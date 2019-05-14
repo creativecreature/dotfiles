@@ -6,4 +6,4 @@
 *.local.*
 
 tags
-/plugged/
+plugged
