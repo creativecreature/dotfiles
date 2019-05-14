@@ -37,9 +37,9 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " Ale
-let g:ale_sign_error = 'üî•'
+let g:ale_sign_error = '🔥'
 hi ALEErrorSign guifg=#DF8C8C
-let g:ale_sign_warning = 'üôÄ'
+let g:ale_sign_warning = '🙀'
 hi ALEWarningSign guifg=#F2C38F
 let g:ale_linters = {'javascript': ['eslint']}
 " ALT-k and ALT-j to navigate errors
