@@ -4,3 +4,6 @@
 # Ignore the "local" versions of files
 *.local
 *.local.*
+
+tags
+/plugged/
