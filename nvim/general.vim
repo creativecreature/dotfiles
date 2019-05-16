@@ -11,14 +11,30 @@ set laststatus=2 " Always displays the status line
 set noshowmode
 set timeoutlen=1000
 set ttimeoutlen=0
-set shiftwidth=2
-set tabstop=2
-set shiftround
 set expandtab
 set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
 set hidden
 set inccommand=nosplit
+
+" Indentation
+set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
+set shiftwidth=2 " number of spaces to use for autoindenting
+set expandtab " insert space characters whenever tab key is pressed
+set tabstop=2 " number of space characters to insert when tab is pressed
+set softtabstop=2 " <Tab> and <BS> inserts and deletes right amount of spaces
+function TabToggle()
+  if &expandtab
+    set shiftwidth=4
+    set softtabstop=0
+    set noexpandtab
+  else
+    set shiftwidth=2
+    set softtabstop=2
+    set expandtab
+  endif
+endfunction
+nmap <leader><tab> mz:execute TabToggle()<CR>'z
 
 " Encoding
 set encoding=utf-8
@@ -57,15 +73,15 @@ autocmd BufReadPost * " {{{2
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
 " inside an event handler (happens when dropping a file on gvim).
-			\ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-			\   exe "normal g`\"" |
-			\ endif "}}}2
+      \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif "}}}2
 
 " Automatically clean trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
-			\ | set textwidth=0
+      \ | set textwidth=0
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -84,7 +100,7 @@ endif
 " UI
 syntax enable
 if has("termguicolors")  " set true colors
-	set termguicolors
+  set termguicolors
 endif
 set background=dark
 colorscheme palenight
