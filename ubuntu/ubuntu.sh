@@ -1,6 +1,8 @@
 #!/bin/bash
 # ubuntu.sh
 
+
+
 # -- Git -----------------------------------------------------------------------
 
 if exists "git"; then
@@ -10,6 +12,8 @@ else
 fi
 
 echo ""
+
+
 
 # -- zsh -----------------------------------------------------------------------
 
@@ -25,6 +29,8 @@ fi
 
 echo ""
 
+
+
 # -- htop ----------------------------------------------------------------------
 
 if exists "htop"; then
@@ -38,6 +44,8 @@ else
 fi
 
 echo ""
+
+
 
 # -- Neovim --------------------------------------------------------------------
 
@@ -53,4 +61,15 @@ else
   else
     echo_item "Skipping Neovim install" red
   fi
+fi
+
+
+
+# -- Plank --------------------------------------------------------------------
+
+if exists "plank"; then
+  echo_item "Plank already installed" green
+else
+  sudo add-apt-repository ppa:ricotz/docky
+  sudo apt-get install plank --yes --force-yes
 fi
