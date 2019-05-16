@@ -31,6 +31,30 @@ echo ""
 
 
 
+# -- fzf -----------------------------------------------------------------------
+if exists "fzf"; then
+  echo_item "fzf is already installed" green
+else
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+  # TODO: Change vim to use Plug '~/.fzf' instead of Plug '/usr/local/opt/fzf'
+fi
+
+echo ""
+
+
+
+# -- ripgrep ----------------------------------------------------------------------
+if exists "rg"; then
+  echo_item "ripgrep is already installed" green
+else
+  sudo apt-get install ripgrep
+fi
+
+echo ""
+
+
+
 # -- htop ----------------------------------------------------------------------
 
 if exists "htop"; then
@@ -63,6 +87,8 @@ else
   fi
 fi
 
+echo ""
+
 
 
 # -- Plank --------------------------------------------------------------------
@@ -71,5 +97,20 @@ if exists "plank"; then
   echo_item "Plank already installed" green
 else
   sudo add-apt-repository ppa:ricotz/docky
+  sudo apt-get update
   sudo apt-get install plank --yes --force-yes
+fi
+
+echo ""
+
+
+
+# -- Plank --------------------------------------------------------------------
+
+if exists "flat-remix"; then
+  echo_item "Flat remix icons already installed"
+else
+  sudo add-apt-repository ppa:daniruiz/flat-remix
+  sudo apt-get update
+  sudo apt-get install flat-remix
 fi

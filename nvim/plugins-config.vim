@@ -61,4 +61,5 @@ nmap =p <Plug>(Prettier)
 let g:prettier#config#single_quote = 'true'
 
 " Lightline
-let g:lightline = { 'colorscheme': 'palenight' }
+" let g:lightline = { 'colorscheme': 'palenight' }
+let g:lightline = { 'colorscheme': 'nord' }
