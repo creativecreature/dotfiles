@@ -2,6 +2,6 @@
 	"suggest.maxCompleteItemCount": 10,
 	"coc.source.emoji.enable": true,
 	"coc.source.emoji.filetypes": null,
-	"coc.source.emoji.shortcut": "T"
+	"coc.source.emoji.shortcut": "T",
+	"coc.source.emoji.triggerCharacters": ["^"]
 }
-
