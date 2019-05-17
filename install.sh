@@ -28,6 +28,7 @@ echo ""
 
 # -- NVIM -----------------------------------------------------------------------
 
+rm -rf $HOME/.config/nvim
 ln -sfn $HOME/dotfiles/nvim $HOME/.config/nvim
 echo_item "Linked nvim configuration"
 
