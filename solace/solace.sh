@@ -36,7 +36,9 @@ if exists "nvm"; then
 else
   if get_boolean_response "Do you want to install Node.js tools?"; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-    nvm install latest
+    source ./.bashrc
+    source ./zshrc
+    nvm install 12.2.0
   else
     echo_item "Skipping Node.js tools install" red
   fi
