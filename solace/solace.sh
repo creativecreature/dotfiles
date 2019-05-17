@@ -6,7 +6,7 @@
 if exists "git"; then
   echo_item "Git is already installed" "green"
 else
-  sudo apt-get install git
+  sudo eopkg install git
 fi
 
 echo ""
@@ -19,7 +19,7 @@ if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
   if get_boolean_response "Do you want to install zsh?"; then
-    sudo apt-get install zsh
+    sudo eopkg install zsh
   else
     echo_item "Skipping zsh install" red
   fi
