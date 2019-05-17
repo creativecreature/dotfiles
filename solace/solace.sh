@@ -27,3 +27,18 @@ fi
 
 echo ""
 
+
+
+# -- Neovim --------------------------------------------------------------------
+
+if exists "nvim"; then
+  echo_item "Neovim is already installed" green
+else
+  if get_boolean_response "Do you want to install Neovim?"; then
+    sudo eopkg install neovim
+  else
+    echo_item "Skipping Neovim install" red
+  fi
+fi
+
+echo ""

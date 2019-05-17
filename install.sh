@@ -23,3 +23,11 @@ fi
 ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
 echo_item "Linked global .gitignore" "green"
 echo ""
+
+
+
+# -- NVIM -----------------------------------------------------------------------
+
+ln -sf $HOME/dotfiles/nvim $HOME/.config/nvim
+echo_item "Linked nvim configuration"
+
