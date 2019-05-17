@@ -1,6 +1,14 @@
 #!/bin/bash
 # solace.sh
 
+
+# -- Hardware settings -----------------------------------------------------------------------
+
+#Add US and SE input sources
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'se')]"
+
+
+
 # -- Git -----------------------------------------------------------------------
 
 if exists "git"; then
@@ -60,6 +68,18 @@ else
   else
     echo_item "Skipping Neovim install" red
   fi
+fi
+
+echo ""
+
+
+
+# -- Ctags --------------------------------------------------------------------
+
+if exists "ctags"; then
+  echo_item "Ctags is already installed" "green"
+else
+  sudo eopkg install ctags
 fi
 
 echo ""
