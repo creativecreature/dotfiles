@@ -31,14 +31,15 @@ echo ""
 
 # -- nvm -----------------------------------------------------------------------
 
-if exists "nvm"; then
+if exists "node"; then
   echo_item "Node tools are already installed" green
 else
   if get_boolean_response "Do you want to install Node.js tools?"; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-    source ./.bashrc
-    source ./zshrc
+    NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm install 12.2.0
+    npm install yarn -g
   else
     echo_item "Skipping Node.js tools install" red
   fi
