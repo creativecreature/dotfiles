@@ -29,6 +29,25 @@ echo ""
 
 
 
+# -- nvm -----------------------------------------------------------------------
+
+if exists "nvm"; then
+  echo_item "Node tools are already installed" green
+else
+  if get_boolean_response "Do you want to install Node.js tools?"; then
+    git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+    . $HOME/.nvm/nvm.sh
+    nvm alias default system
+    nvm install latest
+  else
+    echo_item "Skipping Node.js tools install" red
+  fi
+fi
+
+echo ""
+
+
+
 # -- Neovim --------------------------------------------------------------------
 
 if exists "nvim"; then
