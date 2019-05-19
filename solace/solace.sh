@@ -97,10 +97,20 @@ echo ""
 
 
 
-# -- Zafiro Icons -----------------sudo---------------------------------------------------
+# -- Zafiro Icons --------------------------------------------------------------------
 
 sudo rm -rf /usr/share/icons/Zafiro
 sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
 gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
 
 echo ""
+
+
+
+# -- Plank --------------------------------------------------------------------
+
+if exists "plank"; then
+  echo_item "Plank is already installed" "green"
+else
+  sudo eopkg install plank
+fi
