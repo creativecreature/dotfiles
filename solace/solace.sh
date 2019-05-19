@@ -64,7 +64,7 @@ if exists "nvim"; then
 else
   if get_boolean_response "Do you want to install Neovim?"; then
     sudo eopkg install neovim
-    curl -fLo $($HOME)/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   else
     echo_item "Skipping Neovim install" red
   fi
@@ -84,3 +84,23 @@ fi
 
 echo ""
 
+
+
+# -- Nordic GTK --------------------------------------------------------------------
+
+sudo rm -rf /usr/share/themes/Nordic
+sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
+gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
+gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
+
+echo ""
+
+
+
+# -- Zafiro Icons -----------------sudo---------------------------------------------------
+
+sudo rm -rf /usr/share/icons/Zafiro
+sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
+gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
+
+echo ""

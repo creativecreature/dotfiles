@@ -1,0 +1,1467 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+g:SuperTabDefaultCompletionType	nvim/plugins-config.vim	/^let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up$/;"	v
+gd	nvim/plugins-config.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
+gy	nvim/plugins-config.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+gi	nvim/plugins-config.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
+gr	nvim/plugins-config.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
+<Leader>K	nvim/plugins-config.vim	/^nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>$/;"	m
+show_documentation	nvim/plugins-config.vim	/^function! s:show_documentation()$/;"	f
+<Leader>/	nvim/plugins-config.vim	/^map <Leader>\/ <Plug>(incsearch-easymotion-\/)$/;"	m
+<Leader>?	nvim/plugins-config.vim	/^map <Leader>? <Plug>(incsearch-easymotion-?)$/;"	m
+<Leader>g/	nvim/plugins-config.vim	/^map <Leader>g\/ <Plug>(incsearch-easymotion-stay)$/;"	m
+g:fzf_command_prefix	nvim/plugins-config.vim	/^let g:fzf_command_prefix = 'Fzf'$/;"	v
+<Leader>b	nvim/plugins-config.vim	/^nnoremap <Leader>b :FzfBuffers<CR>$/;"	m
+<Leader>h	nvim/plugins-config.vim	/^nnoremap <Leader>h :FzfHistory<CR>$/;"	m
+<Leader>t	nvim/plugins-config.vim	/^nnoremap <Leader>t :FzfBTags<CR>$/;"	m
+<Leader>T	nvim/plugins-config.vim	/^nnoremap <Leader>T :FzfTags<CR>$/;"	m
+<C-p>	nvim/plugins-config.vim	/^nnoremap <C-p> :FzfFiles<CR>$/;"	m
+g:gutentags_file_list_command	nvim/plugins-config.vim	/^let g:gutentags_file_list_command = "rg --files --follow --ignore-file '~\/.config\/nvim\/.vimignore'"$/;"	v
+g:NERDTreeChDirMode	nvim/plugins-config.vim	/^let g:NERDTreeChDirMode=2$/;"	v
+g:NERDTreeIgnore	nvim/plugins-config.vim	/^let g:NERDTreeIgnore=['\\.rbc$', '\\~$', '\\.pyc$', '\\.db$', '\\.sqlite$', '__pycache__']$/;"	v
+g:NERDTreeSortOrder	nvim/plugins-config.vim	/^let g:NERDTreeSortOrder=['^__\\.py$', '\\\/$', '*', '\\.swp$', '\\.bak$', '\\~$']$/;"	v
+g:NERDTreeShowBookmarks	nvim/plugins-config.vim	/^let g:NERDTreeShowBookmarks=1$/;"	v
+g:nerdtree_tabs_focus_on_files	nvim/plugins-config.vim	/^let g:nerdtree_tabs_focus_on_files=1$/;"	v
+g:NERDTreeWinSize	nvim/plugins-config.vim	/^let g:NERDTreeWinSize = 50$/;"	v
+g:NERDTreeMapOpenVSplit	nvim/plugins-config.vim	/^let g:NERDTreeMapOpenVSplit = '<C-v>'$/;"	v
+g:NERDTreeMapOpenSplit	nvim/plugins-config.vim	/^let g:NERDTreeMapOpenSplit = '<C-x>'$/;"	v
+<F2>	nvim/plugins-config.vim	/^nnoremap <silent> <F2> :NERDTreeFind<CR>$/;"	m
+<F3>	nvim/plugins-config.vim	/^nnoremap <silent> <F3> :NERDTreeToggle<CR>$/;"	m
+g:ale_sign_error	nvim/plugins-config.vim	/^let g:ale_sign_error = '🔥'$/;"	v
+g:ale_sign_warning	nvim/plugins-config.vim	/^let g:ale_sign_warning = '🙀'$/;"	v
+g:ale_linters	nvim/plugins-config.vim	/^let g:ale_linters = {'javascript': ['eslint']}$/;"	v
+˚	nvim/plugins-config.vim	/^nmap <silent> ˚ <Plug>(ale_previous_wrap)$/;"	m
+∆	nvim/plugins-config.vim	/^nmap <silent> ∆ <Plug>(ale_next_wrap)$/;"	m
+=p	nvim/plugins-config.vim	/^nmap =p <Plug>(Prettier)$/;"	m
+g:prettier#config#single_quote	nvim/plugins-config.vim	/^let g:prettier#config#single_quote = 'true'$/;"	v
+g:lightline	nvim/plugins-config.vim	/^let g:lightline = { 'colorscheme': 'nord' }$/;"	v
+<Leader>p	nvim/keybindings.vim	/^nnoremap <Leader>p :set invpaste paste?<CR>$/;"	m
+<C-x>	nvim/keybindings.vim	/^	vmap <C-x> :!pbcopy<CR>$/;"	m
+<C-c>	nvim/keybindings.vim	/^	vmap <C-c> :w !pbcopy<CR><CR>$/;"	m
+IndentWithI	nvim/keybindings.vim	/^function! IndentWithI()$/;"	f
+i	nvim/keybindings.vim	/^nnoremap <expr> i IndentWithI()$/;"	m
+n	nvim/keybindings.vim	/^nnoremap n nzzzv$/;"	m
+N	nvim/keybindings.vim	/^nnoremap N Nzzzv$/;"	m
+<Leader>x	nvim/keybindings.vim	/^noremap <Leader>x :<C-u>split<CR>$/;"	m
+<Leader>v	nvim/keybindings.vim	/^noremap <Leader>v :<C-u>vsplit<CR>$/;"	m
+<leader>q	nvim/keybindings.vim	/^noremap <leader>q :bp<CR>$/;"	m
+<leader>w	nvim/keybindings.vim	/^noremap <leader>w :bn<CR>$/;"	m
+<leader>c	nvim/keybindings.vim	/^noremap <leader>c :bd<CR>$/;"	m
+<leader><space>	nvim/keybindings.vim	/^nnoremap <silent> <leader><space> :noh<cr>$/;"	m
+<C-j>	nvim/keybindings.vim	/^noremap <C-j> <C-w>j$/;"	m
+<C-k>	nvim/keybindings.vim	/^noremap <C-k> <C-w>k$/;"	m
+<C-l>	nvim/keybindings.vim	/^noremap <C-l> <C-w>l$/;"	m
+<C-h>	nvim/keybindings.vim	/^noremap <C-h> <C-w>h$/;"	m
+<	nvim/keybindings.vim	/^vmap < <gv$/;"	m
+>	nvim/keybindings.vim	/^vmap > >gv$/;"	m
+J	nvim/keybindings.vim	/^vnoremap J :m '>+1<CR>gv=gv$/;"	m
+K	nvim/keybindings.vim	/^vnoremap K :m '<-2<CR>gv=gv$/;"	m
+K	nvim/keybindings.vim	/^nnoremap K :grep! "\\b<C-R><C-W>\\b"<CR>:cw<CR>$/;"	m
+Ag	nvim/keybindings.vim	/^command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!$/;"	c
+-	nvim/keybindings.vim	/^nnoremap - :Ag<SPACE>$/;"	m
+<space>	nvim/keybindings.vim	/^nnoremap <space> za$/;"	m
+gF	nvim/keybindings.vim	/^nnoremap gF :vertical wincmd f<CR>$/;"	m
+g:loaded_plug	nvim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
+s:cpo_save	nvim/autoload/plug.vim	/^let s:cpo_save = &cpo$/;"	v
+s:plug_src	nvim/autoload/plug.vim	/^let s:plug_src = 'https:\/\/github.com\/junegunn\/vim-plug.git'$/;"	v
+s:plug_tab	nvim/autoload/plug.vim	/^let s:plug_tab = get(s:, 'plug_tab', -1)$/;"	v
+s:plug_buf	nvim/autoload/plug.vim	/^let s:plug_buf = get(s:, 'plug_buf', -1)$/;"	v
+s:mac_gui	nvim/autoload/plug.vim	/^let s:mac_gui = has('gui_macvim') && has('gui_running')$/;"	v
+s:is_win	nvim/autoload/plug.vim	/^let s:is_win = has('win32')$/;"	v
+s:nvim	nvim/autoload/plug.vim	/^let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)$/;"	v
+s:vim8	nvim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
+s:me	nvim/autoload/plug.vim	/^let s:me = resolve(expand('<sfile>:p'))$/;"	v
+s:base_spec	nvim/autoload/plug.vim	/^let s:base_spec = { 'branch': 'master', 'frozen': 0 }$/;"	v
+s:TYPE	nvim/autoload/plug.vim	/^let s:TYPE = {$/;"	v
+s:loaded	nvim/autoload/plug.vim	/^let s:loaded = get(s:, 'loaded', {})$/;"	v
+s:triggers	nvim/autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
+plug#begin	nvim/autoload/plug.vim	/^function! plug#begin(...)$/;"	f
+define_commands	nvim/autoload/plug.vim	/^function! s:define_commands()$/;"	f
+to_a	nvim/autoload/plug.vim	/^function! s:to_a(v)$/;"	f
+to_s	nvim/autoload/plug.vim	/^function! s:to_s(v)$/;"	f
+glob	nvim/autoload/plug.vim	/^function! s:glob(from, pattern)$/;"	f
+source	nvim/autoload/plug.vim	/^function! s:source(from, ...)$/;"	f
+assoc	nvim/autoload/plug.vim	/^function! s:assoc(dict, key, val)$/;"	f
+ask	nvim/autoload/plug.vim	/^function! s:ask(message, ...)$/;"	f
+ask_no_interrupt	nvim/autoload/plug.vim	/^function! s:ask_no_interrupt(...)$/;"	f
+lazy	nvim/autoload/plug.vim	/^function! s:lazy(plug, opt)$/;"	f
+plug#end	nvim/autoload/plug.vim	/^function! plug#end()$/;"	f
+loaded_names	nvim/autoload/plug.vim	/^function! s:loaded_names()$/;"	f
+load_plugin	nvim/autoload/plug.vim	/^function! s:load_plugin(spec)$/;"	f
+reload_plugins	nvim/autoload/plug.vim	/^function! s:reload_plugins()$/;"	f
+trim	nvim/autoload/plug.vim	/^function! s:trim(str)$/;"	f
+version_requirement	nvim/autoload/plug.vim	/^function! s:version_requirement(val, min)$/;"	f
+git_version_requirement	nvim/autoload/plug.vim	/^function! s:git_version_requirement(...)$/;"	f
+progress_opt	nvim/autoload/plug.vim	/^function! s:progress_opt(base)$/;"	f
+rtp	nvim/autoload/plug.vim	/^  function! s:rtp(spec)$/;"	f
+path	nvim/autoload/plug.vim	/^  function! s:path(path)$/;"	f
+dirpath	nvim/autoload/plug.vim	/^  function! s:dirpath(path)$/;"	f
+is_local_plug	nvim/autoload/plug.vim	/^  function! s:is_local_plug(repo)$/;"	f
+rtp	nvim/autoload/plug.vim	/^  function! s:rtp(spec)$/;"	f
+path	nvim/autoload/plug.vim	/^  function! s:path(path)$/;"	f
+dirpath	nvim/autoload/plug.vim	/^  function! s:dirpath(path)$/;"	f
+is_local_plug	nvim/autoload/plug.vim	/^  function! s:is_local_plug(repo)$/;"	f
+err	nvim/autoload/plug.vim	/^function! s:err(msg)$/;"	f
+warn	nvim/autoload/plug.vim	/^function! s:warn(cmd, msg)$/;"	f
+esc	nvim/autoload/plug.vim	/^function! s:esc(path)$/;"	f
+escrtp	nvim/autoload/plug.vim	/^function! s:escrtp(path)$/;"	f
+remove_rtp	nvim/autoload/plug.vim	/^function! s:remove_rtp()$/;"	f
+reorg_rtp	nvim/autoload/plug.vim	/^function! s:reorg_rtp()$/;"	f
+doautocmd	nvim/autoload/plug.vim	/^function! s:doautocmd(...)$/;"	f
+dobufread	nvim/autoload/plug.vim	/^function! s:dobufread(names)$/;"	f
+plug#load	nvim/autoload/plug.vim	/^function! plug#load(...)$/;"	f
+remove_triggers	nvim/autoload/plug.vim	/^function! s:remove_triggers(name)$/;"	f
+lod	nvim/autoload/plug.vim	/^function! s:lod(names, types, ...)$/;"	f
+lod_ft	nvim/autoload/plug.vim	/^function! s:lod_ft(pat, names)$/;"	f
+lod_cmd	nvim/autoload/plug.vim	/^function! s:lod_cmd(cmd, bang, l1, l2, args, names)$/;"	f
+lod_map	nvim/autoload/plug.vim	/^function! s:lod_map(map, names, with_prefix, prefix)$/;"	f
+plug#	nvim/autoload/plug.vim	/^function! plug#(repo, ...)$/;"	f
+parse_options	nvim/autoload/plug.vim	/^function! s:parse_options(arg)$/;"	f
+infer_properties	nvim/autoload/plug.vim	/^function! s:infer_properties(name, repo)$/;"	f
+install	nvim/autoload/plug.vim	/^function! s:install(force, names)$/;"	f
+update	nvim/autoload/plug.vim	/^function! s:update(force, names)$/;"	f
+plug#helptags	nvim/autoload/plug.vim	/^function! plug#helptags()$/;"	f
+syntax	nvim/autoload/plug.vim	/^function! s:syntax()$/;"	f
+lpad	nvim/autoload/plug.vim	/^function! s:lpad(str, len)$/;"	f
+lines	nvim/autoload/plug.vim	/^function! s:lines(msg)$/;"	f
+lastline	nvim/autoload/plug.vim	/^function! s:lastline(msg)$/;"	f
+new_window	nvim/autoload/plug.vim	/^function! s:new_window()$/;"	f
+plug_window_exists	nvim/autoload/plug.vim	/^function! s:plug_window_exists()$/;"	f
+switch_in	nvim/autoload/plug.vim	/^function! s:switch_in()$/;"	f
+switch_out	nvim/autoload/plug.vim	/^function! s:switch_out(...)$/;"	f
+finish_bindings	nvim/autoload/plug.vim	/^function! s:finish_bindings()$/;"	f
+prepare	nvim/autoload/plug.vim	/^function! s:prepare(...)$/;"	f
+assign_name	nvim/autoload/plug.vim	/^function! s:assign_name()$/;"	f
+chsh	nvim/autoload/plug.vim	/^function! s:chsh(swap)$/;"	f
+bang	nvim/autoload/plug.vim	/^function! s:bang(cmd, ...)$/;"	f
+regress_bar	nvim/autoload/plug.vim	/^function! s:regress_bar()$/;"	f
+is_updated	nvim/autoload/plug.vim	/^function! s:is_updated(dir)$/;"	f
+do	nvim/autoload/plug.vim	/^function! s:do(pull, force, todo)$/;"	f
+hash_match	nvim/autoload/plug.vim	/^function! s:hash_match(a, b)$/;"	f
+checkout	nvim/autoload/plug.vim	/^function! s:checkout(spec)$/;"	f
+finish	nvim/autoload/plug.vim	/^function! s:finish(pull)$/;"	f
+retry	nvim/autoload/plug.vim	/^function! s:retry()$/;"	f
+is_managed	nvim/autoload/plug.vim	/^function! s:is_managed(name)$/;"	f
+names	nvim/autoload/plug.vim	/^function! s:names(...)$/;"	f
+check_ruby	nvim/autoload/plug.vim	/^function! s:check_ruby()$/;"	f
+update_impl	nvim/autoload/plug.vim	/^function! s:update_impl(pull, force, args) abort$/;"	f
+log4	nvim/autoload/plug.vim	/^function! s:log4(name, msg)$/;"	f
+update_finish	nvim/autoload/plug.vim	/^function! s:update_finish()$/;"	f
+job_abort	nvim/autoload/plug.vim	/^function! s:job_abort()$/;"	f
+last_non_empty_line	nvim/autoload/plug.vim	/^function! s:last_non_empty_line(lines)$/;"	f
+job_out_cb	nvim/autoload/plug.vim	/^function! s:job_out_cb(self, data) abort$/;"	f
+job_exit_cb	nvim/autoload/plug.vim	/^function! s:job_exit_cb(self, data) abort$/;"	f
+job_cb	nvim/autoload/plug.vim	/^function! s:job_cb(fn, job, ch, data)$/;"	f
+nvim_cb	nvim/autoload/plug.vim	/^function! s:nvim_cb(job_id, data, event) dict abort$/;"	f
+spawn	nvim/autoload/plug.vim	/^function! s:spawn(name, cmd, opts)$/;"	f
+reap	nvim/autoload/plug.vim	/^function! s:reap(name)$/;"	f
+bar	nvim/autoload/plug.vim	/^function! s:bar()$/;"	f
+logpos	nvim/autoload/plug.vim	/^function! s:logpos(name)$/;"	f
+log	nvim/autoload/plug.vim	/^function! s:log(bullet, name, lines)$/;"	f
+update_vim	nvim/autoload/plug.vim	/^function! s:update_vim()$/;"	f
+tick	nvim/autoload/plug.vim	/^function! s:tick()$/;"	f
+update_python	nvim/autoload/plug.vim	/^function! s:update_python()$/;"	f
+update_ruby	nvim/autoload/plug.vim	/^function! s:update_ruby()$/;"	f
+shellesc_cmd	nvim/autoload/plug.vim	/^function! s:shellesc_cmd(arg)$/;"	f
+shellesc	nvim/autoload/plug.vim	/^function! s:shellesc(arg)$/;"	f
+glob_dir	nvim/autoload/plug.vim	/^function! s:glob_dir(path)$/;"	f
+progress_bar	nvim/autoload/plug.vim	/^function! s:progress_bar(line, bar, total)$/;"	f
+compare_git_uri	nvim/autoload/plug.vim	/^function! s:compare_git_uri(a, b)$/;"	f
+format_message	nvim/autoload/plug.vim	/^function! s:format_message(bullet, name, message)$/;"	f
+with_cd	nvim/autoload/plug.vim	/^function! s:with_cd(cmd, dir)$/;"	f
+system	nvim/autoload/plug.vim	/^function! s:system(cmd, ...)$/;"	f
+system_chomp	nvim/autoload/plug.vim	/^function! s:system_chomp(...)$/;"	f
+git_validate	nvim/autoload/plug.vim	/^function! s:git_validate(spec, check_branch)$/;"	f
+rm_rf	nvim/autoload/plug.vim	/^function! s:rm_rf(dir)$/;"	f
+clean	nvim/autoload/plug.vim	/^function! s:clean(force)$/;"	f
+delete_op	nvim/autoload/plug.vim	/^function! s:delete_op(type, ...)$/;"	f
+delete	nvim/autoload/plug.vim	/^function! s:delete(range, force)$/;"	f
+upgrade	nvim/autoload/plug.vim	/^function! s:upgrade()$/;"	f
+upgrade_specs	nvim/autoload/plug.vim	/^function! s:upgrade_specs()$/;"	f
+status	nvim/autoload/plug.vim	/^function! s:status()$/;"	f
+extract_name	nvim/autoload/plug.vim	/^function! s:extract_name(str, prefix, suffix)$/;"	f
+status_load	nvim/autoload/plug.vim	/^function! s:status_load(lnum)$/;"	f
+status_update	nvim/autoload/plug.vim	/^function! s:status_update() range$/;"	f
+is_preview_window_open	nvim/autoload/plug.vim	/^function! s:is_preview_window_open()$/;"	f
+find_name	nvim/autoload/plug.vim	/^function! s:find_name(lnum)$/;"	f
+preview_commit	nvim/autoload/plug.vim	/^function! s:preview_commit()$/;"	f
+section	nvim/autoload/plug.vim	/^function! s:section(flags)$/;"	f
+format_git_log	nvim/autoload/plug.vim	/^function! s:format_git_log(line)$/;"	f
+append_ul	nvim/autoload/plug.vim	/^function! s:append_ul(lnum, text)$/;"	f
+diff	nvim/autoload/plug.vim	/^function! s:diff()$/;"	f
+revert	nvim/autoload/plug.vim	/^function! s:revert()$/;"	f
+snapshot	nvim/autoload/plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
+split_rtp	nvim/autoload/plug.vim	/^function! s:split_rtp()$/;"	f
+s:first_rtp	nvim/autoload/plug.vim	/^let s:first_rtp = s:escrtp(get(s:split_rtp(), 0, ''))$/;"	v
+s:last_rtp	nvim/autoload/plug.vim	/^let s:last_rtp  = s:escrtp(get(s:split_rtp(), -1, ''))$/;"	v
+g:plugs_order	nvim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
+g:loaded_surround	nvim/plugged/vim-surround/plugin/surround.vim	/^let g:loaded_surround = 1$/;"	v
+getchar	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:getchar()$/;"	f
+inputtarget	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:inputtarget()$/;"	f
+inputreplacement	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:inputreplacement()$/;"	f
+beep	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:beep()$/;"	f
+redraw	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:redraw()$/;"	f
+extractbefore	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:extractbefore(str)$/;"	f
+extractafter	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:extractafter(str)$/;"	f
+fixindent	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:fixindent(str,spc)$/;"	f
+process	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:process(string)$/;"	f
+wrap	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:wrap(string,char,type,removed,special)$/;"	f
+wrapreg	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:wrapreg(reg,char,removed,special)$/;"	f
+insert	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:insert(...) " {{{1$/;"	f
+reindent	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:reindent() " {{{1$/;"	f
+dosurround	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:dosurround(...) " {{{1$/;"	f
+changesurround	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:changesurround(...) " {{{1$/;"	f
+opfunc	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:opfunc(type, ...) abort " {{{1$/;"	f
+opfunc2	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:opfunc2(...) abort$/;"	f
+closematch	nvim/plugged/vim-surround/plugin/surround.vim	/^function! s:closematch(str) " {{{1$/;"	f
+<Plug>SurroundRepeat	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <silent> <Plug>SurroundRepeat .$/;"	m
+<Plug>Dsurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <silent> <Plug>Dsurround  :<C-U>call <SID>dosurround(<SID>inputtarget())<CR>$/;"	m
+<Plug>Csurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <silent> <Plug>Csurround  :<C-U>call <SID>changesurround()<CR>$/;"	m
+<Plug>CSurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <silent> <Plug>CSurround  :<C-U>call <SID>changesurround(1)<CR>$/;"	m
+<Plug>Yssurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <expr>   <Plug>Yssurround '^'.v:count1.<SID>opfunc('setup').'g_'$/;"	m
+<Plug>YSsurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <expr>   <Plug>YSsurround <SID>opfunc2('setup').'_'$/;"	m
+<Plug>Ysurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <expr>   <Plug>Ysurround  <SID>opfunc('setup')$/;"	m
+<Plug>YSurround	nvim/plugged/vim-surround/plugin/surround.vim	/^nnoremap <expr>   <Plug>YSurround  <SID>opfunc2('setup')$/;"	m
+<Plug>VSurround	nvim/plugged/vim-surround/plugin/surround.vim	/^vnoremap <silent> <Plug>VSurround  :<C-U>call <SID>opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>$/;"	m
+<Plug>VgSurround	nvim/plugged/vim-surround/plugin/surround.vim	/^vnoremap <silent> <Plug>VgSurround :<C-U>call <SID>opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>$/;"	m
+<Plug>Isurround	nvim/plugged/vim-surround/plugin/surround.vim	/^inoremap <silent> <Plug>Isurround  <C-R>=<SID>insert()<CR>$/;"	m
+<Plug>ISurround	nvim/plugged/vim-surround/plugin/surround.vim	/^inoremap <silent> <Plug>ISurround  <C-R>=<SID>insert(1)<CR>$/;"	m
+ds	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap ds  <Plug>Dsurround$/;"	m
+cs	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap cs  <Plug>Csurround$/;"	m
+cS	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap cS  <Plug>CSurround$/;"	m
+ys	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap ys  <Plug>Ysurround$/;"	m
+yS	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap yS  <Plug>YSurround$/;"	m
+yss	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap yss <Plug>Yssurround$/;"	m
+ySs	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap ySs <Plug>YSsurround$/;"	m
+ySS	nvim/plugged/vim-surround/plugin/surround.vim	/^  nmap ySS <Plug>YSsurround$/;"	m
+<C-S>	nvim/plugged/vim-surround/plugin/surround.vim	/^      imap    <C-S> <Plug>Isurround$/;"	m
+<C-G>s	nvim/plugged/vim-surround/plugin/surround.vim	/^    imap      <C-G>s <Plug>Isurround$/;"	m
+<C-G>S	nvim/plugged/vim-surround/plugin/surround.vim	/^    imap      <C-G>S <Plug>ISurround$/;"	m
+g:buftabline_numbers	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let g:buftabline_numbers    = get(g:, 'buftabline_numbers',    0)$/;"	v
+g:buftabline_indicators	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let g:buftabline_indicators = get(g:, 'buftabline_indicators', 0)$/;"	v
+g:buftabline_separators	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let g:buftabline_separators = get(g:, 'buftabline_separators', 0)$/;"	v
+g:buftabline_show	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let g:buftabline_show       = get(g:, 'buftabline_show',       2)$/;"	v
+g:buftabline_plug_max	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let g:buftabline_plug_max   = get(g:, 'buftabline_plug_max',  10)$/;"	v
+buftabline#user_buffers	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^function! buftabline#user_buffers() " help buffers are always unlisted, but quickfix buffers are not$/;"	f
+s:dirsep	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let s:dirsep = fnamemodify(getcwd(),':p')[-1:]$/;"	v
+s:centerbuf	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^let s:centerbuf = winbufnr(0)$/;"	v
+buftabline#render	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^function! buftabline#render()$/;"	f
+buftabline#update	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^function! buftabline#update(zombie)$/;"	f
+BufTabLine	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^augroup BufTabLine$/;"	a
+s:b	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^	let s:b = s:n == -1 ? -1 : s:n - 1$/;"	v
+transpile	nvim/plugged/vim-buftabline/plugin/buftabline.vim	/^	function s:transpile()$/;"	f
+s:root	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^let s:root = expand('<sfile>:h:h:h')$/;"	v
+checkEnvironment	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkEnvironment() abort$/;"	f
+checkCommand	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkCommand()$/;"	f
+checkAutocmd	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkAutocmd()$/;"	f
+checkInitailize	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^function! s:checkInitailize() abort$/;"	f
+health#coc#check	nvim/plugged/coc.nvim/autoload/health/coc.vim	/^function! health#coc#check() abort$/;"	f
+s:error_symbol	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^let s:error_symbol = get(g:, 'airline#extensions#coc#error_symbol', 'E:')$/;"	v
+s:warning_symbol	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#coc#warning_symbol', 'W:')$/;"	v
+airline#extensions#coc#get_warning	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^function! airline#extensions#coc#get_warning()$/;"	f
+airline#extensions#coc#get_error	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^function! airline#extensions#coc#get_error()$/;"	f
+airline#extensions#coc#get	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^function! airline#extensions#coc#get(type)$/;"	f
+airline#extensions#coc#init	nvim/plugged/coc.nvim/autoload/airline/extensions/coc.vim	/^function! airline#extensions#coc#init(ext)$/;"	f
+g:coc#_context	nvim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc#_context = {'start': 0, 'candidates': []}$/;"	v
+g:coc_user_config	nvim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_user_config = get(g:, 'coc_user_config', {})$/;"	v
+g:coc_global_extensions	nvim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_global_extensions = get(g:, 'coc_global_extensions', [])$/;"	v
+g:coc_selected_text	nvim/plugged/coc.nvim/autoload/coc.vim	/^let g:coc_selected_text = ''$/;"	v
+s:watched_keys	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:watched_keys = []$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:error_sign	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:error_sign = get(g:, 'coc_status_error_sign', has('mac') ? '❌ ' : 'E')$/;"	v
+s:warning_sign	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:warning_sign = get(g:, 'coc_status_warning_sign', has('mac') ? '⚠️ ' : 'W')$/;"	v
+s:select_api	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:select_api = exists('*nvim_select_popupmenu_item')$/;"	v
+coc#expandable	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#expandable() abort$/;"	f
+coc#jumpable	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#jumpable() abort$/;"	f
+coc#expandableOrJumpable	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#expandableOrJumpable() abort$/;"	f
+coc#refresh	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#refresh() abort$/;"	f
+coc#on_enter	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#on_enter()$/;"	f
+coc#_insert_key	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_insert_key(method, key, ...) abort$/;"	f
+coc#_complete	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_complete() abort$/;"	f
+coc#_reload	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_reload()$/;"	f
+coc#_do_complete	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_do_complete(start, items)$/;"	f
+coc#_select_confirm	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_select_confirm()$/;"	f
+coc#_selected	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_selected()$/;"	f
+coc#_hide	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_hide() abort$/;"	f
+coc#_cancel	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_cancel()$/;"	f
+coc#_select	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_select() abort$/;"	f
+coc#start	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#start(...)$/;"	f
+coc#status	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#status()$/;"	f
+trim	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! s:trim(str)$/;"	f
+coc#config	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#config(section, value)$/;"	f
+coc#add_extension	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#add_extension(...)$/;"	f
+coc#_watch	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_watch(key)$/;"	f
+coc#_unwatch	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_unwatch(key)$/;"	f
+GlobalChange	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! s:GlobalChange(dict, key, val)$/;"	f
+coc#_map	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_map()$/;"	f
+coc#_unmap	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_unmap()$/;"	f
+coc#_init	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! coc#_init()$/;"	f
+s:activated	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^let s:activated = 0$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:saved_ve	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^let s:saved_ve = &t_ve$/;"	v
+coc#list#get_chars	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#get_chars()$/;"	f
+getchar	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! s:getchar()$/;"	f
+coc#list#prompt_start	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#prompt_start()$/;"	f
+coc#list#start_prompt	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#start_prompt()$/;"	f
+coc#list#setlines	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#setlines(lines, append)$/;"	f
+coc#list#options	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#options(...)$/;"	f
+coc#list#stop_prompt	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#stop_prompt()$/;"	f
+coc#list#restore	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#restore()$/;"	f
+coc#list#status	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#status(name)$/;"	f
+coc#list#setup	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#setup(source)$/;"	f
+coc#list#has_preview	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#has_preview()$/;"	f
+coc#list#get_colors	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^function! coc#list#get_colors()$/;"	f
+s:root	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:root = expand('<sfile>:h:h:h')$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:is_win	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:is_win = has("win32") || has("win64")$/;"	v
+s:clients	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:clients = {}$/;"	v
+s:logfile	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:logfile = tempname()$/;"	v
+coc#client#create	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#create(name, command)$/;"	f
+start	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:start() dict$/;"	f
+on_stderr	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:on_stderr(name, msgs)$/;"	f
+on_exit	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:on_exit(name, code) abort$/;"	f
+get_channel	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:get_channel(client)$/;"	f
+request	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:request(method, args) dict$/;"	f
+notify	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:notify(method, args) dict$/;"	f
+request_async	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:request_async(method, args, cb) dict$/;"	f
+on_async_response	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! s:on_async_response(id, resp, isErr) dict$/;"	f
+coc#client#is_running	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#is_running(name) abort$/;"	f
+coc#client#stop	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#stop(name) abort$/;"	f
+coc#client#request	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#request(name, method, args)$/;"	f
+coc#client#notify	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#notify(name, method, args)$/;"	f
+coc#client#request_async	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#request_async(name, method, args, cb)$/;"	f
+coc#client#on_response	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#on_response(name, id, resp, isErr)$/;"	f
+coc#client#restart	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#restart(name) abort$/;"	f
+coc#client#restart_all	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#restart_all()$/;"	f
+coc#client#open_log	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^function! coc#client#open_log()$/;"	f
+s:funcs	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^let s:funcs = {}$/;"	v
+buf_line_count	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:buf_line_count(bufnr) abort$/;"	f
+execute	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:execute(cmd)$/;"	f
+funcs.set_current_dir	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_current_dir(dir) abort$/;"	f
+funcs.set_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_var(name, value) abort$/;"	f
+funcs.del_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.del_var(name) abort$/;"	f
+funcs.set_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_option(name, value) abort$/;"	f
+funcs.set_current_buf	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_current_buf(bufnr) abort$/;"	f
+funcs.set_current_win	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_current_win(win_id) abort$/;"	f
+funcs.set_current_tabpage	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_current_tabpage(tabnr) abort$/;"	f
+funcs.list_wins	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.list_wins() abort$/;"	f
+funcs.call_atomic	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.call_atomic(calls)$/;"	f
+funcs.set_client_info	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_client_info(...) abort$/;"	f
+funcs.subscribe	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.subscribe(...) abort$/;"	f
+funcs.unsubscribe	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.unsubscribe(...) abort$/;"	f
+funcs.call_function	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.call_function(method, args) abort$/;"	f
+funcs.call_dict_function	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.call_dict_function(dict, method, args) abort$/;"	f
+funcs.command	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.command(command) abort$/;"	f
+funcs.eval	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.eval(expr) abort$/;"	f
+funcs.get_api_info	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_api_info()$/;"	f
+funcs.list_bufs	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.list_bufs()$/;"	f
+funcs.feedkeys	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.feedkeys(keys, mode, escape_csi)$/;"	f
+funcs.list_runtime_paths	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.list_runtime_paths()$/;"	f
+funcs.command_output	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.command_output(cmd)$/;"	f
+funcs.get_current_line	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_current_line()$/;"	f
+funcs.set_current_line	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.set_current_line(line)$/;"	f
+funcs.del_current_line	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.del_current_line(line)$/;"	f
+funcs.get_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_var(var)$/;"	f
+funcs.get_vvar	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_vvar(var)$/;"	f
+funcs.get_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_option(name)$/;"	f
+funcs.get_current_buf	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_current_buf()$/;"	f
+funcs.get_current_win	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_current_win()$/;"	f
+funcs.get_current_tabpage	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_current_tabpage()$/;"	f
+funcs.list_tabpages	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.list_tabpages()$/;"	f
+funcs.get_mode	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.get_mode()$/;"	f
+funcs.strwidth	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.strwidth(str)$/;"	f
+funcs.out_write	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.out_write(str)$/;"	f
+funcs.err_write	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.err_write(str)$/;"	f
+funcs.err_writeln	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.err_writeln(str)$/;"	f
+funcs.buf_set_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_set_option(bufnr, name, val)$/;"	f
+funcs.buf_get_changedtick	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_changedtick(bufnr)$/;"	f
+funcs.buf_is_valid	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_is_valid(bufnr)$/;"	f
+funcs.buf_get_mark	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_mark(bufnr, name)$/;"	f
+funcs.buf_line_count	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_line_count(bufnr) abort$/;"	f
+funcs.buf_attach	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_attach(...)$/;"	f
+funcs.buf_detach	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_detach()$/;"	f
+funcs.buf_get_lines	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_lines(bufnr, start, end, strict) abort$/;"	f
+funcs.buf_set_lines	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_set_lines(bufnr, start, end, strict, ...) abort$/;"	f
+funcs.buf_set_name	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_set_name(bufnr, name) abort$/;"	f
+funcs.buf_get_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_var(bufnr, name)$/;"	f
+funcs.buf_set_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_set_var(bufnr, name, val)$/;"	f
+funcs.buf_del_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_del_var(bufnr, name)$/;"	f
+funcs.buf_get_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_option(bufnr, name)$/;"	f
+funcs.buf_get_name	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_get_name(bufnr)$/;"	f
+funcs.win_get_buf	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_buf(winid)$/;"	f
+funcs.win_get_position	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_position(win_id) abort$/;"	f
+funcs.win_get_height	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_height(win_id) abort$/;"	f
+funcs.win_get_width	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_width(win_id) abort$/;"	f
+funcs.win_get_cursor	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_cursor(win_id) abort$/;"	f
+funcs.win_get_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_var(win_id, name) abort$/;"	f
+funcs.win_set_width	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_set_width(win_id, width) abort$/;"	f
+funcs.win_get_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_option(win_id, name) abort$/;"	f
+funcs.win_set_height	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_set_height(win_id, height) abort$/;"	f
+funcs.win_set_option	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_set_option(win_id, name, value) abort$/;"	f
+funcs.win_set_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_set_var(win_id, name, value) abort$/;"	f
+funcs.win_del_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_del_var(win_id, name) abort$/;"	f
+funcs.win_is_valid	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_is_valid(win_id) abort$/;"	f
+funcs.win_get_number	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_number(win_id) abort$/;"	f
+funcs.win_set_cursor	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_set_cursor(win_id, pos) abort$/;"	f
+funcs.win_get_tabpage	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.win_get_tabpage(win_id) abort$/;"	f
+funcs.tabpage_get_number	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_get_number(id)$/;"	f
+funcs.tabpage_list_wins	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_list_wins(tabnr)$/;"	f
+funcs.tabpage_get_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_get_var(tabnr, name)$/;"	f
+funcs.tabpage_set_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_set_var(tabnr, name, value)$/;"	f
+funcs.tabpage_del_var	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_del_var(tabnr, name)$/;"	f
+funcs.tabpage_is_valid	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_is_valid(tabnr)$/;"	f
+funcs.tabpage_get_win	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.tabpage_get_win(tabnr)$/;"	f
+coc#api#func_names	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! coc#api#func_names() abort$/;"	f
+coc#api#call	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! coc#api#call(method, args) abort$/;"	f
+coc#api#notify	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! coc#api#notify(method, args) abort$/;"	f
+s:is_win	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^let s:is_win = has("win32") || has("win64")$/;"	v
+s:client	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^let s:client = v:null$/;"	v
+s:name	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^let s:name = 'coc'$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^let s:is_vim = !has('nvim')$/;"	v
+coc#rpc#start_server	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#start_server()$/;"	f
+coc#rpc#ready	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#ready()$/;"	f
+ChannelSet	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! s:ChannelSet(dict, key, val)$/;"	f
+coc#rpc#kill	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#kill()$/;"	f
+coc#rpc#get_errors	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#get_errors()$/;"	f
+coc#rpc#stop	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#stop()$/;"	f
+coc#rpc#restart	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#restart()$/;"	f
+coc#rpc#request	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#request(method, args) abort$/;"	f
+coc#rpc#notify	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#notify(method, args) abort$/;"	f
+coc#rpc#request_async	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#request_async(method, args, cb) abort$/;"	f
+coc#rpc#async_response	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#async_response(id, resp, isErr) abort$/;"	f
+coc#rpc#async_request	nvim/plugged/coc.nvim/autoload/coc/rpc.vim	/^function! coc#rpc#async_request(id, method, args)$/;"	f
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:map_next	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^let s:map_next = 1$/;"	v
+coc#snippet#_select_mappings	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^function! coc#snippet#_select_mappings()$/;"	f
+coc#snippet#show_choices	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^function! coc#snippet#show_choices(lnum, col, len, values) abort$/;"	f
+coc#snippet#enable	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^function! coc#snippet#enable()$/;"	f
+coc#snippet#disable	nvim/plugged/coc.nvim/autoload/coc/snippet.vim	/^function! coc#snippet#disable()$/;"	f
+s:root	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:root = expand('<sfile>:h:h:h')$/;"	v
+s:is_win	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:install_yarn	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:install_yarn = 0$/;"	v
+s:package_file	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:package_file = s:root.'\/package.json'$/;"	v
+s:activate	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:activate = ""$/;"	v
+s:quit	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:quit = ""$/;"	v
+s:app	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "MacVim"$/;"	v
+s:app	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "Terminal"$/;"	v
+s:app	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "iTerm"$/;"	v
+s:app	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:app = "System Events"$/;"	v
+s:quit	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:quit = "quit"$/;"	v
+s:activate	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:activate = 'activate'$/;"	v
+coc#util#has_preview	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#has_preview()$/;"	f
+coc#util#has_float	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#has_float()$/;"	f
+coc#util#get_float	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_float()$/;"	f
+coc#util#float_hide	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#float_hide()$/;"	f
+coc#util#float_jump	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#float_jump()$/;"	f
+coc#util#float_scrollable	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#float_scrollable()$/;"	f
+coc#util#float_scroll	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#float_scroll(forward)$/;"	f
+coc#util#yarn_cmd	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#yarn_cmd()$/;"	f
+coc#util#cursor	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#cursor()$/;"	f
+coc#util#close_win	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#close_win(id)$/;"	f
+coc#util#win_position	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#win_position()$/;"	f
+coc#util#close_popup	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#close_popup()$/;"	f
+coc#util#version	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#version()$/;"	f
+coc#util#valid_state	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#valid_state()$/;"	f
+coc#util#open_file	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#open_file(cmd, file)$/;"	f
+coc#util#platform	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#platform()$/;"	f
+coc#util#remote_fns	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#remote_fns(name)$/;"	f
+coc#util#job_command	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#job_command()$/;"	f
+coc#util#echo_hover	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#echo_hover(msg)$/;"	f
+coc#util#execute	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#execute(cmd)$/;"	f
+coc#util#echo_messages	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#echo_messages(hl, msgs)$/;"	f
+coc#util#echo_lines	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#echo_lines(lines)$/;"	f
+coc#util#timer	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#timer(method, args)$/;"	f
+Call	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! s:Call(method, args)$/;"	f
+coc#util#is_preview	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#is_preview(bufnr)$/;"	f
+coc#util#get_bufoptions	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_bufoptions(bufnr) abort$/;"	f
+coc#util#root_patterns	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#root_patterns()$/;"	f
+coc#util#on_error	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#on_error(msg) abort$/;"	f
+coc#util#preview_info	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#preview_info(info, ...) abort$/;"	f
+coc#util#get_config_home	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_config_home()$/;"	f
+coc#util#get_input	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_input()$/;"	f
+coc#util#move_cursor	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#move_cursor(delta)$/;"	f
+coc#util#get_complete_option	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_complete_option()$/;"	f
+coc#util#with_callback	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#with_callback(method, args, cb)$/;"	f
+timeout	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let timeout = s:is_vim ? 500 : 0$/;"	v
+coc#util#add_matchids	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#add_matchids(ids)$/;"	f
+coc#util#prompt_confirm	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#prompt_confirm(title)$/;"	f
+coc#util#get_syntax_name	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_syntax_name(lnum, col)$/;"	f
+coc#util#echo_signatures	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#echo_signatures(signatures) abort$/;"	f
+echo_signature	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! s:echo_signature(parts)$/;"	f
+coc#util#unplace_signs	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#unplace_signs(bufnr, sign_ids)$/;"	f
+coc#util#setline	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#setline(lnum, line)$/;"	f
+coc#util#open_terminal	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#open_terminal(opts) abort$/;"	f
+cmd	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^      let cmd = 'cmd.exe \/C "'.cmd.'"'$/;"	v
+coc#util#run_terminal	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#run_terminal(opts, cb)$/;"	f
+coc#util#vim_info	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#vim_info()$/;"	f
+coc#util#highlight_options	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#highlight_options()$/;"	f
+coc#util#get_content	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_content(bufnr)$/;"	f
+coc#util#get_changeinfo	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#get_changeinfo()$/;"	f
+coc#util#diff_content	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#diff_content(lines) abort$/;"	f
+coc#util#clear_signs	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#clear_signs()$/;"	f
+coc#util#clearmatches	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#clearmatches(ids)$/;"	f
+coc#util#open_url	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#open_url(url)$/;"	f
+coc#util#install	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#install(...) abort$/;"	f
+cwd	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^    let cwd = getcwd()$/;"	v
+coc#util#build	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#build()$/;"	f
+coc#util#do_complete	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#do_complete(name, opt, cb) abort$/;"	f
+coc#util#extension_root	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#extension_root() abort$/;"	f
+coc#util#update_extensions	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#update_extensions(...) abort$/;"	f
+coc#util#install_extension	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#install_extension(args) abort$/;"	f
+cwd	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^      let cwd = getcwd()$/;"	v
+coc#util#init_extension_root	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#init_extension_root(root) abort$/;"	f
+coc#util#rebuild	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#rebuild()$/;"	f
+coc#util#update	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#update()$/;"	f
+coc#util#echo_line	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#echo_line()$/;"	f
+coc#util#pick_color	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#pick_color(default_color)$/;"	f
+coc#util#iterm_open	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! coc#util#iterm_open(dir)$/;"	f
+osascript	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! s:osascript(...) abort$/;"	f
+system	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^function! s:system(cmd)$/;"	f
+s:is_vim	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^let s:is_vim = !has('nvim')$/;"	v
+s:running_task	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^let s:running_task = {}$/;"	v
+coc#task#start	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! coc#task#start(id, opts)$/;"	f
+coc#task#stop	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! coc#task#stop(id)$/;"	f
+on_exit	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! s:on_exit(id, code) abort$/;"	f
+on_stderr	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! s:on_stderr(id, msgs)$/;"	f
+on_stdout	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! s:on_stdout(id, msgs)$/;"	f
+coc#task#running	nvim/plugged/coc.nvim/autoload/coc/task.vim	/^function! coc#task#running(id)$/;"	f
+let	nvim/plugged/coc.nvim/bin/tsserverForkStart.js	/^    let fsWriteSyncString = function (\/\/ tslint:disable-line$/;"	f
+fs.writeSync	nvim/plugged/coc.nvim/bin/tsserverForkStart.js	/^    fs.writeSync = function (\/\/ tslint:disable-line$/;"	f
+terminateTree	nvim/plugged/coc.nvim/bin/terminateProcess.sh	/^terminateTree() {$/;"	f
+command_exists	nvim/plugged/coc.nvim/install.sh	/^command_exists() {$/;"	f
+fetch	nvim/plugged/coc.nvim/install.sh	/^fetch() {$/;"	f
+install_yarn	nvim/plugged/coc.nvim/install.sh	/^install_yarn() {$/;"	f
+get_latest_release	nvim/plugged/coc.nvim/install.sh	/^get_latest_release() {$/;"	f
+download	nvim/plugged/coc.nvim/install.sh	/^download() {$/;"	f
+s:is_win	nvim/plugged/coc.nvim/plugin/coc.vim	/^let s:is_win = has('win32') || has('win64')$/;"	v
+g:did_coc_loaded	nvim/plugged/coc.nvim/plugin/coc.vim	/^let g:did_coc_loaded = 1$/;"	v
+g:coc_service_initialized	nvim/plugged/coc.nvim/plugin/coc.vim	/^let g:coc_service_initialized = 0$/;"	v
+s:is_vim	nvim/plugged/coc.nvim/plugin/coc.vim	/^let s:is_vim = !has('nvim')$/;"	v
+CocAction	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocAction(...) abort$/;"	f
+CocActionAsync	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocActionAsync(...) abort$/;"	f
+CocRequest	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocRequest(...) abort$/;"	f
+CocLocations	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocLocations(id, method, ...) abort$/;"	f
+CocLocationsAsync	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocLocationsAsync(id, method, ...) abort$/;"	f
+CocRequestAsync	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! CocRequestAsync(...)$/;"	f
+AsyncRequest	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:AsyncRequest(name, args) abort$/;"	f
+CommandList	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:CommandList(...) abort$/;"	f
+ExtensionList	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:ExtensionList(...) abort$/;"	f
+InstallOptions	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:InstallOptions(...)abort$/;"	f
+OpenConfig	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:OpenConfig()$/;"	f
+Disable	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Disable() abort$/;"	f
+Autocmd	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Autocmd(...) abort$/;"	f
+SyncAutocmd	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:SyncAutocmd(...)$/;"	f
+Enable	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Enable()$/;"	f
+FormatFromSelected	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:FormatFromSelected(type)$/;"	f
+CodeActionFromSelected	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:CodeActionFromSelected(type)$/;"	f
+CocInfo	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocInfo         :call coc#rpc#notify('showInfo', [])$/;"	c
+CocOpenLog	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocOpenLog      :call coc#rpc#notify('openLog',  [])$/;"	c
+CocListResume	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocListResume   :call coc#rpc#notify('listResume', [])$/;"	c
+CocPrev	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocPrev         :call coc#rpc#notify('listPrev', [])$/;"	c
+CocNext	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocNext         :call coc#rpc#notify('listNext', [])$/;"	c
+CocDisable	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocDisable      :call s:Disable()$/;"	c
+CocEnable	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocEnable       :call s:Enable()$/;"	c
+CocConfig	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocConfig       :call s:OpenConfig()$/;"	c
+CocRestart	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocRestart      :call coc#rpc#restart()$/;"	c
+CocStart	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocStart        :call coc#rpc#start_server()$/;"	c
+CocUpdate	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocUpdate       :call coc#util#update_extensions(1)$/;"	c
+CocUpdateSync	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocUpdateSync   :call coc#util#update_extensions()$/;"	c
+CocRebuild	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=0 CocRebuild      :call coc#util#rebuild()$/;"	c
+CocInstall	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=+ -complete=custom,s:InstallOptions CocInstall   :call coc#util#install_extension([<f-args>])$/;"	c
+CocUninstall	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=+ -complete=custom,s:ExtensionList  CocUninstall :call coc#rpc#notify('CocAction', ['uninstallExtension', <f-args>])$/;"	c
+CocList	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=* -complete=custom,coc#list#options CocList      :call coc#rpc#notify('openList',  [<f-args>])$/;"	c
+CocCommand	nvim/plugged/coc.nvim/plugin/coc.vim	/^command! -nargs=* -complete=custom,s:CommandList    CocCommand   :call coc#rpc#notify('runCommand', [<f-args>])$/;"	c
+<Plug>(coc-codelens-action)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-codelens-action)     :<C-u>call CocActionAsync('codeLensAction')<CR>$/;"	m
+<Plug>(coc-format-selected)	nvim/plugged/coc.nvim/plugin/coc.vim	/^vnoremap <Plug>(coc-format-selected)     :<C-u>call CocActionAsync('formatSelected', visualmode())<CR>$/;"	m
+<Plug>(coc-codeaction-selected)	nvim/plugged/coc.nvim/plugin/coc.vim	/^vnoremap <Plug>(coc-codeaction-selected) :<C-u>call CocActionAsync('codeAction',     visualmode())<CR>$/;"	m
+<Plug>(coc-codeaction)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-codeaction)          :<C-u>call CocActionAsync('codeAction',     '')<CR>$/;"	m
+<Plug>(coc-rename)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-rename)              :<C-u>call CocActionAsync('rename')<CR>$/;"	m
+<Plug>(coc-format-selected)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-format-selected)     :<C-u>set  operatorfunc=<SID>FormatFromSelected<CR>g@$/;"	m
+<Plug>(coc-codeaction-selected)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-codeaction-selected) :<C-u>set  operatorfunc=<SID>CodeActionFromSelected<CR>g@$/;"	m
+<Plug>(coc-format)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-format)              :<C-u>call CocActionAsync('format')<CR>$/;"	m
+<Plug>(coc-diagnostic-info)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-diagnostic-info)     :<C-u>call CocActionAsync('diagnosticInfo')<CR>$/;"	m
+<Plug>(coc-diagnostic-next)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-diagnostic-next)     :<C-u>call CocActionAsync('diagnosticNext')<CR>$/;"	m
+<Plug>(coc-diagnostic-prev)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-diagnostic-prev)     :<C-u>call CocActionAsync('diagnosticPrevious')<CR>$/;"	m
+<Plug>(coc-definition)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-definition)          :<C-u>call CocActionAsync('jumpDefinition')<CR>$/;"	m
+<Plug>(coc-declaration)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-declaration)         :<C-u>call CocActionAsync('jumpDeclaration')<CR>$/;"	m
+<Plug>(coc-implementation)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-implementation)      :<C-u>call CocActionAsync('jumpImplementation')<CR>$/;"	m
+<Plug>(coc-type-definition)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-type-definition)     :<C-u>call CocActionAsync('jumpTypeDefinition')<CR>$/;"	m
+<Plug>(coc-references)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-references)          :<C-u>call CocActionAsync('jumpReferences')<CR>$/;"	m
+<Plug>(coc-openlink)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-openlink)            :<C-u>call CocActionAsync('openLink')<CR>$/;"	m
+<Plug>(coc-fix-current)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-fix-current)         :<C-u>call CocActionAsync('doQuickfix')<CR>$/;"	m
+<Plug>(coc-float-hide)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-float-hide)          :<C-u>call coc#util#float_hide()<CR>$/;"	m
+<Plug>(coc-float-jump)	nvim/plugged/coc.nvim/plugin/coc.vim	/^nnoremap <Plug>(coc-float-jump)          :<c-u>call coc#util#float_jump()<cr>$/;"	m
+<Plug>CocRefresh	nvim/plugged/coc.nvim/plugin/coc.vim	/^inoremap <silent> <Plug>CocRefresh       <C-r>=coc#_complete()<CR>$/;"	m
+g:loaded_repeat	nvim/plugged/vim-repeat/autoload/repeat.vim	/^let g:loaded_repeat = 1$/;"	v
+g:repeat_tick	nvim/plugged/vim-repeat/autoload/repeat.vim	/^let g:repeat_tick = -1$/;"	v
+g:repeat_reg	nvim/plugged/vim-repeat/autoload/repeat.vim	/^let g:repeat_reg = ['', '']$/;"	v
+repeat#invalidate	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! repeat#invalidate()$/;"	f
+repeat#set	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! repeat#set(sequence,...)$/;"	f
+repeat#setreg	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! repeat#setreg(sequence,register)$/;"	f
+default_register	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! s:default_register()$/;"	f
+repeat#run	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! repeat#run(count)$/;"	f
+repeat#wrap	nvim/plugged/vim-repeat/autoload/repeat.vim	/^function! repeat#wrap(command,count)$/;"	f
+<Plug>(RepeatDot)	nvim/plugged/vim-repeat/autoload/repeat.vim	/^nnoremap <silent> <Plug>(RepeatDot)      :<C-U>exe repeat#run(v:count)<CR>$/;"	m
+<Plug>(RepeatUndo)	nvim/plugged/vim-repeat/autoload/repeat.vim	/^nnoremap <silent> <Plug>(RepeatUndo)     :<C-U>call repeat#wrap('u',v:count)<CR>$/;"	m
+<Plug>(RepeatUndoLine)	nvim/plugged/vim-repeat/autoload/repeat.vim	/^nnoremap <silent> <Plug>(RepeatUndoLine) :<C-U>call repeat#wrap('U',v:count)<CR>$/;"	m
+<Plug>(RepeatRedo)	nvim/plugged/vim-repeat/autoload/repeat.vim	/^nnoremap <silent> <Plug>(RepeatRedo)     :<C-U>call repeat#wrap("\\<Lt>C-R>",v:count)<CR>$/;"	m
+.	nvim/plugged/vim-repeat/autoload/repeat.vim	/^    nmap . <Plug>(RepeatDot)$/;"	m
+u	nvim/plugged/vim-repeat/autoload/repeat.vim	/^    nmap u <Plug>(RepeatUndo)$/;"	m
+U	nvim/plugged/vim-repeat/autoload/repeat.vim	/^    nmap U <Plug>(RepeatUndoLine)$/;"	m
+<C-R>	nvim/plugged/vim-repeat/autoload/repeat.vim	/^    nmap <C-R> <Plug>(RepeatRedo)$/;"	m
+repeatPlugin	nvim/plugged/vim-repeat/autoload/repeat.vim	/^augroup repeatPlugin$/;"	a
+g:autoloaded_fugitive	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let g:autoloaded_fugitive = 1$/;"	v
+g:fugitive_git_executable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_git_executable = 'git'$/;"	v
+function	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:function(name) abort$/;"	f
+sub	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:sub(str,pat,rep) abort$/;"	f
+gsub	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:gsub(str,pat,rep) abort$/;"	f
+Uniq	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Uniq(list) abort$/;"	f
+winshell	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:winshell() abort$/;"	f
+shellesc	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:shellesc(arg) abort$/;"	f
+s:fnameescape	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:fnameescape = " \\t\\n*?[{`$\\\\%#'\\"|!<"$/;"	v
+fnameescape	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:fnameescape(file) abort$/;"	f
+throw	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:throw(string) abort$/;"	f
+warn	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:warn(str) abort$/;"	f
+Slash	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Slash(path) abort$/;"	f
+PlatformSlash	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PlatformSlash(path) abort$/;"	f
+Resolve	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Resolve(path) abort$/;"	f
+cpath	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:cpath(path, ...) abort$/;"	f
+Cd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Cd(...) abort$/;"	f
+s:executables	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:executables = {}$/;"	v
+executable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:executable(binary) abort$/;"	f
+map	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:map(mode, lhs, rhs, ...) abort$/;"	f
+System	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:System(cmd) abort$/;"	f
+UserCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:UserCommand() abort$/;"	f
+Prepare	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Prepare(...) abort$/;"	f
+s:git_versions	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:git_versions = {}$/;"	v
+fugitive#GitVersion	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#GitVersion(...) abort$/;"	f
+s:commondirs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:commondirs = {}$/;"	v
+fugitive#CommonDir	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#CommonDir(dir) abort$/;"	f
+Dir	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Dir(...) abort$/;"	f
+Tree	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Tree(...) abort$/;"	f
+PreparePathArgs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreparePathArgs(cmd, dir, literal) abort$/;"	f
+s:prepare_env	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:prepare_env = {$/;"	v
+fugitive#Prepare	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Prepare(...) abort$/;"	f
+TreeChomp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TreeChomp(...) abort$/;"	f
+fugitive#Head	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Head(...) abort$/;"	f
+fugitive#RevParse	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#RevParse(rev, ...) abort$/;"	f
+ConfigTimestamps	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ConfigTimestamps(dir, dict) abort$/;"	f
+s:config	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:config = {}$/;"	v
+fugitive#Config	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Config(...) abort$/;"	f
+Remote	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Remote(dir) abort$/;"	f
+fugitive#RemoteUrl	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#RemoteUrl(...) abort$/;"	f
+add_methods	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:add_methods(namespace, method_names) abort$/;"	f
+s:commands	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:commands = []$/;"	v
+command	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:command(definition, ...) abort$/;"	f
+define_commands	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:define_commands() abort$/;"	f
+s:repo_prototype	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:repo_prototype = {}$/;"	v
+s:repos	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:repos = {}$/;"	v
+fugitive#repo	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#repo(...) abort$/;"	f
+repo_dir	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_dir(...) dict abort$/;"	f
+repo_tree	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_tree(...) dict abort$/;"	f
+repo_bare	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_bare() dict abort$/;"	f
+repo_find	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_find(object) dict abort$/;"	f
+repo_translate	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_translate(rev) dict abort$/;"	f
+repo_head	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_head(...) dict abort$/;"	f
+repo_prepare	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_prepare(...) dict abort$/;"	f
+repo_git_command	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_git_command(...) dict abort$/;"	f
+repo_git_chomp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_git_chomp(...) dict abort$/;"	f
+repo_git_chomp_in_tree	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_git_chomp_in_tree(...) dict abort$/;"	f
+repo_rev_parse	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_rev_parse(rev) dict abort$/;"	f
+repo_superglob	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_superglob(base) dict abort$/;"	f
+repo_config	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_config(name) dict abort$/;"	f
+repo_user	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:repo_user() dict abort$/;"	f
+DirCommitFile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DirCommitFile(path) abort$/;"	f
+DirRev	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DirRev(url) abort$/;"	f
+Owner	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Owner(path, ...) abort$/;"	f
+fugitive#Real	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Real(url) abort$/;"	f
+fugitive#Path	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Path(url, ...) abort$/;"	f
+Relative	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Relative(...) abort$/;"	f
+fugitive#Find	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Find(object, ...) abort$/;"	f
+Generate	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Generate(rev, ...) abort$/;"	f
+DotRelative	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DotRelative(path) abort$/;"	f
+fugitive#Object	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Object(...) abort$/;"	f
+s:var	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:var = '\\%(%\\|#<\\=\\d\\+\\|##\\=\\)'$/;"	v
+s:flag	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:flag = '\\%(:[p8~.htre]\\|:g\\=s\\(.\\).\\{-\\}\\1.\\{-\\}\\1\\)'$/;"	v
+s:expand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:expand = '\\%(\\(' . s:var . '\\)\\(' . s:flag . '*\\)\\(:S\\)\\=\\)'$/;"	v
+BufName	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BufName(var) abort$/;"	f
+ExpandVar	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExpandVar(other, var, flags, esc) abort$/;"	f
+Expand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Expand(rev) abort$/;"	f
+fugitive#Expand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Expand(object) abort$/;"	f
+ShellExpand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ShellExpand(cmd) abort$/;"	f
+s:trees	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:trees = {}$/;"	v
+s:indexes	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:indexes = {}$/;"	v
+TreeInfo	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TreeInfo(dir, commit) abort$/;"	f
+PathInfo	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PathInfo(url) abort$/;"	f
+fugitive#simplify	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#simplify(url) abort$/;"	f
+fugitive#resolve	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#resolve(url) abort$/;"	f
+fugitive#getftime	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#getftime(url) abort$/;"	f
+fugitive#getfsize	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#getfsize(url) abort$/;"	f
+fugitive#getftype	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#getftype(url) abort$/;"	f
+fugitive#filereadable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#filereadable(url) abort$/;"	f
+fugitive#filewritable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#filewritable(url) abort$/;"	f
+fugitive#isdirectory	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#isdirectory(url) abort$/;"	f
+fugitive#getfperm	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#getfperm(url) abort$/;"	f
+fugitive#setfperm	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#setfperm(url, perm) abort$/;"	f
+TempCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TempCmd(out, cmd) abort$/;"	f
+s:blobdirs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:blobdirs = {}$/;"	v
+BlobTemp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlobTemp(url) abort$/;"	f
+fugitive#readfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#readfile(url, ...) abort$/;"	f
+fugitive#writefile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#writefile(lines, url, ...) abort$/;"	f
+s:globsubs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:globsubs = {$/;"	v
+fugitive#glob	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#glob(url, ...) abort$/;"	f
+fugitive#delete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#delete(url, ...) abort$/;"	f
+s:buffer_prototype	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:buffer_prototype = {}$/;"	v
+fugitive#buffer	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#buffer(...) abort$/;"	f
+buffer_getvar	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_getvar(var) dict abort$/;"	f
+buffer_getline	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_getline(lnum) dict abort$/;"	f
+buffer_repo	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_repo() dict abort$/;"	f
+buffer_type	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_type(...) dict abort$/;"	f
+buffer_spec	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_spec() dict abort$/;"	f
+buffer_name	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_name() dict abort$/;"	f
+buffer_commit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_commit() dict abort$/;"	f
+buffer_relative	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_relative(...) dict abort$/;"	f
+buffer_path	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_path(...) dict abort$/;"	f
+GlobComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GlobComplete(lead, pattern) abort$/;"	f
+fugitive#CompletePath	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#CompletePath(base, ...) abort$/;"	f
+fugitive#PathComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#PathComplete(...) abort$/;"	f
+fugitive#CompleteObject	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#CompleteObject(base, ...) abort$/;"	f
+fugitive#Complete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Complete(...) abort$/;"	f
+ReplaceCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReplaceCmd(cmd) abort$/;"	f
+QueryLog	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:QueryLog(refspec) abort$/;"	f
+FormatLog	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:FormatLog(dict) abort$/;"	f
+FormatRebase	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:FormatRebase(dict) abort$/;"	f
+FormatFile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:FormatFile(dict) abort$/;"	f
+Format	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Format(val) abort$/;"	f
+AddHeader	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:AddHeader(key, value) abort$/;"	f
+AddSection	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:AddSection(label, lines, ...) abort$/;"	f
+fugitive#BufReadStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#BufReadStatus() abort$/;"	f
+fugitive#FileReadCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#FileReadCmd(...) abort$/;"	f
+fugitive#FileWriteCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#FileWriteCmd(...) abort$/;"	f
+fugitive#BufReadCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#BufReadCmd(...) abort$/;"	f
+fugitive#BufWriteCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#BufWriteCmd(...) abort$/;"	f
+fugitive#SourceCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#SourceCmd(...) abort$/;"	f
+s:temp_files	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:temp_files = {}$/;"	v
+SetupTemp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:SetupTemp(file) abort$/;"	f
+fugitive_temp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_temp$/;"	a
+GitCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GitCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+s:exec_paths	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:exec_paths = {}$/;"	v
+Subcommands	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Subcommands() abort$/;"	f
+s:aliases	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:aliases = {}$/;"	v
+Aliases	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Aliases(dir) abort$/;"	f
+fugitive#CompleteGit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#CompleteGit(lead, ...) abort$/;"	f
+DirComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DirComplete(A, L, P) abort$/;"	f
+DirArg	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DirArg(path) abort$/;"	f
+StatusCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StatusCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+StageSeek	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageSeek(info, fallback) abort$/;"	f
+ReloadStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReloadStatus(...) abort$/;"	f
+fugitive#ReloadStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#ReloadStatus(...) abort$/;"	f
+CanAutoReloadStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:CanAutoReloadStatus() abort$/;"	f
+AutoReloadStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:AutoReloadStatus(...) abort$/;"	f
+fugitive_status	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_status$/;"	a
+StageInfo	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageInfo(...) abort$/;"	f
+Selection	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Selection(arg1, ...) abort$/;"	f
+StageArgs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageArgs(visual) abort$/;"	f
+Do	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Do(action, visual) abort$/;"	f
+StageReveal	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageReveal(...) abort$/;"	f
+StageNext	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageNext(count) abort$/;"	f
+StagePrevious	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StagePrevious(count) abort$/;"	f
+StageInline	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageInline(mode, ...) abort$/;"	f
+StageIntend	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageIntend(count) abort$/;"	f
+StageDiff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageDiff(diff) abort$/;"	f
+StageDiffEdit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageDiffEdit() abort$/;"	f
+StageApply	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageApply(info, reverse, extra) abort$/;"	f
+StageDelete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageDelete(lnum, count) abort$/;"	f
+DoToggleHeadHeader	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleHeadHeader(value) abort$/;"	f
+DoToggleUnpushedHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnpushedHeading(heading) abort$/;"	f
+DoToggleUnpushed	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnpushed(record) abort$/;"	f
+DoToggleUnpulledHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnpulledHeading(heading) abort$/;"	f
+DoToggleUnpulled	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnpulled(record) abort$/;"	f
+DoToggleStagedHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleStagedHeading(...) abort$/;"	f
+DoUnstageStagedHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageStagedHeading(heading) abort$/;"	f
+DoToggleUnstagedHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnstagedHeading(...) abort$/;"	f
+DoStageUnstagedHeading	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoStageUnstagedHeading(heading) abort$/;"	f
+DoToggleStaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleStaged(record) abort$/;"	f
+DoStageStaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoStageStaged(record) abort$/;"	f
+DoUnstageStaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageStaged(record) abort$/;"	f
+DoToggleUnstaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoToggleUnstaged(record) abort$/;"	f
+DoStageUnstaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoStageUnstaged(record) abort$/;"	f
+DoUnstageUnstaged	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageUnstaged(record) abort$/;"	f
+StagePatch	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StagePatch(lnum1,lnum2) abort$/;"	f
+CommitCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:CommitCommand(line1, line2, range, count, bang, mods, reg, arg, args, ...) abort$/;"	f
+CommitComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:CommitComplete(A,L,P) abort$/;"	f
+FinishCommit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:FinishCommit() abort$/;"	f
+RevisionComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RevisionComplete(A, L, P) abort$/;"	f
+RemoteComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RemoteComplete(A, L, P) abort$/;"	f
+RebaseSequenceAborter	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RebaseSequenceAborter() abort$/;"	f
+fugitive#Cwindow	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Cwindow() abort$/;"	f
+s:common_efm	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:common_efm = ''$/;"	v
+s:rebase_abbrevs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:rebase_abbrevs = {$/;"	v
+RebaseEdit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RebaseEdit(cmd, dir) abort$/;"	f
+Merge	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Merge(cmd, bang, mods, args, ...) abort$/;"	f
+RebaseClean	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RebaseClean(file) abort$/;"	f
+fugitive_merge	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_merge$/;"	a
+g:fugitive_summary_format	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_summary_format = '%s'$/;"	v
+GrepComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GrepComplete(A, L, P) abort$/;"	f
+Grep	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Grep(cmd,bang,arg) abort$/;"	f
+Log	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Log(cmd, bang, line1, line2, ...) abort$/;"	f
+UsableWin	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:UsableWin(nr) abort$/;"	f
+OpenParse	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:OpenParse(args) abort$/;"	f
+BlurStatus	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlurStatus() abort$/;"	f
+Open	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Open(cmd, bang, mods, arg, args) abort$/;"	f
+ReadCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReadCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+ReadComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReadComplete(A,L,P) abort$/;"	f
+WriteCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:WriteCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+WqCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:WqCommand(...) abort$/;"	f
+fugitive_commit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_commit$/;"	a
+Dispatch	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Dispatch(bang, args)$/;"	f
+fugitive_diff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_diff$/;"	a
+can_diffoff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:can_diffoff(buf) abort$/;"	f
+fugitive#CanDiffoff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#CanDiffoff(buf) abort$/;"	f
+diff_modifier	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diff_modifier(count) abort$/;"	f
+diff_window_count	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diff_window_count() abort$/;"	f
+diff_restore	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diff_restore() abort$/;"	f
+diffthis	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diffthis() abort$/;"	f
+diffoff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diffoff() abort$/;"	f
+diffoff_all	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:diffoff_all(dir) abort$/;"	f
+CompareAge	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:CompareAge(mine, theirs) abort$/;"	f
+Diff	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Diff(vert,keepfocus,...) abort$/;"	f
+Move	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Move(force, rename, destination) abort$/;"	f
+RenameComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RenameComplete(A,L,P) abort$/;"	f
+Remove	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Remove(after, force) abort$/;"	f
+fugitive_remove	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_remove$/;"	a
+Keywordprg	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Keywordprg() abort$/;"	f
+fugitive_blame	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_blame$/;"	a
+linechars	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:linechars(pattern) abort$/;"	f
+BlameCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+BlameCommit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameCommit(cmd, ...) abort$/;"	f
+BlameJump	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameJump(suffix) abort$/;"	f
+s:hash_colors	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:hash_colors = {}$/;"	v
+BlameSyntax	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameSyntax() abort$/;"	f
+RehighlightBlame	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RehighlightBlame() abort$/;"	f
+s:redirects	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:redirects = {}$/;"	v
+BrowseCommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BrowseCommand(line1, line2, range, count, bang, mods, reg, arg, args) abort$/;"	f
+<SID>:	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^nnoremap <SID>: :<C-U><C-R>=v:count ? v:count : ''<CR>$/;"	m
+fugitive#MapCfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#MapCfile(...) abort$/;"	f
+ContainingCommit	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ContainingCommit() abort$/;"	f
+SquashArgument	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:SquashArgument() abort$/;"	f
+NavigateUp	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:NavigateUp(count) abort$/;"	f
+fugitive#MapJumps	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#MapJumps(...) abort$/;"	f
+StatusCfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StatusCfile(...) abort$/;"	f
+fugitive#StatusCfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#StatusCfile() abort$/;"	f
+MessageCfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:MessageCfile(...) abort$/;"	f
+fugitive#MessageCfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#MessageCfile() abort$/;"	f
+cfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:cfile() abort$/;"	f
+GF	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GF(mode) abort$/;"	f
+fugitive#Cfile	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Cfile() abort$/;"	f
+fugitive#Statusline	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Statusline(...) abort$/;"	f
+fugitive#statusline	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#statusline(...) abort$/;"	f
+fugitive#head	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#head(...) abort$/;"	f
+fugitive#Foldtext	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Foldtext() abort$/;"	f
+fugitive#foldtext	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#foldtext() abort$/;"	f
+fugitive_folding	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_folding$/;"	a
+fugitive#Init	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#Init() abort$/;"	f
+fugitive#is_git_dir	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#is_git_dir(path) abort$/;"	f
+fugitive#extract_git_dir	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#extract_git_dir(path) abort$/;"	f
+fugitive#detect	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! fugitive#detect(path) abort$/;"	f
+b:current_syntax	nvim/plugged/vim-fugitive/syntax/fugitive.vim	/^let b:current_syntax = "fugitive"$/;"	v
+g:loaded_fugitive	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^let g:loaded_fugitive = 1$/;"	v
+FugitiveGitDir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveGitDir(...) abort$/;"	f
+FugitiveCommonDir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveCommonDir(...) abort$/;"	f
+FugitiveWorkTree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveWorkTree(...) abort$/;"	f
+FugitiveReal	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveReal(...) abort$/;"	f
+FugitiveFind	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveFind(...) abort$/;"	f
+FugitivePath	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitivePath(...) abort$/;"	f
+FugitiveParse	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveParse(...) abort$/;"	f
+FugitivePrepare	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitivePrepare(...) abort$/;"	f
+FugitiveConfig	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveConfig(...) abort$/;"	f
+FugitiveRemoteUrl	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveRemoteUrl(...) abort$/;"	f
+FugitiveHead	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveHead(...) abort$/;"	f
+FugitiveStatusline	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveStatusline(...) abort$/;"	f
+FugitiveIsGitDir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveIsGitDir(path) abort$/;"	f
+s:worktree_for_dir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^let s:worktree_for_dir = {}$/;"	v
+s:dir_for_worktree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^let s:dir_for_worktree = {}$/;"	v
+Tree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! s:Tree(path) abort$/;"	f
+FugitiveExtractGitDir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveExtractGitDir(path) abort$/;"	f
+FugitiveDetect	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveDetect(path) abort$/;"	f
+Slash	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! s:Slash(path) abort$/;"	f
+ProjectionistDetect	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! s:ProjectionistDetect() abort$/;"	f
+fugitive	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^augroup fugitive$/;"	a
+s:nord_vim_version	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord_vim_version="0.11.0"$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}$/;"	v
+s:nord0	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord0 = ["#2E3440", "NONE"]$/;"	v
+s:nord1	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord1 = ["#3B4252", 0]$/;"	v
+s:nord2	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord2 = ["#434C5E", "NONE"]$/;"	v
+s:nord3	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord3 = ["#4C566A", 8]$/;"	v
+s:nord4	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord4 = ["#D8DEE9", "NONE"]$/;"	v
+s:nord5	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord5 = ["#E5E9F0", 7]$/;"	v
+s:nord6	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord6 = ["#ECEFF4", 15]$/;"	v
+s:nord7	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord7 = ["#8FBCBB", 14]$/;"	v
+s:nord8	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord8 = ["#88C0D0", 6]$/;"	v
+s:nord9	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord9 = ["#81A1C1", 4]$/;"	v
+s:nord10	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord10 = ["#5E81AC", 12]$/;"	v
+s:nord11	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord11 = ["#BF616A", 1]$/;"	v
+s:nord12	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord12 = ["#D08770", 11]$/;"	v
+s:nord13	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord13 = ["#EBCB8B", 3]$/;"	v
+s:nord14	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord14 = ["#A3BE8C", 2]$/;"	v
+s:nord15	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:nord15 = ["#B48EAD", 5]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.left = [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.warning = [ [ s:nord1, s:nord13 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.normal.error = [ [ s:nord1, s:nord11 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.left =  [ [ s:nord1, s:nord8 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.middle = [ [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.inactive.right = [ [ s:nord5, s:nord1 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.insert.left = [ [ s:nord1, s:nord6 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.replace.left = [ [ s:nord1, s:nord13 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.visual.left = [ [ s:nord1, s:nord7 ], [ s:nord5, s:nord1 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.left = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.middle = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.right = [ [ s:nord5, s:nord3 ] ]$/;"	v
+s:p	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let s:p.tabline.tabsel = [ [ s:nord1, s:nord8 ] ]$/;"	v
+g:lightline#colorscheme#nord#palette	nvim/plugged/nord-vim/autoload/lightline/colorscheme/nord.vim	/^let g:lightline#colorscheme#nord#palette = lightline#colorscheme#flatten(s:p)$/;"	v
+s:nord_vim_version	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord_vim_version="0.11.0"$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette = {}$/;"	v
+s:nord0_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
+s:nord1_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
+s:nord2_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
+s:nord3_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
+s:nord4_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
+s:nord5_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
+s:nord6_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
+s:nord7_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
+s:nord8_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
+s:nord9_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
+s:nord10_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
+s:nord11_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
+s:nord12_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
+s:nord13_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
+s:nord14_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
+s:nord15_gui	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
+s:nord0_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord0_term = "NONE"$/;"	v
+s:nord1_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord1_term = "0"$/;"	v
+s:nord2_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord2_term = "NONE"$/;"	v
+s:nord4_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord4_term = "NONE"$/;"	v
+s:nord11_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord11_term = "1"$/;"	v
+s:nord14_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord14_term = "2"$/;"	v
+s:nord13_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord13_term = "3"$/;"	v
+s:nord9_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord9_term = "4"$/;"	v
+s:nord15_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord15_term = "5"$/;"	v
+s:nord8_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord8_term = "6"$/;"	v
+s:nord5_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord5_term = "7"$/;"	v
+s:nord3_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord3_term = "8"$/;"	v
+s:nord12_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord12_term = "11"$/;"	v
+s:nord10_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord10_term = "12"$/;"	v
+s:nord7_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord7_term = "14"$/;"	v
+s:nord6_term	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:nord6_term = "15"$/;"	v
+s:NMain	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term]$/;"	v
+s:NRight	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:NMiddle	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:NWarn	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:NError	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:NError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal = airline#themes#generate_color_map(s:NMain, s:NRight, s:NMiddle)$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_warning = s:NWarn$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_error = s:NError$/;"	v
+s:IMain	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord6_term]$/;"	v
+s:IRight	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:IMiddle	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:IWarn	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:IError	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert = airline#themes#generate_color_map(s:IMain, s:IRight, s:IMiddle)$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_warning = s:IWarn$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_error = s:IError$/;"	v
+s:RMain	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord14_term]$/;"	v
+s:RRight	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:RMiddle	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:RWarn	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:RError	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:RError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace = airline#themes#generate_color_map(s:RMain, s:RRight, s:RMiddle)$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_warning = s:RWarn$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_error = s:RError$/;"	v
+s:VMain	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMain = [s:nord1_gui, s:nord7_gui, s:nord1_term, s:nord7_term]$/;"	v
+s:VRight	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]$/;"	v
+s:VMiddle	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:VWarn	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:VError	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:VError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual = airline#themes#generate_color_map(s:VMain, s:VRight, s:VMiddle)$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_warning = s:VWarn$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_error = s:VError$/;"	v
+s:IAMain	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMain = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:IARight	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IARight = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]$/;"	v
+s:IAMiddle	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAMiddle = [s:nord5_gui, s:nord1_gui, s:nord5_term, s:nord1_term]$/;"	v
+s:IAWarn	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]$/;"	v
+s:IAError	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let s:IAError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive = airline#themes#generate_color_map(s:IAMain, s:IARight, s:IAMiddle)$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_warning = s:IAWarn$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_error = s:IAError$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.normal.airline_term = s:NMiddle$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.insert.airline_term = s:IMiddle$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.replace.airline_term = s:RMiddle$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.visual.airline_term = s:VMiddle$/;"	v
+g:airline#themes#nord#palette	nvim/plugged/nord-vim/autoload/airline/themes/nord.vim	/^let g:airline#themes#nord#palette.inactive.airline_term = s:IAMiddle$/;"	v
+g:colors_name	nvim/plugged/nord-vim/colors/nord.vim	/^let g:colors_name = "nord"$/;"	v
+s:nord_vim_version	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord_vim_version="0.11.0"$/;"	v
+s:nord0_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord0_gui = "#2E3440"$/;"	v
+s:nord1_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_gui = "#3B4252"$/;"	v
+s:nord2_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord2_gui = "#434C5E"$/;"	v
+s:nord3_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui = "#4C566A"$/;"	v
+s:nord3_gui_bright	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_bright = "#616E88"$/;"	v
+s:nord4_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord4_gui = "#D8DEE9"$/;"	v
+s:nord5_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_gui = "#E5E9F0"$/;"	v
+s:nord6_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_gui = "#ECEFF4"$/;"	v
+s:nord7_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_gui = "#8FBCBB"$/;"	v
+s:nord8_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_gui = "#88C0D0"$/;"	v
+s:nord9_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_gui = "#81A1C1"$/;"	v
+s:nord10_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_gui = "#5E81AC"$/;"	v
+s:nord11_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_gui = "#BF616A"$/;"	v
+s:nord12_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_gui = "#D08770"$/;"	v
+s:nord13_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_gui = "#EBCB8B"$/;"	v
+s:nord14_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_gui = "#A3BE8C"$/;"	v
+s:nord15_gui	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_gui = "#B48EAD"$/;"	v
+s:nord1_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord1_term = "0"$/;"	v
+s:nord3_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_term = "8"$/;"	v
+s:nord5_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord5_term = "7"$/;"	v
+s:nord6_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord6_term = "15"$/;"	v
+s:nord7_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord7_term = "14"$/;"	v
+s:nord8_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord8_term = "6"$/;"	v
+s:nord9_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord9_term = "4"$/;"	v
+s:nord10_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord10_term = "12"$/;"	v
+s:nord11_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord11_term = "1"$/;"	v
+s:nord12_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord12_term = "11"$/;"	v
+s:nord13_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord13_term = "3"$/;"	v
+s:nord14_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord14_term = "2"$/;"	v
+s:nord15_term	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord15_term = "5"$/;"	v
+s:nord3_gui_brightened	nvim/plugged/nord-vim/colors/nord.vim	/^let s:nord3_gui_brightened = [$/;"	v
+g:nord_italic	nvim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic=1$/;"	v
+g:nord_italic	nvim/plugged/nord-vim/colors/nord.vim	/^    let g:nord_italic=0$/;"	v
+s:italic	nvim/plugged/nord-vim/colors/nord.vim	/^let s:italic = "italic,"$/;"	v
+s:italic	nvim/plugged/nord-vim/colors/nord.vim	/^  let s:italic = ""$/;"	v
+s:underline	nvim/plugged/nord-vim/colors/nord.vim	/^let s:underline = "underline,"$/;"	v
+s:underline	nvim/plugged/nord-vim/colors/nord.vim	/^  let s:underline = "NONE,"$/;"	v
+s:italicize_comments	nvim/plugged/nord-vim/colors/nord.vim	/^let s:italicize_comments = ""$/;"	v
+s:italicize_comments	nvim/plugged/nord-vim/colors/nord.vim	/^    let s:italicize_comments = s:italic$/;"	v
+g:nord_uniform_status_lines	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_status_lines = 0$/;"	v
+logWarning	nvim/plugged/nord-vim/colors/nord.vim	/^function! s:logWarning(msg)$/;"	f
+g:nord_comment_brightness	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_comment_brightness = 10$/;"	v
+g:nord_uniform_diff_background	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_uniform_diff_background = 0$/;"	v
+g:nord_cursor_line_number_background	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_cursor_line_number_background = 0$/;"	v
+g:nord_bold_vertical_split_line	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:nord_bold_vertical_split_line = 0$/;"	v
+hi	nvim/plugged/nord-vim/colors/nord.vim	/^function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)$/;"	f
+g:terminal_ansi_colors	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord8_gui, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]$/;"	v
+g:terminal_color_0	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_0 = s:nord1_gui$/;"	v
+g:terminal_color_1	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_1 = s:nord11_gui$/;"	v
+g:terminal_color_2	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_2 = s:nord14_gui$/;"	v
+g:terminal_color_3	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_3 = s:nord13_gui$/;"	v
+g:terminal_color_4	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_4 = s:nord9_gui$/;"	v
+g:terminal_color_5	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_5 = s:nord15_gui$/;"	v
+g:terminal_color_6	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_6 = s:nord8_gui$/;"	v
+g:terminal_color_7	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_7 = s:nord5_gui$/;"	v
+g:terminal_color_8	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_8 = s:nord3_gui$/;"	v
+g:terminal_color_9	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_9 = s:nord11_gui$/;"	v
+g:terminal_color_10	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_10 = s:nord14_gui$/;"	v
+g:terminal_color_11	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_11 = s:nord13_gui$/;"	v
+g:terminal_color_12	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_12 = s:nord9_gui$/;"	v
+g:terminal_color_13	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_13 = s:nord15_gui$/;"	v
+g:terminal_color_14	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_14 = s:nord7_gui$/;"	v
+g:terminal_color_15	nvim/plugged/nord-vim/colors/nord.vim	/^  let g:terminal_color_15 = s:nord6_gui$/;"	v
+s:vimwiki_hcolor_guifg	nvim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:nord8_gui, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]$/;"	v
+s:vimwiki_hcolor_ctermfg	nvim/plugged/nord-vim/colors/nord.vim	/^  let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]$/;"	v
+s:saved_cpo	nvim/plugged/editorconfig-vim/autoload/editorconfig.vim	/^let s:saved_cpo = &cpo$/;"	v
+s:hook_list	nvim/plugged/editorconfig-vim/autoload/editorconfig.vim	/^let s:hook_list = []$/;"	v
+editorconfig#AddNewHook	nvim/plugged/editorconfig-vim/autoload/editorconfig.vim	/^function! editorconfig#AddNewHook(func) " {{{1$/;"	f
+editorconfig#ApplyHooks	nvim/plugged/editorconfig-vim/autoload/editorconfig.vim	/^function! editorconfig#ApplyHooks(config) abort " {{{1$/;"	f
+test_editorconfig	nvim/plugged/editorconfig-vim/tests/spec/editorconfig_spec.rb	/^def test_editorconfig(file_name, expected_values)$/;"	f
+main	nvim/plugged/editorconfig-vim/tests/spec/plugin_tests/test_files/4_space.py	/^def main():$/;"	f
+g:loaded_EditorConfig	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^let g:loaded_EditorConfig = 1$/;"	v
+s:saved_cpo	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^let s:saved_cpo = &cpo$/;"	v
+s:pyscript_path	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^let s:pyscript_path = expand('<sfile>:p:r') . '.py'$/;"	v
+g:EditorConfig_exec_path	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_exec_path = ''$/;"	v
+g:EditorConfig_python_files_dir	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_python_files_dir = 'plugin\/editorconfig-core-py'$/;"	v
+g:EditorConfig_verbose	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_verbose = 0$/;"	v
+g:EditorConfig_preserve_formatoptions	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_preserve_formatoptions = 0$/;"	v
+g:EditorConfig_max_line_indicator	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_max_line_indicator = 'line'$/;"	v
+g:EditorConfig_exclude_patterns	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_exclude_patterns = []$/;"	v
+g:EditorConfig_disable_rules	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let g:EditorConfig_disable_rules = []$/;"	v
+s:editorconfig_core_mode	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let s:editorconfig_core_mode = g:EditorConfig_core_mode$/;"	v
+s:editorconfig_core_mode	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^    let s:editorconfig_core_mode = ''$/;"	v
+s:initialized	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^let s:initialized = 0$/;"	v
+DisableShellSlash	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:DisableShellSlash() " {{{2$/;"	f
+ResetShellSlash	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:ResetShellSlash() " {{{2$/;"	f
+FindPythonInterp	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:FindPythonInterp() " {{{1$/;"	f
+FindPythonFiles	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:FindPythonFiles() " {{{1$/;"	f
+InitializeExternalCommand	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:InitializeExternalCommand() " {{{2$/;"	f
+InitializePythonExternal	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:InitializePythonExternal() " {{{2$/;"	f
+InitializePythonBuiltin	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:InitializePythonBuiltin(editorconfig_core_py_dir) " {{{2$/;"	f
+Initialize	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:Initialize() " {{{1$/;"	f
+GetFilenames	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:GetFilenames(path, filename)$/;"	f
+UseConfigFiles	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:UseConfigFiles() abort$/;"	f
+EditorConfigReload	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^command! EditorConfigReload call s:UseConfigFiles() " Reload EditorConfig files$/;"	c
+editorconfig	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^augroup editorconfig$/;"	a
+UseConfigFiles_Python_Builtin	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:UseConfigFiles_Python_Builtin() abort " {{{2$/;"	f
+UseConfigFiles_Python_External	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:UseConfigFiles_Python_External() " {{{2$/;"	f
+UseConfigFiles_ExternalCommand	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:UseConfigFiles_ExternalCommand() " {{{2$/;"	f
+SpawnExternalParser	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:SpawnExternalParser(cmd) " {{{2$/;"	f
+ApplyConfig	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:ApplyConfig(config) abort " {{{1$/;"	f
+TrimTrailingWhitespace	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:TrimTrailingWhitespace() " {{{{$/;"	f
+IsRuleActive	nvim/plugged/editorconfig-vim/plugin/editorconfig.vim	/^function! s:IsRuleActive(name, config) " {{{{$/;"	f
+main	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/main.py	/^from editorconfig.main import main$/;"	i
+os	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^import os$/;"	i
+re	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^import re$/;"	i
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^__all__ = ["fnmatch", "fnmatchcase", "translate"]$/;"	v
+_cache	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^_cache = {}$/;"	v
+LEFT_BRACE	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^LEFT_BRACE = re.compile($/;"	v
+RIGHT_BRACE	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^RIGHT_BRACE = re.compile($/;"	v
+NUMERIC_RANGE	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^NUMERIC_RANGE = re.compile($/;"	v
+fnmatch	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^def fnmatch(name, pat):$/;"	f
+cached_translate	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^def cached_translate(pat):$/;"	f
+fnmatchcase	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^def fnmatchcase(name, pat):$/;"	f
+translate	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/fnmatch.py	/^def translate(pat, nested=False):$/;"	f
+re	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^import re$/;"	i
+open	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from codecs import open$/;"	i
+posixpath	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^import posixpath$/;"	i
+sep	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from os import sep$/;"	i
+normpath	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from os.path import normpath, dirname$/;"	i
+dirname	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from os.path import normpath, dirname$/;"	i
+ParsingError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from editorconfig.exceptions import ParsingError$/;"	i
+fnmatch	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from editorconfig.fnmatch import fnmatch$/;"	i
+OrderedDict	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from editorconfig.odict import OrderedDict$/;"	i
+u	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^from editorconfig.compat import u$/;"	i
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^__all__ = ["ParsingError", "EditorConfigParser"]$/;"	v
+EditorConfigParser	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^class EditorConfigParser(object):$/;"	c
+SECTCRE	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    SECTCRE = re.compile($/;"	v	class:EditorConfigParser
+OPTCRE	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    OPTCRE = re.compile($/;"	v	class:EditorConfigParser
+__init__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    def __init__(self, filename):$/;"	m	class:EditorConfigParser
+matches_filename	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    def matches_filename(self, config_filename, glob):$/;"	m	class:EditorConfigParser
+read	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    def read(self, filename):$/;"	m	class:EditorConfigParser
+_read	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    def _read(self, fp, fpname):$/;"	m	class:EditorConfigParser
+optionxform	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/ini.py	/^    def optionxform(self, optionstr):$/;"	m	class:EditorConfigParser
+join_version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^from editorconfig.versiontools import join_version$/;"	i
+VERSION	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^VERSION = (0, 12, 0, "final")$/;"	v
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^__all__ = ['get_properties', 'EditorConfigError', 'exceptions']$/;"	v
+__version__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^__version__ = join_version(VERSION)$/;"	v
+get_properties	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^def get_properties(filename):$/;"	f
+EditorConfigHandler	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/__init__.py	/^from editorconfig.handler import EditorConfigHandler$/;"	i
+os	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^import os$/;"	i
+VERSION	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^from editorconfig import VERSION$/;"	i
+EditorConfigParser	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^from editorconfig.ini import EditorConfigParser$/;"	i
+PathError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^from editorconfig.exceptions import PathError, VersionError$/;"	i
+VersionError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^from editorconfig.exceptions import PathError, VersionError$/;"	i
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^__all__ = ['EditorConfigHandler']$/;"	v
+get_filenames	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^def get_filenames(path, filename):$/;"	f
+EditorConfigHandler	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^class EditorConfigHandler(object):$/;"	c
+__init__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^    def __init__(self, filepath, conf_filename='.editorconfig',$/;"	m	class:EditorConfigHandler
+get_configurations	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^    def get_configurations(self):$/;"	m	class:EditorConfigHandler
+check_assertions	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^    def check_assertions(self):$/;"	m	class:EditorConfigHandler
+preprocess_values	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/handler.py	/^    def preprocess_values(self):$/;"	m	class:EditorConfigHandler
+getopt	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^import getopt$/;"	i
+sys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^import sys$/;"	i
+__version__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig import __version__, VERSION$/;"	i
+VERSION	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig import __version__, VERSION$/;"	i
+force_unicode	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.compat import force_unicode$/;"	i
+split_version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.versiontools import split_version$/;"	i
+EditorConfigHandler	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.handler import EditorConfigHandler$/;"	i
+ParsingError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.exceptions import ParsingError, PathError, VersionError$/;"	i
+PathError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.exceptions import ParsingError, PathError, VersionError$/;"	i
+VersionError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^from editorconfig.exceptions import ParsingError, PathError, VersionError$/;"	i
+version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^def version():$/;"	f
+usage	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^def usage(command, error=False):$/;"	f
+main	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/main.py	/^def main():$/;"	f
+re	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/versiontools.py	/^import re$/;"	i
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/versiontools.py	/^__all__ = ['join_version', 'split_version']$/;"	v
+_version_re	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/versiontools.py	/^_version_re = re.compile(r'^(\\d+)\\.(\\d+)\\.(\\d+)(\\..*)?$', re.VERBOSE)$/;"	v
+join_version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/versiontools.py	/^def join_version(version_tuple):$/;"	f
+split_version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/versiontools.py	/^def split_version(version):$/;"	f
+EditorConfigError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^class EditorConfigError(Exception):$/;"	c
+_ParsingError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^    from ConfigParser import ParsingError as _ParsingError$/;"	i
+_ParsingError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^    from configparser import ParsingError as _ParsingError$/;"	i
+ParsingError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^class ParsingError(_ParsingError, EditorConfigError):$/;"	c
+PathError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^class PathError(ValueError, EditorConfigError):$/;"	c
+VersionError	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/exceptions.py	/^class VersionError(ValueError, EditorConfigError):$/;"	c
+sys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^import sys$/;"	i
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^__all__ = ['force_unicode', 'u']$/;"	v
+text_type	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^    text_type = unicode$/;"	v
+text_type	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^    text_type = str$/;"	v
+force_unicode	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^def force_unicode(string):$/;"	f
+codecs	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^    import codecs$/;"	i
+u	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^    u = lambda s: codecs.unicode_escape_decode(s)[0]$/;"	v
+u	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/compat.py	/^    u = lambda s: s$/;"	v
+generators	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^from __future__ import generators$/;"	i
+sys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^import sys$/;"	i
+warnings	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^import warnings$/;"	i
+__docformat__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^__docformat__ = "restructuredtext en"$/;"	v
+__all__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^__all__ = ['OrderedDict']$/;"	v
+INTP_VER	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^INTP_VER = sys.version_info[:2]$/;"	v
+OrderedDict	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^class OrderedDict(dict):$/;"	c
+__init__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __init__(self, init_val=(), strict=False):$/;"	m	class:OrderedDict
+__delitem__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __delitem__(self, key):$/;"	m	class:OrderedDict	file:
+__eq__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __eq__(self, other):$/;"	m	class:OrderedDict	file:
+__lt__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __lt__(self, other):$/;"	m	class:OrderedDict	file:
+__le__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __le__(self, other):$/;"	m	class:OrderedDict	file:
+__ne__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __ne__(self, other):$/;"	m	class:OrderedDict	file:
+__gt__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __gt__(self, other):$/;"	m	class:OrderedDict	file:
+__ge__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __ge__(self, other):$/;"	m	class:OrderedDict	file:
+__repr__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __repr__(self):$/;"	m	class:OrderedDict	file:
+__setitem__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __setitem__(self, key, val):$/;"	m	class:OrderedDict	file:
+__getitem__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __getitem__(self, key):$/;"	m	class:OrderedDict	file:
+__str__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    __str__ = __repr__$/;"	v	class:OrderedDict
+__setattr__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __setattr__(self, name, value):$/;"	m	class:OrderedDict	file:
+__getattr__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __getattr__(self, name):$/;"	m	class:OrderedDict	file:
+__deepcopy__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def __deepcopy__(self, memo):$/;"	m	class:OrderedDict	file:
+deepcopy	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^        from copy import deepcopy$/;"	i
+copy	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def copy(self):$/;"	m	class:OrderedDict
+items	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def items(self):$/;"	m	class:OrderedDict
+keys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def keys(self):$/;"	m	class:OrderedDict
+values	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def values(self, values=None):$/;"	m	class:OrderedDict
+iteritems	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def iteritems(self):$/;"	m	class:OrderedDict
+make_iter	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^        def make_iter(self=self):$/;"	f	function:OrderedDict.iteritems
+iterkeys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def iterkeys(self):$/;"	m	class:OrderedDict
+__iter__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    __iter__ = iterkeys$/;"	v	class:OrderedDict
+itervalues	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def itervalues(self):$/;"	m	class:OrderedDict
+make_iter	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^        def make_iter(self=self):$/;"	f	function:OrderedDict.itervalues
+clear	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def clear(self):$/;"	m	class:OrderedDict
+pop	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def pop(self, key, *args):$/;"	m	class:OrderedDict
+popitem	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def popitem(self, i=-1):$/;"	m	class:OrderedDict
+setdefault	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def setdefault(self, key, defval=None):$/;"	m	class:OrderedDict
+update	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def update(self, from_od):$/;"	m	class:OrderedDict
+rename	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def rename(self, old_key, new_key):$/;"	m	class:OrderedDict
+setitems	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def setitems(self, items):$/;"	m	class:OrderedDict
+setkeys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def setkeys(self, keys):$/;"	m	class:OrderedDict
+setvalues	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def setvalues(self, values):$/;"	m	class:OrderedDict
+index	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def index(self, key):$/;"	m	class:OrderedDict
+insert	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def insert(self, index, key, value):$/;"	m	class:OrderedDict
+reverse	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def reverse(self):$/;"	m	class:OrderedDict
+sort	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    def sort(self, *args, **kwargs):$/;"	m	class:OrderedDict
+doctest	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    import doctest$/;"	i
+m	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    m = sys.modules.get('__main__')$/;"	v
+globs	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/editorconfig/odict.py	/^    globs = m.__dict__.copy()$/;"	v
+SPHINXOPTS	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^SPHINXOPTS    =$/;"	m
+SPHINXBUILD	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^SPHINXBUILD   = sphinx-build$/;"	m
+PAPER	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^PAPER         =$/;"	m
+BUILDDIR	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^BUILDDIR      = _build$/;"	m
+PAPEROPT_a4	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^PAPEROPT_a4     = -D latex_paper_size=a4$/;"	m
+PAPEROPT_letter	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^PAPEROPT_letter = -D latex_paper_size=letter$/;"	m
+ALLSPHINXOPTS	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/Makefile	/^ALLSPHINXOPTS   = -d $(BUILDDIR)\/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .$/;"	m
+sys	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^import sys, os$/;"	i
+os	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^import sys, os$/;"	i
+editorconfig	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^import editorconfig$/;"	i
+__version__	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^from editorconfig import __version__$/;"	i
+extensions	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^extensions = ['sphinx.ext.autodoc']$/;"	v
+templates_path	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^templates_path = ['_templates']$/;"	v
+source_suffix	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^source_suffix = '.rst'$/;"	v
+master_doc	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^master_doc = 'index'$/;"	v
+project	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^project = u'EditorConfig Python Core'$/;"	v
+copyright	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^copyright = u'2012, EditorConfig Team'$/;"	v
+version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^version = __version__$/;"	v
+release	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^release = __version__$/;"	v
+exclude_patterns	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^exclude_patterns = ['_build']$/;"	v
+pygments_style	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^pygments_style = 'sphinx'$/;"	v
+html_theme	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^html_theme = 'agogo'$/;"	v
+html_static_path	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^html_static_path = ['_static']$/;"	v
+htmlhelp_basename	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^htmlhelp_basename = 'EditorConfigPythonCoredoc'$/;"	v
+latex_documents	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^latex_documents = [$/;"	v
+man_pages	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/conf.py	/^man_pages = [$/;"	v
+SPHINXBUILD	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^	set SPHINXBUILD=sphinx-build$/;"	v
+BUILDDIR	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^set BUILDDIR=_build$/;"	v
+ALLSPHINXOPTS	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^set ALLSPHINXOPTS=-d %BUILDDIR%\/doctrees %SPHINXOPTS% .$/;"	v
+ALLSPHINXOPTS	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%$/;"	v
+PAPER	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^	echo.  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter$/;"	v
+end	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/docs/make.bat	/^:end$/;"	l
+setup	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^from setuptools import setup$/;"	i
+editorconfig	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^import editorconfig$/;"	i
+name	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    name='EditorConfig',$/;"	v
+version	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    version=editorconfig.__version__,$/;"	v
+author	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    author='EditorConfig Team',$/;"	v
+packages	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    packages=['editorconfig'],$/;"	v
+url	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    url='http:\/\/editorconfig.org\/',$/;"	v
+license	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    license='LICENSE.txt',$/;"	v
+description	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    description='EditorConfig File Locator and Interpreter for Python',$/;"	v
+long_description	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    long_description=open('README.rst').read(),$/;"	v
+entry_points	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    entry_points = {$/;"	v
+classifiers	nvim/plugged/editorconfig-vim/plugin/editorconfig-core-py/setup.py	/^    classifiers=[$/;"	v
+print_function	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^from __future__ import print_function$/;"	i
+vim	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^        import vim$/;"	i
+sys	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^        import sys$/;"	i
+editorconfig	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^        import editorconfig$/;"	i
+editorconfig	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^        import editorconfig.exceptions as editorconfig_except$/;"	i
+editorconfig_except	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^        import editorconfig.exceptions as editorconfig_except$/;"	i
+ec_data	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^    ec_data = {}$/;"	v
+ec_UseConfigFiles	nvim/plugged/editorconfig-vim/plugin/editorconfig.py	/^    def ec_UseConfigFiles():$/;"	f
+g:AutoPairsLoaded	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let g:AutoPairsLoaded = 1$/;"	v
+g:AutoPairs	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}$/;"	v
+AutoPairsDefaultPairs	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefaultPairs()$/;"	f
+g:AutoPairsMapBS	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapBS = 1$/;"	v
+g:AutoPairsMapCh	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCh = 1$/;"	v
+g:AutoPairsMapCR	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapCR = 1$/;"	v
+g:AutoPairsWildClosedPair	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsWildClosedPair = ''$/;"	v
+g:AutoPairsMapSpace	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMapSpace = 1$/;"	v
+g:AutoPairsCenterLine	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsCenterLine = 1$/;"	v
+g:AutoPairsShortcutToggle	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutToggle = '<M-p>'$/;"	v
+g:AutoPairsShortcutFastWrap	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutFastWrap = '<M-e>'$/;"	v
+g:AutoPairsMoveCharacter	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMoveCharacter = "()[]{}\\"'"$/;"	v
+g:AutoPairsShortcutJump	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutJump = '<M-n>'$/;"	v
+g:AutoPairsFlyMode	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsFlyMode = 0$/;"	v
+g:AutoPairsMultilineClose	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsMultilineClose = 1$/;"	v
+g:AutoPairsShortcutBackInsert	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsShortcutBackInsert = '<M-b>'$/;"	v
+g:AutoPairsSmartQuotes	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let g:AutoPairsSmartQuotes = 1$/;"	v
+s:Go	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = "\\<C-G>U"$/;"	v
+s:Go	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^  let s:Go = ""$/;"	v
+s:Left	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Left = s:Go."\\<LEFT>"$/;"	v
+s:Right	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^let s:Right = s:Go."\\<RIGHT>"$/;"	v
+ulen	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ulen(s)$/;"	f
+left	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:left(s)$/;"	f
+right	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:right(s)$/;"	f
+delete	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:delete(s)$/;"	f
+backspace	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:backspace(s)$/;"	f
+getline	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:getline()$/;"	f
+matchend	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchend(text, open)$/;"	f
+matchbegin	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchbegin(text, close)$/;"	f
+AutoPairsDefine	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDefine(pairs, ...)$/;"	f
+AutoPairsInsert	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInsert(key)$/;"	f
+AutoPairsDelete	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsDelete()$/;"	f
+AutoPairsFastWrap	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsFastWrap()$/;"	f
+AutoPairsJump	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsJump()$/;"	f
+AutoPairsMoveCharacter	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMoveCharacter(key)$/;"	f
+AutoPairsBackInsert	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsBackInsert()$/;"	f
+AutoPairsReturn	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsReturn()$/;"	f
+AutoPairsSpace	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsSpace()$/;"	f
+AutoPairsMap	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsMap(key)$/;"	f
+AutoPairsToggle	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsToggle()$/;"	f
+sortByLength	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:sortByLength(i1, i2)$/;"	f
+AutoPairsInit	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsInit()$/;"	f
+ExpandMap	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:ExpandMap(map)$/;"	f
+AutoPairsTryInit	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsTryInit()$/;"	f
+<SID>AutoPairsReturn	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>$/;"	m
+<Plug>AutoPairsReturn	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn$/;"	m
+SHELL	nvim/plugged/supertab/Makefile	/^SHELL=\/bin\/bash$/;"	m
+b:SuperTabContextTextMemberPatterns	nvim/plugged/supertab/ftplugin/html.vim	/^  let b:SuperTabContextTextMemberPatterns = ['<\/']$/;"	v
+set_precedence	nvim/plugged/supertab/ftplugin/html.vim	/^  let set_precedence = 1$/;"	v
+project	nvim/plugged/supertab/ftplugin/html.vim	/^      let project = eclim#project#util#GetCurrentProjectName()$/;"	v
+natures	nvim/plugged/supertab/ftplugin/html.vim	/^        let natures = eclim#project#util#GetProjectNatureAliases(project)$/;"	v
+set_precedence	nvim/plugged/supertab/ftplugin/html.vim	/^        let set_precedence = !eclim#util#ListContains(natures, 'php')$/;"	v
+b:SuperTabContextTextOmniPrecedence	nvim/plugged/supertab/ftplugin/html.vim	/^    let b:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']$/;"	v
+b:SuperTabContextTextMemberPatterns	nvim/plugged/supertab/ftplugin/xml.vim	/^  let b:SuperTabContextTextMemberPatterns = ['<\/']$/;"	v
+b:SuperTabContextTextOmniPrecedence	nvim/plugged/supertab/ftplugin/xml.vim	/^  let b:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']$/;"	v
+loaded_supertab	nvim/plugged/supertab/plugin/supertab.vim	/^let loaded_supertab = 1$/;"	v
+s:save_cpo	nvim/plugged/supertab/plugin/supertab.vim	/^let s:save_cpo=&cpo$/;"	v
+g:SuperTabDefaultCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabDefaultCompletionType = "<c-p>"$/;"	v
+g:SuperTabContextDefaultCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabContextDefaultCompletionType = "<c-p>"$/;"	v
+g:SuperTabContextTextMemberPatterns	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabContextTextMemberPatterns = ['\\.', '>\\?::', '->']$/;"	v
+g:SuperTabCompletionContexts	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabCompletionContexts = ['s:ContextText']$/;"	v
+g:SuperTabRetainCompletionDuration	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabRetainCompletionDuration = 'insert'$/;"	v
+g:SuperTabNoCompleteBefore	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabNoCompleteBefore = ['\\k']$/;"	v
+g:SuperTabNoCompleteBefore	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabNoCompleteBefore = []$/;"	v
+g:SuperTabNoCompleteAfter	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabNoCompleteAfter = []$/;"	v
+g:SuperTabNoCompleteAfter	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabNoCompleteAfter = ['^', '\\s']$/;"	v
+g:SuperTabMappingForward	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabMappingForward = '<tab>'$/;"	v
+g:SuperTabMappingBackward	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabMappingBackward = '<s-tab>'$/;"	v
+g:SuperTabMappingTabLiteral	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabMappingTabLiteral = '<c-tab>'$/;"	v
+g:SuperTabLongestEnhanced	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabLongestEnhanced = 0$/;"	v
+g:SuperTabLongestHighlight	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabLongestHighlight = 0$/;"	v
+g:SuperTabCrMapping	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabCrMapping = 0$/;"	v
+g:SuperTabClosePreviewOnPopupClose	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabClosePreviewOnPopupClose = 0$/;"	v
+g:SuperTabUndoBreak	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabUndoBreak = 0$/;"	v
+g:SuperTabCompleteCase	nvim/plugged/supertab/plugin/supertab.vim	/^    let g:SuperTabCompleteCase = 'inherit'$/;"	v
+s:tabHelp	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:tabHelp =$/;"	v
+s:types	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:types =$/;"	v
+s:modes	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:modes = '\/^E\/^Y\/^L\/^N\/^K\/^T\/^I\/^]\/^F\/^D\/^V\/^P\/^U\/^O\/s'$/;"	v
+s:types	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:types = s:types . "np"$/;"	v
+s:modes	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:modes = s:modes . '\/n\/p'$/;"	v
+SuperTabSetDefaultCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabSetDefaultCompletionType(type) " {{{$/;"	f
+SuperTabSetCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabSetCompletionType(type) " {{{$/;"	f
+SuperTabAlternateCompletion	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabAlternateCompletion(type) " {{{$/;"	f
+SuperTabLongestHighlight	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabLongestHighlight(dir) " {{{$/;"	f
+Init	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:Init() " {{{$/;"	f
+InitBuffer	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:InitBuffer() " {{{$/;"	f
+ManualCompletionEnter	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ManualCompletionEnter() " {{{$/;"	f
+SetCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:SetCompletionType() " {{{$/;"	f
+SetDefaultCompletionType	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:SetDefaultCompletionType() " {{{$/;"	f
+SuperTab	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTab(command) " {{{$/;"	f
+SuperTabHelp	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:SuperTabHelp() " {{{$/;"	f
+CompletionMode	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:CompletionMode() " {{{$/;"	f
+StartCompletionMode	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:StartCompletionMode() " {{{$/;"	f
+WillComplete	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:WillComplete(...) " {{{$/;"	f
+EnableLongestEnhancement	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:EnableLongestEnhancement() " {{{$/;"	f
+IsNoCompleteAfterReset	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:IsNoCompleteAfterReset() " {{{$/;"	f
+EnableNoCompleteAfterReset	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:EnableNoCompleteAfterReset() " {{{$/;"	f
+CompletionReset	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:CompletionReset(char) " {{{$/;"	f
+CaptureKeyPresses	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:CaptureKeyPresses() " {{{$/;"	f
+CaptureKeyMap	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:CaptureKeyMap(key) " {{{$/;"	f
+IsPreviewOpen	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:IsPreviewOpen() " {{{$/;"	f
+ClosePreview	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ClosePreview() " {{{$/;"	f
+ReleaseKeyPresses	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ReleaseKeyPresses() " {{{$/;"	f
+CommandLineCompletion	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:CommandLineCompletion() " {{{$/;"	f
+ContextCompletion	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ContextCompletion() " {{{$/;"	f
+ContextDiscover	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ContextDiscover() " {{{$/;"	f
+ContextText	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ContextText() " {{{$/;"	f
+ExpandMap	nvim/plugged/supertab/plugin/supertab.vim	/^function! s:ExpandMap(map) " {{{$/;"	f
+SuperTabChain	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabChain(completefunc, completekeys, ...) " {{{$/;"	f
+SuperTabCodeComplete	nvim/plugged/supertab/plugin/supertab.vim	/^function! SuperTabCodeComplete(findstart, base) " {{{$/;"	f
+supertab_close_preview	nvim/plugged/supertab/plugin/supertab.vim	/^    augroup supertab_close_preview$/;"	a
+<c-x>	nvim/plugged/supertab/plugin/supertab.vim	/^  inoremap <silent> <c-x> <c-r>=<SID>ManualCompletionEnter()<cr>$/;"	m
+<Plug>SuperTabForward	nvim/plugged/supertab/plugin/supertab.vim	/^  imap <script> <Plug>SuperTabForward <c-r>=SuperTab('n')<cr>$/;"	m
+<Plug>SuperTabBackward	nvim/plugged/supertab/plugin/supertab.vim	/^  imap <script> <Plug>SuperTabBackward <c-r>=SuperTab('p')<cr>$/;"	m
+s:has_dict_maparg	nvim/plugged/supertab/plugin/supertab.vim	/^  let s:has_dict_maparg = v:version > 703 || (v:version == 703 && has('patch32'))$/;"	v
+existing_tab	nvim/plugged/supertab/plugin/supertab.vim	/^    let existing_tab = maparg('<tab>', 'i')$/;"	v
+s:Tab	nvim/plugged/supertab/plugin/supertab.vim	/^      let s:Tab = function(substitute(existing_tab, '()$', '', ''))$/;"	v
+stab	nvim/plugged/supertab/plugin/supertab.vim	/^    let stab = maparg('<s-tab>', 'i')$/;"	v
+existing_stab	nvim/plugged/supertab/plugin/supertab.vim	/^      let existing_stab = maparg('<s-tab>', 'i', 0, 1)$/;"	v
+stab	nvim/plugged/supertab/plugin/supertab.vim	/^        let stab = substitute(stab, '<SID>\\c', '<SNR>' . existing_stab.sid . '_', '')$/;"	v
+stab	nvim/plugged/supertab/plugin/supertab.vim	/^        let stab = substitute(stab, '()$', '', '')$/;"	v
+s:ShiftTab	nvim/plugged/supertab/plugin/supertab.vim	/^        let s:ShiftTab = function(stab)$/;"	v
+stab	nvim/plugged/supertab/plugin/supertab.vim	/^        let stab = ''$/;"	v
+stab	nvim/plugged/supertab/plugin/supertab.vim	/^      let stab = substitute(stab, '\\(<[-a-zA-Z0-9]\\+>\\)', '\\\\\\1', 'g')$/;"	v
+s:ShiftTab	nvim/plugged/supertab/plugin/supertab.vim	/^      let s:ShiftTab = stab$/;"	v
+expr_map	nvim/plugged/supertab/plugin/supertab.vim	/^    let expr_map = 0$/;"	v
+map_dict	nvim/plugged/supertab/plugin/supertab.vim	/^      let map_dict = maparg('<cr>', 'i', 0, 1)$/;"	v
+expr_map	nvim/plugged/supertab/plugin/supertab.vim	/^      let expr_map = has_key(map_dict, 'expr') && map_dict.expr$/;"	v
+expr_map	nvim/plugged/supertab/plugin/supertab.vim	/^      let expr_map = maparg('<cr>', 'i') =~? '\\<cr>'$/;"	v
+iabbrev_map	nvim/plugged/supertab/plugin/supertab.vim	/^    let iabbrev_map = iabbrevs =~? '\\<cr>'$/;"	v
+g:SuperTabCrMapping	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabCrMapping = 0$/;"	v
+g:SuperTabCrMapping	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabCrMapping = 0$/;"	v
+g:SuperTabCrMapping	nvim/plugged/supertab/plugin/supertab.vim	/^      let g:SuperTabCrMapping = 0$/;"	v
+map	nvim/plugged/supertab/plugin/supertab.vim	/^      let map = maparg('<cr>', 'i')$/;"	v
+cr	nvim/plugged/supertab/plugin/supertab.vim	/^      let cr = !(map =~? '\\(^\\|[^)]\\)<cr>' || map =~ 'ExpandCr')$/;"	v
+map	nvim/plugged/supertab/plugin/supertab.vim	/^      let map = s:ExpandMap(map)$/;"	v
+<cr>	nvim/plugged/supertab/plugin/supertab.vim	/^      inoremap <silent> <cr> <c-r>=<SID>SelectCompletion(1)<cr>$/;"	m
+SelectCompletion	nvim/plugged/supertab/plugin/supertab.vim	/^    function! s:SelectCompletion(cr)$/;"	f
+SuperTabHelp	nvim/plugged/supertab/plugin/supertab.vim	/^    command SuperTabHelp :call <SID>SuperTabHelp()$/;"	c
+TestSuperTabCodeComplete	nvim/plugged/supertab/plugin/supertab.vim	/^function! TestSuperTabCodeComplete(findstart, base) " {{{$/;"	f
+current_compiler	nvim/plugged/vim-polyglot/compiler/python.vim	/^let current_compiler = "python"$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/python.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+$PYTHONWARNINGS	nvim/plugged/vim-polyglot/compiler/python.vim	/^  let $PYTHONWARNINGS="ignore"$/;"	v
+current_compiler	nvim/plugged/vim-polyglot/compiler/gradle.vim	/^let current_compiler = "gradle"$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/gradle.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+current_compiler	nvim/plugged/vim-polyglot/compiler/eslint.vim	/^let current_compiler = "eslint"$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/eslint.vim	/^  command! -nargs=* CompilerSet setlocal <args>$/;"	c
+current_compiler	nvim/plugged/vim-polyglot/compiler/nix-build.vim	/^let current_compiler = 'nix-build'$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/nix-build.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
+current_compiler	nvim/plugged/vim-polyglot/compiler/lilypond.vim	/^let current_compiler = "lilypond"$/;"	v
+g:current_compiler	nvim/plugged/vim-polyglot/compiler/go.vim	/^let g:current_compiler = "go"$/;"	v
+s:cpo_save	nvim/plugged/vim-polyglot/compiler/go.vim	/^let s:cpo_save = &cpo$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/go.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+s:save_cpo	nvim/plugged/vim-polyglot/compiler/go.vim	/^let s:save_cpo = &cpo$/;"	v
+current_compiler	nvim/plugged/vim-polyglot/compiler/haml.vim	/^let current_compiler = "haml"$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/haml.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+s:cpo_save	nvim/plugged/vim-polyglot/compiler/haml.vim	/^let s:cpo_save = &cpo$/;"	v
+current_compiler	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^let current_compiler = 'coffee'$/;"	v
+s:pat	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^let s:pat = '^' . current_compiler$/;"	v
+GetMakePrg	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^function! s:GetMakePrg()$/;"	f
+SetMakePrg	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^function! s:SetMakePrg()$/;"	f
+CoffeeMakeDeprecated	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^function! s:CoffeeMakeDeprecated(bang, args)$/;"	f
+CoffeeMake	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^command! -bang -bar -nargs=* CoffeeMake$/;"	c
+CoffeeUpdateMakePrg	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^augroup CoffeeUpdateMakePrg$/;"	a
+UpdateMakePrg	nvim/plugged/vim-polyglot/compiler/coffee.vim	/^  function! s:UpdateMakePrg()$/;"	f
+current_compiler	nvim/plugged/vim-polyglot/compiler/typescript.vim	/^let current_compiler = "typescript"$/;"	v
+g:typescript_compiler_binary	nvim/plugged/vim-polyglot/compiler/typescript.vim	/^  let g:typescript_compiler_binary = "tsc"$/;"	v
+g:typescript_compiler_options	nvim/plugged/vim-polyglot/compiler/typescript.vim	/^  let g:typescript_compiler_options = ""$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/typescript.vim	/^  command! -nargs=* CompilerSet setlocal <args>$/;"	c
+s:cpo_save	nvim/plugged/vim-polyglot/compiler/typescript.vim	/^let s:cpo_save = &cpo$/;"	v
+current_compiler	nvim/plugged/vim-polyglot/compiler/rspec.vim	/^let current_compiler = "rspec"$/;"	v
+CompilerSet	nvim/plugged/vim-polyglot/compiler/rspec.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+s:cpo_save	nvim/plugged/vim-polyglot/compiler/rspec.vim	/^let s:cpo_
