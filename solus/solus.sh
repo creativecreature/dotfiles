@@ -86,6 +86,18 @@ echo ""
 
 
 
+# -- Tmux --------------------------------------------------------------------
+
+if exists "tmux"; then
+  echo_item "Tmux is already installed" "green"
+else
+  sudo eopkg install tmux
+fi
+
+echo ""
+
+
+
 # -- Nordic GTK --------------------------------------------------------------------
 
 sudo rm -rf /usr/share/themes/Nordic
@@ -114,3 +126,4 @@ if exists "plank"; then
 else
   sudo eopkg install plank
 fi
+
