@@ -16,7 +16,9 @@ bind-key -n C-k select-pane -U
 bind-key -n C-l select-pane -R
 
 # Use the entire 256 color range with tmux
-set-option -g default-terminal "screen-256color"
+# set-option -g default-terminal "screen-256color"
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",xterm-256color*:Tc"
 
 # Plugins
 set -g @plugin 'arcticicestudio/nord-tmux'
