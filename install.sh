@@ -65,5 +65,15 @@ echo ""
 
 rm -rf $HOME/.config/nvim
 ln -sfn $HOME/dotfiles/nvim $HOME/.config/nvim
-echo_item "Linked nvim configuration"
+echo_item "Linked nvim configuration" "green"
 
+echo ""
+
+
+
+# -- TMUX -----------------------------------------------------------------------
+rm -rf $HOME/.tmux
+ln -sfn $HOME/dotfiles/tmux $HOME/.tmux
+echo_item "Linked tmux configuration" "green"
+
+echo ""
