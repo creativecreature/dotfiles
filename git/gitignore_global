@@ -6,4 +6,7 @@ node_modules
 
 # Tags
 tags
+.tags
 
+# Vim
+.netrwhist
