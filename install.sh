@@ -72,8 +72,8 @@ echo ""
 
 
 # -- TMUX -----------------------------------------------------------------------
-rm -rf $HOME/.tmux
-ln -sfn $HOME/dotfiles/tmux $HOME/.tmux
+
+ln -sfn $HOME/dotfiles/tmux/conf $HOME/.tmux/.conf
 echo_item "Linked tmux configuration" "green"
 
 echo ""
