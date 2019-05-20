@@ -1,2 +1,16 @@
+# Change the prefix key from ctrl-b to ctrl-s
 unbind C-b
 set -g prefix C-s
+# On double ctrl-s we send it to the running process
+# bind-key -r C-s send-prefix
+
+# Use ctrl-s + r to source the config file
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# Bind splits, the -n flag indicates we dont want to use the prefix
+bind-key -n C-h select-pane -L
+bind-key -n C-j select-pane -D
+bind-key -n C-k select-pane -U
+bind-key -n C-l select-pane -R
+
+set-option -g default-terminal "screen-256color"
