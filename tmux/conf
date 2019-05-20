@@ -19,7 +19,7 @@ bind-key -n C-l select-pane -R
 set-option -g default-terminal "screen-256color"
 
 # Plugins
-set -g @plugin 'arcticicestudio/nord-tmux
+set -g @plugin 'arcticicestudio/nord-tmux'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
