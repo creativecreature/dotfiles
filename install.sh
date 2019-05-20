@@ -33,10 +33,6 @@ echo ""
 if exists "zsh"; then
   if get_boolean_response "Do you want to install ZSH configuration files?"; then
 
-    # -- ZSHRC
-    ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
-    echo_item "Linked zshrc" "green"
-
     # -- OH MY ZSH
     if [ -d $HOME/.oh-my-zsh/ ]; then
       echo_item "Oh my ZSH is already installed" "green"
@@ -48,6 +44,14 @@ if exists "zsh"; then
       else
         echo_item "You need either curl or wget installed to download Oh My ZSH"
       fi
+    fi
+
+    # -- ZSHRC
+    ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+    echo_item "Linked zshrc" "green"
+
+    if [ -d $HOME/.oh-my-zsh/ ]; then
+      git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     fi
 
   else
