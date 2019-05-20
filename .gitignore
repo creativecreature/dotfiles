@@ -6,6 +6,8 @@
 *.local.*
 
 tags
+tags.temp
+tags.lock
 plugged
 
 node_modules
