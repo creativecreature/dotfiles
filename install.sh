@@ -13,7 +13,7 @@ if system_is_OSX; then
   source 'osx/osx.sh'
 elif system_is_linux; then
   # source 'ubuntu/ubuntu.sh'
-  source solace/solace.sh
+  source solus/solus.sh
 fi
 
 
@@ -75,5 +75,7 @@ echo ""
 
 ln -sfn $HOME/dotfiles/tmux/conf $HOME/.tmux.conf
 echo_item "Linked tmux configuration" "green"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo_item "Cloned tmux plugin manager" "green"
 
 echo ""
