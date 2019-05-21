@@ -150,3 +150,30 @@ else
   sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
   rm -rf ./tmp
 fi
+
+echo ""
+
+
+
+# -- Slack --------------------------------------------------------------------
+
+if exists "slack"; then
+  echo_item "Slack is already installed" "green"
+else
+  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/slack-desktop/pspec.xml
+  sudo eopkg it slack-desktop*.eopkg;sudo rm slack-desktop*.eopkg
+fi
+
+echo ""
+
+
+# -- Google Chrome --------------------------------------------------------------------
+
+if exists "google-chrome"; then
+  echo_item "Google chrome is already installed" "green"
+else
+  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml
+sudo eopkg it google-chrome-*.eopkg;sudo rm google-chrome-*.eopkg
+fi
+
+echo ""
