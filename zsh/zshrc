@@ -29,4 +29,5 @@ alias vi=nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Removes username@host from the terminal prompt
 prompt_context() {}
