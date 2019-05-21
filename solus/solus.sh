@@ -85,6 +85,17 @@ fi
 echo ""
 
 
+# -- Ripgrep --------------------------------------------------------------------
+
+if exists "ripgrep"; then
+  echo_item "Ripgrep is already installed" "green"
+else
+  sudo eopkg install ripgrep
+fi
+
+echo ""
+
+
 
 # -- Tmux --------------------------------------------------------------------
 
@@ -127,3 +138,15 @@ else
   sudo eopkg install plank
 fi
 
+
+
+# -- Tilix --------------------------------------------------------------------
+
+if exists "tilix"; then
+  echo_item "Tilix is already installed" "green"
+else
+  sudo eopkg install tilix
+  git clone https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
+  sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
+  rm -rf ./tmp
+fi
