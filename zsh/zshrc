@@ -26,5 +26,11 @@ export PATH="$HOME/bin:$PATH"
 # Aliases
 alias vim=nvim
 alias vi=nvim
+# alias ag='ag --path-to-ignore ~/.ignore'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf search with ripgrep and preview
+# export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
