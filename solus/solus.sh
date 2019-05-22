@@ -170,11 +170,23 @@ echo ""
 
 # -- Google Chrome --------------------------------------------------------------------
 
-if exists "google-chrome"; then
+if exists "google-chrome-stable"; then
   echo_item "Google chrome is already installed" "green"
 else
   sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml
 sudo eopkg it google-chrome-*.eopkg;sudo rm google-chrome-*.eopkg
+fi
+
+echo ""
+
+
+
+# -- Docker --------------------------------------------------------------------
+
+if exists "docker"; then
+  echo_item "Docker is already installed" "green"
+else
+  sudo eopkg install docker
 fi
 
 echo ""
