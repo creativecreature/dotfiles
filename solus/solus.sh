@@ -85,6 +85,17 @@ fi
 echo ""
 
 
+# -- Ripgrep --------------------------------------------------------------------
+
+if exists "ripgrep"; then
+  echo_item "Ripgrep is already installed" "green"
+else
+  sudo eopkg install ripgrep
+fi
+
+echo ""
+
+
 
 # -- Tmux --------------------------------------------------------------------
 
@@ -127,3 +138,55 @@ else
   sudo eopkg install plank
 fi
 
+
+
+# -- Tilix --------------------------------------------------------------------
+
+if exists "tilix"; then
+  echo_item "Tilix is already installed" "green"
+else
+  sudo eopkg install tilix
+  git clone --depth=1 https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
+  sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
+  rm -rf ./tmp
+fi
+
+echo ""
+
+
+
+# -- Slack --------------------------------------------------------------------
+
+if exists "slack"; then
+  echo_item "Slack is already installed" "green"
+else
+  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/slack-desktop/pspec.xml
+  sudo eopkg it slack-desktop*.eopkg;sudo rm slack-desktop*.eopkg
+  # Todo use this: https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json
+fi
+
+echo ""
+
+
+# -- Google Chrome --------------------------------------------------------------------
+
+if exists "google-chrome-stable"; then
+  echo_item "Google chrome is already installed" "green"
+else
+  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml
+sudo eopkg it google-chrome-*.eopkg;sudo rm google-chrome-*.eopkg
+fi
+
+echo ""
+
+
+
+# -- Docker --------------------------------------------------------------------
+
+if exists "docker"; then
+  echo_item "Docker is already installed" "green"
+else
+  sudo eopkg install docker
+fi
+
+echo ""
