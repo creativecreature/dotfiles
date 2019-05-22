@@ -9,17 +9,58 @@ set -g prefix C-s
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# Bind splits, the -n flag indicates we dont want to use the prefix
+
+
+
+# **************** PANES *******************
+
+# Create panes at the current panes path
+bind-key - split-window -v -c '#{pane_current_path}'
+bind-key \ split-window -h -c '#{pane_current_path}'
+
+# Move between panes, the -n flag indicates we dont want to use the prefix
 bind-key -n C-h select-pane -L
 bind-key -n C-j select-pane -D
 bind-key -n C-k select-pane -U
 bind-key -n C-l select-pane -R
 
+# Resize panes, shift arrow keys for smaller increments and control arrow key for larger
+bind -n S-Left resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down resize-pane -D 1
+bind -n S-Up resize-pane -U 1
 
-# Use the xterm-256color terminal
+bind -n C-Left resize-pane -L 10
+bind -n C-Right resize-pane -R 10
+bind -n C-Down resize-pane -D 5
+bind -n C-Up resize-pane -U 5
+
+
+
+
+# **************** WINDOWS *******************
+
+# New windows opens at the path of the pane
+bind c new-window -c '#{pane_current_path}'
+
+# Dont index windows from 0, start at 1
+set-option -g base-index 1
+
+# Automatically renumber the windows to follow this rule
+set-option -g renumber-windows on
+
+# Move current pane to a new window but keep focus on this window
+bind-key b break-pane -d
+
+
+
+
+# Use the xterm-256color terminal and then apply it
 set -g default-terminal "xterm-256color"
-# Apply Tc
 set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+# Make it so the status bar can display up to 50 characters of the session name
+set -g status-left-length 50
 
 # Plugins
 set -g @plugin 'arcticicestudio/nord-tmux'
