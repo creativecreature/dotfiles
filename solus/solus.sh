@@ -146,7 +146,7 @@ if exists "tilix"; then
   echo_item "Tilix is already installed" "green"
 else
   sudo eopkg install tilix
-  git clone https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
+  git clone --depth=1 https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
   sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
   rm -rf ./tmp
 fi
@@ -162,6 +162,7 @@ if exists "slack"; then
 else
   sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/slack-desktop/pspec.xml
   sudo eopkg it slack-desktop*.eopkg;sudo rm slack-desktop*.eopkg
+  # Todo use this: https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json
 fi
 
 echo ""
