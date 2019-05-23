@@ -2,3 +2,5 @@
   editor = /usr/local/bin/nvim
   email = info@creativecreature.com
   name = Charles Victor Conner
+[core]
+	excludesfile = /home/conner/.gitignore_global
