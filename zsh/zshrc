@@ -43,3 +43,16 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 =======
 # Removes username@host from the terminal prompt
 prompt_context() {}
+
+export TERM='screen-256color'
+
+_not_inside_tmux() {
+  [[ -z "$TMUX" ]]
+}
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+ensure_tmux_is_running

@@ -69,6 +69,10 @@ set foldlevel=99
 if has("autocmd")
 filetype plugin indent on
 
+" Resize vim windows when window size changes, usually caused by opening a
+" tmux split
+autocmd VimResized * :wincmd =
+
 autocmd BufReadPost * " {{{2
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
