@@ -187,6 +187,32 @@ if exists "docker"; then
   echo_item "Docker is already installed" "green"
 else
   sudo eopkg install docker
+	sudo usermod -aG docker $USER
+fi
+
+echo ""
+
+
+
+# -- Docker Compose --------------------------------------------------------------------
+
+if exists "docker-compose"; then
+  echo_item "Docker-compose is already installed" "green"
+else
+  sudo eopkg install docker-compose
+	sudo usermod -aG docker-compose $USER
+fi
+
+echo ""
+
+
+
+# -- Make --------------------------------------------------------------------
+
+if exists "make"; then
+  echo_item "Make is already installed" "green"
+else
+  sudo eopkg install make
 fi
 
 echo ""
