@@ -13,8 +13,6 @@ Plug 'trevordmiller/nova-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug '/usr/local/opt/fzf'
-" Plug '/usr/bin/fzf'
-" Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -39,8 +37,13 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
 
 " Task Running
 Plug 'w0rp/ale'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'janko/vim-test'
+Plug 'benmills/vimux'
 
 " Git
 Plug 'tpope/vim-fugitive'
 
+
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
