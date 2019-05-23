@@ -78,9 +78,9 @@ bind-key b break-pane -d
 # **************** SESSIONS *******************
 
 # Use fzf to display a list of all sessions and then open the seleted session in a new window
-# bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
-# bind C-j split-window -v "tmux ls | sed -E 's/:.*$//' | fzf | xargs tmux switch-client -t"
-# bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+# To get this working i had to do sudo ln -sfn /home/conner/.fzf/bin/fzf /usr/bin/fzf
+# because fzf is installed by vim and only to my user its not available when this runs
+bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
 # Choose tree lets us switch between sessions, o for open-session
 bind C-o choose-session
