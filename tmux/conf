@@ -1,4 +1,6 @@
 set-environment -g PATH "/usr/local/bin:/bin:/usr/bin"
+# Shorter wait
+set -sg escape-time 0
 
 # Change the prefix key from ctrl-b to ctrl-s
 unbind C-b
