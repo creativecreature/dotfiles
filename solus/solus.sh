@@ -47,7 +47,8 @@ else
     NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm install 12.2.0
-    npm install yarn -g
+    npm install -g yarn
+    npm install -g eslint eslint-plugin-react
   else
     echo_item "Skipping Node.js tools install" red
   fi
@@ -187,7 +188,7 @@ if exists "docker"; then
   echo_item "Docker is already installed" "green"
 else
   sudo eopkg install docker
-	sudo usermod -aG docker $USER
+  sudo usermod -aG docker $USER
 fi
 
 echo ""
@@ -200,7 +201,7 @@ if exists "docker-compose"; then
   echo_item "Docker-compose is already installed" "green"
 else
   sudo eopkg install docker-compose
-	sudo usermod -aG docker-compose $USER
+  sudo usermod -aG docker-compose $USER
 fi
 
 echo ""

@@ -81,3 +81,12 @@ ln -sf $HOME/dotfiles/tmux/tat $HOME/bin/tat
 echo_item "Linked tat script" "green"
 
 echo ""
+
+
+
+# -- ESLINT -----------------------------------------------------------------------
+
+ln -sf $HOME/dotfiles/eslint/eslintrc $HOME/.eslintrc
+echo_item "Linked global eslint config" "green"
+
+echo ""
