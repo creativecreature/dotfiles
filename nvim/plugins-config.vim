@@ -54,7 +54,9 @@ nmap <silent> ˚ <Plug>(ale_previous_wrap)
 nmap <silent> ∆ <Plug>(ale_next_wrap)
 
 " Indentline
-autocmd Filetype json :IndentLinesDisable
+" This is to display ` and "
+let g:indentLine_setConceal = 2
+let g:indentLine_concealcursor = ""
 
 " Prettier
 nmap =p <Plug>(Prettier)
