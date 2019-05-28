@@ -98,6 +98,16 @@ echo ""
 
 
 
+# -- jq --------------------------------------------------------------------
+
+if exists "jq"; then
+  echo_item "jq is already installed" "green"
+else
+  sudo eopkg install jq
+fi
+
+echo ""
+
 # -- Tmux --------------------------------------------------------------------
 
 if exists "tmux"; then

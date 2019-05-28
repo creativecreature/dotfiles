@@ -112,12 +112,14 @@ bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-m
 set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",screen-256color:Tc"
 
-
 # Make it so the status bar can display up to 50 characters of the session name
 set -g status-left-length 50
+set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #[fg=cyan]#(echo $USER)#[default]@#H"
+
 
 # Plugins
+set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'arcticicestudio/nord-tmux'
-
+set -g @plugin 'yardnsm/tmux-1password'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
