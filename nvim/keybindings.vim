@@ -59,8 +59,8 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind - to grep and show result in quickfix
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap - :Ag<SPACE>
+command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
+nnoremap - :Rg<SPACE>
 
 " Enable folding with the spacebar
 nnoremap <space> za
