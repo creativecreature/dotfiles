@@ -134,6 +134,7 @@ set -g window-status-separator ""
 set -g @sysstat_mem_color_low "cyan"
 set -g @sysstat_cpu_color_low "cyan"
 
+
 # Plugins
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'arcticicestudio/nord-tmux'
