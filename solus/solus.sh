@@ -227,14 +227,3 @@ else
 fi
 
 echo ""
-
-
-
-# -- C++ compiler and devtools --------------------------------------------------------------------
-if exists "g++"; then
-  echo_item "g++ is already installed" "green"
-else
-  sudo eopkg it -c system.devel
-fi
-
-echo ""
