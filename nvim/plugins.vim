@@ -37,7 +37,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
 
 " Task Running
 Plug 'w0rp/ale'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'janko/vim-test'
 Plug 'benmills/vimux'
 
