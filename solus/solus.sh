@@ -122,10 +122,10 @@ echo ""
 
 # -- Nordic GTK --------------------------------------------------------------------
 
-sudo rm -rf /usr/share/themes/Nordic
-sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
-gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
-gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
+#sudo rm -rf /usr/share/themes/Nordic
+#sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
+#gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
+#gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
 
 echo ""
 
@@ -133,9 +133,9 @@ echo ""
 
 # -- Zafiro Icons --------------------------------------------------------------------
 
-sudo rm -rf /usr/share/icons/Zafiro
-sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
-gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
+#sudo rm -rf /usr/share/icons/Zafiro
+#sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
+#gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
 
 echo ""
 
@@ -157,9 +157,8 @@ if exists "tilix"; then
   echo_item "Tilix is already installed" "green"
 else
   sudo eopkg install tilix
-  git clone --depth=1 https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
-  sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
-  rm -rf ./tmp
+  curl -fLo ~/.config/tilix/schemes/nord.json --create-dirs https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json
+
 fi
 
 echo ""
