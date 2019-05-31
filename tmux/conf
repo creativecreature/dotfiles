@@ -11,7 +11,7 @@ set -g prefix C-s
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins'
 
 
 # **************** PANES *******************
@@ -138,6 +138,6 @@ set -g @sysstat_cpu_color_low "cyan"
 # Plugins
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'arcticicestudio/nord-tmux'
-set -g @plugin 'yardnsm/tmux-1password'
+# set -g @plugin 'yardnsm/tmux-1password'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'

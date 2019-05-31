@@ -6,7 +6,8 @@
 
 #Add US and SE input sources
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'se')]"
-
+sudo apt-get update
+sudo apt-get install fonts-powerline
 
 
 # -- Git -----------------------------------------------------------------------
@@ -14,7 +15,19 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 if exists "git"; then
   echo_item "Git is already installed" "green"
 else
-  sudo eopkg install git
+  sudo apt-get install git
+fi
+
+echo ""
+
+
+
+# -- Curl  -----------------------------------------------------------------------
+
+if exists "curl"; then
+  echo_item "curl is already installed" "green"
+else
+  sudo apt-get install curl
 fi
 
 echo ""
@@ -27,7 +40,7 @@ if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
   if get_boolean_response "Do you want to install zsh?"; then
-    sudo eopkg install zsh
+    sudo apt-get install zsh
   else
     echo_item "Skipping zsh install" red
   fi
@@ -43,6 +56,7 @@ if exists "node"; then
   echo_item "Node tools are already installed" green
 else
   if get_boolean_response "Do you want to install Node.js tools?"; then
+    mkdir ~/.nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
     NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -64,7 +78,7 @@ if exists "nvim"; then
   echo_item "Neovim is already installed" green
 else
   if get_boolean_response "Do you want to install Neovim?"; then
-    sudo eopkg install neovim
+    sudo apt-get install neovim
     curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   else
     echo_item "Skipping Neovim install" red
@@ -80,7 +94,7 @@ echo ""
 if exists "ctags"; then
   echo_item "Ctags is already installed" "green"
 else
-  sudo eopkg install ctags
+  sudo apt-get install ctags
 fi
 
 echo ""
@@ -91,7 +105,7 @@ echo ""
 if exists "ripgrep"; then
   echo_item "Ripgrep is already installed" "green"
 else
-  sudo eopkg install ripgrep
+  sudo apt-get install ripgrep
 fi
 
 echo ""
@@ -103,7 +117,7 @@ echo ""
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
-  sudo eopkg install jq
+  sudo apt-get install jq
 fi
 
 echo ""
@@ -113,7 +127,7 @@ echo ""
 if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
-  sudo eopkg install tmux
+  sudo apt-get install tmux
 fi
 
 echo ""
@@ -146,7 +160,7 @@ echo ""
 if exists "plank"; then
   echo_item "Plank is already installed" "green"
 else
-  sudo eopkg install plank
+  sudo apt-get install plank
 fi
 
 
@@ -156,36 +170,10 @@ fi
 if exists "tilix"; then
   echo_item "Tilix is already installed" "green"
 else
-  sudo eopkg install tilix
+  sudo apt-get install tilix
   git clone --depth=1 https://github.com/arcticicestudio/nord-tilix.git ./tmp/nord
   sudo mv ./tmp/nord/src/json/nord.json /usr/share/tilix/schemes/nord.json
   rm -rf ./tmp
-fi
-
-echo ""
-
-
-
-# -- Slack --------------------------------------------------------------------
-
-if exists "slack"; then
-  echo_item "Slack is already installed" "green"
-else
-  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/slack-desktop/pspec.xml
-  sudo eopkg it slack-desktop*.eopkg;sudo rm slack-desktop*.eopkg
-  # Todo use this: https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json
-fi
-
-echo ""
-
-
-# -- Google Chrome --------------------------------------------------------------------
-
-if exists "google-chrome-stable"; then
-  echo_item "Google chrome is already installed" "green"
-else
-  sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml
-sudo eopkg it google-chrome-*.eopkg;sudo rm google-chrome-*.eopkg
 fi
 
 echo ""
@@ -197,7 +185,7 @@ echo ""
 if exists "docker"; then
   echo_item "Docker is already installed" "green"
 else
-  sudo eopkg install docker
+  sudo apt-get install docker
   sudo usermod -aG docker $USER
 fi
 
@@ -210,7 +198,7 @@ echo ""
 if exists "docker-compose"; then
   echo_item "Docker-compose is already installed" "green"
 else
-  sudo eopkg install docker-compose
+  sudo apt-get install docker-compose
   sudo usermod -aG docker-compose $USER
 fi
 
@@ -223,7 +211,7 @@ echo ""
 if exists "make"; then
   echo_item "Make is already installed" "green"
 else
-  sudo eopkg install make
+  sudo apt-get install make
 fi
 
 echo ""

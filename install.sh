@@ -12,8 +12,8 @@ source 'scripts/helpers.sh'
 if system_is_OSX; then
   source 'osx/osx.sh'
 elif system_is_linux; then
-  # source 'ubuntu/ubuntu.sh'
-  source solus/solus.sh
+  source 'ubuntu/ubuntu.sh'
+  # source solus/solus.sh
 fi
 
 
