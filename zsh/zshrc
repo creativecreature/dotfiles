@@ -5,6 +5,9 @@ plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
+# Stop auto change of directory from zsh
+unsetopt AUTO_CD
+
 
 # Turn caps lock into escape
 setxkbmap -option caps:escape
@@ -30,7 +33,7 @@ alias vi=nvim
 # Tilix fix
 # https://gnunn1.github.io/tilix-web/manual/vteconfig/
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /usr/share/defaults/etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -55,19 +58,3 @@ ensure_tmux_is_running() {
   fi
 }
 ensure_tmux_is_running
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/root/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/root/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/root/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/root/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
