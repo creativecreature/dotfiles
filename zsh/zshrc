@@ -20,6 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add Yarn to path
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$(yarn global bin):$PATH"
 
 # Add bin to path, should eventually remove this and use dotfiles bin
 export PATH="$HOME/bin:$PATH"
@@ -33,7 +34,7 @@ alias vi=nvim
 # Tilix fix
 # https://gnunn1.github.io/tilix-web/manual/vteconfig/
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+  source /usr/share/defaults/etc/profile.d/vte.sh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
