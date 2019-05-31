@@ -11,7 +11,7 @@ set -g prefix C-s
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins'
+# set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins'
 
 
 # **************** PANES *******************
