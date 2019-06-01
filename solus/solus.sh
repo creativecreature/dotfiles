@@ -226,3 +226,15 @@ else
 fi
 
 echo ""
+
+
+
+# -- System dev tools --------------------------------------------------------------------
+
+if exists "g++"; then
+  echo_item "System develop tools already installed" "green"
+else
+  sudo eopkg it -c system.devel
+fi
+
+echo ""
