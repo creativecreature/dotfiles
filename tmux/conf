@@ -1,4 +1,5 @@
-set-environment -g PATH "/usr/local/bin:/bin:/usr/bin"
+# Use default $SHELL instead of a login shell
+set -g default-command $SHELL
 # Shorter wait
 set -sg escape-time 0
 
@@ -53,7 +54,8 @@ bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
 # Easily swap a pane (targeted by pane number) with the current pane
 bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
 
-
+run-shell "echo $PATH"
+run-shell "echo $SHELL"
 
 
 # **************** WINDOWS *******************
