@@ -9,6 +9,11 @@ set -g prefix C-s
 # On double ctrl-s we send it to the running process
 # bind-key -r C-s send-prefix
 
+
+set -g mouse on
+# sane scrolling:
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
@@ -16,6 +21,10 @@ bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 
 # **************** PANES *******************
+
+# Kill panes without confirmation
+bind-key x kill-pane
+
 
 # Create panes at the current panes path
 bind-key - split-window -v -c '#{pane_current_path}'
@@ -54,8 +63,6 @@ bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
 # Easily swap a pane (targeted by pane number) with the current pane
 bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
 
-run-shell "echo $PATH"
-run-shell "echo $SHELL"
 
 
 # **************** WINDOWS *******************
