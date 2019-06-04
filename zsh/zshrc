@@ -30,6 +30,7 @@ export PATH="$HOME/.local/bin:$PATH"
 alias vim=nvim
 alias vi=nvim
 # alias ag='ag --path-to-ignore ~/.ignore'
+alias pe="~/code/mtg-cloudformation/msp pe"
 
 # Tilix fix
 # https://gnunn1.github.io/tilix-web/manual/vteconfig/

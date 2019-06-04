@@ -228,3 +228,15 @@ else
 fi
 
 echo ""
+
+
+
+# -- Python --------------------------------------------------------------------
+
+if exists "virtualenv"; then
+  echo_item "Virtual env already installed" "green"
+else
+  sudo eopkg install virtualenv
+fi
+
+echo ""
