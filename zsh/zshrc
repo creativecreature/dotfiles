@@ -26,6 +26,10 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Aws region
+export AWS_REGION=eu-west-1
+export AWS_DEFAULT_REGION=eu-west-1
+
 # Aliases
 alias vim=nvim
 alias vi=nvim
