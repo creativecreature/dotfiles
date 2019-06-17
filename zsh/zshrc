@@ -30,6 +30,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export AWS_REGION=eu-west-1
 export AWS_DEFAULT_REGION=eu-west-1
 
+# Set nvim as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Aliases
 alias vim=nvim
 alias vi=nvim
