@@ -1,6 +1,13 @@
 [user]
+  email = charlesvictorconner@gmail.com
+  name = Victor Conner
   editor = /usr/local/bin/nvim
-  email = info@creativecreature.com
-  name = Charles Victor Conner
+
 [core]
-	excludesfile = /home/cnr/.gitignore_global
+  excludesfile = /home/cnr/.gitignore_global
+
+[includeif "gitdir:~/code/conner/"]
+  path = ~/code/conner/.gitconfig
+
+[includeif "gitdir:~/code/viaplay/"]
+  path = ~/code/viaplay/.gitconfig
