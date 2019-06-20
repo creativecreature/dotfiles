@@ -6,13 +6,22 @@ set -sg escape-time 0
 # Change the prefix key from ctrl-b to ctrl-s
 unbind C-b
 set -g prefix C-s
+
+
 # On double ctrl-s we send it to the running process
 # bind-key -r C-s send-prefix
 
 
-set -g mouse on
+# set -g mouse on
 # sane scrolling:
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+# bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+
+# Copy n paste
+bind P paste-buffer
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
@@ -90,7 +99,8 @@ bind-key b break-pane -d
 bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
 # Choose tree lets us switch between sessions, o for open-session
-bind C-o choose-session
+# bind C-o choose-session
+bind C-o split-window -v "cat ~/.z | sort -t '|' -k 2 -n -r | awk -F'|' '{print $1}' | awk -F/ '{print$NF}' | fzf | while read -r i; do z '$i'; done; tat;"
 
 # This quits the current session and breaks out to a new one
 bind-key C-b send-keys 'tat && exit' 'C-m'
