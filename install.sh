@@ -90,3 +90,12 @@ ln -sf $HOME/dotfiles/eslint/eslintrc $HOME/.eslintrc
 echo_item "Linked global eslint config" "green"
 
 echo ""
+
+
+
+# -- RIPGREP -----------------------------------------------------------------------
+
+ln -sf $HOME/dotfiles/ripgrep/ignore $HOME/.ignore
+echo_item "Linked ripgrep ignore file" "green"
+
+echo ""
