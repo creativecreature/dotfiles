@@ -67,6 +67,12 @@ endif
 set foldmethod=indent
 set foldlevel=99
 
+" This makes coc vim diagnostic messages work better
+set updatetime=300
+" Don't give |ins-completion-menu| messages. Coc vim
+set shortmess+=c
+set signcolumn=yes
+
 if has("autocmd")
 filetype plugin indent on
 
