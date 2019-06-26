@@ -6,5 +6,6 @@
   "coc.source.emoji.triggerCharacters": ["^"],
   "diagnostic.errorSign": "🔥",
   "diagnostic.warningSign": "💩",
-  "diagnostic.infoSign": "👉"
+  "diagnostic.infoSign": "💩",
+  "javascript.suggestionActions.enabled": false
 }
