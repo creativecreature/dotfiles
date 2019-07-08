@@ -1,6 +1,9 @@
 # OSX
 .DS_Store
 
+# LOCALDEV - Where I put my things to sometimes modify local dev experience
+LOCALDEV
+
 # Node
 node_modules
 

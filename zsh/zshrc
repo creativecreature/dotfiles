@@ -39,6 +39,7 @@ alias vim=nvim
 alias vi=nvim
 # alias ag='ag --path-to-ignore ~/.ignore'
 alias pe="~/code/viaplay/mtg-cloudformation/msp pe"
+alias msp="~/code/viaplay/mtg-cloudformation/msp"
 
 # Tilix fix
 # https://gnunn1.github.io/tilix-web/manual/vteconfig/
