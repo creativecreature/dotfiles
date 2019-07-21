@@ -14,5 +14,8 @@ fix ctrl-h nvim navigation
 
 Put this in `~/.profile` to bind caps lock to esc `setxkbmap -option caps:swapescape`
 
+## Tmux status bar color with palenight theme
+First click `ctrl s` followed by `:` to enter a command. then enter `set status-style "bg=black"`
+
 TODO:
 - Add environment in /etc/environment to dotfiles

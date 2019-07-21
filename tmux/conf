@@ -130,12 +130,13 @@ set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",screen-256color:Tc"
 
 # Disable the default status bar from nord theme
-set -g @nord_tmux_show_status_content "0"
+# set -g @nord_tmux_show_status_content "0"
+set -g @palenight_tmux_show_status_content "0"
 
 # https://github.com/arcticicestudio/nord-tmux/issues/35
-set -g @prefix_highlight_output_prefix "#[fg=brightcyan]#[bg=black]#[nobold]#[noitalics]#[nounderscore]#[bg=brightcyan]#[fg=black]"
-set -g @prefix_highlight_output_suffix ""
-set -g @prefix_highlight_copy_mode_attr "fg=brightcyan,bg=black,bold"
+# set -g @prefix_highlight_output_prefix "#[fg=brightcyan]#[bg=black]#[nobold]#[noitalics]#[nounderscore]#[bg=brightcyan]#[fg=black]"
+# set -g @prefix_highlight_output_suffix ""
+# set -g @prefix_highlight_copy_mode_attr "fg=brightcyan,bg=black,bold"
 
 
 
@@ -154,8 +155,8 @@ set -g @sysstat_cpu_color_low "cyan"
 
 # Plugins
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
-set -g @plugin 'arcticicestudio/nord-tmux'
-# set -g @plugin 'tonylambiris/palenight-tmux'
+# set -g @plugin 'arcticicestudio/nord-tmux'
+set -g @plugin 'tonylambiris/palenight-tmux'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
