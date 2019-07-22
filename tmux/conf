@@ -134,21 +134,32 @@ set-option -ga terminal-overrides ",screen-256color:Tc"
 set -g @palenight_tmux_show_status_content "0"
 
 # https://github.com/arcticicestudio/nord-tmux/issues/35
-set -g @prefix_highlight_output_prefix "#[fg=brightcyan]#[bg=black]#[nobold]#[noitalics]#[nounderscore]#[bg=brightcyan]#[fg=black]"
-set -g @prefix_highlight_output_suffix ""
-set -g @prefix_highlight_copy_mode_attr "fg=brightcyan,bg=black,bold"
+# set -g @prefix_highlight_output_prefix "#[fg=brightcyan]#[bg=black]#[nobold]#[noitalics]#[nounderscore]#[bg=brightcyan]#[fg=black]"
+# set -g @prefix_highlight_output_suffix ""
+# set -g @prefix_highlight_copy_mode_attr "fg=brightcyan,bg=black,bold"
 
+set -g @prefix_highlight_output_prefix "#[fg=#89DDFF]#[bg=default]#[nobold]#[noitalics]#[nounderscore]#[bg=#89DDFF]#[fg=default]"
+set -g @prefix_highlight_output_suffix ""
+# set -g @prefix_highlight_show_copy_mode 'on'
+set -g @prefix_highlight_copy_mode_attr "fg=#ffcb6b,bg=default,bold"
 
 
 
 set -g status-left-length 50
 set -g status-right-length 150
-set -g status-left "#[fg=black,bg=#c792ea,bold] #S #[fg=#c792ea,bg=black,nobold,noitalics,nounderscore]"
-set -g status-right "#{prefix_highlight}#[fg=brightblack,bg=black,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack]#{sysstat_cpu}#[fg=white,bg=brightblack] #[fg=white,bg=brightblack] #{sysstat_mem}#[fg=white,bg=brightblack] #[fg=white,bg=brightblack] %Y-%m-%d #[fg=white,bg=brightblack,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %H:%M #[fg=cyan,bg=brightblack,nobold,noitalics,nounderscore]#[fg=black,bg=cyan,bold] #H "
+set status-style "bg=black"
+# set -g status-left "#[fg=#292D3E,bg=#ffcb6b,bold] #S #[fg=#ffcb6b,bg=default,nobold,noitalics,nounderscore]"
+set -g status-left "#[fg=black,bg=#ffcb6b,bold] #S #[fg=#ffcb6b,bg=black,nobold,noitalics,nounderscore]"
+set -g status-right "#{prefix_highlight}#[fg=brightblack,bg=black,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack]#{sysstat_cpu}#[fg=white,bg=brightblack] #[fg=white,bg=brightblack] #{sysstat_mem}#[fg=white,bg=brightblack] #[fg=white,bg=brightblack] %Y-%m-%d #[fg=white,bg=brightblack,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %H:%M #[fg=#ffcb6b,bg=brightblack,nobold,noitalics,nounderscore]#[fg=black,bg=#ffcb6b,bold] #H "
 
-set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
-set -g window-status-current-format "#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]"
+# set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
+# set -g window-status-current-format "#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]"
+# set -g window-status-separator ""
+
+set -g window-status-format "#[fg=colour235,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#I #[fg=#c792ea,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#W #F #[fg=#3E4452,bg=default,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=colour235,bg=#c792ea,nobold,noitalics,nounderscore] #[fg=#292D3E,bg=#c792ea]#I #[fg=#292D3E,bg=#c792ea,nobold,noitalics,nounderscore] #[fg=#292D3E,bg=#c792ea]#W #F #[fg=#c792ea,bg=default,nobold,noitalics,nounderscore]"
 set -g window-status-separator ""
+set -g monitor-activity off
 set -g @sysstat_mem_color_low "#c3e88d"
 set -g @sysstat_cpu_color_low "#c3e88d"
 
