@@ -141,20 +141,6 @@ echo ""
 
 
 
-# -- Tilix --------------------------------------------------------------------
-
-if exists "tilix"; then
-  echo_item "Tilix is already installed" "green"
-else
-  sudo eopkg install tilix
-  curl -fLo ~/.config/tilix/schemes/nord.json --create-dirs https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json
-
-fi
-
-echo ""
-
-
-
 # -- Slack --------------------------------------------------------------------
 
 if exists "slack"; then
