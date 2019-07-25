@@ -226,3 +226,16 @@ else
 fi
 
 echo ""
+
+
+
+# -- Pipenv --------------------------------------------------------------------
+
+if exists "pipenv"; then
+  echo_item "Pipenv already installed" "green"
+else
+  sudo eopkg install pipenv
+fi
+
+echo ""
+
