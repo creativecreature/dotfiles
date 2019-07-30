@@ -44,8 +44,8 @@ nnoremap <silent> <leader><space> :noh<cr>
 " noremap <C-h> <C-w>h
 
 " Zoom and rebalance vim panes
-nnoremap <leader>z :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>Z :wincmd =<cr>
+nnoremap <leader>Z :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>z :wincmd =<cr>
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
