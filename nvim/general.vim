@@ -16,6 +16,8 @@ set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
 set hidden
 set inccommand=nosplit
+set number relativenumber
+set nu rnu
 
 " Indentation
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
