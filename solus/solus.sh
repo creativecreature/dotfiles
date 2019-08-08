@@ -3,14 +3,12 @@
 
 
 # -- Hardware settings -----------------------------------------------------------------------
-
 #Add US and SE input sources
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'se')]"
 
 
 
 # -- Git -----------------------------------------------------------------------
-
 if exists "git"; then
   echo_item "Git is already installed" "green"
 else
@@ -22,7 +20,6 @@ echo ""
 
 
 # -- zsh -----------------------------------------------------------------------
-
 if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
@@ -38,7 +35,6 @@ echo ""
 
 
 # -- nvm -----------------------------------------------------------------------
-
 if exists "node"; then
   echo_item "Node tools are already installed" green
 else
@@ -59,7 +55,6 @@ echo ""
 
 
 # -- Neovim --------------------------------------------------------------------
-
 if exists "nvim"; then
   echo_item "Neovim is already installed" green
 else
@@ -76,7 +71,6 @@ echo ""
 
 
 # -- Ctags --------------------------------------------------------------------
-
 if exists "ctags"; then
   echo_item "Ctags is already installed" "green"
 else
@@ -87,7 +81,6 @@ echo ""
 
 
 # -- Ripgrep --------------------------------------------------------------------
-
 if exists "ripgrep"; then
   echo_item "Ripgrep is already installed" "green"
 else
@@ -99,7 +92,6 @@ echo ""
 
 
 # -- jq --------------------------------------------------------------------
-
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
@@ -109,7 +101,6 @@ fi
 echo ""
 
 # -- Tmux --------------------------------------------------------------------
-
 if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
@@ -121,7 +112,6 @@ echo ""
 
 
 # -- Nordic GTK --------------------------------------------------------------------
-
 #sudo rm -rf /usr/share/themes/Nordic
 #sudo git clone https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic
 #gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
@@ -132,7 +122,6 @@ echo ""
 
 
 # -- Zafiro Icons --------------------------------------------------------------------
-
 sudo rm -rf /usr/share/icons/Zafiro
 sudo git clone https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro
 gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
@@ -142,7 +131,6 @@ echo ""
 
 
 # -- Slack --------------------------------------------------------------------
-
 if exists "slack"; then
   echo_item "Slack is already installed" "green"
 else
@@ -155,7 +143,6 @@ echo ""
 
 
 # -- Google Chrome --------------------------------------------------------------------
-
 if exists "google-chrome-stable"; then
   echo_item "Google chrome is already installed" "green"
 else
@@ -168,7 +155,6 @@ echo ""
 
 
 # -- Docker --------------------------------------------------------------------
-
 if exists "docker"; then
   echo_item "Docker is already installed" "green"
 else
@@ -181,7 +167,6 @@ echo ""
 
 
 # -- Docker Compose --------------------------------------------------------------------
-
 if exists "docker-compose"; then
   echo_item "Docker-compose is already installed" "green"
 else
@@ -194,7 +179,6 @@ echo ""
 
 
 # -- Make --------------------------------------------------------------------
-
 if exists "make"; then
   echo_item "Make is already installed" "green"
 else
@@ -206,7 +190,6 @@ echo ""
 
 
 # -- System dev tools --------------------------------------------------------------------
-
 if exists "g++"; then
   echo_item "System develop tools already installed" "green"
 else
@@ -218,7 +201,6 @@ echo ""
 
 
 # -- Python --------------------------------------------------------------------
-
 if exists "virtualenv"; then
   echo_item "Virtual env already installed" "green"
 else
@@ -230,7 +212,6 @@ echo ""
 
 
 # -- Pipenv --------------------------------------------------------------------
-
 if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
@@ -238,4 +219,3 @@ else
 fi
 
 echo ""
-
