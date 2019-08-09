@@ -16,3 +16,5 @@ First click `ctrl s` followed by `:` to enter a command. then enter `set status-
 
 TODO:
 - Add environment in /etc/environment to dotfiles
+- Make OS check to determine between solus.sh and ubuntu.sh. Use `cat /etc/os-release`
+
