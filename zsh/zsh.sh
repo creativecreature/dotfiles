@@ -22,11 +22,18 @@ if exists "zsh"; then
     elif exists "wget"; then
       wget --no-check-certificate http://install.ohmyz.sh -O - | sh
     else
-      echo_item "You need either curl or wget installed to download Oh My ZSH" "red"
+      echo_item "You need either curl or wget installed to download Oh my zsh" "red"
     fi
   fi
 else
-  echo_item "ZSH is not installed" "red"
+  echo_item "Zsh is not installed" "red"
+fi
+
+if [[ "$SHELL" == "/bin/zsh"  ]]; then
+  echo_item "Your default shell is already zsh" "green"
+else
+  echo_item "Setting zsh to be your default shell" "green"
+  chsh -s /bin/zsh
 fi
 
 echo ""
