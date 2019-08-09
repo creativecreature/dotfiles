@@ -37,4 +37,7 @@ else
   ln -sf $HOME/dotfiles/git/gitconfig_conner $HOME/code/conner/.gitconfig
 fi
 
+echo_item "Setting  ~/.gitignore_global to global ignore" "green"
+git config --global core.excludesfile ~/.gitignore_global
+
 echo ""

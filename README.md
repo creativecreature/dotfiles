@@ -1,5 +1,4 @@
 # dotfiles
-run `git config --global core.excludesfile ~/.gitignore_global`
 
 run `chsh -s /bin/zsh` and then restart the computer to change shell to zsh after running the installer
 
