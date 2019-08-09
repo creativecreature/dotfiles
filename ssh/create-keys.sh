@@ -8,6 +8,7 @@ WORK_KEY_PUB=$HOME/.ssh/nentgroup_rsa.pub
 PERSONAL_KEY_PUB=$HOME/.ssh/private_rsa.pub
 
 echo_header "SSH Setup"
+
 if [[ -d "$SSH_DIR" ]]; then
   echo_item "SSH dir already exists" "green"
 else
@@ -34,6 +35,7 @@ if [[ -f "$SSH_CONFIG" || -L "$SSH_CONFIG" ]]; then
 else
   echo_item "Symlinking config to ~/.ssh/config file"
   ln -sf $HOME/dotfiles/ssh/config $HOME/.ssh/config
+  chmod 600 ~/.ssh/config
 fi
 
 echo ""

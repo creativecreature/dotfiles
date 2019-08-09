@@ -48,11 +48,7 @@ fi
 
 
 # -- GIT -----------------------------------------------------------------------
-ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
-echo_item "Linked global .gitignore" "green"
-ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
-echo_item "Linked gitconfig" "green"
-echo ""
+source 'git/configure-git.sh'
 
 
 
