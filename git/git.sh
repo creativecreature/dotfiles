@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source './scripts/helpers.sh'
-
 echo_header "GIT Configuration"
 
 echo_item "Symlinking global gitignore" "green"

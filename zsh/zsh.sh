@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source 'scripts/helpers.sh'
-
 ZSHRC=$HOME/.zshrc
 OH_MY_ZSH=$HOME/.oh-my-zsh
 

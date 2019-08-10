@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source 'scripts/helpers.sh'
-
 CODE_DIR=$HOME/code
 VIAPLAY_DIR=$HOME/code/viaplay
 CONNER_DIR=$HOME/code/conner

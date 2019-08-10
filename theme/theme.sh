@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source './scripts/helpers.sh'
 THEMES_DIR=/usr/share/themes
 THEME_DIR=/usr/share/themes/Nordic
 ICONS_DIR=/usr/share/icons
