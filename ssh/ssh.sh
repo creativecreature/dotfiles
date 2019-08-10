@@ -30,12 +30,8 @@ else
   ssh-keygen -t rsa -b 4096 -f ~/.ssh/private_rsa -C "charlesvictorconner@gmail.com"
 fi
 
-if [[ -f "$SSH_CONFIG" || -L "$SSH_CONFIG" ]]; then
-  echo_item "SSH config already exists" "green"
-else
-  echo_item "Symlinking config to ~/.ssh/config file"
-  ln -sf $HOME/dotfiles/ssh/config $HOME/.ssh/config
-  chmod 600 ~/.ssh/config
-fi
+echo_item "Symlinking config to ~/.ssh/config file" "green"
+ln -sf $HOME/dotfiles/ssh/config $HOME/.ssh/config
+chmod 600 ~/.ssh/config
 
 echo ""
