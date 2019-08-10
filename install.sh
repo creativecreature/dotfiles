@@ -7,42 +7,15 @@ source 'scripts/helpers.sh'
 
 
 # -- Setup directory structure -------------------------------------------------
-echo_header "Setting up source code directory structure"
-CODE_DIR=$HOME/code
-VIAPLAY_DIR=$HOME/code/viaplay
-CONNER_DIR=$HOME/code/conner
+source 'scripts/setup_structure.sh'
 
-if [[ -d "$CODE_DIR" ]]; then
-  echo_item "Code dir already exists" "green"
+
+
+# -- Solus- or Ubuntu-Specific Setup --------------------------------------------
+if system_is_solus; then
+  source 'solus/solus.sh'
 else
-  echo_item "Creating code dir" "green"
-  mkdir $HOME/code
-fi
-
-if [[ -d "$VIAPLAY_DIR" ]]; then
-  echo_item "Viaplay dir already exists" "green"
-else
-  echo_item "Creating viaplay dir" "green"
-  mkdir $HOME/viaplay
-fi
-
-if [[ -d "$CONNER_DIR" ]]; then
-  echo_item "Conner dir already exists" "green"
-else
-  echo_item "Creating conner dir" "green"
-  mkdir $HOME/conner
-fi
-
-echo ""
-
-
-
-# -- OSX- or Linux-Specific Setup ----------------------------------------------
-if system_is_OSX; then
-  source 'osx/osx.sh'
-elif system_is_linux; then
-  #source 'ubuntu/ubuntu.sh'
-  source solus/solus.sh
+  source 'ubuntu/ubuntu.sh'
 fi
 
 

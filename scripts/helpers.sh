@@ -93,3 +93,12 @@ system_is_linux() {
     return 1
   fi
 }
+
+system_is_solus() {
+  ID=sudo cat /etc/os-release | grep solus
+  if [[ "$ID"=~solus  ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
