@@ -50,7 +50,4 @@ source 'eslint/eslint.sh'
 
 
 # -- RIPGREP -----------------------------------------------------------------------
-ln -sf $HOME/dotfiles/ripgrep/ignore $HOME/.ignore
-echo_item "Linked ripgrep ignore file" "green"
-
-echo ""
+source 'ripgrep/ripgrep.sh'
