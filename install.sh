@@ -41,14 +41,7 @@ source 'nvim/nvim.sh'
 
 
 # -- TMUX -----------------------------------------------------------------------
-ln -sf $HOME/dotfiles/tmux/conf $HOME/.tmux.conf
-echo_item "Linked tmux configuration" "green"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo_item "Cloned tmux plugin manager" "green"
-ln -sf $HOME/dotfiles/tmux/tat $HOME/bin/tat
-echo_item "Linked tat script" "green"
-
-echo ""
+source 'tmux/tmux.sh'
 
 
 
