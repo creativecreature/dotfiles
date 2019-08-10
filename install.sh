@@ -46,11 +46,7 @@ source 'tmux/tmux.sh'
 
 
 # -- ESLINT -----------------------------------------------------------------------
-ln -sf $HOME/dotfiles/eslint/eslintrc $HOME/.eslintrc
-echo_item "Linked global eslint config" "green"
-
-echo ""
-
+source 'eslint/eslint.sh'
 
 
 # -- RIPGREP -----------------------------------------------------------------------
