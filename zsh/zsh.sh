@@ -7,13 +7,10 @@ OH_MY_ZSH=$HOME/.oh-my-zsh
 
 echo_header "ZSH Configuration"
 
+echo_item "Symlinking zshrc" "green"
+ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+
 if exists "zsh"; then
-  if [[ -f "$ZSHRC" || -L "$ZSHRC" ]]; then
-    echo_item "~/.zshrc already exists" "green"
-  else
-    ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
-    echo_item "Symlinking zshrc" "green"
-  fi
   if [[ -d  "$OH_MY_ZSH" ]]; then
     echo_item "Oh my zsh is already installed" "green"
   else
@@ -30,7 +27,7 @@ else
 fi
 
 if [[ "$SHELL" == "/bin/zsh"  ]]; then
-  echo_item "Your default shell is already zsh" "green"
+  echo_item "Your default shell is already set to zsh" "green"
 else
   echo_item "Setting zsh to be your default shell" "green"
   chsh -s /bin/zsh
