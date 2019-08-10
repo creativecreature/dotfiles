@@ -2,7 +2,7 @@
 
 source './scripts/helpers.sh'
 THEMES_DIR=/usr/share/themes
-THEME_DIR=usr/share/themes/Nordic
+THEME_DIR=/usr/share/themes/Nordic
 ICONS_DIR=/usr/share/icons
 ICON_DIR=/usr/share/icons/Zafiro
 

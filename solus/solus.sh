@@ -67,7 +67,7 @@ echo ""
 
 
 # -- Ripgrep --------------------------------------------------------------------
-if exists "ripgrep"; then
+if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
   echo_item "Installing Ripgrep" "green"
