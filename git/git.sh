@@ -2,7 +2,7 @@
 
 source './scripts/helpers.sh'
 
-echo_header "GIT configuration"
+echo_header "GIT Configuration"
 
 echo_item "Symlinking global gitignore" "green"
 ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
