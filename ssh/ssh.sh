@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source './scripts/helpers.sh'
-
 SSH_DIR=$HOME/.ssh
 SSH_CONFIG=$HOME/.ssh/config
 WORK_KEY_PUB=$HOME/.ssh/nentgroup_rsa.pub

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source 'scripts/helpers.sh'
-
 TMUX_DIR=$HOME/.tmux
 PLUGIN_DIR=$HOME/.tmux/plugins
 TPM_DIR=$HOME/.tmux/plugins/tpm

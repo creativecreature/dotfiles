@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source 'scripts/helpers.sh'
-
 echo_header "NVIM Configuration"
 
 echo_item "Symlinking nvim configuration" "green"
