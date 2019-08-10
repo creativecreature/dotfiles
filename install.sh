@@ -67,3 +67,8 @@ source 'theme/theme.sh'
 
 # -- TERMINAL ----------------------------------------------------------------------
 source 'terminal/terminal.sh'
+
+
+
+# -- ENVIRONMENT --------------------------------------------------------------------
+source 'environment/environment.sh'
