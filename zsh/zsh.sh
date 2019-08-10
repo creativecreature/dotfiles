@@ -7,6 +7,9 @@ OH_MY_ZSH=$HOME/.oh-my-zsh
 
 echo_header "ZSH Configuration"
 
+echo_item "Symlinking zprofile" "green"
+ln -sf $HOME/dotfiles/zsh/zprofile $HOME/.zprofile
+
 echo_item "Symlinking zshrc" "green"
 ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
