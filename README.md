@@ -1,6 +1,5 @@
 # dotfiles
 
-Put this in `~/.profile` to bind caps lock to esc `setxkbmap -option caps:swapescape`
 
 
 TODO:
