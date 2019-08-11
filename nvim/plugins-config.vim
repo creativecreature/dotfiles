@@ -14,6 +14,9 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+" ALT-k and ALT-j to navigate errors
+nmap <silent> ˚ <Plug>(coc-diagnostic-prev)
+nmap <silent> ∆ <Plug>(coc-diagnostic-next)
 
 " Easymotion
 map <Leader>/ <Plug>(incsearch-easymotion-/)
@@ -49,9 +52,6 @@ hi ALEErrorSign guifg=#DF8C8C
 let g:ale_sign_warning = '🙀'
 hi ALEWarningSign guifg=#F2C38F
 let g:ale_linters = {'javascript': ['eslint']}
-" ALT-k and ALT-j to navigate errors
-nmap <silent> ˚ <Plug>(ale_previous_wrap)
-nmap <silent> ∆ <Plug>(ale_next_wrap)
 
 " Indentline
 " This is to display ` and "
