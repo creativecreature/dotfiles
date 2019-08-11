@@ -15,8 +15,8 @@ function! s:show_documentation()
   endif
 endfunction
 " ALT-k and ALT-j to navigate errors
-nmap <silent> ˚ <Plug>(coc-diagnostic-prev)
-nmap <silent> ∆ <Plug>(coc-diagnostic-next)
+nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
+nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
 
 " Easymotion
 map <Leader>/ <Plug>(incsearch-easymotion-/)
