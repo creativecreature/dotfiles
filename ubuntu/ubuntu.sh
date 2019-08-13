@@ -1,7 +1,14 @@
 #!/bin/bash
 
+echo_header "Ubuntu Configuration"
 
-# -- Hardware settings -----------------------------------------------------------------------
+
+
+# -- Update repo ----------------------------------------------------------------
+echo_item "Updating repo" "green"
+sudo apt-get update
+echo ""
+
 
 
 # -- Git -----------------------------------------------------------------------
@@ -96,7 +103,7 @@ echo ""
 
 # -- Ripgrep --------------------------------------------------------------------
 
-if exists "ripgrep"; then
+if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
   sudo apt-get install ripgrep
@@ -166,12 +173,24 @@ echo ""
 
 
 
-# -- Make --------------------------------------------------------------------
-
-if exists "make"; then
-  echo_item "Make is already installed" "green"
+# -- Python --------------------------------------------------------------------
+if exists "virtualenv"; then
+  echo_item "Virtualenv already installed" "green"
 else
-  sudo apt-get install make
+  echo_item "Installing virtualenv" "green"
+  sudo apt-get install virtualenv
+fi
+
+echo ""
+
+
+
+# -- Pipenv --------------------------------------------------------------------
+if exists "pipenv"; then
+  echo_item "Pipenv already installed" "green"
+else
+  echo_item "Installing pipenv" "green"
+  sudo apt-get install pipenv
 fi
 
 echo ""
