@@ -7,6 +7,9 @@ set -sg escape-time 0
 unbind C-b
 set -g prefix C-s
 
+# Larger scrollback, can reduce this if we want to same RAM
+set-option -g history-limit 100000
+
 
 # On double ctrl-s we send it to the running process
 # bind-key -r C-s send-prefix
