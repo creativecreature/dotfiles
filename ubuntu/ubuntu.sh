@@ -106,6 +106,8 @@ echo ""
 if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
+  sudo add-apt-repository ppa:x4121/ripgrep
+  sudo apt-get update
   sudo apt-get install ripgrep
 fi
 
@@ -128,7 +130,18 @@ echo ""
 if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
-  sudo apt-get install tmux
+  sudo apt-get -y install wget tar libevent-dev libncurses-dev
+  TMUX_VERSION=2.9a
+  mkdir $HOME/tmp/tmux
+  cd $HOME/tmp/tmux
+  wget https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
+  tar xf tmux-${TMUX_VERSION}.tar.gz
+  rm -f tmux-${TMUX_VERSION}.tar.gz
+  cd tmux-${TMUX_VERSION}
+  ./configure && make
+  sudo make install
+  cd $HOME/dotfiles
+  rm -rf $home/tmp/tmux
 fi
 
 echo ""
