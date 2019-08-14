@@ -211,3 +211,18 @@ else
 fi
 
 echo ""
+
+
+
+# -- Powerline Fonts -------------------------------------------------------------
+if [[ -n $(find $HOME/.local/share/fonts -type f -name '*Powerline*') ]]; then
+  echo_item "Powerline fonts are already installed" "green"
+else
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd -
+  rm -rf fonts
+fi
+
+echo ""
