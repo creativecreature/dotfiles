@@ -11,6 +11,13 @@ echo ""
 
 
 
+# -- Tools ----------------------------------------------------------------
+echo_item "Installing some software needed for installing from source"
+sudo apt-get -y install wget tar libevent-dev libncurses-dev make
+echo ""
+
+
+
 # -- Git -----------------------------------------------------------------------
 
 if exists "git"; then
@@ -76,14 +83,12 @@ echo ""
 # -- Neovim --------------------------------------------------------------------
 
 if exists "nvim"; then
-  echo_item "Neovim is already installed" green
+  echo_item "Neovim is already installed" "green"
 else
-  if get_boolean_response "Do you want to install Neovim?"; then
-    sudo apt-get install neovim
-    curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  else
-    echo_item "Skipping Neovim install" red
-  fi
+  echo_item "Installing Neovim" "green"
+  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv ./nvim.appimage /usr/bin/nvim
 fi
 
 echo ""
@@ -130,7 +135,6 @@ echo ""
 if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
-  sudo apt-get -y install wget tar libevent-dev libncurses-dev
   TMUX_VERSION=2.9a
   mkdir $HOME/tmp/tmux
   cd $HOME/tmp/tmux

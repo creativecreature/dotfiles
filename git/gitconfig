@@ -4,7 +4,7 @@
   editor = /usr/local/bin/nvim
 
 [core]
-	excludesfile = /home/cnr/.gitignore_global
+	excludesfile = /home/conner/.gitignore_global
 
 [includeif "gitdir:~/code/conner/"]
   path = ~/code/conner/.gitconfig
