@@ -41,12 +41,6 @@ alias vi=nvim
 alias pe="~/code/viaplay/mtg-cloudformation/msp pe"
 alias msp="~/code/viaplay/mtg-cloudformation/msp"
 
-# Tilix fix
-# https://gnunn1.github.io/tilix-web/manual/vteconfig/
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /usr/share/defaults/etc/profile.d/vte.sh
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf search with ripgrep and preview

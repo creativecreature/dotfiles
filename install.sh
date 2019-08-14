@@ -18,7 +18,8 @@ source 'scripts/setup_structure.sh'
 
 # -- Solus- or Ubuntu-Specific Setup --------------------------------------------
 if system_is_solus; then
-  source 'solus/solus.sh'
+  # source 'solus/solus.sh'
+  source 'ubuntu/ubuntu.sh'
 else
   source 'ubuntu/ubuntu.sh'
 fi
