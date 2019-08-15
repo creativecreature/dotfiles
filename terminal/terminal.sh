@@ -10,11 +10,17 @@ infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
 rm $TERM.ti
 
-# echo_item "Installing palenight profile" "green"
-# git clone https://github.com/CharlesConner/palenight-gnome-term --depth=1
-# cd palenight-gnome-term
-# ./palenight.sh
-# cd -
-# rm -rf palenight-gnome-term
+PROFILE_FILE=$HOME/.config/palenightprofile
+if [[ -f  "$PROFILE_FILE" ]]; then
+  echo_item "Palenight profile for gnome is already installed" "green"
+else
+  echo_item "Installing palenight profile" "green"
+  git clone https://github.com/CharlesConner/palenight-gnome-term --depth=1
+  cd palenight-gnome-term
+  ./palenight.sh
+  cd -
+  rm -rf palenight-gnome-term
+  touch $PROFILE_FILE
+fi
 
 echo ""

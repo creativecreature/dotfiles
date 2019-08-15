@@ -23,7 +23,7 @@ echo ""
 if exists "git"; then
   echo_item "Git is already installed" "green"
 else
-  sudo apt-get install git
+  sudo apt-get -y install git
 fi
 
 echo ""
@@ -35,7 +35,7 @@ echo ""
 if exists "curl"; then
   echo_item "curl is already installed" "green"
 else
-  sudo apt-get install curl
+  sudo apt-get -y install curl
 fi
 
 echo ""
@@ -48,7 +48,7 @@ if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
   if get_boolean_response "Do you want to install zsh?"; then
-    sudo apt-get install zsh
+    sudo apt-get -y install zsh
   else
     echo_item "Skipping zsh install" red
   fi
@@ -100,7 +100,7 @@ echo ""
 if exists "ctags"; then
   echo_item "Ctags is already installed" "green"
 else
-  sudo apt-get install ctags
+  sudo apt-get -y install ctags
 fi
 
 echo ""
@@ -113,7 +113,7 @@ if exists "rg"; then
 else
   sudo add-apt-repository ppa:x4121/ripgrep
   sudo apt-get update
-  sudo apt-get install ripgrep
+  sudo apt-get -y install ripgrep
 fi
 
 echo ""
@@ -125,7 +125,7 @@ echo ""
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
-  sudo apt-get install jq
+  sudo apt-get -y install jq
 fi
 
 echo ""
@@ -157,7 +157,7 @@ echo ""
 if exists "plank"; then
   echo_item "Plank is already installed" "green"
 else
-  sudo apt-get install plank
+  sudo apt-get -y install plank
 fi
 
 echo ""
@@ -169,7 +169,7 @@ echo ""
 if exists "docker"; then
   echo_item "Docker is already installed" "green"
 else
-  sudo apt-get install docker
+  sudo apt-get -y install docker
   sudo usermod -aG docker $USER
 fi
 
@@ -182,7 +182,7 @@ echo ""
 if exists "docker-compose"; then
   echo_item "Docker-compose is already installed" "green"
 else
-  sudo apt-get install docker-compose
+  sudo apt-get -y install docker-compose
   sudo usermod -aG docker-compose $USER
 fi
 
@@ -195,7 +195,7 @@ if exists "virtualenv"; then
   echo_item "Virtualenv already installed" "green"
 else
   echo_item "Installing virtualenv" "green"
-  sudo apt-get install virtualenv
+  sudo apt-get -y install virtualenv
 fi
 
 echo ""
@@ -207,7 +207,7 @@ if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
   echo_item "Installing pipenv" "green"
-  sudo apt-get install pipenv
+  sudo apt-get -y install pipenv
 fi
 
 echo ""
@@ -233,7 +233,7 @@ echo ""
 if exists "gnome-tweaks"; then
   echo_item "Gnome tweaks is already installed" "green"
 else
-  sudo apt-get install gnome-tweaks
+  sudo apt-get -y install gnome-tweaks
 fi
 
 echo ""
@@ -244,7 +244,7 @@ echo_header "Removing unwanted software"
 # -- Uninstall Thunderbird -------------------------------------------------------
 if exists "thunderbird"; then
   echo_item "Uninstalling thunderbird" "green"
-  sudo apt-get remove thunderbird
+  sudo apt-get -y remove thunderbird
 else
   echo_item "Thunderbird is already uninstalled" "green"
 fi
@@ -256,7 +256,7 @@ echo ""
 # -- Uninstall Rhythmbox -------------------------------------------------------
 if exists "rhythmbox"; then
   echo_item "Uninstalling Rhythmbox" "green"
-  sudo apt-get remove rhythmbox
+  sudo apt-get -y remove rhythmbox
 else
   echo_item "Rhythmbox is already uninstalled" "green"
 fi
@@ -268,7 +268,7 @@ echo ""
 # -- Uninstall Mahjongg -------------------------------------------------------
 if exists "gnome-mahjongg"; then
   echo_item "Uninstalling Mahjongg" "green"
-  sudo apt-get remove gnome-mahjongg
+  sudo apt-get -y remove gnome-mahjongg
 else
   echo_item "Mahjongg is already uninstalled" "green"
 fi
@@ -280,7 +280,7 @@ echo ""
 # -- Uninstall Mines -------------------------------------------------------
 if exists "gnome-mines"; then
   echo_item "Uninstalling Mines" "green"
-  sudo apt-get remove gnome-mines
+  sudo apt-get -y remove gnome-mines
 else
   echo_item "Mines is already uninstalled" "green"
 fi
