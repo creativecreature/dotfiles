@@ -95,10 +95,6 @@ system_is_linux() {
 }
 
 system_is_solus() {
-  ID=sudo cat /etc/os-release | grep solus >/dev/null 2>/dev/null
-  if [[ "$ID"=~solus  ]]; then
-    return 0
-  else
-    return 1
-  fi
+  OS_INFO= sudo cat /etc/os-release
+  return grep -q $OS_INFO
 }
