@@ -237,3 +237,52 @@ else
 fi
 
 echo ""
+
+
+
+echo_header "Removing unwanted software"
+# -- Uninstall Thunderbird -------------------------------------------------------
+if exists "thunderbird"; then
+  echo_item "Uninstalling thunderbird" "green"
+  sudo apt-get remove thunderbird
+else
+  echo_item "Thunderbird is already uninstalled" "green"
+fi
+
+echo ""
+
+
+
+# -- Uninstall Rhythmbox -------------------------------------------------------
+if exists "rhythmbox"; then
+  echo_item "Uninstalling Rhythmbox" "green"
+  sudo apt-get remove rhythmbox
+else
+  echo_item "Rhythmbox is already uninstalled" "green"
+fi
+
+echo ""
+
+
+
+# -- Uninstall Mahjongg -------------------------------------------------------
+if exists "gnome-mahjongg"; then
+  echo_item "Uninstalling Mahjongg" "green"
+  sudo apt-get remove gnome-mahjongg
+else
+  echo_item "Mahjongg is already uninstalled" "green"
+fi
+
+echo ""
+
+
+
+# -- Uninstall Mines -------------------------------------------------------
+if exists "gnome-mines"; then
+  echo_item "Uninstalling Mines" "green"
+  sudo apt-get remove gnome-mines
+else
+  echo_item "Mines is already uninstalled" "green"
+fi
+
+echo ""
