@@ -332,3 +332,15 @@ else
   sudo apt install enpass -y
   touch $HOME/.config/dotfile-installs/enpass
 fi
+
+
+
+# -- Slack ------------------------------------------------------------------
+if exists "slack"; then
+  echo_item "Slack is already installed" "green"
+else
+  echo_item "Installing slack" "green"
+  sudo snap install slack --classic
+fi
+
+echo ""

@@ -5,6 +5,7 @@ VIAPLAY_DIR=$HOME/code/viaplay
 CONNER_DIR=$HOME/code/conner
 BIN_DIR=$HOME/bin
 INSTALL_DIR=$HOME/.config/dotfile-installs
+WALLPAPER_DIR=$HOME/wallpaper
 
 echo_header "Setting up source code directory structure"
 
@@ -42,4 +43,12 @@ else
   echo_item "Creating dotfile-installs directory" "green"
   mkdir "$INSTALL_DIR"
 fi
+
+if [[ -d "$WALLPAPER_DIR" ]]; then
+  echo_item "Wallpaper directory already exists" "green"
+else
+  echo_item "Creating Wallpaper directory" "green"
+  mkdir "$WALLPAPER_DIR"
+fi
+
 echo ""

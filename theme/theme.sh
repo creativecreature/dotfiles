@@ -36,4 +36,6 @@ else
   gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
 fi
 
+
+
 echo ""
