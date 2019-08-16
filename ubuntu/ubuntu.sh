@@ -4,28 +4,9 @@ echo_header "Ubuntu Configuration"
 
 
 
-# -- Update repo ----------------------------------------------------------------
-echo_item "Updating repo" "green"
-sudo apt-get update
-echo ""
-
-
-
 # -- Tools ----------------------------------------------------------------
 echo_item "Installing some software needed for installing from source"
 sudo apt-get -y install wget tar libevent-dev libncurses-dev make
-echo ""
-
-
-
-# -- Git -----------------------------------------------------------------------
-
-if exists "git"; then
-  echo_item "Git is already installed" "green"
-else
-  sudo apt-get -y install git
-fi
-
 echo ""
 
 
