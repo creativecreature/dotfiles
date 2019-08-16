@@ -339,8 +339,20 @@ fi
 if exists "slack"; then
   echo_item "Slack is already installed" "green"
 else
-  echo_item "Installing slack" "green"
+  echo_item "Installing Slack" "green"
   sudo snap install slack --classic
+fi
+
+echo ""
+
+
+
+# -- Firefox ----------------------------------------------------------------
+if exists "firefox"; then
+  echo_item "Firefox is already installed" "green"
+else
+  echo_item "Installing Firefox" "green"
+  sudo apt-get install -y firefox
 fi
 
 echo ""
