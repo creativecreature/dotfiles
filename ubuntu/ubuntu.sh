@@ -47,11 +47,8 @@ echo ""
 if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
-  if get_boolean_response "Do you want to install zsh?"; then
-    sudo apt-get -y install zsh
-  else
-    echo_item "Skipping zsh install" red
-  fi
+  sudo apt-get -y install zsh
+  echo_item "Skipping zsh install" red
 fi
 
 echo ""
@@ -207,7 +204,8 @@ if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
   echo_item "Installing pipenv" "green"
-  sudo apt-get -y install pipenv
+  sudo apt install -y python3-pip
+  pip3 install pipenv
 fi
 
 echo ""
@@ -286,3 +284,9 @@ else
 fi
 
 echo ""
+
+
+
+# -- Scrolling --------------------------------------------------------------
+echo_item "Turning off natural-scroll for the touchpad" "green"
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
