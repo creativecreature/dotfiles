@@ -12,7 +12,7 @@ rm $TERM.ti
 
 # I dont like this solution much but I havent found a way to query the gnome terminal
 # for profile names, only ID's.
-PROFILE_FILE=$HOME/.config/palenightprofile
+PROFILE_FILE=$HOME/.config/dotfile-installs/palenightprofile
 if [[ -f  "$PROFILE_FILE" ]]; then
   echo_item "Palenight profile for gnome is already installed" "green"
 else

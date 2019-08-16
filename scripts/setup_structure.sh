@@ -4,6 +4,7 @@ CODE_DIR=$HOME/code
 VIAPLAY_DIR=$HOME/code/viaplay
 CONNER_DIR=$HOME/code/conner
 BIN_DIR=$HOME/bin
+INSTALL_DIR=$HOME/.config/dotfile-installs
 
 echo_header "Setting up source code directory structure"
 
@@ -33,5 +34,12 @@ if [[ -d "$BIN_DIR" ]]; then
 else
   echo_item "Creating bin dir" "green"
   mkdir $HOME/bin
+fi
+
+if [[ -d "$INSTALL_DIR" ]]; then
+  echo_item "Dotfile-installs directory already exists" "green"
+else
+  echo_item "Creating dotfile-installs directory" "green"
+  mkdir "$INSTALL_DIR"
 fi
 echo ""
