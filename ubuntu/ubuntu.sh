@@ -122,8 +122,8 @@ else
   cd tmux-${TMUX_VERSION}
   ./configure && make
   sudo make install
-  cd $HOME/dotfiles
-  rm -rf $home/tmp/tmux
+  cd $HOME/code/conner/dotfiles
+  rm -rf $HOME/tmp/tmux
 fi
 
 echo ""
