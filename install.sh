@@ -11,19 +11,11 @@ source 'hardware/hardware.sh'
 
 
 
-# -- Setup directory structure -------------------------------------------------
-source 'scripts/setup_structure.sh'
-
-
-
 # -- Solus- or Ubuntu-Specific Setup --------------------------------------------
 if system_is_solus; then
   source 'solus/solus.sh'
-  sudo eopkg install git
 else
   source 'ubuntu/ubuntu.sh'
-  sudo apt-get update
-  sudo apt-get install -y git
 fi
 
 

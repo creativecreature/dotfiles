@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo_header "Ubuntu Configuration"
+sudo apt-get update
 
 
 
