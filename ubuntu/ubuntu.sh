@@ -229,7 +229,11 @@ echo ""
 
 
 
+# -- Uninstall Unwanted Software -------------------------------------------------
 echo_header "Removing unwanted software"
+
+
+
 # -- Uninstall Thunderbird -------------------------------------------------------
 if exists "thunderbird"; then
   echo_item "Uninstalling thunderbird" "green"
@@ -281,3 +285,42 @@ echo ""
 # -- Scrolling --------------------------------------------------------------
 echo_item "Turning off natural-scroll for the touchpad" "green"
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+
+echo ""
+
+
+
+# -- Exfat support -----------------------------------------------------------
+if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
+  echo_item "Exfat support is already installed" "green"
+else
+  echo_item "Installing exfat support" "green"
+  sudo apt install exfat-fuse exfat-utils
+  sudo add-apt-repository universe
+  touch $HOME/.config/dotfile-installs/exfat
+fi
+
+echo ""
+
+
+
+# -- VLC -------------------------------------------------------------------
+if exists "vlc"; then
+  echo_item "VLC is already installed" "green"
+else
+  echo_item "Installing VLC" "green"
+  sudo apt-get install vlc
+fi
+
+
+
+# -- Enpass -----------------------------------------------------------------
+if exists "enpass"; then
+  echo_item "Enpass is already installed" "green"
+else
+  sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
+  wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
+  sudo apt update
+  sudo apt install enpass -y
+  touch $HOME/.config/dotfile-installs/enpass
+fi
