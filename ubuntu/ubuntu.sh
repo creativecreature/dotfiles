@@ -48,8 +48,7 @@ else
     NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm install 12.2.0
-    npm install -g yarn
-    npm install -g eslint eslint-plugin-react babel-eslint
+    npm install -g eslint eslint-plugin-react babel-eslint yarn neovim
   else
     echo_item "Skipping Node.js tools install" red
   fi
