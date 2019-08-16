@@ -149,18 +149,6 @@ echo ""
 
 
 
-# -- Plank --------------------------------------------------------------------
-
-if exists "plank"; then
-  echo_item "Plank is already installed" "green"
-else
-  sudo apt-get -y install plank
-fi
-
-echo ""
-
-
-
 # -- Docker --------------------------------------------------------------------
 
 if exists "docker"; then
