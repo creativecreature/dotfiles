@@ -290,6 +290,14 @@ echo ""
 
 
 
+# -- Dock --------------------------------------------------------------------
+echo_item "Executing dock configurations"
+source './dock/dock.sh'
+
+echo ""
+
+
+
 # -- Exfat support -----------------------------------------------------------
 if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
   echo_item "Exfat support is already installed" "green"
