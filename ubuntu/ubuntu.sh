@@ -29,8 +29,8 @@ echo ""
 if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
+  echo_item "Installing zsh" "green"
   sudo apt-get -y install zsh
-  echo_item "Skipping zsh install" red
 fi
 
 echo ""

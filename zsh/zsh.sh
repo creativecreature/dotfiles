@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 ZSHRC=$HOME/.zshrc
 OH_MY_ZSH=$HOME/.oh-my-zsh
 
@@ -21,11 +22,11 @@ else
   echo_item "Zsh is not installed" "red"
 fi
 
-if [[ "$SHELL" == "/bin/zsh"  ]]; then
+if [[ "$SHELL" == "$(which zsh)"  ]]; then
   echo_item "Your default shell is already set to zsh" "green"
 else
   echo_item "Setting zsh to be your default shell" "green"
-  chsh -s /bin/zsh
+  sudo chsh -s $(which zsh)
 fi
 
 echo_item "Symlinking zprofile" "green"
