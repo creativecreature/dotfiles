@@ -237,6 +237,17 @@ echo ""
 
 
 
+# -- Caffeine --------------------------------------------------------------------
+if exists "caffeine"; then
+  echo_item "Caffeine is already installed" "green"
+else
+  sudo apt-get install -y caffeine
+fi
+
+echo ""
+
+
+
 echo_header "Removing unwanted software"
 # -- Uninstall Thunderbird -------------------------------------------------------
 if exists "thunderbird"; then
