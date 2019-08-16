@@ -219,7 +219,18 @@ echo ""
 if exists "gnome-tweaks"; then
   echo_item "Gnome tweaks is already installed" "green"
 else
-  sudo apt-get -y install gnome-tweaks
+  sudo apt-get install -y gnome-tweaks
+fi
+
+echo ""
+
+
+
+# -- Xclip -----------------------------------------------------------------------
+if exists "xclip"; then
+  echo_item "Xclip is already installed" "green"
+else
+  sudo apt-get install -y xclip
 fi
 
 echo ""
