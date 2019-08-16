@@ -10,6 +10,7 @@ node_modules
 # Tags
 tags
 .tags
+tags.lock
 
 # Vim
 .netrwhist
