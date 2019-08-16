@@ -2,18 +2,6 @@
 
 echo_header "Solus Configuration"
 
-# -- Git -----------------------------------------------------------------------
-if exists "git"; then
-  echo_item "Git is already installed" "green"
-else
-  echo_item "Installing git"
-  sudo eopkg install git
-fi
-
-echo ""
-
-
-
 # -- zsh -----------------------------------------------------------------------
 if exists "zsh"; then
   echo_item "zsh is already installed" green
