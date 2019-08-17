@@ -356,3 +356,15 @@ else
 fi
 
 echo ""
+
+
+
+# -- Blueman ----------------------------------------------------------------
+if exists "blueman-manager"; then
+  echo_item "Blueman is already installed" "green"
+else
+  echo_item "Installing Blueman" "green"
+  sudo apt-get install -y blueman
+fi
+
+echo ""
