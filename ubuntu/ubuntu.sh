@@ -365,6 +365,7 @@ if exists "blueman-manager"; then
 else
   echo_item "Installing Blueman" "green"
   sudo apt-get install -y blueman
+  sudo apt-get install -y pulseaudio-module-bluetooth
 fi
 
 echo ""
