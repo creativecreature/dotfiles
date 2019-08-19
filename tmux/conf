@@ -1,5 +1,6 @@
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
+
 # Shorter wait
 set -sg escape-time 0
 
@@ -7,30 +8,30 @@ set -sg escape-time 0
 unbind C-b
 set -g prefix C-s
 
-# Larger scrollback, can reduce this if we want to same RAM
+# Larger scrollback, can reduce this if we want to save RAM
 set-option -g history-limit 100000
 
 
 # On double ctrl-s we send it to the running process
 # bind-key -r C-s send-prefix
 
-
-# set -g mouse on
-# sane scrolling:
-# bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
-
 # Copy n paste
 bind P paste-buffer
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi y send-keys -X copy-selection
 bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
-# bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins'
+# Use the screen-256color terminal and then apply it
+set -g default-terminal "screen-256color"
+set-option -ga terminal-overrides ",screen-256color:Tc"
+
+
+
+
 
 
 # **************** PANES *******************
@@ -78,6 +79,9 @@ bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
 
 
 
+
+
+
 # **************** WINDOWS *******************
 
 # New windows opens at the path of the pane
@@ -112,14 +116,6 @@ bind-key C-b send-keys 'tat && exit' 'C-m'
 # This kills the current session and switches to a previous one, if there are no more sessions it exits to the shell
 bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
 
-
-
-
-
-
-
-
-
 # This makes ctrl-s followed by w open up vim with fzf ready to find a file -c is for command
 # bind-key w split-window -h -c ~/my-wiki "vim +FZF"
 
@@ -127,14 +123,9 @@ bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-m
 
 
 
-# Use the screen-256color terminal and then apply it
-set -g default-terminal "screen-256color"
-set-option -ga terminal-overrides ",screen-256color:Tc"
 
-# Disable the default status bar from palenight theme
+# **************** STATUS STYLE *******************
 set -g @palenight_tmux_show_status_content "0"
-
-
 set -g status-left-length 50
 set -g status-right-length 150
 set status-style "bg=black"
@@ -150,9 +141,12 @@ set -g @sysstat_mem_color_low "#c3e88d"
 set -g @sysstat_cpu_color_low "#c3e88d"
 
 
-# Plugins
+
+
+
+
+# **************** PLUGINS *******************
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
-# set -g @plugin 'arcticicestudio/nord-tmux'
 set -g @plugin 'tonylambiris/palenight-tmux'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
