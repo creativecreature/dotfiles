@@ -131,28 +131,7 @@ echo ""
 
 
 # -- Docker --------------------------------------------------------------------
-
-if exists "docker"; then
-  echo_item "Docker is already installed" "green"
-else
-  sudo apt-get -y install docker
-  sudo usermod -aG docker $USER
-fi
-
-echo ""
-
-
-
-# -- Docker Compose --------------------------------------------------------------------
-
-if exists "docker-compose"; then
-  echo_item "Docker-compose is already installed" "green"
-else
-  sudo apt-get -y install docker-compose
-  sudo usermod -aG docker-compose $USER
-fi
-
-echo ""
+source "./docker/docker.sh"
 
 
 
