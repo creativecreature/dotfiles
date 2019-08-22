@@ -17,7 +17,6 @@ endfunction
 " ALT-k and ALT-j to navigate errors
 nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
-let g:coc_node_path =  '/home/conner/.nvm/versions/node/v12.2.0/bin/node'
 
 " Easymotion
 map <Leader>/ <Plug>(incsearch-easymotion-/)
