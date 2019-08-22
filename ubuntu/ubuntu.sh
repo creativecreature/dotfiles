@@ -353,3 +353,13 @@ echo ""
 
 # -- VPN -------------------------------------------------------------------
 source './vpn/vpn.sh'
+
+
+
+# -- DATAGRIP -----------------------------------------------------------------
+if exists "datagrip"; then
+  echo_item "Datagrip is already installed" "green"
+else
+  echo_item "Installing datagrip" "green"
+  sudo snap install datagrip --classic
+fi
