@@ -7,5 +7,11 @@
   "diagnostic.errorSign": "🔥",
   "diagnostic.warningSign": "💩",
   "diagnostic.infoSign": "💩",
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "eslint.options": {
+    "configFile": "/home/conner/.eslintrc"
+  },
+  "eslint.nodePath": "/home/conner/.nvm/versions/node/v12.2.0/lib/node_modules",
   "javascript.suggestionActions.enabled": false
 }
+
