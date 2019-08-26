@@ -363,3 +363,17 @@ else
   echo_item "Installing datagrip" "green"
   sudo snap install datagrip --classic
 fi
+
+
+if exists "insomnia"; then
+  echo_item "Insomnia is already installed" "green"
+else
+  echo_item "Installing Insomnia" "green"
+  echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+  wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+  sudo apt-get update
+  sudo apt-get install insomnia
+fi
+
