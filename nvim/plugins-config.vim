@@ -69,3 +69,6 @@ let g:lightline = { 'colorscheme': 'palenight' }
 " Vim-test
 let g:test#javascript#mocha#file_pattern = '.*\.test\.js'
 let test#strategy = 'vimux'
+
+" Vim close-tag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js"
