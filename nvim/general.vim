@@ -100,8 +100,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
-au BufRead,BufNewFile *.scss set filetype=scss.css
-au BufRead,BufNewFile *.scssm set filetype=scss.css
+au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.scssm set filetype=scss
 
 autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 autocmd BufEnter *.tsx set filetype=typescript
