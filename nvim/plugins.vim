@@ -34,6 +34,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
+Plug 'alvan/vim-closetag'
 
 " Task Running
 Plug 'w0rp/ale'
