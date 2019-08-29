@@ -356,7 +356,7 @@ source './vpn/vpn.sh'
 
 
 
-# -- DATAGRIP -----------------------------------------------------------------
+# -- Datagrip -----------------------------------------------------------------
 if exists "datagrip"; then
   echo_item "Datagrip is already installed" "green"
 else
@@ -365,6 +365,8 @@ else
 fi
 
 
+
+# -- Insomnia -----------------------------------------------------------------
 if exists "insomnia"; then
   echo_item "Insomnia is already installed" "green"
 else
@@ -377,3 +379,12 @@ else
   sudo apt-get install insomnia
 fi
 
+
+
+# -- Heroku -------------------------------------------------------------------
+if exists "heroku"; then
+  echo_item "Heroku is already installed" "green"
+else
+  echo_item "Installing Heroku"
+  sudo snap install --classic heroku
+fi
