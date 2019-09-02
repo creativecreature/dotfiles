@@ -121,5 +121,4 @@ if has("termguicolors")  " set true colors
 endif
 set background=dark
 colorscheme palenight
-" colorscheme nord
 let no_buffers_menu=1
