@@ -6,8 +6,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
-Plug 'arcticicestudio/nord-vim'
-Plug 'trevordmiller/nova-vim'
 
 " Project navigation
 Plug 'scrooloose/nerdtree'
