@@ -8,5 +8,6 @@
   "diagnostic.warningSign": "💩",
   "diagnostic.infoSign": "💩",
   "javascript.suggestionActions.enabled": false,
-  "css.filetypes": ["css", "less", "scss", "scss.css"]
+  "css.filetypes": ["css", "less", "scss", "scss.css"],
+  "eslint.options": { "configFile": "/home/conner/.eslintrc" }
 }
