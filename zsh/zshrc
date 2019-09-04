@@ -66,3 +66,6 @@ ensure_tmux_is_running() {
   fi
 }
 ensure_tmux_is_running
+
+# Source utility functions
+source ~/dotfiles/zsh/utilities.sh
