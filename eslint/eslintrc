@@ -1,6 +1,5 @@
 {
   "parserOptions": { "sourceType": "module" },
-  "parser": "babel-eslint",
   "env": {
     "node": true
   },
