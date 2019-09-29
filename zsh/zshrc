@@ -12,6 +12,10 @@ unsetopt AUTO_CD
 # Turn caps lock into escape
 setxkbmap -option caps:escape
 
+# Disable PgUp and PgDown, they have a really annoying position on my laptop
+# xmodmap -pke to list all keycodes
+xmodmap -e 'keycode 112 = '
+xmodmap -e 'keycode 117 = '
 
 # NVM Stuff
 export NVM_DIR="$HOME/.nvm"
