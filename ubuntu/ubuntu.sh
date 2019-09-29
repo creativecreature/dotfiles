@@ -388,3 +388,8 @@ else
   echo_item "Installing Heroku"
   sudo snap install --classic heroku
 fi
+
+
+
+# -- Gestures -------------------------------------------------------------------
+source './gesture/gestures.sh'
