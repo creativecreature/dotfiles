@@ -42,6 +42,10 @@ Plug 'benmills/vimux'
 " Git
 Plug 'tpope/vim-fugitive'
 
-
+" Tmux
 Plug 'christoomey/vim-tmux-navigator'
+
+" Kick bad habits
+Plug 'takac/vim-hardtime'
+
 call plug#end()
