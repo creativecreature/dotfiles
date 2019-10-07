@@ -35,7 +35,6 @@ Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 
 " Task Running
-Plug 'w0rp/ale'
 Plug 'janko/vim-test'
 Plug 'benmills/vimux'
 
