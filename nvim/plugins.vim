@@ -36,7 +36,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-sort-motion'
 
 " Task Running
-Plug 'w0rp/ale'
 Plug 'janko/vim-test'
 Plug 'benmills/vimux'
 

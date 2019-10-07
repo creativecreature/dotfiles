@@ -46,13 +46,6 @@ let g:NERDTreeMapOpenSplit = '<C-x>'
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" Ale
-let g:ale_sign_error = '🔥'
-hi ALEErrorSign guifg=#DF8C8C
-let g:ale_sign_warning = '🙀'
-hi ALEWarningSign guifg=#F2C38F
-let g:ale_linters = {'javascript': ['eslint']}
-
 " Indentline
 " This is to display ` and "
 let g:indentLine_setConceal = 2
@@ -72,3 +65,6 @@ let test#strategy = 'vimux'
 
 " Vim close-tag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js"
+
+" Hardtime
+let g:hardtime_timeout = 5000
