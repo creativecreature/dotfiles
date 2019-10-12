@@ -34,6 +34,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-sort-motion'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Task Running
 Plug 'janko/vim-test'
