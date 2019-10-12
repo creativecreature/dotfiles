@@ -33,6 +33,7 @@ Plug 'tpope/vim-commentary'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-sort-motion'
 
 " Task Running
 Plug 'w0rp/ale'
