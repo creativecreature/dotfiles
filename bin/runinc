@@ -1,5 +1,5 @@
 #!/bin/bash
-export FZF_DEFAULT_OPTS='--height 90% --reverse --border'
+FZF_DEFAULT_OPTS='--height 90% --reverse --border'
 container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf-tmux --reverse --multi | awk -F '\\=>' '{print $1}')
 if [[ $container != '' ]]; then
   echo -e "\n  \033[1mDocker container:\033[0m" $container
@@ -13,4 +13,4 @@ if [[ $container != '' ]]; then
   docker exec $options $container $cmd
   echo ''
 fi
-export FZF_DEFAULT_OPTS=""
+FZF_DEFAULT_OPTS=""
