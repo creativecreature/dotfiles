@@ -44,11 +44,4 @@ else
   mkdir "$INSTALL_DIR"
 fi
 
-if [[ -d "$WALLPAPER_DIR" ]]; then
-  echo_item "Wallpaper directory already exists" "green"
-else
-  echo_item "Creating Wallpaper directory" "green"
-  mkdir "$WALLPAPER_DIR"
-fi
-
 echo ""
