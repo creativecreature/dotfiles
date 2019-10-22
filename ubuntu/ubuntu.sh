@@ -392,4 +392,13 @@ fi
 
 
 # -- Gestures -------------------------------------------------------------------
-source './gesture/gestures.sh'
+source './gestures/gestures.sh'
+
+
+
+# -- Bin -------------------------------------------------------------------
+for filepath in $HOME/dotfiles/bin/*; do
+  [ -e "$filepath" ] || continue
+  filename=${filepath##*/}
+  ln -sf $filepath $HOME/bin/$filename
+done
