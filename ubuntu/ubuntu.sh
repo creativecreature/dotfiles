@@ -402,3 +402,8 @@ for filepath in $HOME/dotfiles/bin/*; do
   filename=${filepath##*/}
   ln -sf $filepath $HOME/bin/$filename
 done
+
+
+
+# -- Startup Scripts -------------------------------------------------------------------
+source './startup/startup.sh'
