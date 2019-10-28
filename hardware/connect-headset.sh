@@ -77,4 +77,3 @@ setProfile off
 btDisConnect || exit $?
 btConnect || exit $?
 setProfile $profile
-
