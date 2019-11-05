@@ -46,7 +46,7 @@ function ListToggle()
     set list listchars=tab:»·,trail:·  " Display extra whitespace characters
   endif
 endfunction
-nmap <leader>> mz:execute ListToggle()<CR>
+nmap <leader>> mz:execute ListToggle()<CR>'z
 
 " Encoding
 set encoding=utf-8
