@@ -38,6 +38,16 @@ function TabToggle()
 endfunction
 nmap <leader><tab> mz:execute TabToggle()<CR>'z
 
+" Show tabs and spaces
+function ListToggle()
+  if &list
+    set nolist
+  else
+    set list listchars=tab:»·,trail:·  " Display extra whitespace characters
+  endif
+endfunction
+nmap <leader>> mz:execute ListToggle()<CR>
+
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
