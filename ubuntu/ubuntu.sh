@@ -180,6 +180,7 @@ if exists "gnome-tweaks"; then
   echo_item "Gnome tweaks is already installed" "green"
 else
   sudo apt-get install -y gnome-tweaks
+  sudo apt install gnome-shell-extension-autohidetopbar
 fi
 
 echo ""
