@@ -7,6 +7,5 @@
   "diagnostic.errorSign": "🔥",
   "diagnostic.warningSign": "💩",
   "diagnostic.infoSign": "💩",
-  "javascript.suggestionActions.enabled": false,
   "css.filetypes": ["css", "less", "scss", "scss.css"]
 }
