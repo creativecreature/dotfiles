@@ -18,6 +18,10 @@ endfunction
 nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
 
+" Surround vim
+" Deletes surrounding function
+nmap <silent> dsf ds)db
+
 " Easymotion
 map <Leader>/ <Plug>(incsearch-easymotion-/)
 map <Leader>? <Plug>(incsearch-easymotion-?)
