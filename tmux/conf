@@ -15,7 +15,7 @@ set-option -g history-limit 100000
 
 
 # On double ctrl-s we send it to the running process
-# bind-key -r C-s send-prefix
+bind-key -r C-s send-prefix
 
 # Copy n paste
 bind P paste-buffer
