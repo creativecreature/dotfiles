@@ -157,29 +157,33 @@ echo ""
 
 
 # -- Powerline Fonts -------------------------------------------------------------
-if [[ -n $(find $HOME/.local/share/fonts -type f -name '*Powerline*') ]]; then
-  echo_item "Powerline fonts are already installed" "green"
-else
-  git clone https://github.com/powerline/fonts.git --depth=1
-  cd fonts
-  ./install.sh
-  cd -
-  rm -rf fonts
-fi
+if [[ !$HEADLESS ]]; then
+  if [[ -n $(find $HOME/.local/share/fonts -type f -name '*Powerline*') ]]; then
+    echo_item "Powerline fonts are already installed" "green"
+  else
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd -
+    rm -rf fonts
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- Gnome Tweaks ---------------------------------------------------------------
-if exists "gnome-tweaks"; then
-  echo_item "Gnome tweaks is already installed" "green"
-else
-  sudo apt-get install -y gnome-tweaks
-  sudo apt install gnome-shell-extension-autohidetopbar
-fi
+if [[ !$HEADLESS ]]; then
+  if exists "gnome-tweaks"; then
+    echo_item "Gnome tweaks is already installed" "green"
+  else
+    sudo apt-get install -y gnome-tweaks
+    sudo apt install gnome-shell-extension-autohidetopbar
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
@@ -195,13 +199,15 @@ echo ""
 
 
 # -- Caffeine --------------------------------------------------------------------
-if exists "caffeine"; then
-  echo_item "Caffeine is already installed" "green"
-else
-  sudo apt-get install -y caffeine
-fi
+if [[ !$HEADLESS ]]; then
+  if exists "caffeine"; then
+    echo_item "Caffeine is already installed" "green"
+  else
+    sudo apt-get install -y caffeine
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
@@ -259,137 +265,163 @@ echo ""
 
 
 # -- Scrolling --------------------------------------------------------------
-echo_item "Turning off natural-scroll for the touchpad" "green"
-gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+if [[ !$HEADLESS ]]; then
+  echo_item "Turning off natural-scroll for the touchpad" "green"
+  gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- Dock --------------------------------------------------------------------
-echo_item "Executing dock configurations"
-source './dock/dock.sh'
+if [[ !$HEADLESS ]]; then
+  echo_item "Executing dock configurations"
+  source './dock/dock.sh'
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- Exfat support -----------------------------------------------------------
-if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
-  echo_item "Exfat support is already installed" "green"
-else
-  echo_item "Installing exfat support" "green"
-  sudo apt install exfat-fuse exfat-utils
-  sudo add-apt-repository universe
-  touch $HOME/.config/dotfile-installs/exfat
-fi
+if [[ !$HEADLESS ]]; then
+  if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
+    echo_item "Exfat support is already installed" "green"
+  else
+    echo_item "Installing exfat support" "green"
+    sudo apt install exfat-fuse exfat-utils
+    sudo add-apt-repository universe
+    touch $HOME/.config/dotfile-installs/exfat
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- VLC -------------------------------------------------------------------
-if exists "vlc"; then
-  echo_item "VLC is already installed" "green"
-else
-  echo_item "Installing VLC" "green"
-  sudo apt-get install vlc
+if [[ !$HEADLESS ]]; then
+  if exists "vlc"; then
+    echo_item "VLC is already installed" "green"
+  else
+    echo_item "Installing VLC" "green"
+    sudo apt-get install vlc
+  fi
 fi
 
 
 
 # -- Enpass -----------------------------------------------------------------
-if exists "enpass"; then
-  echo_item "Enpass is already installed" "green"
-else
-  sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
-  wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
-  sudo apt update
-  sudo apt install enpass -y
-  touch $HOME/.config/dotfile-installs/enpass
+if [[ !$HEADLESS ]]; then
+  if exists "enpass"; then
+    echo_item "Enpass is already installed" "green"
+  else
+    sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
+    wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
+    sudo apt update
+    sudo apt install enpass -y
+    touch $HOME/.config/dotfile-installs/enpass
+  fi
 fi
 
 
 
 # -- Slack ------------------------------------------------------------------
-if exists "slack"; then
-  echo_item "Slack is already installed" "green"
-else
-  echo_item "Installing Slack" "green"
-  sudo snap install slack --classic
-fi
+if [[ !$HEADLESS ]]; then
+  if exists "slack"; then
+    echo_item "Slack is already installed" "green"
+  else
+    echo_item "Installing Slack" "green"
+    sudo snap install slack --classic
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- Firefox ----------------------------------------------------------------
-if exists "firefox"; then
-  echo_item "Firefox is already installed" "green"
-else
-  echo_item "Installing Firefox" "green"
-  sudo apt-get install -y firefox
-fi
+if [[ !$HEADLESS ]]; then
+  if exists "firefox"; then
+    echo_item "Firefox is already installed" "green"
+  else
+    echo_item "Installing Firefox" "green"
+    sudo apt-get install -y firefox
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- Blueman ----------------------------------------------------------------
-if exists "blueman-manager"; then
-  echo_item "Blueman is already installed" "green"
-else
-  echo_item "Installing Blueman" "green"
-  sudo apt-get install -y blueman
-  sudo apt-get install -y pulseaudio-module-bluetooth
-fi
+if [[ !$HEADLESS ]]; then
+  if exists "blueman-manager"; then
+    echo_item "Blueman is already installed" "green"
+  else
+    echo_item "Installing Blueman" "green"
+    sudo apt-get install -y blueman
+    sudo apt-get install -y pulseaudio-module-bluetooth
+  fi
 
-echo ""
+  echo ""
+fi
 
 
 
 # -- VPN -------------------------------------------------------------------
-source './vpn/vpn.sh'
+if [[ !$HEADLESS ]]; then
+  source './vpn/vpn.sh'
+fi
 
 
 
 # -- Datagrip -----------------------------------------------------------------
-if exists "datagrip"; then
-  echo_item "Datagrip is already installed" "green"
-else
-  echo_item "Installing datagrip" "green"
-  sudo snap install datagrip --classic
+if [[ !$HEADLESS ]]; then
+  if exists "datagrip"; then
+    echo_item "Datagrip is already installed" "green"
+  else
+    echo_item "Installing datagrip" "green"
+    sudo snap install datagrip --classic
+  fi
 fi
 
 
 
 # -- Insomnia -----------------------------------------------------------------
-if exists "insomnia"; then
-  echo_item "Insomnia is already installed" "green"
-else
-  echo_item "Installing Insomnia" "green"
-  echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-      wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
-        | sudo apt-key add -
-              sudo apt-get update
-              sudo apt-get install insomnia
+if [[ !$HEADLESS ]]; then
+  if exists "insomnia"; then
+    echo_item "Insomnia is already installed" "green"
+  else
+    echo_item "Installing Insomnia" "green"
+    echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+      | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+          wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+            | sudo apt-key add -
+                      sudo apt-get update
+                      sudo apt-get install insomnia
+  fi
 fi
 
 
 
 # -- Heroku -------------------------------------------------------------------
-if exists "heroku"; then
-  echo_item "Heroku is already installed" "green"
-else
-  echo_item "Installing Heroku"
-  sudo snap install --classic heroku
+if [[ !$HEADLESS ]]; then
+  if exists "heroku"; then
+    echo_item "Heroku is already installed" "green"
+  else
+    echo_item "Installing Heroku"
+    sudo snap install --classic heroku
+  fi
 fi
 
 
 
 # -- Gestures -------------------------------------------------------------------
-source './gestures/gestures.sh'
+if [[ !$HEADLESS ]]; then
+  source './gestures/gestures.sh'
+fi
 
 
 
@@ -403,4 +435,6 @@ done
 
 
 # -- Startup Scripts -------------------------------------------------------------------
-source './startup/startup.sh'
+if [[ !$HEADLESS ]]; then
+  source './startup/startup.sh'
+fi
