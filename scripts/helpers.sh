@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # -- COLORS -----------------------------------------------------------------------
+echo $USER_NAME
 
 # Adds support for newer versions of Mac OSX that do not support the \e
 # escapre sequence
