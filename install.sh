@@ -1,5 +1,6 @@
 #!/bin/bash
-# Install .dotfiles
+
+
 
 # -- Import helper scripts -----------------------------------------------------
 source 'scripts/helpers.sh'

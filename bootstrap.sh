@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# -- Import helper scripts -----------------------------------------------------
-source 'scripts/helpers.sh'
+# TODO: User this for all paths etc
+export USER_NAME=${NAME:=conner}
+export HEADLESS=false
 
-
-# -- Setup directory structure -------------------------------------------------
 source 'scripts/setup_structure.sh'
-
 
 
 # -- Solus- or Ubuntu-Specific Setup --------------------------------------------
@@ -19,10 +17,8 @@ fi
 
 
 # -- Clone and symlink dotfiles repo --------------------------------------------
-cd $HOME/code/conner
+cd /home/$USER_NAME/code/$USER_NAME
 git clone git@github.com:CharlesConner/dotfiles.git
-ln -s $HOME/code/conner/dotfiles $HOME/dotfiles
+ln -s /home/$USER_NAME/code/$USER_NAME/dotfiles /home/$USER_NAME/dotfiles
 cd dotfiles
-# Temporairly test this for running headless
-find . -type f -print0 | xargs -0 sed -i 's/sudo //g'
 ./install.sh
