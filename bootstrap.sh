@@ -20,7 +20,7 @@ fi
 
 # -- Clone and symlink dotfiles repo --------------------------------------------
 cd $HOME/code/conner
-yes | git clone git@github.com:CharlesConner/dotfiles.git
+git clone git@github.com:CharlesConner/dotfiles.git
 ln -s $HOME/code/conner/dotfiles $HOME/dotfiles
 cd dotfiles
 ./install.sh
