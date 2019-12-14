@@ -7,7 +7,7 @@ if exists "libinput-gestures"; then
 else
   echo_item "Installing libinput-gesture, xdotool and wmctrl" "green"
   sudo gpasswd -a $USER input # Need to be a member of input group to read touchpad
-  sudo apt-get install xdotool wmctrl libinput-tools
+  sudo apt-get -qq install xdotool wmctrl libinput-tools
   git clone http://github.com/bulletmark/libinput-gestures
   cd libinput-gestures
   sudo ./libinput-gestures-setup install
