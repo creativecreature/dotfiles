@@ -11,8 +11,8 @@ source 'scripts/setup_structure.sh'
 if system_is_solus; then
   sudo eopkg install git
 else
-  sudo apt-get update
-  sudo apt-get install -y git
+  sudo apt-get -qq update
+  sudo apt-get -qq install -y git
 fi
 
 
