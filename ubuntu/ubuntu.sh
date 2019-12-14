@@ -157,7 +157,7 @@ echo ""
 
 
 # -- Powerline Fonts -------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if [[ -n $(find $HOME/.local/share/fonts -type f -name '*Powerline*') ]]; then
     echo_item "Powerline fonts are already installed" "green"
   else
@@ -174,7 +174,7 @@ fi
 
 
 # -- Gnome Tweaks ---------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "gnome-tweaks"; then
     echo_item "Gnome tweaks is already installed" "green"
   else
@@ -199,7 +199,7 @@ echo ""
 
 
 # -- Caffeine --------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "caffeine"; then
     echo_item "Caffeine is already installed" "green"
   else
@@ -265,7 +265,7 @@ echo ""
 
 
 # -- Scrolling --------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   echo_item "Turning off natural-scroll for the touchpad" "green"
   gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
@@ -275,7 +275,7 @@ fi
 
 
 # -- Dock --------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   echo_item "Executing dock configurations"
   source './dock/dock.sh'
 
@@ -285,7 +285,7 @@ fi
 
 
 # -- Exfat support -----------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
     echo_item "Exfat support is already installed" "green"
   else
@@ -301,7 +301,7 @@ fi
 
 
 # -- VLC -------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "vlc"; then
     echo_item "VLC is already installed" "green"
   else
@@ -313,7 +313,7 @@ fi
 
 
 # -- Enpass -----------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "enpass"; then
     echo_item "Enpass is already installed" "green"
   else
@@ -328,7 +328,7 @@ fi
 
 
 # -- Slack ------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "slack"; then
     echo_item "Slack is already installed" "green"
   else
@@ -342,7 +342,7 @@ fi
 
 
 # -- Firefox ----------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "firefox"; then
     echo_item "Firefox is already installed" "green"
   else
@@ -356,7 +356,7 @@ fi
 
 
 # -- Blueman ----------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "blueman-manager"; then
     echo_item "Blueman is already installed" "green"
   else
@@ -371,14 +371,14 @@ fi
 
 
 # -- VPN -------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   source './vpn/vpn.sh'
 fi
 
 
 
 # -- Datagrip -----------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "datagrip"; then
     echo_item "Datagrip is already installed" "green"
   else
@@ -390,7 +390,7 @@ fi
 
 
 # -- Insomnia -----------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "insomnia"; then
     echo_item "Insomnia is already installed" "green"
   else
@@ -407,7 +407,7 @@ fi
 
 
 # -- Heroku -------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   if exists "heroku"; then
     echo_item "Heroku is already installed" "green"
   else
@@ -419,7 +419,7 @@ fi
 
 
 # -- Gestures -------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   source './gestures/gestures.sh'
 fi
 
@@ -435,6 +435,6 @@ done
 
 
 # -- Startup Scripts -------------------------------------------------------------------
-if [[ !$HEADLESS ]]; then
+if [[ "$HEADLESS" = false ]]; then
   source './startup/startup.sh'
 fi
