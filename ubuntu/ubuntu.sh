@@ -7,7 +7,7 @@ sudo apt-get -qq update
 
 # -- Tools ----------------------------------------------------------------
 echo_item "Installing some software needed for installing from source"
-sudo apt-get -qq install wget tar libevent-dev libncurses-dev make
+sudo apt-get -qq install wget tar libevent-dev libncurses-dev make build-essentials
 echo ""
 
 
