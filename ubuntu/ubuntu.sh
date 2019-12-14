@@ -7,7 +7,7 @@ sudo apt-get update
 
 # -- Tools ----------------------------------------------------------------
 echo_item "Installing some software needed for installing from source"
-sudo apt-get -y install wget tar libevent-dev libncurses-dev make
+sudo apt-get install wget tar libevent-dev libncurses-dev make
 echo ""
 
 
@@ -17,7 +17,7 @@ echo ""
 if exists "curl"; then
   echo_item "curl is already installed" "green"
 else
-  sudo apt-get -y install curl
+  sudo apt-get install curl
 fi
 
 echo ""
@@ -30,7 +30,7 @@ if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
   echo_item "Installing zsh" "green"
-  sudo apt-get -y install zsh
+  sudo apt-get install zsh
 fi
 
 echo ""
@@ -74,7 +74,7 @@ echo ""
 if exists "ctags"; then
   echo_item "Ctags is already installed" "green"
 else
-  sudo apt-get -y install ctags
+  sudo apt-get install ctags
 fi
 
 echo ""
@@ -87,7 +87,7 @@ if exists "rg"; then
 else
   sudo add-apt-repository ppa:x4121/ripgrep
   sudo apt-get update
-  sudo apt-get -y install ripgrep
+  sudo apt-get install ripgrep
 fi
 
 echo ""
@@ -99,7 +99,7 @@ echo ""
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
-  sudo apt-get -y install jq
+  sudo apt-get install jq
 fi
 
 echo ""
@@ -136,7 +136,7 @@ if exists "virtualenv"; then
   echo_item "Virtualenv already installed" "green"
 else
   echo_item "Installing virtualenv" "green"
-  sudo apt-get -y install virtualenv
+  sudo apt-get install virtualenv
 fi
 
 echo ""
@@ -148,7 +148,7 @@ if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
   echo_item "Installing pipenv" "green"
-  sudo apt install -y python3-pip
+  sudo apt install python3-pip
   pip3 install pipenv
 fi
 
@@ -178,7 +178,7 @@ if [[ "$HEADLESS" = false ]]; then
   if exists "gnome-tweaks"; then
     echo_item "Gnome tweaks is already installed" "green"
   else
-    sudo apt-get install -y gnome-tweaks
+    sudo apt-get install gnome-tweaks
     sudo apt install gnome-shell-extension-autohidetopbar
   fi
 
@@ -191,7 +191,7 @@ fi
 if exists "xclip"; then
   echo_item "Xclip is already installed" "green"
 else
-  sudo apt-get install -y xclip
+  sudo apt-get install xclip
 fi
 
 echo ""
@@ -203,7 +203,7 @@ if [[ "$HEADLESS" = false ]]; then
   if exists "caffeine"; then
     echo_item "Caffeine is already installed" "green"
   else
-    sudo apt-get install -y caffeine
+    sudo apt-get install caffeine
   fi
 
   echo ""
@@ -219,7 +219,7 @@ echo_header "Removing unwanted software"
 # -- Uninstall Thunderbird -------------------------------------------------------
 if exists "thunderbird"; then
   echo_item "Uninstalling thunderbird" "green"
-  sudo apt-get -y remove thunderbird
+  sudo apt-get remove thunderbird
 else
   echo_item "Thunderbird is already uninstalled" "green"
 fi
@@ -231,7 +231,7 @@ echo ""
 # -- Uninstall Rhythmbox -------------------------------------------------------
 if exists "rhythmbox"; then
   echo_item "Uninstalling Rhythmbox" "green"
-  sudo apt-get -y remove rhythmbox
+  sudo apt-get remove rhythmbox
 else
   echo_item "Rhythmbox is already uninstalled" "green"
 fi
@@ -243,7 +243,7 @@ echo ""
 # -- Uninstall Mahjongg -------------------------------------------------------
 if exists "gnome-mahjongg"; then
   echo_item "Uninstalling Mahjongg" "green"
-  sudo apt-get -y remove gnome-mahjongg
+  sudo apt-get remove gnome-mahjongg
 else
   echo_item "Mahjongg is already uninstalled" "green"
 fi
@@ -255,7 +255,7 @@ echo ""
 # -- Uninstall Mines -------------------------------------------------------
 if exists "gnome-mines"; then
   echo_item "Uninstalling Mines" "green"
-  sudo apt-get -y remove gnome-mines
+  sudo apt-get remove gnome-mines
 else
   echo_item "Mines is already uninstalled" "green"
 fi
@@ -347,7 +347,7 @@ if [[ "$HEADLESS" = false ]]; then
     echo_item "Firefox is already installed" "green"
   else
     echo_item "Installing Firefox" "green"
-    sudo apt-get install -y firefox
+    sudo apt-get install firefox
   fi
 
   echo ""
@@ -361,8 +361,8 @@ if [[ "$HEADLESS" = false ]]; then
     echo_item "Blueman is already installed" "green"
   else
     echo_item "Installing Blueman" "green"
-    sudo apt-get install -y blueman
-    sudo apt-get install -y pulseaudio-module-bluetooth
+    sudo apt-get install blueman
+    sudo apt-get install pulseaudio-module-bluetooth
   fi
 
   echo ""
