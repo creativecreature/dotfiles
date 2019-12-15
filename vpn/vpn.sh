@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VPN_INSTALLATION=$HOME/.config/dotfile-installs/vpn
+VPN_INSTALLATION=/home/$USER_NAME/.config/dotfile-installs/vpn
 
 echo_header "VPN configuration"
 

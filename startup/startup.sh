@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-USBWAKEUP=$HOME/dotfiles/startup/wakeup.sh
+USBWAKEUP=/home/$USER_NAME/dotfiles/startup/wakeup.sh
 
 echo_header "Startup scripts"
 
