@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-ZSHRC=/home/$USER_NAME/.zshrc
-OH_MY_ZSH=/home/$USER_NAME/.oh-my-zsh
+ZSHRC=$HOME/.zshrc
+OH_MY_ZSH=$HOME/.oh-my-zsh
 
 echo_header "ZSH Configuration"
 
@@ -30,9 +30,9 @@ else
 fi
 
 echo_item "Symlinking zprofile" "green"
-ln -sf /home/$USER_NAME/dotfiles/zsh/zprofile /home/$USER_NAME/.zprofile
+ln -sf $HOME/dotfiles/zsh/zprofile $HOME/.zprofile
 
 echo_item "Symlinking zshrc" "green"
-ln -sf /home/$USER_NAME/dotfiles/zsh/zshrc /home/$USER_NAME/.zshrc
+ln -sf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
 echo ""
