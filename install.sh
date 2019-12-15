@@ -8,7 +8,10 @@ source 'scripts/helpers.sh'
 
 
 # -- Import from other scripts -------------------------------------------------
-source 'hardware/hardware.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'hardware/hardware.sh'
+
+fi
 
 
 
@@ -22,12 +25,16 @@ fi
 
 
 # -- GIT -------------------------------------------------------------------------
-source 'git/git.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'git/git.sh'
+fi
 
 
 
 # -- SSH -------------------------------------------------------------------------
-source 'ssh/ssh.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'ssh/ssh.sh'
+fi
 
 
 
@@ -57,7 +64,9 @@ source 'ripgrep/ripgrep.sh'
 
 
 # -- THEME -------------------------------------------------------------------------
-source 'theme/theme.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'theme/theme.sh'
+fi
 
 
 
@@ -69,4 +78,6 @@ fi
 
 
 # -- ENVIRONMENT --------------------------------------------------------------------
-source 'environment/environment.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'environment/environment.sh'
+fi
