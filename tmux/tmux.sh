@@ -25,7 +25,7 @@ if [[ -d "$TPM_DIR" ]]; then
   echo_item "Tpm directory already exists" "green"
 else
   echo_item "Cloning TPM directory" "green"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm /home/$USER_NAME/.tmux/plugins/tpm
 fi
 
 echo_item "Symlinking tat script" "green"

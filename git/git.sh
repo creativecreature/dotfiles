@@ -15,6 +15,6 @@ echo_item "Symlinking personal gitconfig" "green"
 ln -sf /home/$USER_NAME/dotfiles/git/gitconfig_conner /home/$USER_NAME/code/conner/.gitconfig
 
 echo_item "Setting  ~/.gitignore_global to global ignore" "green"
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile /home/$USER_NAME/.gitignore_global
 
 echo ""
