@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SSH_DIR=$HOME/.ssh
-SSH_CONFIG=$HOME/.ssh/config
-WORK_KEY_PUB=$HOME/.ssh/nentgroup_rsa.pub
-PERSONAL_KEY_PUB=$HOME/.ssh/private_rsa.pub
+SSH_DIR=/home/$USER_NAME/.ssh
+SSH_CONFIG=/home/$USER_NAME/.ssh/config
+WORK_KEY_PUB=/home/$USER_NAME/.ssh/nentgroup_rsa.pub
+PERSONAL_KEY_PUB=/home/$USER_NAME/.ssh/private_rsa.pub
 
 echo_header "SSH Setup"
 
@@ -29,7 +29,7 @@ else
 fi
 
 echo_item "Symlinking config to ~/.ssh/config file" "green"
-ln -sf $HOME/dotfiles/ssh/config $HOME/.ssh/config
+ln -sf /home/$USER_NAME/dotfiles/ssh/config /home/$USER_NAME/.ssh/config
 chmod 600 ~/.ssh/config
 
 echo ""

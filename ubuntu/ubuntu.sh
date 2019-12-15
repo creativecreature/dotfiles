@@ -44,7 +44,7 @@ if exists "node"; then
 else
   mkdir ~/.nvm
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-  NVM_DIR="$HOME/.nvm"
+  NVM_DIR="/home/$USER_NAME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   nvm install 12.2.0
   npm install -g eslint@5.16 eslint-config-prettier@6.0.0 eslint-config-standard@12.0.0 eslint-plugin-import@2.18.0 eslint-plugin-jest@22.7.2 eslint-plugin-node@9 eslint-plugin-promise@4.2.1 eslint-plugin-standard@4.0.0 eslint-plugin-react babel-eslint yarn neovim
@@ -158,7 +158,7 @@ echo ""
 
 # -- Powerline Fonts -------------------------------------------------------------
 if [[ "$HEADLESS" = false ]]; then
-  if [[ -n $(find $HOME/.local/share/fonts -type f -name '*Powerline*') ]]; then
+  if [[ -n $(find /home/$USER_NAME/.local/share/fonts -type f -name '*Powerline*') ]]; then
     echo_item "Powerline fonts are already installed" "green"
   else
     git clone https://github.com/powerline/fonts.git --depth=1
@@ -286,13 +286,13 @@ fi
 
 # -- Exfat support -----------------------------------------------------------
 if [[ "$HEADLESS" = false ]]; then
-  if [[ -f $HOME/.config/dotfile-installs/exfat ]]; then
+  if [[ -f /home/$USER_NAME/.config/dotfile-installs/exfat ]]; then
     echo_item "Exfat support is already installed" "green"
   else
     echo_item "Installing exfat support" "green"
     sudo apt install exfat-fuse exfat-utils
     sudo add-apt-repository universe
-    touch $HOME/.config/dotfile-installs/exfat
+    touch /home/$USER_NAME/.config/dotfile-installs/exfat
   fi
 
   echo ""
@@ -321,7 +321,7 @@ if [[ "$HEADLESS" = false ]]; then
     wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
     sudo apt update
     sudo apt install enpass -y
-    touch $HOME/.config/dotfile-installs/enpass
+    touch /home/$USER_NAME/.config/dotfile-installs/enpass
   fi
 fi
 
@@ -426,10 +426,10 @@ fi
 
 
 # -- Bin -------------------------------------------------------------------
-for filepath in $HOME/dotfiles/bin/*; do
+for filepath in /home/$USER_NAME/dotfiles/bin/*; do
   [ -e "$filepath" ] || continue
   filename=${filepath##*/}
-  ln -sf $filepath $HOME/bin/$filename
+  ln -sf $filepath /home/$USER_NAME/bin/$filename
 done
 
 
