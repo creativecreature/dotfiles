@@ -20,5 +20,4 @@ fi
 cd /home/$USER_NAME/code/$USER_NAME
 git clone git@github.com:CharlesConner/dotfiles.git
 ln -s /home/$USER_NAME/code/$USER_NAME/dotfiles /home/$USER_NAME/dotfiles
-cd dotfiles
-./install.sh
+cd dotfiles && ./install.sh
