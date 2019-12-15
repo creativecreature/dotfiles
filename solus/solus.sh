@@ -19,7 +19,7 @@ if exists "node"; then
 else
   echo_item "Installing NVM and a few global NPM packages"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-  NVM_DIR="/home/$USER_NAME/.nvm"
+  NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   nvm install 12.2.0
   npm install -g yarn
@@ -36,7 +36,7 @@ if exists "nvim"; then
 else
   echo_item "Installing Neovim" "green"
   sudo eopkg install neovim
-  curl -fLo /home/$USER_NAME/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 echo ""
