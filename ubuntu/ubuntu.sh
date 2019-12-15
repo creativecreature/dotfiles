@@ -110,16 +110,16 @@ if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
   TMUX_VERSION=2.9a
-  mkdir $HOME/tmp/tmux
-  cd $HOME/tmp/tmux
+  mkdir /home/$USER_NAME/tmp/tmux
+  cd /home/$USER_NAME/tmp/tmux
   wget https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
   tar xf tmux-${TMUX_VERSION}.tar.gz
   rm -f tmux-${TMUX_VERSION}.tar.gz
   cd tmux-${TMUX_VERSION}
   ./configure && make
   sudo make install
-  cd $HOME/code/conner/dotfiles
-  rm -rf $HOME/tmp/tmux
+  cd /home/$USER_NAME/dotfiles
+  rm -rf /home/$USER_NAME/tmp/tmux
 fi
 
 echo ""

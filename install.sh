@@ -62,7 +62,9 @@ source 'theme/theme.sh'
 
 
 # -- TERMINAL ----------------------------------------------------------------------
-source 'terminal/terminal.sh'
+if [[ "$HEADLESS" = false ]]; then
+  source 'terminal/terminal.sh'
+fi
 
 
 
