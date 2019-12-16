@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# TODO: User this for all paths etc
 export USER_NAME=${NAME:=conner}
-export HEADLESS=false
 
 source 'scripts/setup_structure.sh'
 
