@@ -6,7 +6,7 @@ sudo apt-get -qq update
 
 
 # -- Tools ----------------------------------------------------------------
-echo_item "Installing some software needed for installing from source"
+echo_item "Installing some software needed for installing from source" "green"
 sudo apt-get -qq install wget tar libevent-dev libncurses-dev make build-essential
 echo ""
 
@@ -42,9 +42,9 @@ echo ""
 if exists "node"; then
   echo_item "Node tools are already installed" green
 else
-  mkdir /home/$USER_NAME/.nvm
+  mkdir /home/$USER/.nvm
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-  NVM_DIR="/home/$USER_NAME/.nvm"
+  NVM_DIR="/home/$USER/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   nvm install 12.2.0
   npm install -g eslint@5.16 eslint-config-prettier@6.0.0 eslint-config-standard@12.0.0 eslint-plugin-import@2.18.0 eslint-plugin-jest@22.7.2 eslint-plugin-node@9 eslint-plugin-promise@4.2.1 eslint-plugin-standard@4.0.0 eslint-plugin-react babel-eslint yarn neovim
@@ -110,16 +110,16 @@ if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
   TMUX_VERSION=2.9a
-  mkdir /home/$USER_NAME/tmp/tmux
-  cd /home/$USER_NAME/tmp/tmux
+  mkdir /home/$USER/tmp/tmux
+  cd /home/$USER/tmp/tmux
   wget https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
   tar xf tmux-${TMUX_VERSION}.tar.gz
   rm -f tmux-${TMUX_VERSION}.tar.gz
   cd tmux-${TMUX_VERSION}
   ./configure && make
   sudo make install
-  cd /home/$USER_NAME/dotfiles
-  rm -rf /home/$USER_NAME/tmp/tmux
+  cd /home/$USER/dotfiles
+  rm -rf /home/$USER/tmp/tmux
 fi
 
 echo ""
@@ -157,7 +157,7 @@ echo ""
 
 
 # -- Powerline Fonts -------------------------------------------------------------
-if [[ -n $(find /home/$USER_NAME/.local/share/fonts -type f -name '*Powerline*') ]]; then
+if [[ -n $(find /home/$USER/.local/share/fonts -type f -name '*Powerline*') ]]; then
   echo_item "Powerline fonts are already installed" "green"
 else
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -267,7 +267,7 @@ echo ""
 
 
 # -- Dock --------------------------------------------------------------------
-echo_item "Executing dock configurations"
+echo_item "Executing dock configurations" "green"
 source './dock/dock.sh'
 
 echo ""
@@ -275,13 +275,13 @@ echo ""
 
 
 # -- Exfat support -----------------------------------------------------------
-if [[ -f /home/$USER_NAME/.config/dotfile-installs/exfat ]]; then
+if [[ -f /home/$USER/.config/dotfile-installs/exfat ]]; then
   echo_item "Exfat support is already installed" "green"
 else
   echo_item "Installing exfat support" "green"
   sudo apt install exfat-fuse exfat-utils
   sudo add-apt-repository universe
-  touch /home/$USER_NAME/.config/dotfile-installs/exfat
+  touch /home/$USER/.config/dotfile-installs/exfat
 fi
 
 echo ""
@@ -306,7 +306,7 @@ else
   wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
   sudo apt update
   sudo apt install enpass -y
-  touch /home/$USER_NAME/.config/dotfile-installs/enpass
+  touch /home/$USER/.config/dotfile-installs/enpass
 fi
 
 
@@ -394,10 +394,10 @@ source './gestures/gestures.sh'
 
 
 # -- Bin -------------------------------------------------------------------
-for filepath in /home/$USER_NAME/dotfiles/bin/*; do
+for filepath in /home/$USER/dotfiles/bin/*; do
   [ -e "$filepath" ] || continue
   filename=${filepath##*/}
-  ln -sf $filepath /home/$USER_NAME/bin/$filename
+  ln -sf $filepath /home/$USER/bin/$filename
 done
 
 

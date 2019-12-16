@@ -2,6 +2,6 @@
 
 echo_header "Eslint Configuration"
 echo_item "Symlinking global eslint config" "green"
-ln -sf /home/$USER_NAME/dotfiles/eslint/eslintrc /home/$USER_NAME/.eslintrc
+ln -sf /home/$USER/dotfiles/eslint/eslintrc /home/$USER/.eslintrc
 
 echo ""

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TMUX_DIR=/home/$USER_NAME/.tmux
-PLUGIN_DIR=/home/$USER_NAME/.tmux/plugins
-TPM_DIR=/home/$USER_NAME/.tmux/plugins/tpm
+TMUX_DIR=/home/$USER/.tmux
+PLUGIN_DIR=/home/$USER/.tmux/plugins
+TPM_DIR=/home/$USER/.tmux/plugins/tpm
 
 echo_header "TMUX Configuration"
 
@@ -13,7 +13,7 @@ else
 fi
 
 echo_item "Symlinking tmux configuration" "green"
-ln -sf /home/$USER_NAME/dotfiles/tmux/conf /home/$USER_NAME/.tmux.conf
+ln -sf /home/$USER/dotfiles/tmux/conf /home/$USER/.tmux.conf
 
 if [[ -d "$PLUGIN_DIR" ]]; then
   echo_item "Plugin directory already exists" "green"
@@ -25,10 +25,10 @@ if [[ -d "$TPM_DIR" ]]; then
   echo_item "Tpm directory already exists" "green"
 else
   echo_item "Cloning TPM directory" "green"
-  git clone https://github.com/tmux-plugins/tpm /home/$USER_NAME/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm /home/$USER/.tmux/plugins/tpm
 fi
 
 echo_item "Symlinking tat script" "green"
-ln -sf /home/$USER_NAME/dotfiles/tmux/tat /home/$USER_NAME/bin/tat
+ln -sf /home/$USER/dotfiles/tmux/tat /home/$USER/bin/tat
 
 echo ""
