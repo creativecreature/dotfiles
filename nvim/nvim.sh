@@ -3,8 +3,8 @@
 echo_header "NVIM Configuration"
 
 echo_item "Symlinking nvim configuration" "green"
-rm -rf /home/$USER_NAME/.config/nvim
-ln -sfn /home/$USER_NAME/dotfiles/nvim /home/$USER_NAME/.config/nvim
+rm -rf /home/$USER/.config/nvim
+ln -sfn /home/$USER/dotfiles/nvim /home/$USER/.config/nvim
 
 echo_item "Installing NVIM plugins" "green"
 nvim "+PlugInstall" +qall

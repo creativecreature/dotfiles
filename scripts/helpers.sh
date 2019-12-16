@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# -- COLORS -----------------------------------------------------------------------
-echo $USER_NAME
 
 # Adds support for newer versions of Mac OSX that do not support the \e
 # escapre sequence
@@ -12,6 +10,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 
+# -- COLORS -----------------------------------------------------------------------
 function __colortext()
 {
   echo -e " $__ESCAPESEQ[$2m$1$__ESCAPESEQ[0m"
@@ -96,6 +95,6 @@ system_is_linux() {
 }
 
 system_is_solus() {
-  OS_INFO= sudo cat /etc/os-release
+  OS_INFO= sudo cat /etc/os-release > /dev/null
   return grep -q $OS_INFO
 }

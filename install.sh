@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 # -- Import helper scripts -----------------------------------------------------
 source 'scripts/helpers.sh'
 

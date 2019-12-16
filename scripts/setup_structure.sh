@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CODE_DIR=/home/$USER_NAME/code
-VIAPLAY_DIR=/home/$USER_NAME/code/viaplay
-USER_DIR=/home/$USER_NAME/code/$USER_NAME
-BIN_DIR=/home/$USER_NAME/bin
-INSTALL_DIR=/home/$USER_NAME/.config/dotfile-installs
-WALLPAPER_DIR=/home/$USER_NAME/wallpaper
+CODE_DIR=/home/$USER/code
+VIAPLAY_DIR=/home/$USER/code/viaplay
+USER_DIR=/home/$USER/code/$USER
+BIN_DIR=/home/$USER/bin
+INSTALL_DIR=/home/$USER/.config/dotfile-installs
+WALLPAPER_DIR=/home/$USER/wallpaper
 
 echo "Setting up source code directory structure"
 
@@ -13,28 +13,28 @@ if [[ -d "$CODE_DIR" ]]; then
   echo "Code dir already exists"
 else
   echo "Creating code dir"
-  mkdir /home/$USER_NAME/code
+  mkdir /home/$USER/code
 fi
 
 if [[ -d "$VIAPLAY_DIR" ]]; then
   echo "Viaplay dir already exists"
 else
   echo "Creating viaplay dir"
-  mkdir /home/$USER_NAME/code/viaplay
+  mkdir /home/$USER/code/viaplay
 fi
 
 if [[ -d "$USER_DIR" ]]; then
   echo "Username dir already exists"
 else
   echo "Creating username code dir"
-  mkdir /home/$USER_NAME/code/$USER_NAME
+  mkdir /home/$USER/code/$USER
 fi
 
 if [[ -d "$BIN_DIR" ]]; then
   echo "Bin dir already exists"
 else
   echo "Creating bin dir"
-  mkdir /home/$USER_NAME/bin
+  mkdir /home/$USER/bin
 fi
 
 if [[ -d "$INSTALL_DIR" ]]; then
