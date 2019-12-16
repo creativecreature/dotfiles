@@ -299,13 +299,14 @@ fi
 
 
 # -- Enpass -----------------------------------------------------------------
-if exists "enpass"; then
+ENPASS_FILE=/home/$USER/.config/dotfile-installs/enpass
+if [[ -f "$ENPASS_FILE" ]]; then
   echo_item "Enpass is already installed" "green"
 else
   sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
   wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
-  sudo apt update
-  sudo apt install enpass -y
+  sudo apt -qq update
+  sudo apt -qq install enpass -y
   touch /home/$USER/.config/dotfile-installs/enpass
 fi
 
