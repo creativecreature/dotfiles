@@ -95,6 +95,5 @@ system_is_linux() {
 }
 
 system_is_solus() {
-  OS_INFO= sudo cat /etc/os-release > /dev/null
-  return grep -q $OS_INFO
+  return $(sudo cat /etc/os-release | grep 'solus')
 }
