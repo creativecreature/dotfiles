@@ -60,8 +60,17 @@ nmap =p <Plug>(Prettier)
 let g:prettier#config#single_quote = 'true'
 
 " Lightline
-let g:lightline = { 'colorscheme': 'palenight' }
-" let g:lightline = { 'colorscheme': 'nord' }
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Vim-test
 let g:test#javascript#mocha#file_pattern = '.*\.test\.js'
