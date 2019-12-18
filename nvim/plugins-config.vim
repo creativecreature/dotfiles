@@ -122,8 +122,9 @@ endfunction
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Vim-test
-let g:test#javascript#mocha#file_pattern = '.*\.test\.js'
-let test#strategy = 'vimux'
+let g:test#javascript#jest#file_pattern = '.*\.test\.js'
+" let test#strategy = 'vimux'
+let test#strategy = 'basic'
 
 " Vim close-tag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js"
