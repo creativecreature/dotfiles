@@ -2,6 +2,11 @@
 let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
 
 " Coc
+let g:coc_user_config = {}
+let g:coc_user_config['diagnostic'] = {}
+let g:coc_user_config['diagnostic']['infoSign'] = "💩"
+let g:coc_user_config['diagnostic']['warningSign'] = "😱"
+let g:coc_user_config['diagnostic']['errorSign'] = "🔥"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -85,12 +90,6 @@ let g:lightline.component_type = {
 \   'coc_fix'          : 'middle',
 \ }
 
-let g:coc_user_config = {}
-let g:coc_user_config['diagnostic'] = {}
-let g:coc_user_config['diagnostic']['infoSign'] = "💩"
-let g:coc_user_config['diagnostic']['errorSign'] = "🔥"
-
-
 function! s:lightline_coc_diagnostic(kind, sign) abort
   let info = get(b:, 'coc_diagnostic_info', 0)
   if empty(info) || get(info, a:kind, 0) == 0
@@ -101,7 +100,6 @@ function! s:lightline_coc_diagnostic(kind, sign) abort
   catch
     let s = join([a:sign, 'Sign'], '')
   endtry
-  " return printf('%s', a:sign)
   return printf('%s %d', s, info[a:kind])
 endfunction
 
