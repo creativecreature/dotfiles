@@ -69,17 +69,6 @@ echo ""
 
 
 
-# -- Ctags --------------------------------------------------------------------
-
-if exists "ctags"; then
-  echo_item "Ctags is already installed" "green"
-else
-  sudo apt-get -qq install ctags
-fi
-
-echo ""
-
-
 # -- Ripgrep --------------------------------------------------------------------
 
 if exists "rg"; then
