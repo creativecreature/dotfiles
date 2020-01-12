@@ -49,4 +49,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Kick bad habits
 Plug 'takac/vim-hardtime'
 
+" Wakatime
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
