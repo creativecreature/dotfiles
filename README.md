@@ -42,8 +42,9 @@ setup the development environment just the way I like it.
 - Brew (OSX only installation)
 - Iterm2 (OSX only installation and configuration)
 - Dash (OSX only installation)
-- Evernote (Osx only installation)
-- Spectacle (Osx only installation)
+- Evernote (OSX only installation)
+- Spectacle (OSX only installation)
+- 1password (OSX only installation)
 
 
 ## Installation
