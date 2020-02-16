@@ -24,11 +24,11 @@ setup the development environment just the way I like it.
 - Slack (Installation)
 - Firefox (Installation)
 - Insomnia (Installation)
+- Caffeine (Installation)
 
 - Linux Build Tools (Linux only installation)
 - Gnome tweaks (Linux only installation)
 - Xclip (Linux only installation)
-- Caffeine (Linux only installation)
 - Exfat (Linux only installation)
 - Dock (Linux only configuration)
 - Enpass (Linux only installation)
@@ -40,6 +40,10 @@ setup the development environment just the way I like it.
 - Libinput-gestures (Linux only installation)
 
 - Brew (OSX only installation)
+- Iterm2 (OSX only installation and configuration)
+- Dash (OSX only installation)
+- Evernote (Osx only installation)
+- Spectacle (Osx only installation)
 
 
 ## Installation
