@@ -221,7 +221,19 @@ echo ""
 
 
 
-# -- OSX Configuration -----------------------------------------------------------------
+# -- 1password ----------------------------------------------------------------
+if exists "1password"; then
+  echo_item "1password is already installed" "green"
+else
+  echo_item "Installing 1password" "green"
+  brew cask install 1password
+fi
+
+echo ""
+
+
+
+# -- OSX Configuration ---------------------------------------------------------
 echo_item "Running OSX configuration" "green"
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
