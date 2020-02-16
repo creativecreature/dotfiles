@@ -3,12 +3,15 @@
 if exists "nvim"; then
   echo_item "Neovim is already installed" "green"
 else
-  echo_item "Installing Neovim" "green"
-  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-  chmod u+x nvim.appimage
-  sudo mv ./nvim.appimage /usr/bin/nvim
+  if system_is_OSX; then
+    brew install --HEAD neovim
+  else
+    echo_item "Installing Neovim" "green"
+    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+    chmod u+x nvim.appimage
+    sudo mv ./nvim.appimage /usr/bin/nvim
+  fi
 fi
-
 echo ""
 
 
