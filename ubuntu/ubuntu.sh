@@ -15,7 +15,6 @@ echo ""
 source "./hardware/hardware.sh"
 
 # -- Curl  -----------------------------------------------------------------------
-
 if exists "curl"; then
   echo_item "curl is already installed" "green"
 else
@@ -27,7 +26,6 @@ echo ""
 
 
 # -- zsh -----------------------------------------------------------------------
-
 if exists "zsh"; then
   echo_item "zsh is already installed" green
 else
@@ -40,39 +38,16 @@ echo ""
 
 
 # -- nvm -----------------------------------------------------------------------
-
-if exists "node"; then
-  echo_item "Node tools are already installed" green
-else
-  mkdir /home/$USER/.nvm
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-  NVM_DIR="/home/$USER/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  nvm install 12.2.0
-  npm install -g eslint@5.16 eslint-config-prettier@6.0.0 eslint-config-standard@12.0.0 eslint-plugin-import@2.18.0 eslint-plugin-jest@22.7.2 eslint-plugin-node@9 eslint-plugin-promise@4.2.1 eslint-plugin-standard@4.0.0 eslint-plugin-react babel-eslint yarn neovim
-fi
-
-echo ""
+source 'nvm/nvm.sh'
 
 
 
 # -- Neovim --------------------------------------------------------------------
-
-if exists "nvim"; then
-  echo_item "Neovim is already installed" "green"
-else
-  echo_item "Installing Neovim" "green"
-  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-  chmod u+x nvim.appimage
-  sudo mv ./nvim.appimage /usr/bin/nvim
-fi
-
-echo ""
+source 'nvim/nvim.sh'
 
 
 
 # -- Ripgrep --------------------------------------------------------------------
-
 if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
@@ -86,7 +61,6 @@ echo ""
 
 
 # -- jq --------------------------------------------------------------------
-
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
@@ -96,24 +70,7 @@ fi
 echo ""
 
 # -- Tmux --------------------------------------------------------------------
-
-if exists "tmux"; then
-  echo_item "Tmux is already installed" "green"
-else
-  TMUX_VERSION=2.9a
-  mkdir /home/$USER/tmp/tmux
-  cd /home/$USER/tmp/tmux
-  wget https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
-  tar xf tmux-${TMUX_VERSION}.tar.gz
-  rm -f tmux-${TMUX_VERSION}.tar.gz
-  cd tmux-${TMUX_VERSION}
-  ./configure && make
-  sudo make install
-  cd /home/$USER/dotfiles
-  rm -rf /home/$USER/tmp/tmux
-fi
-
-echo ""
+source 'tmux/tmux.sh'
 
 
 
@@ -382,15 +339,6 @@ fi
 
 # -- Gestures -------------------------------------------------------------------
 source './gestures/gestures.sh'
-
-
-
-# -- Bin -------------------------------------------------------------------
-for filepath in /home/$USER/dotfiles/bin/*; do
-  [ -e "$filepath" ] || continue
-  filename=${filepath##*/}
-  ln -sf $filepath /home/$USER/bin/$filename
-done
 
 
 
