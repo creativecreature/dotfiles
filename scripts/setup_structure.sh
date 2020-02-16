@@ -5,7 +5,6 @@ VIAPLAY_DIR=/home/$USER/code/viaplay
 USER_DIR=/home/$USER/code/$USER
 BIN_DIR=/home/$USER/bin
 INSTALL_DIR=/home/$USER/.config/dotfile-installs
-WALLPAPER_DIR=/home/$USER/wallpaper
 
 echo "Setting up source code directory structure"
 
