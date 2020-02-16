@@ -233,6 +233,18 @@ echo ""
 
 
 
+# -- Tig -----------------------------------------------------------------------
+if exists "tig"; then
+  echo_item "Tig is already installed" "green"
+else
+  echo_item "Installing Tig" "green"
+  brew install tig
+fi
+
+echo ""
+
+
+
 # -- OSX Configuration ---------------------------------------------------------
 echo_item "Running OSX configuration" "green"
 # Keep folders on top when sorting by name
