@@ -5,14 +5,9 @@ source 'scripts/helpers.sh'
 
 
 
-# -- Import from other scripts -------------------------------------------------
-source 'hardware/hardware.sh'
-
-
-
-# -- Solus- or Ubuntu-Specific Setup --------------------------------------------
-if system_is_solus; then
-  source 'solus/solus.sh'
+# -- OSX- or Ubuntu-Specific Setup --------------------------------------------
+if system_is_OSX; then
+  source 'osx/osx.sh'
 else
   source 'ubuntu/ubuntu.sh'
 fi
@@ -51,18 +46,3 @@ source 'eslint/eslint.sh'
 
 # -- RIPGREP -----------------------------------------------------------------------
 source 'ripgrep/ripgrep.sh'
-
-
-
-# -- THEME -------------------------------------------------------------------------
-source 'theme/theme.sh'
-
-
-
-# -- TERMINAL ----------------------------------------------------------------------
-source 'terminal/terminal.sh'
-
-
-
-# -- ENVIRONMENT --------------------------------------------------------------------
-source 'environment/environment.sh'

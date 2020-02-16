@@ -2,7 +2,7 @@
 
 
 # Adds support for newer versions of Mac OSX that do not support the \e
-# escapre sequence
+# escape sequence
 if [ "$(uname)" == "Darwin" ]; then
   __ESCAPESEQ="\x1b"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then

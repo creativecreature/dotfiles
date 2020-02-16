@@ -11,6 +11,8 @@ sudo apt-get -qq install wget tar libevent-dev libncurses-dev make build-essenti
 echo ""
 
 
+# -- Hardware ----------------------------------------------------------------
+source "./hardware/hardware.sh"
 
 # -- Curl  -----------------------------------------------------------------------
 
@@ -389,6 +391,21 @@ for filepath in /home/$USER/dotfiles/bin/*; do
   filename=${filepath##*/}
   ln -sf $filepath /home/$USER/bin/$filename
 done
+
+
+
+# -- THEME -------------------------------------------------------------------------
+source 'theme/theme.sh'
+
+
+
+# -- TERMINAL ----------------------------------------------------------------------
+source 'terminal/terminal.sh'
+
+
+
+# -- ENVIRONMENT --------------------------------------------------------------------
+source 'environment/environment.sh'
 
 
 
