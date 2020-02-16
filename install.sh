@@ -29,16 +29,6 @@ source 'zsh/zsh.sh'
 
 
 
-# -- NVIM -------------------------------------------------------------------------
-source 'nvim/nvim.sh'
-
-
-
-# -- TMUX --------------------------------------------------------------------------
-source 'tmux/tmux.sh'
-
-
-
 # -- ESLINT ------------------------------------------------------------------------
 source 'eslint/eslint.sh'
 
@@ -46,3 +36,12 @@ source 'eslint/eslint.sh'
 
 # -- RIPGREP -----------------------------------------------------------------------
 source 'ripgrep/ripgrep.sh'
+
+
+
+# -- Bin -------------------------------------------------------------------
+for filepath in /home/$USER/dotfiles/bin/*; do
+  [ -e "$filepath" ] || continue
+  filename=${filepath##*/}
+  ln -sf $filepath /home/$USER/bin/$filename
+done

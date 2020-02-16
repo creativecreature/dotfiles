@@ -1,6 +1,16 @@
 #!/bin/bash
 
-echo_header "NVIM Configuration"
+if exists "nvim"; then
+  echo_item "Neovim is already installed" "green"
+else
+  echo_item "Installing Neovim" "green"
+  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv ./nvim.appimage /usr/bin/nvim
+fi
+
+echo ""
+
 
 echo_item "Symlinking nvim configuration" "green"
 rm -rf /home/$USER/.config/nvim
