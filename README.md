@@ -45,6 +45,7 @@ setup the development environment just the way I like it.
 - Evernote (OSX only installation)
 - Spectacle (OSX only installation)
 - 1password (OSX only installation)
+- Tig (OSX only installation)
 
 
 ## Installation
