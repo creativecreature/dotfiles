@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# -- Import helper scripts -----------------------------------------------------
+# -- Import helper scripts ---------------------------------------------------
 source 'scripts/helpers.sh'
+
+
+# -- Ask for sudo password and keep alive -------------------------------------
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 
