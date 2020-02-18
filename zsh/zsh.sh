@@ -26,7 +26,7 @@ if [[ "$SHELL" == "$(which zsh)"  ]]; then
   echo_item "Your default shell is already set to zsh" "green"
 else
   echo_item "Setting zsh to be your default shell" "green"
-  sudo chsh -s $(which zsh)
+  chsh -s $(which zsh)
 fi
 
 echo_item "Symlinking zprofile" "green"
