@@ -4,7 +4,7 @@ if exists "node"; then
   echo_item "Node tools are already installed" "green"
 else
   echo_item "Installing Node Tools" "green"
-  mkdir /home/$USER/.nvm
+  mkdir $HOME/.nvm
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
