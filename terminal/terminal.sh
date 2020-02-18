@@ -3,7 +3,7 @@
 echo_header "Terminal configuration"
 
 echo_item "Symlinking GTK styles for the terminal" "green"
-ln -sfn /home/$USER/dotfiles/terminal/gtk.css /home/$USER/.config/gtk-3.0/gtk.css
+ln -sfn ~/dotfiles/terminal/gtk.css ~/.config/gtk-3.0/gtk.css
 
 echo_item "Setting up terminal colors" "green"
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
@@ -12,7 +12,7 @@ rm $TERM.ti
 
 # I dont like this solution much but I havent found a way to query the gnome terminal
 # for profile names, only ID's.
-PROFILE_FILE=/home/$USER/.config/dotfile-installs/palenightprofile
+PROFILE_FILE=~/.config/dotfile-installs/palenightprofile
 if [[ -f  "$PROFILE_FILE" ]]; then
   echo_item "Palenight profile for gnome is already installed" "green"
 else
