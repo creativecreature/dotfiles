@@ -2,6 +2,6 @@
 
 echo_header "Ripgrep Configuration"
 echo_item "Symlinking ripgrep ignore file" "green"
-ln -sf /home/$USER/dotfiles/ripgrep/ignore /home/$USER/.ignore
+ln -sf ~/dotfiles/ripgrep/ignore ~/.ignore
 
 echo ""

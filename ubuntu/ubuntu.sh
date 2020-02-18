@@ -105,7 +105,7 @@ echo ""
 
 
 # -- Powerline Fonts -------------------------------------------------------------
-if [[ -n $(find /home/$USER/.local/share/fonts -type f -name '*Powerline*') ]]; then
+if [[ -n $(find ~/.local/share/fonts -type f -name '*Powerline*') ]]; then
   echo_item "Powerline fonts are already installed" "green"
 else
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -223,13 +223,13 @@ echo ""
 
 
 # -- Exfat support -----------------------------------------------------------
-if [[ -f /home/$USER/.config/dotfile-installs/exfat ]]; then
+if [[ -f ~/.config/dotfile-installs/exfat ]]; then
   echo_item "Exfat support is already installed" "green"
 else
   echo_item "Installing exfat support" "green"
   sudo apt install exfat-fuse exfat-utils
   sudo add-apt-repository universe
-  touch /home/$USER/.config/dotfile-installs/exfat
+  touch ~/.config/dotfile-installs/exfat
 fi
 
 echo ""
@@ -247,7 +247,7 @@ fi
 
 
 # -- Enpass -----------------------------------------------------------------
-ENPASS_FILE=/home/$USER/.config/dotfile-installs/enpass
+ENPASS_FILE=~/.config/dotfile-installs/enpass
 if [[ -f "$ENPASS_FILE" ]]; then
   echo_item "Enpass is already installed" "green"
 else
@@ -255,7 +255,7 @@ else
   wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
   sudo apt -qq update
   sudo apt -qq install enpass -y
-  touch /home/$USER/.config/dotfile-installs/enpass
+  touch ~/.config/dotfile-installs/enpass
 fi
 
 

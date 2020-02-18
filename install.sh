@@ -45,8 +45,8 @@ source 'ripgrep/ripgrep.sh'
 
 
 # -- Bin -------------------------------------------------------------------
-for filepath in /home/$USER/dotfiles/bin/*; do
+for filepath in ~/dotfiles/bin/*; do
   [ -e "$filepath" ] || continue
   filename=${filepath##*/}
-  ln -sf $filepath /home/$USER/bin/$filename
+  ln -sf $filepath ~/bin/$filename
 done
