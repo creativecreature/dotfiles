@@ -4,6 +4,7 @@ CODE_DIR=~/code
 VIAPLAY_DIR=~/code/viaplay
 USER_DIR=~/code/$USER
 BIN_DIR=~/bin
+CONFIG_DIR=~/.config
 INSTALL_DIR=~/.config/dotfile-installs
 
 echo "Setting up source code directory structure"
@@ -34,6 +35,13 @@ if [[ -d "$BIN_DIR" ]]; then
 else
   echo "Creating bin dir"
   mkdir ~/bin
+fi
+
+if [[ -d "$CONFIG_DIR" ]]; then
+  echo "Config dir  already exists"
+else
+  echo "Creating Config directory"
+  mkdir "$CONFIG_DIR"
 fi
 
 if [[ -d "$INSTALL_DIR" ]]; then
