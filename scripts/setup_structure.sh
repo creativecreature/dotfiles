@@ -6,6 +6,7 @@ USER_DIR=~/code/$USER
 BIN_DIR=~/bin
 CONFIG_DIR=~/.config
 INSTALL_DIR=~/.config/dotfile-installs
+TMP_DIR=~/tmp
 
 echo "Setting up source code directory structure"
 
@@ -49,6 +50,13 @@ if [[ -d "$INSTALL_DIR" ]]; then
 else
   echo "Creating dotfile-installs directory"
   mkdir "$INSTALL_DIR"
+fi
+
+if [[ -d "$TMP_DIR" ]]; then
+  echo "Tmp directory already exists"
+else
+  echo "Creating Tmp directory"
+  mkdir "$TMP_DIR"
 fi
 
 echo ""
