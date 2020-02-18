@@ -133,7 +133,7 @@ set -g status-left-length 50
 set -g status-right-length 150
 set -g status-style "bg=black"
 set -g status-left "#[fg=#292D3E,bg=#ffcb6b,bold] #S #[fg=#ffcb6b,bg=default,nobold,noitalics,nounderscore]"
-set -g status-right "#{prefix_highlight}#[fg=#3E4452,bg=black,nobold,noitalics,nounderscore]#[fg=#d0d0d0,bg=#3E4452]#{sysstat_cpu}#[fg=#d0d0d0,bg=#3E4452] #[fg=#d0d0d0,bg=#3E4452] #{sysstat_mem}#[fg=#d0d0d0,bg=#3E4452] #[fg=#C792EA,bg=#3E4452] %Y-%m-%d #[fg=#d0d0d0,bg=#3E4452,nobold,noitalics,nounderscore]#[fg=#C792EA,bg=#3E4452] %H:%M #[fg=#c3e88d,bg=#3E4452,nobold,noitalics,nounderscore]#[fg=black,bg=#c3e88d,bold] #H "
+set -g status-right "#{prefix_highlight}#[fg=#3E4452,bg=black,nobold,noitalics,nounderscore]#[fg=#d0d0d0,bg=#3E4452]#{sysstat_cpu}#[fg=#d0d0d0,bg=#3E4452] #[fg=#d0d0d0,bg=#3E4452] #{sysstat_mem}#[fg=#d0d0d0,bg=#3E4452] #[fg=#C792EA,bg=#3E4452] %Y-%m-%d #[fg=#d0d0d0,bg=#3E4452,nobold,noitalics,nounderscore]#[fg=#C792EA,bg=#3E4452] %H:%M "
 
 
 set -g window-status-format "#[fg=colour235,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#I #[fg=#c792ea,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#W #F #[fg=#3E4452,bg=default,nobold,noitalics,nounderscore]"
