@@ -56,10 +56,10 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden -i --ignore-file '~/.ignore'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # Removes username@host from the terminal prompt
-prompt_context() {}
+# prompt_context() {}
 
 # Only show current dir not entire path
-prompt_dir() { prompt_segment blue black '%c' }
+# prompt_dir() { prompt_segment blue black '%c' }
 
 # export TERM='screen-256color'
 
@@ -76,3 +76,7 @@ ensure_tmux_is_running
 
 # Source utility functions
 source ~/dotfiles/zsh/utilities.sh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
