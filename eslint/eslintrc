@@ -7,7 +7,8 @@
     "standard",
     "prettier",
     "prettier/standard",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:react/recommended"
   ],
   "plugins": ["jest"]
 }
