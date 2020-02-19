@@ -114,7 +114,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.scssm set filetype=scss
 
 autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
-autocmd BufEnter *.tsx set filetype=typescript
+autocmd BufEnter *.tsx set filetype=typescript.tsx
 
 autocmd BufEnter * set foldmethod=indent
 
