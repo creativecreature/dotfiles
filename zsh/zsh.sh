@@ -17,6 +17,8 @@ if exists "zsh"; then
     else
       echo_item "You need either curl or wget installed to download Oh my zsh" "red"
     fi
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   fi
 else
   echo_item "Zsh is not installed" "red"
