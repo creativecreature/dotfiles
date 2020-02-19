@@ -22,8 +22,8 @@ endfunction
 " ALT-k and ALT-j to navigate errors
 " nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
 " nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
-nmap <silent> ˚ <Plug>(coc-diagnostic-prev)
-nmap <silent> ∆ <Plug>(coc-diagnostic-next)
+nmap <silent> <M-k> <Plug>(coc-diagnostic-prev)
+nmap <silent> <M-j> <Plug>(coc-diagnostic-next)
 " Surround vim
 " Deletes surrounding function
 nmap <silent> dsf ds)db

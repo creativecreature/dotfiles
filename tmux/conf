@@ -153,6 +153,8 @@ set -g @sysstat_cpu_color_low "#c3e88d"
 
 
 
+# Comment out the line below on linux, on MAC I'm testing out the iterm status bar
+# set -g status off
 
 
 # **************** PLUGINS *******************
