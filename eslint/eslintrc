@@ -1,7 +1,12 @@
 {
-  "parserOptions": { "sourceType": "module" },
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   },
   "extends": [
     "standard",
@@ -10,5 +15,9 @@
     "plugin:jest/recommended",
     "plugin:react/recommended"
   ],
-  "plugins": ["jest"]
+  "plugins": ["jest"],
+  "rules": {
+    "strict": ["error", "never"],
+    "valid-typeof": "error"
+  }
 }
