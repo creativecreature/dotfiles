@@ -34,6 +34,8 @@ fi
 
 echo_item "Symlinking tmux configuration" "green"
 ln -sf ~/dotfiles/tmux/conf ~/.tmux.conf
+ln -sf ~/dotfiles/tmux/conf.osx ~/.tmux.conf.osx
+ln -sf ~/dotfiles/tmux/conf.linux ~/.tmux.conf.linux
 
 if [[ -d "$PLUGIN_DIR" ]]; then
   echo_item "Plugin directory already exists" "green"

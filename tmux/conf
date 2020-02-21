@@ -27,16 +27,8 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# Use this on LINUX
-# Use the screen-256color terminal and then apply it
-# set -g default-terminal "screen-256color"
-# set-option -ga terminal-overrides ",screen-256color:Tc"
-
-# Use this on MAC
-set -g default-terminal "screen-256color"
-# tell Tmux that outside terminal supports true color
-set -ga terminal-overrides ",xterm-256color*:Tc"
-
+# True color support for Osx and Linux
+if-shell 'uname | grep -q Darwin' 'source-file ~/.tmux.conf.osx' 'source-file ~/.tmux.conf.linux"'
 
 
 
@@ -151,9 +143,6 @@ set -g @sysstat_cpu_color_low "#c3e88d"
 
 
 
-
-# Comment out the line below on linux, on MAC I'm testing out the iterm status bar
-# set -g status off
 
 
 # **************** PLUGINS *******************
