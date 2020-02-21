@@ -28,7 +28,9 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 # True color support for Osx and Linux
-if-shell 'uname | grep -q Darwin' 'source-file ~/.tmux.conf.osx' "source-file ~/.tmux.conf.linux"
+if-shell 'uname | grep -q Darwin' \
+    'source-file ~/.tmux.conf.osx' \
+    'if-shell "uname | grep -q CYGWIN" "source-file ~/.tmux.conf.cygwin" "source-file ~/.tmux.conf.linux"'
 
 
 
