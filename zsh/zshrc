@@ -16,6 +16,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Linux specific setup
+if [[ "$(uname)" == "Linux" ]]; then
+  # Turn caps lock into escape
+  setxkbmap -option caps:escape
+  # Disable PgUp and PgDown, they have a really annoying position on my laptop
+  # xmodmap -pke to list all keycodes
+  xmodmap -e 'keycode 112 = '
+  xmodmap -e 'keycode 117 = '
+  # Export term for better colors in TMUX
+  export TERM='screen-256color'
+fi
+
 # Add Yarn to path
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
@@ -69,17 +81,6 @@ ensure_tmux_is_running
 source ~/dotfiles/zsh/utilities.sh
 
 
-# Linux specific setup
-if [[ "$(uname)" == "Linux" ]]; then
-  # Turn caps lock into escape
-  setxkbmap -option caps:escape
-  # Disable PgUp and PgDown, they have a really annoying position on my laptop
-  # xmodmap -pke to list all keycodes
-  xmodmap -e 'keycode 112 = '
-  xmodmap -e 'keycode 117 = '
-  # Export term for better colors in TMUX
-  export TERM='screen-256color'
-fi
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
