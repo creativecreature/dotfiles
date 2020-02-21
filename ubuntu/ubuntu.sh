@@ -337,6 +337,19 @@ fi
 
 
 
+# -- NordVPN -------------------------------------------------------------------
+if exists "nordvpn"; then
+  echo_item "NordVPN is already installed" "green"
+else
+  echo_item "Installing NordVPN" "green"
+  cd ~/Downloads
+  sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+  sudo dpkg -i ./nordvpn-release_1.0.0_all.deb
+  sudo apt-get update
+  sudo apt-get install nordvpn
+  cd -
+fi
+
 # -- Gestures -------------------------------------------------------------------
 source './gestures/gestures.sh'
 
