@@ -20,10 +20,16 @@ function! s:show_documentation()
   endif
 endfunction
 " ALT-k and ALT-j to navigate errors
-" nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
-" nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
-nmap <silent> <M-k> <Plug>(coc-diagnostic-prev)
-nmap <silent> <M-j> <Plug>(coc-diagnostic-next)
+if system('uname -s') == "Darwin\n"
+  "OSX
+  nmap <silent> <M-k> <Plug>(coc-diagnostic-prev)
+  nmap <silent> <M-j> <Plug>(coc-diagnostic-next)
+else
+  "Linux
+  nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
+  nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
+endif
+
 " Surround vim
 " Deletes surrounding function
 nmap <silent> dsf ds)db
