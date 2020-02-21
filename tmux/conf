@@ -74,11 +74,10 @@ bind -n S-Right resize-pane -R 2
 bind -n S-Down resize-pane -D 1
 bind -n S-Up resize-pane -U 1
 
-# Changed this to work for mac, for linux change back to C-Left etc
-bind -n M-Left resize-pane -L 10
-bind -n M-Right resize-pane -R 10
-bind -n M-Down resize-pane -D 5
-bind -n M-Up resize-pane -U 5
+bind -n C-Left resize-pane -L 10
+bind -n C-Right resize-pane -R 10
+bind -n C-Down resize-pane -D 5
+bind -n C-Up resize-pane -U 5
 
 # Prompted join-pane
 bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
