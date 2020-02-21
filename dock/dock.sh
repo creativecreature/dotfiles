@@ -2,7 +2,7 @@
 
 # MOVE TO BOTTOM AND DONT BE MAX WIDTH
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position LEFT
 
 # AUTO HIDE DOCK
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
