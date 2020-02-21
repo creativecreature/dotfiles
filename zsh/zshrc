@@ -11,14 +11,6 @@ unsetopt AUTO_CD
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# Turn caps lock into escape
-# setxkbmap -option caps:escape
-
-# Disable PgUp and PgDown, they have a really annoying position on my laptop
-# xmodmap -pke to list all keycodes
-# xmodmap -e 'keycode 112 = '
-# xmodmap -e 'keycode 117 = '
-
 # NVM Stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -75,6 +67,19 @@ ensure_tmux_is_running
 
 # Source utility functions
 source ~/dotfiles/zsh/utilities.sh
+
+
+# Linux specific setup
+if [[ "$(uname)" == "Linux" ]]; then
+  # Turn caps lock into escape
+  setxkbmap -option caps:escape
+  # Disable PgUp and PgDown, they have a really annoying position on my laptop
+  # xmodmap -pke to list all keycodes
+  xmodmap -e 'keycode 112 = '
+  xmodmap -e 'keycode 117 = '
+  # Export term for better colors in TMUX
+  export TERM='screen-256color'
+fi
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
