@@ -55,7 +55,7 @@ alias msp="~/code/viaplay/mtg-cloudformation/msp"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf search with ripgrep and preview
-# export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_OPTS='--height=70% --preview="bat --theme=base16 --color=always {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND="rg --files --hidden -i --ignore-file '~/.ignore'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # Removes username@host from the terminal prompt
