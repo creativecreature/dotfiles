@@ -245,6 +245,17 @@ echo ""
 
 
 
+# -- Bat ----------------------------------------------------------------------
+if exists "bat"; then
+  echo_item "Bat is already installed" "green"
+else
+  echo_item "Installing Bat" "green"
+  brew install bat
+fi
+
+echo ""
+
+
 # -- OSX Configuration ---------------------------------------------------------
 echo_item "Running OSX configuration" "green"
 # Keep folders on top when sorting by name

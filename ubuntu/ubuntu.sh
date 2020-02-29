@@ -364,7 +364,7 @@ echo ""
 if exists "bat"; then
   echo_item "Bat is already installed" "green"
 else
-  echo_otem "Installing Bat" "green"
+  echo_item "Installing Bat" "green"
   sudo apt -qq install bat -y
 fi
 
