@@ -310,6 +310,8 @@ else
   sudo snap install datagrip --classic
 fi
 
+echo ""
+
 
 
 # -- Insomnia -----------------------------------------------------------------
@@ -325,6 +327,8 @@ else
               sudo apt-get -qq install insomnia
 fi
 
+echo ""
+
 
 
 # -- Heroku -------------------------------------------------------------------
@@ -334,6 +338,8 @@ else
   echo_item "Installing Heroku"
   sudo snap install --classic heroku
 fi
+
+echo ""
 
 
 
@@ -350,13 +356,23 @@ else
   cd -
 fi
 
+echo ""
+
+
+
+# -- Bat ----------------------------------------------------------------------
 if exists "bat"; then
   echo_item "Bat is already installed" "green"
 else
+  echo_otem "Installing Bat" "green"
   sudo apt -qq install bat -y
 fi
 
-# -- Gestures -------------------------------------------------------------------
+echo ""
+
+
+
+# -- Gestures ------------------------------------------------------------------
 source './gestures/gestures.sh'
 
 
