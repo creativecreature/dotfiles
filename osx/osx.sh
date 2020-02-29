@@ -251,6 +251,9 @@ if exists "bat"; then
 else
   echo_item "Installing Bat" "green"
   brew install bat
+  mkdir -p "$(bat --config-dir)/themes"
+  ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
+  bat cache --build
 fi
 
 echo ""
