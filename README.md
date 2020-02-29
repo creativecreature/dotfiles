@@ -4,6 +4,8 @@
 I use this repository to prevent configuration drift between different machines I work on. It is highly opiniated and will
 setup the development environment just the way I like it.
 
+![Setup](./screenshots/dotfiles.png)
+
 ## Pre-install options for linux
 To use the spaceship prompt and make the npm installment work run this before executing any of these scripts: `sudo chown -R $USER /usr/local/share
 `
