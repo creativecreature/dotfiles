@@ -29,6 +29,7 @@ To use the spaceship prompt and make the npm installment work run this before ex
 - Firefox (Installation)
 - Insomnia (Installation)
 - Caffeine (Installation)
+- Bat (Installation and configuration)
 
 - Linux Build Tools (Linux only installation)
 - Gnome tweaks (Linux only installation)
