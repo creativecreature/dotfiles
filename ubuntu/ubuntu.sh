@@ -346,8 +346,14 @@ else
   sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
   sudo dpkg -i ./nordvpn-release_1.0.0_all.deb
   sudo apt-get update
-  sudo apt-get install nordvpn
+  sudo apt-get -qq install nordvpn
   cd -
+fi
+
+if exists "bat"; then
+  echo_item "Bat is already installed" "green"
+else
+  sudo apt -qq install bat -y
 fi
 
 # -- Gestures -------------------------------------------------------------------
