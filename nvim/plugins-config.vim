@@ -143,7 +143,7 @@ let g:test#javascript#jest#file_pattern = '.*\.test\.js'
 let test#strategy = 'basic'
 
 " Vim close-tag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.ts, *.tsx"
 
 " Hardtime
 let g:hardtime_timeout = 5000
