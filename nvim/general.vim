@@ -18,6 +18,7 @@ set hidden
 set inccommand=nosplit
 set number relativenumber
 set nu rnu
+set cmdheight=2 " Give more space for displaying messages.
 
 " Indentation
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
