@@ -56,7 +56,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind - to grep and show result in quickfix
 command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
