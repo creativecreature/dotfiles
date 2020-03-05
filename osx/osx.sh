@@ -265,8 +265,6 @@ echo_item "Running OSX configuration" "green"
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-# Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Automatically hide and show the Dock
