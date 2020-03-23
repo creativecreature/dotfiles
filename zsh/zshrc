@@ -11,6 +11,9 @@ unsetopt AUTO_CD
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+# bind ctrl-space to choose zsh autosuggestions
+bindkey '^ ' autosuggest-accept
+
 # NVM Stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
