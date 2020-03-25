@@ -4,8 +4,8 @@ let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
 " Coc
 let g:coc_user_config = {}
 let g:coc_user_config['diagnostic'] = {}
-let g:coc_user_config['diagnostic']['infoSign'] = "💩"
-let g:coc_user_config['diagnostic']['warningSign'] = "😱"
+let g:coc_user_config['diagnostic']['infoSign'] = "😱"
+let g:coc_user_config['diagnostic']['warningSign'] = "💩"
 let g:coc_user_config['diagnostic']['errorSign'] = "🔥"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -90,6 +90,7 @@ let g:indentLine_concealcursor = ""
 " Prettier
 nmap =p <Plug>(Prettier)
 let g:prettier#config#single_quote = 'true'
+let g:prettier#config#print_width = 120
 
 " Lightline
 let g:lightline = {
@@ -154,7 +155,7 @@ let g:test#javascript#jest#file_pattern = '.*\.test\.js'
 let test#strategy = 'basic'
 
 " Vim close-tag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.ts, *.tsx"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.tsx"
 
 " Hardtime
 let g:hardtime_timeout = 5000
