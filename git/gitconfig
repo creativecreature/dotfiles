@@ -11,5 +11,9 @@
 
 [includeif "gitdir:~/code/viaplay/"]
   path = ~/code/viaplay/.gitconfig
+
+[includeif "gitdir:~/code/klarna/"]
+  path = ~/code/klarna/.gitconfig
+
 [push]
 	default = current

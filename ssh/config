@@ -17,3 +17,9 @@ AddKeysToAgent yes
 User git
 IdentityFile ~/.ssh/nentgroup_rsa
 IdentitiesOnly yes
+
+Host stash.int.klarna.net
+AddKeysToAgent yes
+User git
+IdentityFile ~/.ssh/klarna_rsa
+IdentitiesOnly yes
