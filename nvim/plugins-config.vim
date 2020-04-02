@@ -91,6 +91,8 @@ let g:indentLine_concealcursor = ""
 nmap =p <Plug>(Prettier)
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#print_width = 120
+let g:prettier#config#semi = 'false'
+let g:prettier#config#trailing_comma = 'es5'
 
 " Lightline
 let g:lightline = {
@@ -159,3 +161,10 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.tsx"
 
 " Hardtime
 let g:hardtime_timeout = 5000
+
+" Ripgrep
+" bind CTRL-f to grep word under cursor and show results in quickfix
+nnoremap <C-f> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind - to grep and show result in quickfix
+command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
+nnoremap - :Rg<SPACE>

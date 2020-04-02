@@ -70,10 +70,10 @@ set smartcase
 set splitbelow
 set splitright
 
-" The Silver Searcher
+" Grep with ripgrep
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
+    set grepformat=%f:%l:%c:%m
 endif
 
 " Enable folding
