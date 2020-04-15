@@ -79,6 +79,7 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeWinSize = 50
 let g:NERDTreeMapOpenVSplit = '<C-v>'
 let g:NERDTreeMapOpenSplit = '<C-x>'
+let g:NERDTreeShowHidden=1
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
