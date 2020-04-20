@@ -6,5 +6,12 @@
   "coc.source.emoji.triggerCharacters": ["^"],
   "javascript.suggestionActions.enabled": false,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "css.filetypes": ["css", "less", "scss", "scss.css"]
+  "css.filetypes": ["css", "less", "scss", "scss.css"],
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  }
 }
