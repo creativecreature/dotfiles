@@ -161,7 +161,7 @@ let test#strategy = 'basic'
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.tsx"
 
 " Hardtime
-let g:hardtime_timeout = 5000
+let g:hardtime_timeout = 2500
 
 " Ripgrep
 " bind CTRL-f to grep word under cursor and show results in quickfix
