@@ -22,6 +22,7 @@ Plug 'ervandew/supertab'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 
 " Editing
 Plug 'tpope/vim-repeat'
