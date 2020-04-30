@@ -1,3 +1,7 @@
+" Hardtime
+" let g:hardtime_default_on = 1
+let g:hardtime_timeout = 2500
+
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
 
@@ -159,9 +163,6 @@ let test#strategy = 'basic'
 
 " Vim close-tag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php, *.jsx, *.js, *.tsx"
-
-" Hardtime
-let g:hardtime_timeout = 2500
 
 " Ripgrep
 " bind CTRL-f to grep word under cursor and show results in quickfix
