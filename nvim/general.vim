@@ -133,5 +133,28 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
 colorscheme palenight
+" colorscheme nova
 " colorscheme night-owl
 let no_buffers_menu=1
+
+
+hi ActiveWindow guibg=#292D3E
+hi InactiveWindow guibg=#252837
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of active/inactive windows
+function! Handle_Win_Enter()
+  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+ endfunction
+
+ function! Handle_Win_Exit()
+     setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
+ endfunction
+
+ nmap <silent> <leader>o mz:execute Handle_Win_Exit()<CR>'z
+ nmap <silent> <leader>O mz:execute Handle_Win_Enter()<CR>'z

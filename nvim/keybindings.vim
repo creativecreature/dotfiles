@@ -60,4 +60,3 @@ nnoremap <space> za
 
 " Map gF to go to file in vertical split
 nnoremap gF :vertical wincmd f<CR>
-

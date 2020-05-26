@@ -6,6 +6,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
+Plug 'trevordmiller/nova-vim'
 
 " Project navigation
 Plug 'scrooloose/nerdtree'
@@ -46,6 +47,7 @@ Plug 'tpope/vim-fugitive'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 
 " Kick bad habits
 Plug 'takac/vim-hardtime'
