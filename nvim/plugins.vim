@@ -3,7 +3,8 @@ call plug#begin()
 " User interface
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'charlesconner/palenight.vim'
+Plug 'trevordmiller/nova-vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
 Plug 'trevordmiller/nova-vim'
