@@ -97,7 +97,7 @@ nmap =p <Plug>(Prettier)
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#print_width = 120
 let g:prettier#config#semi = 'false'
-let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#trailing_comma = 'all'
 
 " Lightline
 let g:lightline = {
