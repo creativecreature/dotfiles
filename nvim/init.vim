@@ -7,3 +7,9 @@ source $HOME/.config/nvim/keybindings.vim
 " They get overwritten by some plug so they chill here 💩
 set modeline
 set modelines=5
+
+
+
+" let g:plaintex_delimiters = 1
+" syntax on
+" syn match   plaintexDelimiter             display '[][{}]'

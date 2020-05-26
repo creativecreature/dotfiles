@@ -7,9 +7,7 @@ else
     brew install --HEAD neovim
   else
     echo_item "Installing Neovim" "green"
-    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-    chmod u+x nvim.appimage
-    sudo mv ./nvim.appimage /usr/bin/nvim
+    sudo apt-get -qq install neovim
   fi
 fi
 echo ""

@@ -72,8 +72,8 @@ set splitright
 
 " Grep with ripgrep
 if executable("rg")
-    set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m
 endif
 
 " Enable folding
@@ -87,37 +87,37 @@ set shortmess+=c
 set signcolumn=yes
 
 if has("autocmd")
-filetype plugin indent on
+  filetype plugin indent on
 
-" Resize vim windows when window size changes, usually caused by opening a
-" tmux split
-autocmd VimResized * :wincmd =
+  " Resize vim windows when window size changes, usually caused by opening a
+  " tmux split
+  autocmd VimResized * :wincmd =
 
-autocmd BufReadPost * " {{{2
-" When editing a file, always jump to the last known cursor position.
-" Don't do it for commit messages, when the position is invalid, or when
-" inside an event handler (happens when dropping a file on gvim).
-      \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif "}}}2
+  autocmd BufReadPost * " {{{2
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif "}}}2
 
-" Automatically clean trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+  " Automatically clean trailing whitespace
+  autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
-      \ | set textwidth=0
+  autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
+        \ | set textwidth=0
 
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
+  autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
-au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile *.scssm set filetype=scss
+  au BufRead,BufNewFile *.scss set filetype=scss
+  au BufRead,BufNewFile *.scssm set filetype=scss
 
-autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
-autocmd BufEnter *.tsx set filetype=typescript.tsx
+  autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
+  autocmd BufEnter *.tsx set filetype=typescript.tsx
 
-autocmd BufEnter * set foldmethod=indent
+  autocmd BufEnter * set foldmethod=indent
 
 endif
 
@@ -131,12 +131,22 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "     set termguicolors
 " endif
 set termguicolors
-set background=dark
+" set background=dark
 colorscheme palenight
 " colorscheme nova
 " colorscheme night-owl
+" let g:nova_transparent = 1
+" colorscheme nova
+"
 let no_buffers_menu=1
 
+function! s:highlight_helper(...)
+  let l:syntax_group = a:1
+  let l:foreground_color = a:2
+  let l:background_color = empty(a:3) ? "NONE" : a:3
+  let l:gui = a:0 == 3 ? "None" : a:4
+  exec "highlight " . l:syntax_group . " guifg=" . l:foreground_color . " guibg=" . l:background_color . " gui=" . l:gui . " cterm=NONE term=NONE"
+endfunction
 
 hi ActiveWindow guibg=#292D3E
 hi InactiveWindow guibg=#252837
@@ -150,11 +160,17 @@ augroup END
 " Change highlight group of active/inactive windows
 function! Handle_Win_Enter()
   setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
- endfunction
+  call s:highlight_helper("Normal", "#bfc7d5", "#292D3E")
+  call s:highlight_helper("TabLine", "#697098", "#292D3E")
+  call s:highlight_helper("TabLineSel", "#bfc7d5", "#292D3E")
+endfunction
 
- function! Handle_Win_Exit()
-     setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
- endfunction
+function! Handle_Win_Exit()
+  setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
+  call s:highlight_helper("Normal", "#bfc7d5", "#252837")
+  call s:highlight_helper("TabLine", "#697098", "#252837")
+  call s:highlight_helper("TabLineSel", "#bfc7d5", "#252837")
+endfunction
 
- nmap <silent> <leader>o mz:execute Handle_Win_Exit()<CR>'z
- nmap <silent> <leader>O mz:execute Handle_Win_Enter()<CR>'z
+nmap <silent> <leader>o mz:execute Handle_Win_Exit()<CR>'z
+nmap <silent> <leader>O mz:execute Handle_Win_Enter()<CR>'z

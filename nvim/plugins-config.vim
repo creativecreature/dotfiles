@@ -6,6 +6,7 @@ let g:hardtime_timeout = 2500
 let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
 
 " Coc
+let g:coc_global_extensions = ['coc-solargraph']
 let g:coc_user_config = {}
 let g:coc_user_config['diagnostic'] = {}
 let g:coc_user_config['diagnostic']['infoSign'] = "😱"
@@ -102,6 +103,9 @@ let g:prettier#config#trailing_comma = 'all'
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'palenight',
+      \ 'enable': {
+      \   'tabline': 0
+      \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'coc-status', 'readonly', 'filename', 'modified', 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ]

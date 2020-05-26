@@ -28,8 +28,8 @@ noremap <Leader>x :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Buffer nav
-noremap <leader>q :bp<CR>
-noremap <leader>w :bn<CR>
+noremap <silent><leader>q :bp<CR>
+noremap <silent><leader>w :bn<CR>
 
 " Close buffer
 noremap <leader>c :bd<CR>
