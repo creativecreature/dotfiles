@@ -61,6 +61,7 @@ nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>t :FzfBTags<CR>
 nnoremap <Leader>T :FzfTags<CR>
+" let g:fzf_files_options = '--preview="bat --theme=base16 --color=always {}"'
 nnoremap <C-p> :FzfFiles<CR>
 
 " Gutentags
