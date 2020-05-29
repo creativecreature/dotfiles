@@ -1,20 +1,20 @@
 " Smarter pasting
 nnoremap <Leader>p :set invpaste paste?<CR>
 if has('macunix')
-	vmap <C-x> :!pbcopy<CR>
-	vmap <C-c> :w !pbcopy<CR><CR>
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
 endif
 if has('unnamedplus')
-	set clipboard=unnamed,unnamedplus
+  set clipboard=unnamed,unnamedplus
 endif
 
 " Smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
-	if len(getline('.')) == 0
-		return "\"_ddO"
-	else
-		return "i"
-	endif
+  if len(getline('.')) == 0
+    return "\"_ddO"
+  else
+    return "i"
+  endif
 endfunction
 nnoremap <expr> i IndentWithI()
 
@@ -31,8 +31,8 @@ noremap <Leader>v :<C-u>vsplit<CR>
 noremap <silent><leader>q :bp<CR>
 noremap <silent><leader>w :bn<CR>
 
-" Close buffer
-noremap <leader>c :bd<CR>
+" Close buffer, small fix for nerdtree bug see https://github.com/preservim/nerdtree/issues/400
+noremap <leader>c :bp<cr>:bd #<cr>
 
 "Clean search highlight
 nnoremap <silent> <leader><space> :noh<cr>

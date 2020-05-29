@@ -155,22 +155,22 @@ hi InactiveWindow guibg=#252837
 augroup WindowManagement
   autocmd!
   autocmd WinEnter * call Handle_Win_Enter()
+  autocmd WinLeave * call Handle_Win_Exit()
 augroup END
 
 " Change highlight group of active/inactive windows
 function! Handle_Win_Enter()
   setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-  call s:highlight_helper("Normal", "#bfc7d5", "#292D3E")
-  call s:highlight_helper("TabLine", "#697098", "#292D3E")
-  call s:highlight_helper("TabLineSel", "#bfc7d5", "#292D3E")
 endfunction
 
 function! Handle_Win_Exit()
   setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
-  call s:highlight_helper("Normal", "#bfc7d5", "#252837")
-  call s:highlight_helper("TabLine", "#697098", "#252837")
-  call s:highlight_helper("TabLineSel", "#bfc7d5", "#252837")
 endfunction
 
-nmap <silent> <leader>o mz:execute Handle_Win_Exit()<CR>'z
-nmap <silent> <leader>O mz:execute Handle_Win_Enter()<CR>'z
+nnoremap <silent> <leader>o :call Handle_Win_Exit()<CR>
+nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
+
+" TODO Eventually move these to the colorscheme
+call s:highlight_helper("TabLine", "#697098", "#252837")
+call s:highlight_helper("TabLineSel", "#bfc7d5", "#252837")
+call s:highlight_helper("TabLineFill", "#bfc7d5", "#252837")
