@@ -42,6 +42,78 @@ source 'nvm/nvm.sh'
 
 
 
+# -- ruby ----------------------------------------------------------------------
+if exists "rbenv"; then
+  echo_item "Rbenv is already installed" "green"
+else
+ sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+ rbenv install 2.6.3
+ rbenv global 2.6.3
+ gem install bundler
+ rbenv rehash
+ gem install rails -v 6.0.0.rc1
+ rbenv rehash
+ gem install solargraph
+fi
+
+echo ""
+
+
+
+# -- GO ------------------------------------------------------------------------
+if exists "go"; then
+  echo_item "Go is already installed" "green"
+else
+  mkdir ~/tmp
+  cd ~/tmp
+  curl -O https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+  tar xvf go1.14.1.linux-amd64.tar.gz
+  sudo mv go /usr/local/bin/
+  cd -
+fi
+
+echo ""
+
+
+
+# -- Terraform -----------------------------------------------------------------
+if exists "terraform"; then
+  echo_item "Terraform is already installed" "green"
+else
+  "Installing Terraform"
+  mkdir ~/tmp
+  cd ~/tmp
+  wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+  unzip terraform_0.11.14_linux_amd64.zip
+  sudo mv terraform /usr/local/bin/
+  cd -
+fi
+
+echo ""
+
+
+
+# -- Terraform Languange Server ------------------------------------------------
+if exists "terraform-lsp"; then
+  echo_item "Terraform language server is already installed" "green"
+else
+  ech_item "Installing terraform language server" "green"
+  cd ..
+  git clone https://github.com/juliosueiras/terraform-lsp.git
+  cd -
+  cd ../terraform-lsp
+  GO111MODULE=on go mod download
+  make
+  make copy
+  cd -
+fi
+
+echo ""
+
+
+
 # -- Neovim --------------------------------------------------------------------
 source 'nvim/nvim.sh'
 
@@ -339,6 +411,18 @@ if exists "heroku"; then
 else
   echo_item "Installing Heroku"
   sudo snap install --classic heroku
+fi
+
+echo ""
+
+
+
+# -- Simple screen recorder ---------------------------------------------------
+if exists "simplescreenrecorder"; then
+  echo_item "Simple screen recorder is already installed" "green"
+else
+  echo_item "Installing Simple screen recorder"
+  sudo apt install simplescreenrecorder
 fi
 
 echo ""
