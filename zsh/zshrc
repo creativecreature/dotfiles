@@ -19,6 +19,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Add Yarn to path
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$(yarn global bin):$PATH"
+
+# Add bin to path, should eventually remove this and use dotfiles bin
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Add Klarna tools to path
+export PATH="$HOME/code/klarna/tools/bin:$PATH"
+
 # Linux specific setup
 if [[ "$(uname)" == "Linux" ]]; then
   # Turn caps lock into escape
@@ -36,15 +49,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export ZSH_DISABLE_COMPFIX=true
 fi
 
-# Add Yarn to path
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$(yarn global bin):$PATH"
-
-# Add bin to path, should eventually remove this and use dotfiles bin
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
 # Aws region
 export AWS_REGION=eu-west-1
 export AWS_DEFAULT_REGION=eu-west-1
@@ -56,14 +60,14 @@ export EDITOR="$VISUAL"
 # Aliases
 alias vim=nvim
 alias vi=nvim
+alias gs="git status"
 # alias ag='ag --path-to-ignore ~/.ignore'
 alias pe="~/code/viaplay/mtg-cloudformation/msp pe"
 alias msp="~/code/viaplay/mtg-cloudformation/msp"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fzf search with ripgrep and preview
-export FZF_DEFAULT_OPTS='--height=70% --preview="bat --theme=base16 --color=always {}" --preview-window=right:60%:wrap'
+# fzf search with ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden -i --ignore-file '~/.ignore'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # Removes username@host from the terminal prompt
