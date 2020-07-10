@@ -18,6 +18,9 @@
 [includeif "gitdir:~/code/devaddict/"]
   path = ~/code/devaddict/.gitconfig
 
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
+
 [includeif "gitdir:~/code/viaplay/"]
   path = ~/code/viaplay/.gitconfig
 
