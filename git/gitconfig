@@ -4,10 +4,10 @@
   editor = /usr/local/bin/nvim
 
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 
-[includeif "gitdir:~/code/conner/"]
-  path = ~/code/conner/.gitconfig
+[includeif "gitdir:~/code/c.conner/"]
+  path = ~/code/c.conner/.gitconfig
 
 [includeif "gitdir:~/code/viaplay/"]
   path = ~/code/viaplay/.gitconfig
@@ -16,4 +16,22 @@
   path = ~/code/klarna/.gitconfig
 
 [push]
-	default = current
+  default = upstream
+
+[pull]
+  rebase = true
+
+[merge]
+  ff = only
+
+[fetch]
+  prune = true
+
+[alias]
+  sla = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+  unstage = reset
+  uncommit = reset --soft HEAD^
+  mup = !git checkout master && git pull && git checkout -
+  upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
+  ureset = !git upstream && git reset --hard $(git upstream)
