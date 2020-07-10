@@ -36,6 +36,7 @@ if [[ -d "$BIN_DIR" ]]; then
 else
   echo "Creating bin dir"
   mkdir ~/bin
+  mkdir ~/.bin
 fi
 
 if [[ -d "$CONFIG_DIR" ]]; then
