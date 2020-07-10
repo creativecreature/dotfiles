@@ -4,10 +4,16 @@
   editor = /usr/local/bin/nvim
 
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = /home/conner/.gitignore_global
 
 [includeif "gitdir:~/code/c.conner/"]
   path = ~/code/c.conner/.gitconfig
+
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
+
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
 
 [includeif "gitdir:~/code/viaplay/"]
   path = ~/code/viaplay/.gitconfig
@@ -16,7 +22,7 @@
   path = ~/code/klarna/.gitconfig
 
 [push]
-  default = upstream
+  default = current
 
 [pull]
   rebase = true
