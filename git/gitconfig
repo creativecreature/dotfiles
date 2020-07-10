@@ -6,8 +6,11 @@
 [core]
   excludesfile = /home/conner/.gitignore_global
 
-[includeif "gitdir:~/code/c.conner/"]
-  path = ~/code/c.conner/.gitconfig
+[includeif "gitdir:~/code/conner/"]
+  path = ~/code/conner/.gitconfig
+
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
 
 [includeif "gitdir:~/code/devaddict/"]
   path = ~/code/devaddict/.gitconfig
