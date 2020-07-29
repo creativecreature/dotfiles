@@ -143,3 +143,6 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
+
+load-module module-echo-cancel source_name=hyperxsource source_properties=device.description=hyperxHD
+set-default-source hyperxHD

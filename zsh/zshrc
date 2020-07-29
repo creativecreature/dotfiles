@@ -81,6 +81,7 @@ alias gs="git status"
 # alias ag='ag --path-to-ignore ~/.ignore'
 alias pe="~/code/viaplay/mtg-cloudformation/msp pe"
 alias msp="~/code/viaplay/mtg-cloudformation/msp"
+alias open="gio open"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
