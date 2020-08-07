@@ -13,12 +13,12 @@ else
   fi
   mkdir ~/tmp/tmux
   cd ~/tmp/tmux
-  wget https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
-  tar xf tmux-${TMUX_VERSION}.tar.gz
+  curl --silent --show-error --output /dev/null https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
+  tar xf tmux-${TMUX_VERSION}.tar.gz > /dev/null
   rm -f tmux-${TMUX_VERSION}.tar.gz
   cd tmux-${TMUX_VERSION}
-  ./configure && make
-  sudo make install
+  ./configure && make > /dev/null
+  sudo make install > /dev/null
   cd ~/dotfiles
   rm -rf ~/tmp/tmux
 fi
@@ -47,7 +47,7 @@ if [[ -d "$TPM_DIR" ]]; then
   echo_item "Tpm directory already exists" "green"
 else
   echo_item "Cloning TPM directory" "green"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone --quiet https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm > /dev/null
 fi
 
 echo_item "Symlinking tat script" "green"

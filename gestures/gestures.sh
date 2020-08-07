@@ -8,12 +8,12 @@ else
   echo_item "Installing libinput-gesture, xdotool and wmctrl" "green"
   sudo gpasswd -a $USER input # Need to be a member of input group to read touchpad
   sudo apt-get -qq install xdotool wmctrl libinput-tools
-  git clone http://github.com/bulletmark/libinput-gestures
+  git clone --silent http://github.com/bulletmark/libinput-gestures > /dev/null
   cd libinput-gestures
-  sudo ./libinput-gestures-setup install
+  sudo ./libinput-gestures-setup install > /dev/null
   cd -
-  libinput-gestures-setup start
-  libinput-gestures-setup autostart
+  libinput-gestures-setup start > /dev/null
+  libinput-gestures-setup autostart > /dev/null
   rm -rf libinput-gestures
   cp /etc/libinput-gestures.conf ~/.config/libinput-gestures.conf # Copy a local conf file
 fi

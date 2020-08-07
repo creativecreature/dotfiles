@@ -15,7 +15,7 @@ if system_is_OSX; then
   brew install git
 else
   sudo apt-get -qq update
-  sudo apt-get -qq install -y git
+  sudo apt-get -qq install git
 fi
 
 

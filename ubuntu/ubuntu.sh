@@ -46,16 +46,17 @@ source 'nvm/nvm.sh'
 if exists "rbenv"; then
   echo_item "Rbenv is already installed" "green"
 else
- sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
- git clone https://github.com/rbenv/rbenv.git ~/.rbenv
- git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
- rbenv install 2.6.3
- rbenv global 2.6.3
- gem install bundler
- rbenv rehash
- gem install rails -v 6.0.0.rc1
- rbenv rehash
- gem install solargraph
+  echo_item "Installing rbenv" "green"
+ sudo apt-get -qq install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+ git clone --quiet https://github.com/rbenv/rbenv.git ~/.rbenv > /dev/null
+ git clone --quiet https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build > /dev/null
+ rbenv install 2.6.3 > /dev/null
+ rbenv global 2.6.3 > /dev/null
+ gem install bundler > /dev/null
+ rbenv rehash > /dev/null
+ gem install rails -v 6.0.0.rc1 > /dev/null
+ rbenv rehash > /dev/null
+ gem install solargraph > /dev/null
 fi
 
 echo ""
@@ -66,10 +67,9 @@ echo ""
 if exists "go"; then
   echo_item "Go is already installed" "green"
 else
-  mkdir ~/tmp
   cd ~/tmp
-  curl -O https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
-  tar xvf go1.14.1.linux-amd64.tar.gz
+  curl --silent --show-error --output /dev/null https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+  tar xvf go1.14.1.linux-amd64.tar.gz > /dev/null
   sudo mv go /usr/local/bin/
   cd -
 fi
@@ -83,10 +83,9 @@ if exists "terraform"; then
   echo_item "Terraform is already installed" "green"
 else
   "Installing Terraform"
-  mkdir ~/tmp
   cd ~/tmp
-  wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
-  unzip terraform_0.11.14_linux_amd64.zip
+  curl --silent --show-error --output /dev/null https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+  unzip terraform_0.11.14_linux_amd64.zip > /dev/null
   sudo mv terraform /usr/local/bin/
   cd -
 fi
@@ -101,12 +100,12 @@ if exists "terraform-lsp"; then
 else
   ech_item "Installing terraform language server" "green"
   cd ..
-  git clone https://github.com/juliosueiras/terraform-lsp.git
+  git clone --quiet https://github.com/juliosueiras/terraform-lsp.git > /dev/null
   cd -
   cd ../terraform-lsp
   GO111MODULE=on go mod download
-  make
-  make copy
+  make > /dev/null
+  make copy > /dev/null
   cd -
 fi
 
@@ -123,7 +122,7 @@ source 'nvim/nvim.sh'
 if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
-  sudo add-apt-repository ppa:x4121/ripgrep
+  sudo add-apt-repository ppa:x4121/ripgrep > /dev/null
   sudo apt-get -qq update
   sudo apt-get -qq install ripgrep
 fi
@@ -170,8 +169,8 @@ if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
   echo_item "Installing pipenv" "green"
-  sudo apt install python3-pip
-  pip3 install pipenv
+  sudo apt-get -qq install python3-pip
+  pip3 install pipenv > /dev/null
 fi
 
 echo ""
@@ -182,9 +181,9 @@ echo ""
 if [[ -n $(find ~/.local/share/fonts -type f -name '*Powerline*') ]]; then
   echo_item "Powerline fonts are already installed" "green"
 else
-  git clone https://github.com/powerline/fonts.git --depth=1
+  git clone --quiet https://github.com/powerline/fonts.git --depth=1 > /dev/null
   cd fonts
-  ./install.sh
+  ./install.sh > /dev/null
   cd -
   rm -rf fonts
 fi
@@ -198,7 +197,7 @@ if exists "gnome-tweaks"; then
   echo_item "Gnome tweaks is already installed" "green"
 else
   sudo apt-get -qq install gnome-tweaks
-  sudo apt install gnome-shell-extension-autohidetopbar
+  sudo apt-get -qq install gnome-shell-extension-autohidetopbar
 fi
 
 echo ""
@@ -301,8 +300,7 @@ if [[ -f ~/.config/dotfile-installs/exfat ]]; then
   echo_item "Exfat support is already installed" "green"
 else
   echo_item "Installing exfat support" "green"
-  sudo apt install exfat-fuse exfat-utils
-  sudo add-apt-repository universe
+  sudo apt-get -qq install exfat-fuse exfat-utils
   touch ~/.config/dotfile-installs/exfat
 fi
 
@@ -339,7 +337,7 @@ if exists "slack"; then
   echo_item "Slack is already installed" "green"
 else
   echo_item "Installing Slack" "green"
-  sudo snap install slack --classic
+  sudo snap install slack --classic > /dev/null
 fi
 
 echo ""
@@ -376,18 +374,6 @@ source './vpn/vpn.sh'
 
 
 
-# -- Datagrip -----------------------------------------------------------------
-if exists "datagrip"; then
-  echo_item "Datagrip is already installed" "green"
-else
-  echo_item "Installing datagrip" "green"
-  sudo snap install datagrip --classic
-fi
-
-echo ""
-
-
-
 # -- Insomnia -----------------------------------------------------------------
 if exists "insomnia"; then
   echo_item "Insomnia is already installed" "green"
@@ -410,7 +396,7 @@ if exists "heroku"; then
   echo_item "Heroku is already installed" "green"
 else
   echo_item "Installing Heroku"
-  sudo snap install --classic heroku
+  sudo snap install --classic heroku > /dev/null
 fi
 
 echo ""
@@ -422,7 +408,7 @@ if exists "simplescreenrecorder"; then
   echo_item "Simple screen recorder is already installed" "green"
 else
   echo_item "Installing Simple screen recorder"
-  sudo apt install simplescreenrecorder
+  sudo apt-get -qq install simplescreenrecorder
 fi
 
 echo ""
@@ -435,9 +421,9 @@ if exists "nordvpn"; then
 else
   echo_item "Installing NordVPN" "green"
   cd ~/Downloads
-  sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-  sudo dpkg -i ./nordvpn-release_1.0.0_all.deb
-  sudo apt-get update
+  curl --silent --show-error --output /dev/null https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+  sudo dpkg -i ./nordvpn-release_1.0.0_all.deb > /dev/null
+  sudo apt-get -qq update
   sudo apt-get -qq install nordvpn
   cd -
 fi
@@ -451,10 +437,10 @@ if exists "bat"; then
   echo_item "Bat is already installed" "green"
 else
   echo_item "Installing Bat" "green"
-  sudo apt -qq install bat -y
+  sudo apt -qq install bat
   mkdir -p "$(bat --config-dir)/themes"
   ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
-  bat cache --build
+  bat cache --build > /dev/null
 fi
 
 echo ""
@@ -473,11 +459,6 @@ source 'theme/theme.sh'
 
 # -- TERMINAL ----------------------------------------------------------------------
 source 'terminal/terminal.sh'
-
-
-
-# -- ENVIRONMENT --------------------------------------------------------------------
-source 'environment/environment.sh'
 
 
 

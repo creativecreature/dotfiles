@@ -6,7 +6,7 @@ if exists "docker"; then
 else
   sudo apt-get -qq install apt-transport-https ca-certificates curl software-properties-common
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
+  sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" > /dev/null
   sudo apt-get -qq update
   sudo apt-get -qq install docker-ce
   sudo usermod -a -G docker $USER

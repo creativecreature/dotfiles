@@ -11,7 +11,6 @@ set laststatus=2 " Always displays the status line
 set noshowmode
 set timeoutlen=1000
 set ttimeoutlen=0
-set expandtab
 set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
 set hidden
@@ -23,9 +22,9 @@ set cmdheight=2 " Give more space for displaying messages.
 " Indentation
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftwidth=2 " number of spaces to use for autoindenting
-set expandtab " insert space characters whenever tab key is pressed
 set tabstop=2 " number of space characters to insert when tab is pressed
 set softtabstop=2 " <Tab> and <BS> inserts and deletes right amount of spaces
+set expandtab " insert space characters whenever tab key is pressed
 function TabToggle()
   if &expandtab
     set shiftwidth=4
