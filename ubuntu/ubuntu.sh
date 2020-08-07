@@ -67,8 +67,9 @@ echo ""
 if exists "go"; then
   echo_item "Go is already installed" "green"
 else
+  echo_item "Installing Go" "green"
   cd ~/tmp
-  curl --silent --show-error --output /dev/null https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+  curl --silent --show-error  https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
   tar xvf go1.14.1.linux-amd64.tar.gz > /dev/null
   sudo mv go /usr/local/bin/
   cd -
@@ -82,9 +83,9 @@ echo ""
 if exists "terraform"; then
   echo_item "Terraform is already installed" "green"
 else
-  "Installing Terraform"
+  echo_item "Installing Terraform" "green"
   cd ~/tmp
-  curl --silent --show-error --output /dev/null https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+  curl --silent --show-error  https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
   unzip terraform_0.11.14_linux_amd64.zip > /dev/null
   sudo mv terraform /usr/local/bin/
   cd -
@@ -98,7 +99,7 @@ echo ""
 if exists "terraform-lsp"; then
   echo_item "Terraform language server is already installed" "green"
 else
-  ech_item "Installing terraform language server" "green"
+  echo_item "Installing terraform language server" "green"
   cd ..
   git clone --quiet https://github.com/juliosueiras/terraform-lsp.git > /dev/null
   cd -
@@ -122,7 +123,8 @@ source 'nvim/nvim.sh'
 if exists "rg"; then
   echo_item "Ripgrep is already installed" "green"
 else
-  sudo add-apt-repository ppa:x4121/ripgrep > /dev/null
+  echo_item "Installing ripgrep" "green"
+  sudo add-apt-repository ppa:x4121/ripgrep
   sudo apt-get -qq update
   sudo apt-get -qq install ripgrep
 fi
@@ -170,7 +172,7 @@ if exists "pipenv"; then
 else
   echo_item "Installing pipenv" "green"
   sudo apt-get -qq install python3-pip
-  pip3 install pipenv > /dev/null
+  pip3 install pipenv
 fi
 
 echo ""
@@ -181,6 +183,7 @@ echo ""
 if [[ -n $(find ~/.local/share/fonts -type f -name '*Powerline*') ]]; then
   echo_item "Powerline fonts are already installed" "green"
 else
+  echo_item "Installing powerline fonts" "green"
   git clone --quiet https://github.com/powerline/fonts.git --depth=1 > /dev/null
   cd fonts
   ./install.sh > /dev/null
@@ -323,10 +326,11 @@ ENPASS_FILE=~/.config/dotfile-installs/enpass
 if [[ -f "$ENPASS_FILE" ]]; then
   echo_item "Enpass is already installed" "green"
 else
+  echo_item "Installing Enpass" "green"
   sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
   wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
-  sudo apt -qq update
-  sudo apt -qq install enpass -y
+  sudo apt update
+  sudo apt install enpass -y
   touch ~/.config/dotfile-installs/enpass
 fi
 
@@ -350,19 +354,6 @@ if exists "firefox"; then
 else
   echo_item "Installing Firefox" "green"
   sudo apt-get -qq install firefox
-fi
-
-echo ""
-
-
-
-# -- Blueman ----------------------------------------------------------------
-if exists "blueman-manager"; then
-  echo_item "Blueman is already installed" "green"
-else
-  echo_item "Installing Blueman" "green"
-  sudo apt-get -qq install blueman
-  sudo apt-get -qq install pulseaudio-module-bluetooth
 fi
 
 echo ""
