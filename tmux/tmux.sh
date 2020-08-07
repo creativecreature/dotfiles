@@ -1,6 +1,5 @@
 #!/bin/bash
 
-TMUX_VERSION=2.9a
 TMUX_DIR=~/.tmux
 PLUGIN_DIR=~/.tmux/plugins
 TPM_DIR=~/.tmux/plugins/tpm
@@ -8,19 +7,7 @@ TPM_DIR=~/.tmux/plugins/tpm
 if exists "tmux"; then
   echo_item "Tmux is already installed" "green"
 else
-  if system_is_OSX; then
-    brew install libevent
-  fi
-  mkdir ~/tmp/tmux
-  cd ~/tmp/tmux
-  curl --silent --show-error --output /dev/null https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
-  tar xf tmux-${TMUX_VERSION}.tar.gz > /dev/null
-  rm -f tmux-${TMUX_VERSION}.tar.gz
-  cd tmux-${TMUX_VERSION}
-  ./configure && make > /dev/null
-  sudo make install > /dev/null
-  cd ~/dotfiles
-  rm -rf ~/tmp/tmux
+  sudo apt-get -qq install tmux
 fi
 
 echo ""

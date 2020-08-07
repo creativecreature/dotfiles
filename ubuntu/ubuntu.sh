@@ -403,7 +403,7 @@ echo ""
 
 
 
-# -- Simple screen recorder ---------------------------------------------------
+# -- Simple screen recorder ----------------------------------------------------
 if exists "simplescreenrecorder"; then
   echo_item "Simple screen recorder is already installed" "green"
 else
@@ -412,6 +412,32 @@ else
 fi
 
 echo ""
+
+
+
+# -- Git crypt -----------------------------------------------------------------
+if exists "git-crypt"; then
+  echo_item "Git crypt is already installed" "green"
+else
+  echo_item "Installing Git crypt"
+  sudo apt-get -qq install git-crypt
+fi
+
+echo ""
+
+
+
+# -- Tree ----------------------------------------------------------------------
+if exists "tree"; then
+  echo_item "Tree is already installed" "green"
+else
+  echo_item "Installing Tree"
+  sudo apt-get -qq install tree
+fi
+
+echo ""
+
+
 
 
 
