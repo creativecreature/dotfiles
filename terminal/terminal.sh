@@ -16,11 +16,11 @@ if [[ -f  "$PROFILE_FILE" ]]; then
   echo_item "Palenight profile is already created" "green"
 else
   echo_item "Installing palenight profile" "green"
-  git clone --quiet https://github.com/CharlesConner/palenight-gnome-term --depth=1 > /dev/null
-  cd palenight-gnome-term
+  git clone --quiet https://github.com/devaddict/terminal-scheme --depth=1 > /dev/null
+  cd terminal-scheme
   ./palenight.sh > /dev/null
   cd -
-  rm -rf palenight-gnome-term
+  rm -rf terminal-scheme
   touch $PROFILE_FILE
 fi
 
