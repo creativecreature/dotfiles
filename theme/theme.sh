@@ -16,9 +16,9 @@ if [[ -d "$THEME_DIR" ]]; then
   echo_item "Theme is already installed" "green"
 else
   echo_item "Cloning down Nordic gtk theme" "green"
-  sudo git clone --quiet https://github.com/EliverLara/Nordic.git /usr/share/themes/Nordic > /dev/null
-  gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
-  gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
+  sudo git clone --quiet https://github.com/devaddict/gtk-theme.git /usr/share/themes/Juno > /dev/null
+  gsettings set org.gnome.desktop.interface gtk-theme "Juno"
+  gsettings set org.gnome.desktop.wm.preferences theme "Juno"
 fi
 
 if [[ -d "$ICONS_DIR" ]]; then
@@ -32,7 +32,7 @@ if [[ -d "$ICON_DIR" ]]; then
   echo_item "Icon directory already exists" "green"
 else
   echo_item "Cloning down Zafiro icons" "green"
-  sudo git clone --quiet https://github.com/zayronxio/Zafiro-icons.git /usr/share/icons/Zafiro > /dev/null
+  sudo git clone --quiet https://github.com/devaddict/icons.git /usr/share/icons/Zafiro > /dev/null
   gsettings set org.gnome.desktop.interface icon-theme 'Zafiro'
 fi
 
