@@ -10,16 +10,15 @@ infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
 rm $TERM.ti
 
-# I dont like this solution much but I havent found a way to query the gnome terminal
-# for profile names, only ID's.
+# Cant query gnome terminal for profile names
 PROFILE_FILE=~/.config/dotfile-installs/palenightprofile
 if [[ -f  "$PROFILE_FILE" ]]; then
-  echo_item "Palenight profile for gnome is already installed" "green"
+  echo_item "Palenight profile is already created" "green"
 else
   echo_item "Installing palenight profile" "green"
-  git clone https://github.com/CharlesConner/palenight-gnome-term --depth=1
+  git clone --quiet https://github.com/CharlesConner/palenight-gnome-term --depth=1 > /dev/null
   cd palenight-gnome-term
-  ./palenight.sh
+  ./palenight.sh > /dev/null
   cd -
   rm -rf palenight-gnome-term
   touch $PROFILE_FILE

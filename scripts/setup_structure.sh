@@ -1,8 +1,8 @@
 #!/bin/bash
 
 CODE_DIR=~/code
-VIAPLAY_DIR=~/code/viaplay
 USER_DIR=~/code/$USER
+DEV_ADDICT_DIR=~/code/devaddict
 BIN_DIR=~/bin
 CONFIG_DIR=~/.config
 INSTALL_DIR=~/.config/dotfile-installs
@@ -17,11 +17,11 @@ else
   mkdir ~/code
 fi
 
-if [[ -d "$VIAPLAY_DIR" ]]; then
-  echo "Viaplay dir already exists"
+if [[ -d "$DEV_ADDICT_DIR" ]]; then
+  echo "Dev addict dir already exists"
 else
-  echo "Creating viaplay dir"
-  mkdir ~/code/viaplay
+  echo "Creating devaddict dir"
+  mkdir ~/code/devaddict
 fi
 
 if [[ -d "$USER_DIR" ]]; then

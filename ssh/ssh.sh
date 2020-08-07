@@ -2,7 +2,7 @@
 
 SSH_DIR=~/.ssh
 SSH_CONFIG=~/.ssh/config
-WORK_KEY_PUB=~/.ssh/nentgroup_rsa.pub
+DEVADDICT_KEY_PUB=~/.ssh/devaddict_rsa.pub
 PERSONAL_KEY_PUB=~/.ssh/private_rsa.pub
 
 echo_header "SSH Setup"
@@ -14,11 +14,11 @@ else
   mkdir ~/.ssh
 fi
 
-if [[ -f "$WORK_KEY_PUB" || -L "$WORK_KEY_PUB" ]]; then
-  echo_item "SSH key for work already exists" "green"
+if [[ -f "$DEVADDICT_KEY_PUB" || -L "$DEVADDICT_KEY_PUB" ]]; then
+  echo_item "SSH key for devaddict already exists" "green"
 else
-  echo_item "Generating a SSH key for nentgroup" "green"
-  ssh-keygen -t rsa -b 4096 -f ~/.ssh/nentgroup_rsa -C "victor.conner@nentgroup.com"
+  echo_item "Generating a SSH key for devaddict" "green"
+  ssh-keygen -t rsa -b 4096 -f ~/.ssh/devaddict_rsa -C "hello@devaddict.com"
 fi
 
 if [[ -f "$PERSONAL_KEY_PUB" || -L "$PERSONAL_KEY_PUB" ]]; then
