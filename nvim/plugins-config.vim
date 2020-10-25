@@ -16,14 +16,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <Leader>f :CocCommand actions.open<CR>
 nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+
 " ALT-k and ALT-j to navigate errors
 if system('uname -s') == "Darwin\n"
   "OSX
@@ -61,8 +56,8 @@ nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>t :FzfBTags<CR>
 nnoremap <Leader>T :FzfTags<CR>
-" let g:fzf_files_options = '--preview="bat --theme=base16 --color=always {}"'
 nnoremap <C-p> :FzfFiles<CR>
+" let g:fzf_files_options = '--preview="bat --theme=base16 --color=always {}"'
 
 " Gutentags
 let g:gutentags_add_default_project_roots = 0

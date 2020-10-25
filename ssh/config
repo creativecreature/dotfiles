@@ -1,3 +1,9 @@
+
+AddKeysToAgent yes
+User git
+IdentityFile ~/.ssh/klarna_rsa
+IdentitiesOnly yes
+
 Host github.com-private
 HostName github.com
 AddKeysToAgent yes
@@ -5,7 +11,7 @@ User git
 IdentityFile ~/.ssh/private_rsa
 IdentitiesOnly yes
 
-Host github.com-addict
+Host github.com-devaddict
 HostName github.com
 AddKeysToAgent yes
 User git
@@ -23,10 +29,4 @@ Host bitbucket.nentgroup.com
 AddKeysToAgent yes
 User git
 IdentityFile ~/.ssh/nentgroup_rsa
-IdentitiesOnly yes
-
-Host stash.int.klarna.net
-AddKeysToAgent yes
-User git
-IdentityFile ~/.ssh/klarna_rsa
 IdentitiesOnly yes

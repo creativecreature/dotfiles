@@ -8,6 +8,7 @@ source $HOME/.config/nvim/keybindings.vim
 set modeline
 set modelines=5
 
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 
 " let g:plaintex_delimiters = 1

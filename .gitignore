@@ -11,3 +11,5 @@ tags.lock
 plugged
 
 node_modules
+nvim/autoload
+nvim/plugged

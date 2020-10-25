@@ -24,6 +24,9 @@
 [includeif "gitdir:~/code/devaddict/"]
   path = ~/code/devaddict/.gitconfig
 
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
+
 [includeif "gitdir:~/code/viaplay/"]
   path = ~/code/viaplay/.gitconfig
 
@@ -50,3 +53,8 @@
   mup = !git checkout master && git pull && git checkout -
   upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
   ureset = !git upstream && git reset --hard $(git upstream)
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
