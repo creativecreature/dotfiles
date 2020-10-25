@@ -103,8 +103,8 @@ if has("autocmd")
   " Automatically clean trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 
-  autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
-        \ | set textwidth=0
+  " autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
+  "       \ | set textwidth=0
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -123,20 +123,9 @@ endif
 " UI
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
-" if has("termguicolors")  " set true colors
-"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"     set termguicolors
-" endif
 set termguicolors
-" set background=dark
 colorscheme palenight
-" colorscheme nova
-" colorscheme night-owl
-" let g:nova_transparent = 1
-" colorscheme nova
-"
+
 let no_buffers_menu=1
 
 function! s:highlight_helper(...)
