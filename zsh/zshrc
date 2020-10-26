@@ -64,7 +64,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add rbenv to path
 export PATH="$HOME/.rbenv/bin:$PATH"
 # Load rvenv automatically
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # Aws region
 export AWS_REGION=eu-west-1
