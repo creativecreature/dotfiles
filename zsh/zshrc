@@ -121,9 +121,9 @@ source ~/dotfiles/zsh/utilities.sh
 # export GRADLE_USER_HOME="/usr/local/share/gradle"
 # export M2_HOME="/usr/local/share/maven"
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# # Set Spaceship ZSH as a prompt
+# autoload -U promptinit; promptinit
+# prompt spaceship
 # PS1='$(pwd)'
 #
 function aws-profile() {
@@ -132,3 +132,8 @@ function aws-profile() {
 
 # enable zmv
 autoload zmv
+fpath=($fpath "/home/conner/.zfunctions")
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
