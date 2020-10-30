@@ -1,0 +1,86 @@
+colors:
+  # Default colors
+  primary:
+    background: '0x292d3e'
+    foreground: '0x959dcb'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x292d3e'
+    cursor: '0x959dcb'
+
+  # Normal colors
+  normal:
+    black: '0x292d3e'
+    red: '0xf07178'
+    green: '0xc3e88d'
+    yellow: '0xffcb6b'
+    blue: '0x82aaff'
+    magenta: '0xc792ea'
+    cyan: '0x89ddff'
+    white: '0x959dcb'
+
+  # Bright colors
+  bright:
+    black: '0x676e95'
+    red: '0xf07178'
+    green: '0xc3e88d'
+    yellow: '0xffcb6b'
+    blue: '0x82aaff'
+    magenta: '0xc792ea'
+    cyan: '0x89ddff'
+    white: '0xffffff'
+
+  indexed_colors:
+    - { index: 16, color: '0xf78c6c' }
+    - { index: 17, color: '0xff5370' }
+    - { index: 18, color: '0x444267' }
+    - { index: 19, color: '0x32374d' }
+    - { index: 20, color: '0x8796b0' }
+    - { index: 21, color: '0x959dcb' }
+
+font:
+  normal:
+    family: 'Hack'
+    style: Regular
+  bold:
+    family: 'Hack'
+    style: Bold
+  italic:
+    family: 'Hack'
+    style: Italic
+  bold_italic:
+    family: 'Hack'
+    style: Bold Italic
+  # Point size
+  size: 13.0
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 10
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true
+
+live_config_reload: true
+
+key_bindings:
+  - { key: J,        mods: Command, action: SpawnNewInstance            }
+  - { key: J,        mods: Alt,     action: SpawnNewInstance                       }
+  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
