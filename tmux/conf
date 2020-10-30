@@ -3,6 +3,9 @@
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
 
+# https://medium.com/@pezcoder/how-i-migrated-from-iterm-to-alacritty-c50a04705f95
+set -g default-terminal "alacritty"
+
 # Shorter wait
 set -sg escape-time 0
 
