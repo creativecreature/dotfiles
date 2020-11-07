@@ -137,3 +137,5 @@ fpath=($fpath "/home/conner/.zfunctions")
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
