@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo ""
 echo_header "Ubuntu Configuration"
 sudo apt-get -qq --yes update
 
@@ -33,6 +34,9 @@ else
   sudo apt-get -qq --yes install zsh
   echo_item "Making zsh the default shell"
   sudo usermod -s /usr/bin/zsh $(whoami)
+  curl --silent -L http://install.ohmyz.sh | sh
+  git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone --quiet  https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
 echo ""
@@ -51,6 +55,8 @@ else
   echo_item "Installing tldr" "green"
   sudo apt-get -qq --yes install tldr
 fi
+echo ""
+
 
 
 # -- rust ----------------------------------------------------------------------
@@ -59,7 +65,7 @@ source 'rust/rust.sh'
 
 
 # -- alacritty -----------------------------------------------------------------
-source 'rust/rust.sh'
+source 'alacritty/alacritty.sh'
 
 
 
@@ -69,7 +75,7 @@ if exists "go"; then
 else
   echo_item "Installing go" "green"
   cd ~/tmp
-  curl --silent --show-error  https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+  curl --silent https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
   tar xvf go1.14.1.linux-amd64.tar.gz >/dev/null
   sudo mv go /usr/local/bin/
   cd -
@@ -163,6 +169,7 @@ echo ""
 
 
 # -- Powerline Fonts -------------------------------------------------------------
+# TODO: this find causes console output, "could not find file..."
 if [[ -n $(find ~/.local/share/fonts -type f -name '*Powerline*') ]]; then
   echo_item "Powerline fonts are already installed" "green"
 else
@@ -302,6 +309,8 @@ else
   sudo apt-get -qq --yes install vlc
 fi
 
+echo ""
+
 
 
 # -- Enpass -----------------------------------------------------------------
@@ -315,6 +324,8 @@ else
   sudo apt-get -qq --yes update
   sudo apt-get -qq --yes install enpass
 fi
+
+echo ""
 
 
 
@@ -343,6 +354,7 @@ echo ""
 
 
 # -- Insomnia -----------------------------------------------------------------
+# TODO: could not find package
 if exists "insomnia"; then
   echo_item "Insomnia is already installed" "green"
 else
@@ -363,7 +375,7 @@ echo ""
 if exists "heroku"; then
   echo_item "Heroku is already installed" "green"
 else
-  echo_item "Installing Heroku"
+  echo_item "Installing Heroku" "green"
   sudo snap install --classic heroku > /dev/null
 fi
 
@@ -375,7 +387,7 @@ echo ""
 if exists "simplescreenrecorder"; then
   echo_item "Simple screen recorder is already installed" "green"
 else
-  echo_item "Installing Simple screen recorder"
+  echo_item "Installing Simple screen recorder" "green"
   sudo apt-get -qq --yes install simplescreenrecorder
 fi
 
@@ -387,7 +399,7 @@ echo ""
 if exists "git-crypt"; then
   echo_item "Git crypt is already installed" "green"
 else
-  echo_item "Installing Git crypt"
+  echo_item "Installing Git crypt" "green"
   sudo apt-get -qq --yes install git-crypt
 fi
 
@@ -399,7 +411,7 @@ echo ""
 if exists "tree"; then
   echo_item "Tree is already installed" "green"
 else
-  echo_item "Installing Tree"
+  echo_item "Installing Tree" "green"
   sudo apt-get -qq --yes install tree
 fi
 
@@ -408,6 +420,7 @@ echo ""
 
 
 # -- NordVPN -------------------------------------------------------------------
+# TODO: Failed
 if exists "nordvpn"; then
   echo_item "NordVPN is already installed" "green"
 else
@@ -425,14 +438,15 @@ echo ""
 
 
 # -- Bat ----------------------------------------------------------------------
+# TODO: Failed
 if exists "bat"; then
   echo_item "Bat is already installed" "green"
 else
   echo_item "Installing Bat" "green"
   sudo apt-get -qq --yes install bat
-  mkdir -p "$(bat --config-dir)/themes"
-  ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
-  bat cache --build > /dev/null
+  sudo mkdir -p "$(bat --config-dir)/themes"
+  sudo ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
+  sudo bat cache --build > /dev/null
 fi
 
 echo ""
