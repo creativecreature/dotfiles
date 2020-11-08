@@ -87,13 +87,9 @@ system_is_OSX() {
 }
 
 system_is_linux() {
-  if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  if [ "$(expr $(uname -s) : '\(Linux\)')" ]; then
     return 0
   else
     return 1
   fi
-}
-
-system_is_solus() {
-  return $(sudo cat /etc/os-release | grep 'solus')
 }
