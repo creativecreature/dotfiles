@@ -1,24 +1,24 @@
 #!/bin/bash
 
 echo_header "Ubuntu Configuration"
-sudo apt-get -qq update
+sudo apt-get -qq --yes update
 
 
 
 # -- Tools ----------------------------------------------------------------
 echo_item "Installing some software needed for installing from source" "green"
-sudo apt-get -qq install wget tar libevent-dev libncurses-dev make build-essential
+sudo apt-get -qq --yes install wget tar libevent-dev libncurses-dev make build-essential
 echo ""
 
 
-# -- Hardware ----------------------------------------------------------------
-source "./hardware/hardware.sh"
+# -- Keyboard ----------------------------------------------------------------
+source "./hardware/keyboard.sh"
 
 # -- Curl  -----------------------------------------------------------------------
 if exists "curl"; then
   echo_item "curl is already installed" "green"
 else
-  sudo apt-get -qq install curl
+  sudo apt-get -qq --yes install curl
 fi
 
 echo ""
@@ -27,10 +27,12 @@ echo ""
 
 # -- zsh -----------------------------------------------------------------------
 if exists "zsh"; then
-  echo_item "zsh is already installed" green
+  echo_item "zsh is already installed" "green"
 else
   echo_item "Installing zsh" "green"
-  sudo apt-get -qq install zsh
+  sudo apt-get -qq --yes install zsh
+  echo_item "Making zsh the default shell"
+  sudo usermod -s /usr/bin/zsh $(whoami)
 fi
 
 echo ""
@@ -42,35 +44,33 @@ source 'nvm/nvm.sh'
 
 
 
-# -- ruby ----------------------------------------------------------------------
-if exists "rbenv"; then
-  echo_item "Rbenv is already installed" "green"
+# -- tldr ----------------------------------------------------------------------
+if exists "tldr"; then
+  echo_item "tldr is already installed" "green"
 else
-  echo_item "Installing rbenv" "green"
- sudo apt-get -qq install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
- git clone --quiet https://github.com/rbenv/rbenv.git ~/.rbenv > /dev/null
- git clone --quiet https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build > /dev/null
- rbenv install 2.6.3 > /dev/null
- rbenv global 2.6.3 > /dev/null
- gem install bundler > /dev/null
- rbenv rehash > /dev/null
- gem install rails -v 6.0.0.rc1 > /dev/null
- rbenv rehash > /dev/null
- gem install solargraph > /dev/null
+  echo_item "Installing tldr" "green"
+  sudo apt-get -qq --yes install tldr
 fi
 
-echo ""
+
+# -- rust ----------------------------------------------------------------------
+source 'rust/rust.sh'
 
 
 
-# -- GO ------------------------------------------------------------------------
+# -- alacritty -----------------------------------------------------------------
+source 'rust/rust.sh'
+
+
+
+# -- go ------------------------------------------------------------------------
 if exists "go"; then
-  echo_item "Go is already installed" "green"
+  echo_item "go is already installed" "green"
 else
-  echo_item "Installing Go" "green"
+  echo_item "Installing go" "green"
   cd ~/tmp
   curl --silent --show-error  https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
-  tar xvf go1.14.1.linux-amd64.tar.gz > /dev/null
+  tar xvf go1.14.1.linux-amd64.tar.gz >/dev/null
   sudo mv go /usr/local/bin/
   cd -
 fi
@@ -80,34 +80,12 @@ echo ""
 
 
 # -- Terraform -----------------------------------------------------------------
-if exists "terraform"; then
-  echo_item "Terraform is already installed" "green"
+if exists "tfenv"; then
+  echo_item "tfenv is already installed" "green"
 else
-  echo_item "Installing Terraform" "green"
-  cd ~/tmp
-  curl --silent --show-error  https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
-  unzip terraform_0.11.14_linux_amd64.zip > /dev/null
-  sudo mv terraform /usr/local/bin/
-  cd -
-fi
-
-echo ""
-
-
-
-# -- Terraform Languange Server ------------------------------------------------
-if exists "terraform-lsp"; then
-  echo_item "Terraform language server is already installed" "green"
-else
-  echo_item "Installing terraform language server" "green"
-  cd ..
-  git clone --quiet https://github.com/juliosueiras/terraform-lsp.git > /dev/null
-  cd -
-  cd ../terraform-lsp
-  GO111MODULE=on go mod download
-  make > /dev/null
-  make copy > /dev/null
-  cd -
+  echo_item "Installing tfenv" "green"
+  git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+  sudo ln -s ~/.tfenv/bin/* /usr/local/bin
 fi
 
 echo ""
@@ -121,12 +99,10 @@ source 'nvim/nvim.sh'
 
 # -- Ripgrep --------------------------------------------------------------------
 if exists "rg"; then
-  echo_item "Ripgrep is already installed" "green"
+  echo_item "ripgrep is already installed" "green"
 else
   echo_item "Installing ripgrep" "green"
-  sudo add-apt-repository ppa:x4121/ripgrep
-  sudo apt-get -qq update
-  sudo apt-get -qq install ripgrep
+  sudo apt-get -qq --yes install ripgrep
 fi
 
 echo ""
@@ -137,7 +113,8 @@ echo ""
 if exists "jq"; then
   echo_item "jq is already installed" "green"
 else
-  sudo apt-get -qq install jq
+  echo_item "Installing jq" "green"
+  sudo apt-get -qq --yes install jq
 fi
 
 echo ""
@@ -154,12 +131,18 @@ source "./docker/docker.sh"
 
 
 
+# -- 1password --------------------------------------------------------------------
+# source "./1password/1password.sh"
+# Wait for 1password mini on Linux
+
+
+
 # -- Python --------------------------------------------------------------------
 if exists "virtualenv"; then
   echo_item "Virtualenv already installed" "green"
 else
   echo_item "Installing virtualenv" "green"
-  sudo apt-get -qq install virtualenv
+  sudo apt-get -qq --yes install virtualenv
 fi
 
 echo ""
@@ -171,7 +154,7 @@ if exists "pipenv"; then
   echo_item "Pipenv already installed" "green"
 else
   echo_item "Installing pipenv" "green"
-  sudo apt-get -qq install python3-pip
+  sudo apt-get -qq --yes install python3-pip
   pip3 install pipenv
 fi
 
@@ -199,8 +182,8 @@ echo ""
 if exists "gnome-tweaks"; then
   echo_item "Gnome tweaks is already installed" "green"
 else
-  sudo apt-get -qq install gnome-tweaks
-  sudo apt-get -qq install gnome-shell-extension-autohidetopbar
+  sudo apt-get -qq --yes install gnome-tweaks
+  sudo apt-get -qq --yes install gnome-shell-extension-autohidetopbar
 fi
 
 echo ""
@@ -211,7 +194,7 @@ echo ""
 if exists "xclip"; then
   echo_item "Xclip is already installed" "green"
 else
-  sudo apt-get -qq install xclip
+  sudo apt-get -qq --yes install xclip
 fi
 
 echo ""
@@ -222,7 +205,7 @@ echo ""
 if exists "caffeine"; then
   echo_item "Caffeine is already installed" "green"
 else
-  sudo apt-get -qq install caffeine
+  sudo apt-get -qq --yes install caffeine
 fi
 
 echo ""
@@ -237,7 +220,7 @@ echo_header "Removing unwanted software"
 # -- Uninstall Thunderbird -------------------------------------------------------
 if exists "thunderbird"; then
   echo_item "Uninstalling thunderbird" "green"
-  sudo apt-get -qq remove thunderbird
+  sudo apt-get -qq --yes remove thunderbird
 else
   echo_item "Thunderbird is already uninstalled" "green"
 fi
@@ -249,7 +232,7 @@ echo ""
 # -- Uninstall Rhythmbox -------------------------------------------------------
 if exists "rhythmbox"; then
   echo_item "Uninstalling Rhythmbox" "green"
-  sudo apt-get -qq remove rhythmbox
+  sudo apt-get -qq --yes remove rhythmbox
 else
   echo_item "Rhythmbox is already uninstalled" "green"
 fi
@@ -261,7 +244,7 @@ echo ""
 # -- Uninstall Mahjongg -------------------------------------------------------
 if exists "gnome-mahjongg"; then
   echo_item "Uninstalling Mahjongg" "green"
-  sudo apt-get -qq remove gnome-mahjongg
+  sudo apt-get -qq --yes remove gnome-mahjongg
 else
   echo_item "Mahjongg is already uninstalled" "green"
 fi
@@ -273,7 +256,7 @@ echo ""
 # -- Uninstall Mines -------------------------------------------------------
 if exists "gnome-mines"; then
   echo_item "Uninstalling Mines" "green"
-  sudo apt-get -qq remove gnome-mines
+  sudo apt-get -qq --yes remove gnome-mines
 else
   echo_item "Mines is already uninstalled" "green"
 fi
@@ -303,7 +286,7 @@ if [[ -f ~/.config/dotfile-installs/exfat ]]; then
   echo_item "Exfat support is already installed" "green"
 else
   echo_item "Installing exfat support" "green"
-  sudo apt-get -qq install exfat-fuse exfat-utils
+  sudo apt-get -qq --yes install exfat-fuse exfat-utils
   touch ~/.config/dotfile-installs/exfat
 fi
 
@@ -316,22 +299,21 @@ if exists "vlc"; then
   echo_item "VLC is already installed" "green"
 else
   echo_item "Installing VLC" "green"
-  sudo apt-get -qq install vlc
+  sudo apt-get -qq --yes install vlc
 fi
 
 
 
 # -- Enpass -----------------------------------------------------------------
-ENPASS_FILE=~/.config/dotfile-installs/enpass
+ENPASS_FILE=/usr/share/applications/enpass.desktop
 if [[ -f "$ENPASS_FILE" ]]; then
   echo_item "Enpass is already installed" "green"
 else
   echo_item "Installing Enpass" "green"
   sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" > /etc/apt/sources.list.d/enpass.list'
   wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
-  sudo apt update
-  sudo apt install enpass -y
-  touch ~/.config/dotfile-installs/enpass
+  sudo apt-get -qq --yes update
+  sudo apt-get -qq --yes install enpass
 fi
 
 
@@ -353,15 +335,10 @@ if exists "firefox"; then
   echo_item "Firefox is already installed" "green"
 else
   echo_item "Installing Firefox" "green"
-  sudo apt-get -qq install firefox
+  sudo apt-get -qq --yes install firefox
 fi
 
 echo ""
-
-
-
-# -- VPN -------------------------------------------------------------------
-source './vpn/vpn.sh'
 
 
 
@@ -374,8 +351,8 @@ else
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
       wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
         | sudo apt-key add -
-              sudo apt-get -qq update
-              sudo apt-get -qq install insomnia
+              sudo apt-get -qq --yes update
+              sudo apt-get -qq --yes install insomnia
 fi
 
 echo ""
@@ -399,7 +376,7 @@ if exists "simplescreenrecorder"; then
   echo_item "Simple screen recorder is already installed" "green"
 else
   echo_item "Installing Simple screen recorder"
-  sudo apt-get -qq install simplescreenrecorder
+  sudo apt-get -qq --yes install simplescreenrecorder
 fi
 
 echo ""
@@ -411,7 +388,7 @@ if exists "git-crypt"; then
   echo_item "Git crypt is already installed" "green"
 else
   echo_item "Installing Git crypt"
-  sudo apt-get -qq install git-crypt
+  sudo apt-get -qq --yes install git-crypt
 fi
 
 echo ""
@@ -423,12 +400,10 @@ if exists "tree"; then
   echo_item "Tree is already installed" "green"
 else
   echo_item "Installing Tree"
-  sudo apt-get -qq install tree
+  sudo apt-get -qq --yes install tree
 fi
 
 echo ""
-
-
 
 
 
@@ -440,8 +415,8 @@ else
   cd ~/Downloads
   curl --silent --show-error --output /dev/null https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
   sudo dpkg -i ./nordvpn-release_1.0.0_all.deb > /dev/null
-  sudo apt-get -qq update
-  sudo apt-get -qq install nordvpn
+  sudo apt-get -qq --yes update
+  sudo apt-get -qq --yes install nordvpn
   cd -
 fi
 
@@ -454,7 +429,7 @@ if exists "bat"; then
   echo_item "Bat is already installed" "green"
 else
   echo_item "Installing Bat" "green"
-  sudo apt -qq install bat
+  sudo apt-get -qq --yes install bat
   mkdir -p "$(bat --config-dir)/themes"
   ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
   bat cache --build > /dev/null
@@ -464,18 +439,20 @@ echo ""
 
 
 
-# -- Gestures ------------------------------------------------------------------
-source './gestures/gestures.sh'
+# -- Virtualbox ----------------------------------------------------------------
+if exists "virtualbox"; then
+  echo_item "Virtualbox is already installed" "green"
+else
+  echo_item "Installing Virtualbox" "green"
+  sudo apt-get -qq --yes install virtualbox
+fi
+
+echo ""
 
 
 
 # -- THEME -------------------------------------------------------------------------
 source 'theme/theme.sh'
-
-
-
-# -- TERMINAL ----------------------------------------------------------------------
-source 'terminal/terminal.sh'
 
 
 

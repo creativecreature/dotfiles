@@ -7,7 +7,9 @@ else
     brew install --HEAD neovim
   else
     echo_item "Installing Neovim" "green"
-    sudo apt-get -qq install neovim
+    sudo apt-get -qq --yes install neovim
+    curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 fi
 echo ""

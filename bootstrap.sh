@@ -3,7 +3,7 @@
 source 'scripts/helpers.sh'
 source 'scripts/setup_structure.sh'
 
-# -- Solus- or Ubuntu-Specific Setup --------------------------------------------
+# -- OSX- or Ubuntu-Specific Setup --------------------------------------------
 if system_is_OSX; then
   if test ! $(which brew)
   then
@@ -14,8 +14,8 @@ if system_is_OSX; then
   brew tap caskroom/cask
   brew install git
 else
-  sudo apt-get -qq update
-  sudo apt-get -qq install git
+  sudo apt-get -qq --yes update
+  sudo apt-get -qq --yes install git
 fi
 
 

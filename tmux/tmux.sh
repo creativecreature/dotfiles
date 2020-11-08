@@ -5,17 +5,16 @@ PLUGIN_DIR=~/.tmux/plugins
 TPM_DIR=~/.tmux/plugins/tpm
 
 if exists "tmux"; then
-  echo_item "Tmux is already installed" "green"
+  echo_item "tmux is already installed" "green"
 else
-  sudo apt-get -qq install tmux
+  echo_item 'Installing tmux' "green"
+  sudo apt-get -qq --yes install tmux
 fi
 
 echo ""
 
 
-if [[ -d "$TMUX_DIR" ]]; then
-  echo_item ".tmux directory already exists" "green"
-else
+if [[ ! -d "$TMUX_DIR" ]]; then
   mkdir "$TMUX_DIR"
 fi
 
@@ -24,15 +23,11 @@ ln -sf ~/dotfiles/tmux/conf ~/.tmux.conf
 ln -sf ~/dotfiles/tmux/conf.osx ~/.tmux.conf.osx
 ln -sf ~/dotfiles/tmux/conf.linux ~/.tmux.conf.linux
 
-if [[ -d "$PLUGIN_DIR" ]]; then
-  echo_item "Plugin directory already exists" "green"
-else
+if [[ ! -d "$PLUGIN_DIR" ]]; then
   mkdir "$PLUGIN_DIR"
 fi
 
-if [[ -d "$TPM_DIR" ]]; then
-  echo_item "Tpm directory already exists" "green"
-else
+if [[ ! -d "$TPM_DIR" ]]; then
   echo_item "Cloning TPM directory" "green"
   git clone --quiet https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm > /dev/null
 fi
