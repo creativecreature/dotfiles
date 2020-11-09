@@ -4,6 +4,7 @@ if exists "alacritty"; then
   echo_item "alacritty is already installed" "green"
 else
   echo_item "Installing alacritty" "green"
+  mkdir -p ~/.config/alacritty
   git clone https://github.com/alacritty/alacritty.git ~/alacritty
   cd ~/alacritty
   rustup override set stable
@@ -17,6 +18,7 @@ else
   sudo update-desktop-database
   sudo mkdir -p /usr/local/share/man/man1
   gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+  cd -
 fi
 
 echo_item "Symlinking Alacritty config file" "green"
