@@ -102,6 +102,20 @@ echo ""
 source 'nvim/nvim.sh'
 
 
+# -- Bat ----------------------------------------------------------------------
+# FOR NOW THIS IS INSTALLED WITH RIPGREP, THERE IS A BUG IN UBUNTU 20.4
+# SEE https://github.com/sharkdp/bat/issues/938
+# if exists "bat"; then
+#   echo_item "Bat is already installed" "green"
+# else
+#   echo_item "Installing Bat" "green"
+#   sudo apt-get -qq --yes install bat
+#   sudo mkdir -p "$(bat --config-dir)/themes"
+#   sudo ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
+#   sudo bat cache --build > /dev/null
+# fi
+
+# echo ""
 
 # -- Ripgrep --------------------------------------------------------------------
 if exists "rg"; then
@@ -109,6 +123,7 @@ if exists "rg"; then
 else
   echo_item "Installing ripgrep" "green"
   sudo apt-get -qq --yes install ripgrep
+  sudo apt install -o Dpkg::Options::="--force-overwrite" bat ripgrep
 fi
 
 echo ""
@@ -431,22 +446,6 @@ else
   sudo apt-get -qq --yes update
   sudo apt-get -qq --yes install nordvpn
   cd -
-fi
-
-echo ""
-
-
-
-# -- Bat ----------------------------------------------------------------------
-# TODO: Failed
-if exists "bat"; then
-  echo_item "Bat is already installed" "green"
-else
-  echo_item "Installing Bat" "green"
-  sudo apt-get -qq --yes install bat
-  sudo mkdir -p "$(bat --config-dir)/themes"
-  sudo ln -sf ~/dotfiles/bat/palenight.tmTheme "$(bat --config-dir)/themes/palenight.tmTheme"
-  sudo bat cache --build > /dev/null
 fi
 
 echo ""

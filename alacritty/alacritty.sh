@@ -19,7 +19,7 @@ else
   gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
 fi
 
-echo_item "Alacritty config file" "green"
+echo_item "Symlinking Alacritty config file" "green"
 ln -sf ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 echo ""
