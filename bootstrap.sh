@@ -10,7 +10,7 @@ install_git
 
 
 # Clone dotfiles repo and symlink it to the users home directory
-git clone https://github.com/CharlesConner/dotfiles.git ~/code/$USER
+git clone https://github.com/CharlesConner/dotfiles.git ~/code/$USER/dotfiles
 ln -s ~/code/$USER/dotfiles ~/dotfiles
 cd ~/dotfiles && ./install.sh
 
