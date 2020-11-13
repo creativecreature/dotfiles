@@ -1,26 +1,18 @@
 #!/bin/bash
 
+set -o nounset
+
 source 'scripts/helpers.sh'
 source 'scripts/setup_structure.sh'
+source 'utilities/git/git.sh'
 
-# -- OSX- or Ubuntu-Specific Setup --------------------------------------------
-if system_is_OSX; then
-  if test ! $(which brew)
-  then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
-  fi
-  brew upgrade
-  brew update
-  brew tap caskroom/cask
-  brew install git
-else
-  sudo apt-get -qq --yes update
-  sudo apt-get -qq --yes install git
-fi
+install_git
 
 
-# -- Clone and symlink dotfiles repo --------------------------------------------
-cd ~/code/$USER
-git clone https://github.com/CharlesConner/dotfiles.git
+# Clone dotfiles repo and symlink it to the users home directory
+git clone https://github.com/CharlesConner/dotfiles.git ~/code/$USER
 ln -s ~/code/$USER/dotfiles ~/dotfiles
 cd ~/dotfiles && ./install.sh
+
+# Post installation I want to update the remote to be ssh instead of https
+cd ~/dotfiles && git remote set-url origin git@github.com:charlesconner/dotfiles.git

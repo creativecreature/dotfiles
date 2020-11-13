@@ -1,6 +1,0 @@
-[user]
-  email = hello@devaddict.com
-  name = devaddict
-
-[url "git@github.com-addict"]
-  insteadOf = git@github.com

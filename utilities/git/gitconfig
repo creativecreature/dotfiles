@@ -1,0 +1,45 @@
+[user]
+  email = charlesvictorconner@gmail.com
+  name = Victor Conner
+  editor = /usr/local/bin/nvim
+
+[core]
+	excludesfile = /home/conner/.gitignore_global
+
+[includeif "gitdir:~/code/conner/"]
+  path = ~/code/conner/.gitconfig
+
+[includeif "gitdir:~/code/devaddict/"]
+  path = ~/code/devaddict/.gitconfig
+
+[includeif "gitdir:~/code/viaplay/"]
+  path = ~/code/viaplay/.gitconfig
+
+[includeif "gitdir:~/code/klarna/"]
+  path = ~/code/klarna/.gitconfig
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
+
+[merge]
+  ff = only
+
+[fetch]
+  prune = true
+
+[alias]
+  sla = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+  unstage = reset
+  uncommit = reset --soft HEAD^
+  mup = !git checkout master && git pull && git checkout -
+  upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
+  ureset = !git upstream && git reset --hard $(git upstream)
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip -- %f
+  process = git-lfs filter-process --skip
+  required = true

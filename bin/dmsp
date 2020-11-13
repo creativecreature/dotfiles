@@ -1,5 +1,0 @@
-#!/bin/bash
-DIR="$(dirname "$(readlink "$0")")/mtg-cloudformation"
-docker run --rm -it -v "$DIR:/app" -w /app --entrypoint ./msp -e AWS_DEFAULT_REGION=eu-west-1 -e AWS_REGION=eu-west-1 python:3 $@
-
-# vim: ft=sh
