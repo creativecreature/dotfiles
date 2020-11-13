@@ -12,4 +12,4 @@ plugged
 
 node_modules
 nvim/autoload
-nvim/plugged
+terminal/nvim/plugged
