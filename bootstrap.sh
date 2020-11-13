@@ -2,8 +2,8 @@
 
 set -o nounset
 
-source 'scripts/helpers.sh'
-source 'scripts/setup_structure.sh'
+source 'helpers.sh'
+source 'setup_structure.sh'
 source 'utilities/git/git.sh'
 
 install_git

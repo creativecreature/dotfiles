@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source './helpers.sh'
+source 'helpers.sh'
 
 set -o nounset
 
