@@ -17,18 +17,18 @@ install_zsh() {
     curl --silent -L http://install.ohmyz.sh | sh
   fi
 
-  if [[ $(dpkg -l | grep 'zsh-syntax-highlighting' >/dev/null)  ]]; then
+  if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
+    echo_item "zsh-autosuggestions are already installed" "green"
+  else
+    echo_item "installing zsh-autosuggestions" "green"
+    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  fi
+
+  if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
     echo_item "zsh-syntax-highlighting is already installed" "green"
   else
     echo_item "installing zsh-syntax-highlighting" "green"
-    sudo apt-get -qq --yes install zsh-syntax-highlighting
-  fi
-
-  if [[ $(dpkg -l | grep 'zsh-autosuggestions' >/dev/null)  ]]; then
-    echo_item "zsh-autosuggestions is already installed" "green"
-  else
-    echo_item "installing zsh-autosuggestions" "green"
-    sudo apt-get -qq --yes install zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
   fi
 }
 
