@@ -10,4 +10,7 @@ configure_dock() {
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
   gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
   gsettings set org.gnome.shell.extensions.dash-to-dock intellihide true
+
+  # SET APPLICATIONS IN DOCK
+  gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.desktop', 'Alacritty.desktop']"
 }
