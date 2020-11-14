@@ -6,6 +6,8 @@ source 'helpers.sh'
 source 'setup_structure.sh'
 source 'utilities/git/git.sh'
 
+sudo apt-get -qq --yes update
+
 install_git
 
 
