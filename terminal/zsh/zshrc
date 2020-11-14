@@ -124,8 +124,8 @@ function aws-profile() {
 autoload zmv
 fpath=($fpath "/home/conner/.zfunctions")
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Set starship ZSH as a prompt
+eval "$(starship init zsh)"
