@@ -99,6 +99,7 @@ source './applications/nordvpn.sh'
 source './applications/virtualbox.sh'
 source './applications/vlc.sh'
 source './applications/slack.sh'
+source './applications/discord.sh'
 source './applications/simplescreenrecorder.sh'
 
 install_docker
@@ -107,6 +108,7 @@ install_nordvpn
 install_virtualbox
 install_vlc
 install_slack
+install_discord
 install_simplescreenrecorder
 echo ""
 
