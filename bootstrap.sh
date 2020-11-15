@@ -18,3 +18,11 @@ cd ~/dotfiles && ./install.sh
 
 # Post installation I want to update the remote to be ssh instead of https
 cd ~/dotfiles && git remote set-url origin git@github.com:charlesconner/dotfiles.git
+
+# Installation complete, ask for reboot
+echo "Installation completed successfully."
+echo "Some of the changes might require a reboot, want to do that now?"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  sudo shutdown -r
+fi
