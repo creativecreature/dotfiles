@@ -104,6 +104,7 @@ source './applications/simplescreenrecorder.sh'
 
 install_docker
 install_enpass
+configure_enpass
 install_nordvpn
 install_virtualbox
 install_vlc
