@@ -12,10 +12,11 @@ let g:coc_user_config['diagnostic'] = {}
 let g:coc_user_config['diagnostic']['infoSign'] = "😱"
 let g:coc_user_config['diagnostic']['warningSign'] = "💩"
 let g:coc_user_config['diagnostic']['errorSign'] = "🔥"
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> <Leader>f :CocCommand actions.open<CR>
 nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>
 
