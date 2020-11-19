@@ -53,7 +53,7 @@ font:
     family: 'Hack'
     style: Bold Italic
   # Point size
-  size: 11.0
+  size: 13.0
 
   offset:
     x: 0
@@ -81,6 +81,7 @@ selection:
 live_config_reload: true
 
 key_bindings:
-  - { key: J,        mods: Command, action: SpawnNewInstance            }
-  - { key: J,        mods: Alt,     action: SpawnNewInstance                       }
-  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
