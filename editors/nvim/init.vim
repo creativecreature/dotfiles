@@ -10,8 +10,4 @@ set modelines=5
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
-
-" let g:plaintex_delimiters = 1
-" syntax on
-" syn match   plaintexDelimiter             display '[][{}]'
 set expandtab
