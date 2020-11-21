@@ -1,9 +1,7 @@
-# **************** GENERAL *******************
-
+# -- GENERAL -------------------------------------------------------------------
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
 
-# https://medium.com/@pezcoder/how-i-migrated-from-iterm-to-alacritty-c50a04705f95
 set -g default-terminal "alacritty"
 
 # Shorter wait
@@ -13,7 +11,7 @@ set -sg escape-time 0
 unbind C-b
 set -g prefix C-s
 
-# Larger scrollback, can reduce this if we want to save RAM
+# Larger scrollback
 set-option -g history-limit 100000
 
 
