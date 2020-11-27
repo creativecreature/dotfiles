@@ -1,6 +1,6 @@
 " Hardtime
 " let g:hardtime_default_on = 1
-let g:hardtime_timeout = 2500
+let g:hardtime_timeout = 1500
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
