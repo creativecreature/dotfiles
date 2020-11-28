@@ -41,17 +41,17 @@ colors:
 
 font:
   normal:
-    family: 'Hack'
-    style: Regular
+    family: 'OperatorMono'
+    style: Light
   bold:
-    family: 'Hack'
-    style: Bold
+    family: 'OperatorMono'
+    style: Book
   italic:
-    family: 'Hack'
-    style: Italic
+    family: 'OperatorMono'
+    style: Light Italic
   bold_italic:
-    family: 'Hack'
-    style: Bold Italic
+    family: 'OperatorMono'
+    style: Book Italic
   # Point size
   size: 13.0
 
