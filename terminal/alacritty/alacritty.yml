@@ -53,7 +53,7 @@ font:
     family: 'OperatorMono'
     style: Book Italic
   # Point size
-  size: 13.0
+  size: 12.5
 
   offset:
     x: 0
