@@ -7,7 +7,10 @@ if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
 
-" Smart indent when entering insert mode with i on empty lines
+" Bind leader p to always paste the latest yank
+nnoremap <Leader>p "0p
+
+"Smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
   if len(getline('.')) == 0
     return "\"_ddO"
