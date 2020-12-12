@@ -8,6 +8,8 @@ Plug 'trevordmiller/nova-vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
 Plug 'trevordmiller/nova-vim'
+Plug 'chrisbra/Colorizer'
+
 
 " Project navigation
 Plug 'scrooloose/nerdtree'
