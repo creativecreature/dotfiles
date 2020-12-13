@@ -125,6 +125,7 @@ syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 colorscheme palenight
+" colorscheme zeilo
 
 let no_buffers_menu=1
 
