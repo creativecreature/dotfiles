@@ -137,8 +137,8 @@ function! s:highlight_helper(...)
   exec "highlight " . l:syntax_group . " guifg=" . l:foreground_color . " guibg=" . l:background_color . " gui=" . l:gui . " cterm=NONE term=NONE"
 endfunction
 
-hi ActiveWindow guibg=#292D3E
-hi InactiveWindow guibg=#252837
+hi ActiveWindow guibg=#1E233C
+hi InactiveWindow guibg=#171a30
 
 " Call method on window enter
 augroup WindowManagement
@@ -160,6 +160,6 @@ nnoremap <silent> <leader>o :call Handle_Win_Exit()<CR>
 nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
 
 " TODO Eventually move these to the colorscheme
-call s:highlight_helper("TabLine", "#697098", "#252837")
-call s:highlight_helper("TabLineSel", "#bfc7d5", "#252837")
-call s:highlight_helper("TabLineFill", "#bfc7d5", "#252837")
+call s:highlight_helper("TabLine", "#697098", "#171a30") " TODO: Change first color to be colorGreyX
+call s:highlight_helper("TabLineSel", "#bfc7d5", "#171a30") " TODO: Change first color to be colorGreyX
+call s:highlight_helper("TabLineFill", "#bfc7d5", "#171a30") " TODO: Change first color to be colorGreyX
