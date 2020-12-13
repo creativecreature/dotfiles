@@ -152,12 +152,12 @@ set -g @sysstat_cpu_view_tmpl ' #[fg=#292D3E,nobold]#{cpu.pused} '
 
 # ACTIVE COLOR FOR TMUX, TODO fix for vim: https://www.reddit.com/r/vim/comments/d46ger/is_there_a_way_to_dim_inactive_panes_in_tmuxvim/
 # Set the foreground/background color for the active window
-setw -g window-active-style "fg=default,bg=#292D3D"
-setw -g pane-active-border-style "fg=#252837,bg=#252837"
+setw -g window-active-style "fg=default,bg=#1E233C"
+setw -g pane-active-border-style "fg=#171a30,bg=#171a30"
 # Set the foreground/background color for all other windows
-setw -g window-style "fg=default,bg=#252837"
-setw -g pane-border-style "fg=#252837,bg=#252837"
-set -g status-bg "#252837" # For the status bar
+setw -g window-style "fg=default,bg=#171a30"
+setw -g pane-border-style "fg=#171a30,bg=#171a30"
+set -g status-bg "#171a30" # For the status bar
 
 # **************** PLUGINS *******************
 
