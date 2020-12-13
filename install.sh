@@ -29,6 +29,7 @@ source './utilities/heroku/heroku.sh'
 source './utilities/gitcrypt/gitcrypt.sh'
 source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
+source './utilities/kcolorchooser/kcolorchooser.sh'
 
 install_build_tools
 configure_ssh
@@ -45,6 +46,7 @@ install_heroku
 install_gitcrypt
 install_tree
 configure_eslint
+install_kcolorchooser
 echo ""
 
 
