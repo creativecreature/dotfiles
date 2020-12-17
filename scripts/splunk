@@ -1,0 +1,59 @@
+#!/bin/bash
+
+BASE_URL="https://splunk.klarna.net/en-US/app/rhinos/search"
+LOG_LEVEL=30
+ALL_LAMBDAS=(
+  "disputes-infra-eu1-disputes-notifications-dispute-events" \
+  "disputes-infra-eu1-disputes-notifications-comms-callback" \
+  "disputes-infra-eu1-dispute-reasons-get-reasons"
+)
+
+rawurlencode() {
+  local string="${1}"
+  local strlen=${#string}
+  local encoded=""
+  local pos c o
+
+  for (( pos=0 ; pos<strlen ; pos++ )); do
+     c=${string:$pos:1}
+     case "$c" in
+        [-_.~a-zA-Z0-9] ) o="${c}" ;;
+        * )               printf -v o '%%%02x' "'$c"
+     esac
+     encoded+="${o}"
+  done
+  echo "${encoded}"
+}
+
+# build_url() {
+
+# }
+
+# open_browser() {
+
+# }
+
+# Prompt user to select a Lambda
+lambda=$(printf "%s\n" "${ALL_LAMBDAS[@]}" | fzf --header 'For which lambda would you like to view logs?')
+echo Great, will build the query url for "${lambda}".
+
+# Check if we should query only for error logs
+echo 'Do you wish to see only errors logs? y/n'
+read -r log_level_response
+if [[ $log_level_response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  LOG_LEVEL=50
+fi
+
+# Check how far back we should query for logs
+echo 'How far back do you want to fetch logs? 1-5'
+echo '1 - Last 15 minutes'
+echo '2 - Last 30 minutes'
+echo '3 - Last hour'
+echo '4 - Last day'
+echo '5 - Last 3 days'
+read -r log_time_response
+
+URL="${BASE_URL}?q=search$(rawurlencode " index=\"disputes\" source=\"${lambda}\"")"
+
+# Open Splunk in a new tab
+open -na "Google Chrome" --args --new-tab "${URL}"
