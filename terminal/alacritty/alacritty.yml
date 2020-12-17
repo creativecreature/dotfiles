@@ -41,16 +41,16 @@ colors:
 
 font:
   normal:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Light
   bold:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Book
   italic:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Light Italic
   bold_italic:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Book Italic
   # Point size
   size: 12.5
