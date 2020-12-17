@@ -9,6 +9,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
 Plug 'trevordmiller/nova-vim'
 Plug 'chrisbra/Colorizer'
+Plug 'pangloss/vim-javascript'
 
 
 " Project navigation
