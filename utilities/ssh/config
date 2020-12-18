@@ -1,10 +1,3 @@
-Host github.com-private
-HostName github.com
-AddKeysToAgent yes
-User git
-IdentityFile ~/.ssh/private_rsa
-IdentitiesOnly yes
-
 Host github.com-creativecreature
 HostName github.com
 AddKeysToAgent yes
