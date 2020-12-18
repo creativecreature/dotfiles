@@ -2,7 +2,7 @@ Host github.com-creativecreature
 HostName github.com
 AddKeysToAgent yes
 User git
-IdentityFile ~/.ssh/creativecreature_rsa
+IdentityFile ~/.ssh/creativecreature
 IdentitiesOnly yes
 
 Host localhost
