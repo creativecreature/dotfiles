@@ -20,7 +20,7 @@ cd ~/dotfiles && git remote set-url origin git@github.com:creativecreature/dotfi
 
 # Installation complete, ask for reboot
 echo "Installation completed successfully."
-echo "Some of the changes might require a reboot, want to do that now?"
+echo "Some of the changes might require a reboot, want to do that now? [Y/n]"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo shutdown -r
