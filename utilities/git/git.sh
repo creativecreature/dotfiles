@@ -18,10 +18,4 @@ configure_git() {
 
   echo_item "symlinking creativecreature gitconfig" "green"
   ln -sf ~/dotfiles/utilities/git/gitconfig_creativecreature ~/code/creativecreature/.gitconfig
-
-  echo_item "symlinking personal gitconfig" "green"
-  ln -sf ~/dotfiles/utilities/git/gitconfig_conner ~/code/$USER/.gitconfig
-
-  echo_item "setting  ~/.gitignore_global to global ignore" "green"
-  git config --global core.excludesfile ~/.gitignore_global
 }
