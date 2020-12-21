@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'devaddict/vim-theme'
+Plug '~/code/creativecreature/zeilo'
 Plug 'trevordmiller/nova-vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
