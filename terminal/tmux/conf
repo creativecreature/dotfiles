@@ -127,21 +127,17 @@ bind-key -T prefix v switch-client -T prefix_v
 bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 
 
-
-
-
-
 # **************** STATUS STYLE *******************
 
 set -g status-left-length 50
 set -g status-right-length 150
 set -g status-style "bg=black"
-set -g status-left "#[fg=#292D3E,bg=#ffcb6b,nobold] #S #[fg=#ffcb6b,bg=default,nobold,noitalics,nounderscore]"
+set -g status-left "#[fg=#06182d,bg=#ffa857,nobold] #S #[fg=#ffa857,bg=default,nobold,noitalics,nounderscore]"
 set -g status-right "#{prefix_highlight}#[fg=#ffcb6b,bg=#252837,nobold,noitalics,nounderscore]#[fg=#292D3E,bg=#ffcb6b]#{sysstat_cpu}#[fg=#C792EA,bg=#252837,nobold,noitalics,nounderscore]#[fg=#292D3E,bg=#C792EA] #{sysstat_mem}#[fg=#C3E88D,bg=#252837]#[fg=#292D3E,bg=#C3E88D] %Y-%m-%d #[fg=#82b1ff,bg=#252837]#[fg=#292D3E,bg=#82b1ff]  %H:%M "
 
 
-set -g window-status-format "#[fg=colour235,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#I #[fg=#c792ea,bg=#3E4452,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#3E4452]#W #F #[fg=#3E4452,bg=default,nobold,noitalics,nounderscore]"
-set -g window-status-current-format "#[fg=colour235,bg=#c792ea,nobold,noitalics,nounderscore] #[fg=#292D3E,bg=#c792ea]#I #[fg=#292D3E,bg=#c792ea,nobold,noitalics,nounderscore] #[fg=#292D3E,bg=#c792ea]#W #F #[fg=#c792ea,bg=default,nobold,noitalics,nounderscore]"
+set -g window-status-format "#[fg=colour235,bg=#184267,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#184267 ]#I #[fg=#c792ea,bg=#184267,nobold,noitalics,nounderscore] #[fg=#c792ea,bg=#184267]#W #F #[fg=#184267,bg=default,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=colour235,bg=#8095ff,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#8095ff]#I #[fg=#e2edf8,bg=#8095ff,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#8095ff]#W #F #[fg=#8095ff,bg=default,nobold,noitalics,nounderscore]"
 set -g window-status-separator ""
 set -g monitor-activity off
 set -g @sysstat_mem_color_low "#c3e88d"
