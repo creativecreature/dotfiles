@@ -15,37 +15,37 @@ colors:
     red: '#d84b60'
     green: '#b0ec55' # Lime
     yellow: '#ffcd42' # Yellow
-    blue: '#24c1ff' # Cyan
+    blue: '#00d5ff' # Cyan
     magenta: '#c690e9' # Pink
-    cyan: '#dc7756' # Orange
-    white: '#ebedfa' # Grey one
+    cyan: '#ffa857' # Orange
+    white: '#e2edf8' # Text one
 
   # Bright colors
   bright:
     black: '#112d4b'
     red: '#d84b60'
     green: '#b0ec55' # Lime
-    yellow: '#ffcd42' # Yellow
-    blue: '#24c1ff' # Cyan
+    yellow: '#ffcb6b' # Yellow
+    blue: '#00d5ff' # Cyan
     magenta: '#c690e9' # Pink
-    cyan: '#dc7756' # Orange
-    white: '#ebedfa' # Grey one
+    cyan: '#ffa857' # Orange
+    white: '#e2edf8' # Text one
 
 font:
   normal:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Light
   bold:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Book
   italic:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Light Italic
   bold_italic:
-    family: 'OperatorMono'
+    family: 'OperatorMono Nerd Font'
     style: Book Italic
   # Point size
-  size: 12.5
+  size: 14.5
 
   offset:
     x: 0
