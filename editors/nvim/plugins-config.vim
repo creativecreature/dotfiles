@@ -99,7 +99,7 @@ let g:prettier#config#trailing_comma = 'all'
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'zeilo',
       \ 'enable': {
       \   'tabline': 0
       \ },
