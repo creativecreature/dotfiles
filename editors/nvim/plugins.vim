@@ -3,15 +3,9 @@ call plug#begin()
 " User interface
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'devaddict/vim-theme'
 Plug '~/code/creativecreature/zeilo'
-Plug 'trevordmiller/nova-vim'
-Plug 'haishanh/night-owl.vim'
 Plug 'ap/vim-buftabline'
-Plug 'trevordmiller/nova-vim'
 Plug 'chrisbra/Colorizer'
-Plug 'pangloss/vim-javascript'
-
 
 " Project navigation
 Plug 'scrooloose/nerdtree'
@@ -35,7 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.x' }
+Plug 'prettier/vim-prettier'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-sort-motion'
