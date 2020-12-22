@@ -3,7 +3,6 @@ call plug#begin()
 " User interface
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug '~/code/creativecreature/zeilo'
 Plug 'ap/vim-buftabline'
 Plug 'chrisbra/Colorizer'
 
@@ -15,6 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
+Plug '~/code/creativecreature/zeilo'
 Plug 'ervandew/supertab'
 
 " File navigation
