@@ -131,5 +131,8 @@ fpath=($fpath "/home/conner/.zfunctions")
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# Set color of autocomplete text
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+
 # Set starship ZSH as a prompt
 eval "$(starship init zsh)"

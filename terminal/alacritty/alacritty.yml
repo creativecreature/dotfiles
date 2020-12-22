@@ -1,17 +1,17 @@
 colors:
   # Default colors
   primary:
-    background: '#112d4b'
-    foreground: '0x959dcb'
+    background: '#112d4b' # Bg one
+    foreground: '#d2e2f4'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#d1d5f0' # Grey three
-    cursor: '#c690e9'
+    text: '#e2edf8'
+    cursor: '#00d5ff'
 
   # Normal colors
   normal:
-    black: '#112d4b'
+    black: '#112d4b' # Bg one
     red: '#d84b60'
     green: '#b0ec55' # Lime
     yellow: '#ffcd42' # Yellow
@@ -22,7 +22,7 @@ colors:
 
   # Bright colors
   bright:
-    black: '#112d4b'
+    black: '#112d4b' # Bg one
     red: '#d84b60'
     green: '#b0ec55' # Lime
     yellow: '#ffcb6b' # Yellow
