@@ -1,3 +1,5 @@
+# vim: ft=tmux
+
 set -g default-terminal "screen-256color"
 # tell Tmux that outside terminal supports true color
 set -ga terminal-overrides ",xterm-256color*:Tc"
