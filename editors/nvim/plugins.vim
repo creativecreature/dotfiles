@@ -13,9 +13,13 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" This has to be set before polyglot is loaded
+let g:polyglot_disabled = ['typescript', 'javascript']
 Plug 'sheerun/vim-polyglot'
+Plug '~/code/creativecreature/vim-javascript'
 Plug '~/code/creativecreature/zeilo'
 Plug 'ervandew/supertab'
+Plug 'leafgarland/typescript-vim'
 
 " File navigation
 Plug 'haya14busa/incsearch.vim'
