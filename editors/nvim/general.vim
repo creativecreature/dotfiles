@@ -163,3 +163,10 @@ nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
 call s:highlight_helper("TabLine", "#697098", "#0a2642") " TODO: Change first color to be colorGreyX
 call s:highlight_helper("TabLineSel", "#bfc7d5", "#0a2642") " TODO: Change first color to be colorGreyX
 call s:highlight_helper("TabLineFill", "#bfc7d5", "#0a2642") " TODO: Change first color to be colorGreyX
+
+" TODO Eventually move this to some helper file
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+nmap <leader><leader>h mz:execute SynGroup()<CR>
