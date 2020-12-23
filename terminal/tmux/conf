@@ -1,3 +1,5 @@
+# vim: ft=tmux
+
 # -- GENERAL -------------------------------------------------------------------
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
