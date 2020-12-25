@@ -14,6 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 Plug '~/code/creativecreature/zeilo'
 Plug 'ervandew/supertab'
 
