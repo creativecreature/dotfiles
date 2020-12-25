@@ -1,6 +1,9 @@
 # vim: ft=tmux
 
-# -- GENERAL -------------------------------------------------------------------
+# =============================================================================
+# ********************************** GENERAL **********************************
+# =============================================================================
+
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
 
@@ -37,9 +40,9 @@ if-shell 'uname | grep -q Darwin' \
 
 
 
-
-
-# **************** PANES *******************
+# =============================================================================
+# *********************************** PANES ***********************************
+# =============================================================================
 
 # Kill panes without confirmation
 bind-key x kill-pane
@@ -50,12 +53,10 @@ is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?
 bind-key - if-shell "$is_vim" "send-keys ,o" \; split-window -v -c '#{pane_current_path}'
 bind-key \\ if-shell "$is_vim" "send-keys ,o" \; split-window -h -c '#{pane_current_path}'
 
-# Move between panes, the -n flag indicates we dont want to use the prefix
-# Smart pane switching with awareness of Vim splits.
-# See: https://github.com/christoomey/vim-tmux-navigator
 set -g focus-events on
-# set-hook -g pane-focus-in "if-shell '$is_vim' 'send-keys Escape'"
 set-hook -g pane-focus-in "if-shell '$is_vim' 'run ~/dotfiles/terminal/tmux/focus.sh'"
+
+# Smart pane switching with awareness of Vim splits, the -n flag indicates we dont want to use the prefix
 bind -n C-h if-shell "([ $(tmux display-message -p '#{pane_at_left}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_right}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-h" "select-pane -L"
 bind -n C-l if-shell "([ $(tmux display-message -p '#{pane_at_left}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_right}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-l" "select-pane -R"
 bind -n C-k if-shell "([ $(tmux display-message -p '#{pane_at_bottom}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_top}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-k" "select-pane -U"
@@ -86,10 +87,9 @@ bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
 
 
 
-
-
-
-# **************** WINDOWS *******************
+# =============================================================================
+# ********************************** WINDOWS **********************************
+# =============================================================================
 
 # New windows opens at the path of the pane
 bind c new-window -c '#{pane_current_path}'
@@ -105,10 +105,9 @@ bind-key b break-pane -d
 
 
 
-
-
-
-# **************** SESSIONS *******************
+# =============================================================================
+# ********************************** SESSIONS *********************************
+# =============================================================================
 
 # Use fzf to display a list of all sessions and then open the seleted session in a new window
 bind C-j popup -KER "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
@@ -129,13 +128,20 @@ bind-key -T prefix v switch-client -T prefix_v
 bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 
 
-# **************** STATUS STYLE *******************
 
+# =============================================================================
+# ******************************** STATUS BAR *********************************
+# =============================================================================
 set -g status-left-length 50
 set -g status-right-length 150
 set -g status-style "bg=black"
 set -g status-left "#[fg=#0a2642,bg=#ffa857,nobold] #S #[fg=#ffa857,bg=default,nobold,noitalics,nounderscore]"
-set -g status-right "#{prefix_highlight}#[fg=#c690e9,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#c690e9]#{sysstat_cpu}#[fg=#8095ff,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#8095ff] #{sysstat_mem}#[fg=#ffa857,bg=#252837]#[fg=#0a2642,bg=#ffa857] %Y-%m-%d #[fg=#ffcb6b,bg=#252837]#[fg=#0a2642,bg=#ffcb6b]  %H:%M "
+
+STATS_CPU="#[fg=#c690e9,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#c690e9]#{sysstat_cpu}"
+STATS_MEM="#[fg=#8095ff,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#8095ff]#{sysstat_mem}"
+YY_MM_DD="#[fg=#ffa857,bg=#252837]#[fg=#0a2642,bg=#ffa857] %Y-%m-%d "
+H_M="#[fg=#ffcb6b,bg=#252837]#[fg=#0a2642,bg=#ffcb6b] %H:%M "
+set -g status-right "$STATS_CPU$STATS_MEM$YY_MM_DD$H_M"
 
 
 set -g window-status-format "#[fg=colour235,bg=#184267,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#184267 ]#I #[fg=#54708c,bg=#184267,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#184267]#W #F #[fg=#184267,bg=default,nobold,noitalics,nounderscore]"
@@ -148,7 +154,6 @@ set -g @sysstat_cpu_color_low "#c3e88d"
 set -g @sysstat_mem_view_tmpl ' #[fg=#0a2642,nobold]#{mem.used} / #[fg=#0a2642,nobold]#{mem.total} '
 set -g @sysstat_cpu_view_tmpl ' #[fg=#0a2642,nobold]#{cpu.pused} '
 
-# ACTIVE COLOR FOR TMUX, TODO fix for vim: https://www.reddit.com/r/vim/comments/d46ger/is_there_a_way_to_dim_inactive_panes_in_tmuxvim/
 # Set the foreground/background color for the active window
 setw -g window-active-style "fg=default,bg=#112d4b"
 setw -g pane-active-border-style "fg=#0a2642,bg=#0a2642"
@@ -157,8 +162,11 @@ setw -g window-style "fg=default,bg=#0a2642"
 setw -g pane-border-style "fg=#0a2642,bg=#0a2642"
 set -g status-bg "#0a2642" # For the status bar
 
-# **************** PLUGINS *******************
 
+
+# =============================================================================
+# ********************************* PLUGINS ***********************************
+# =============================================================================
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
