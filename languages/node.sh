@@ -5,11 +5,9 @@ install_node() {
     echo_item "node is already installed" "green"
   else
     echo_item "installing node" "green"
-    mkdir $HOME/.nvm
-    curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm install 14 --silent
-    npm install -g yarn neovim >/dev/null
+    curl --silent https://get.volta.sh | bash
+    /home/$USER/.volta/bin/volta install node
+    /home/$USER/.volta/bin/volta install yarn
+    /home/$USER/.volta/bin/volta install neovim
   fi
 }
