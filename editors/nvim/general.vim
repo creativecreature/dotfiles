@@ -139,6 +139,8 @@ endfunction
 hi ActiveWindow guibg=#112d4b
 hi InactiveWindow guibg=#0a2642
 
+hi ActiveWindow guibg=#162534
+hi InactiveWindow guibg=#14212f
 " Call method on window enter
 augroup WindowManagement
   autocmd!
@@ -159,9 +161,9 @@ nnoremap <silent> <leader>o :call Handle_Win_Exit()<CR>
 nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
 
 " TODO Eventually move these to the colorscheme
-call s:highlight_helper("TabLine", "#697098", "#0a2642") " TODO: Change first color to be colorGreyX
-call s:highlight_helper("TabLineSel", "#bfc7d5", "#0a2642") " TODO: Change first color to be colorGreyX
-call s:highlight_helper("TabLineFill", "#bfc7d5", "#0a2642") " TODO: Change first color to be colorGreyX
+call s:highlight_helper("TabLine", "#697098", "#14212f") " TODO: Change first color to be colorGreyX
+call s:highlight_helper("TabLineSel", "#bfc7d5", "#14212f") " TODO: Change first color to be colorGreyX
+call s:highlight_helper("TabLineFill", "#bfc7d5", "#14212f") " TODO: Change first color to be colorGreyX
 
 " TODO Eventually move this to some helper file
 function! SynGroup()

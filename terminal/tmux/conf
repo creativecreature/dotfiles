@@ -135,12 +135,12 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 set -g status-left-length 50
 set -g status-right-length 150
 set -g status-style "bg=black"
-set -g status-left "#[fg=#0a2642,bg=#ffa857,nobold] #S #[fg=#ffa857,bg=default,nobold,noitalics,nounderscore]"
+set -g status-left "#[fg=#14212f,bg=#ffa857,nobold] #S #[fg=#ffa857,bg=default,nobold,noitalics,nounderscore]"
 
-STATS_CPU="#[fg=#c690e9,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#c690e9]#{sysstat_cpu}"
-STATS_MEM="#[fg=#8095ff,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#8095ff]#{sysstat_mem}"
-YY_MM_DD="#[fg=#ffa857,bg=#252837]#[fg=#0a2642,bg=#ffa857] %Y-%m-%d "
-H_M="#[fg=#ffcb6b,bg=#252837]#[fg=#0a2642,bg=#ffcb6b] %H:%M "
+STATS_CPU="#[fg=#c690e9,bg=#252837,nobold,noitalics,nounderscore]#[fg=#14212f,bg=#c690e9]#{sysstat_cpu}"
+STATS_MEM="#[fg=#8095ff,bg=#252837,nobold,noitalics,nounderscore]#[fg=#14212f,bg=#8095ff]#{sysstat_mem}"
+YY_MM_DD="#[fg=#ffa857,bg=#252837]#[fg=#14212f,bg=#ffa857] %Y-%m-%d "
+H_M="#[fg=#ffcb6b,bg=#252837]#[fg=#14212f,bg=#ffcb6b] %H:%M "
 set -g status-right "$STATS_CPU$STATS_MEM$YY_MM_DD$H_M"
 
 
@@ -151,16 +151,16 @@ set -g monitor-activity off
 set -g @sysstat_mem_color_low "#c3e88d"
 set -g @sysstat_cpu_color_low "#c3e88d"
 
-set -g @sysstat_mem_view_tmpl ' #[fg=#0a2642,nobold]#{mem.used} / #[fg=#0a2642,nobold]#{mem.total} '
-set -g @sysstat_cpu_view_tmpl ' #[fg=#0a2642,nobold]#{cpu.pused} '
+set -g @sysstat_mem_view_tmpl ' #[fg=#14212f,nobold]#{mem.used} / #[fg=#14212f,nobold]#{mem.total} '
+set -g @sysstat_cpu_view_tmpl ' #[fg=#14212f,nobold]#{cpu.pused} '
 
 # Set the foreground/background color for the active window
-setw -g window-active-style "fg=default,bg=#112d4b"
-setw -g pane-active-border-style "fg=#0a2642,bg=#0a2642"
+setw -g window-active-style "fg=default,bg=#162534"
+setw -g pane-active-border-style "fg=#14212f,bg=#14212f"
 # Set the foreground/background color for all other windows
-setw -g window-style "fg=default,bg=#0a2642"
-setw -g pane-border-style "fg=#0a2642,bg=#0a2642"
-set -g status-bg "#0a2642" # For the status bar
+setw -g window-style "fg=default,bg=#14212f"
+setw -g pane-border-style "fg=#14212f,bg=#14212f"
+set -g status-bg "#14212f" # For the status bar
 
 
 
