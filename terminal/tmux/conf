@@ -135,32 +135,32 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 set -g status-left-length 50
 set -g status-right-length 150
 set -g status-style "bg=black"
-set -g status-left "#[fg=#0a2642,bg=#ffa857,nobold] #S #[fg=#ffa857,bg=default,nobold,noitalics,nounderscore]"
+set -g status-left "#[fg=#252837,bg=#f78e6e,nobold] #S #[fg=#f78e6e,bg=default,nobold,noitalics,nounderscore]"
 
-STATS_CPU="#[fg=#c690e9,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#c690e9]#{sysstat_cpu}"
-STATS_MEM="#[fg=#8095ff,bg=#252837,nobold,noitalics,nounderscore]#[fg=#0a2642,bg=#8095ff]#{sysstat_mem}"
-YY_MM_DD="#[fg=#ffa857,bg=#252837]#[fg=#0a2642,bg=#ffa857] %Y-%m-%d "
-H_M="#[fg=#ffcb6b,bg=#252837]#[fg=#0a2642,bg=#ffcb6b] %H:%M "
+STATS_CPU="#[fg=#c894eb,bg=#252837,nobold,noitalics,nounderscore]#[fg=#252837,bg=#c894eb]#{sysstat_cpu}"
+STATS_MEM="#[fg=#929ddd,bg=#252837,nobold,noitalics,nounderscore]#[fg=#252837,bg=#929ddd]#{sysstat_mem}"
+YY_MM_DD="#[fg=#f78e6e,bg=#252837]#[fg=#252837,bg=#f78e6e] %Y-%m-%d "
+H_M="#[fg=#ffcb6b,bg=#252837]#[fg=#252837,bg=#ffcb6b] %H:%M "
 set -g status-right "$STATS_CPU$STATS_MEM$YY_MM_DD$H_M"
 
 
-set -g window-status-format "#[fg=colour235,bg=#184267,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#184267 ]#I #[fg=#54708c,bg=#184267,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#184267]#W #F #[fg=#184267,bg=default,nobold,noitalics,nounderscore]"
-set -g window-status-current-format "#[fg=colour235,bg=#8095ff,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#8095ff]#I #[fg=#e2edf8,bg=#8095ff,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#8095ff]#W #F #[fg=#8095ff,bg=default,nobold,noitalics,nounderscore]"
+set -g window-status-format "#[fg=colour235,bg=#33384d,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#33384d ]#I #[fg=#54708c,bg=#33384d,nobold,noitalics,nounderscore] #[fg=#54708c,bg=#33384d]#W #F #[fg=#33384d,bg=default,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=colour235,bg=#474e6b,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#474e6b]#I #[fg=#e2edf8,bg=#474e6b,nobold,noitalics,nounderscore] #[fg=#e2edf8,bg=#474e6b]#W #F #[fg=#474e6b,bg=default,nobold,noitalics,nounderscore]"
 set -g window-status-separator ""
 set -g monitor-activity off
 set -g @sysstat_mem_color_low "#c3e88d"
 set -g @sysstat_cpu_color_low "#c3e88d"
 
-set -g @sysstat_mem_view_tmpl ' #[fg=#0a2642,nobold]#{mem.used} / #[fg=#0a2642,nobold]#{mem.total} '
-set -g @sysstat_cpu_view_tmpl ' #[fg=#0a2642,nobold]#{cpu.pused} '
+set -g @sysstat_mem_view_tmpl ' #[fg=#252837,nobold]#{mem.used} / #[fg=#252837,nobold]#{mem.total} '
+set -g @sysstat_cpu_view_tmpl ' #[fg=#252837,nobold]#{cpu.pused} '
 
 # Set the foreground/background color for the active window
-setw -g window-active-style "fg=default,bg=#112d4b"
-setw -g pane-active-border-style "fg=#0a2642,bg=#0a2642"
+setw -g window-active-style "fg=default,bg=#292d3d"
+setw -g pane-active-border-style "fg=#252837,bg=#252837"
 # Set the foreground/background color for all other windows
-setw -g window-style "fg=default,bg=#0a2642"
-setw -g pane-border-style "fg=#0a2642,bg=#0a2642"
-set -g status-bg "#0a2642" # For the status bar
+setw -g window-style "fg=default,bg=#252837"
+setw -g pane-border-style "fg=#252837,bg=#252837"
+set -g status-bg "#252837" # For the status bar
 
 
 
