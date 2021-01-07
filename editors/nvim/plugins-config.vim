@@ -17,7 +17,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> <Leader>f :CocCommand actions.open<CR>
+xmap <leader>f  <Plug>(coc-codeaction-selected)
+nmap <leader>f  <Plug>(coc-codeaction-selected)w
 nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>
 
 " ALT-k and ALT-j to navigate errors
