@@ -85,3 +85,4 @@ key_bindings:
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: J, mods: Alt, chars: "\x1bj" }
   - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: L, mods: Alt, command: { program: "/usr/local/bin/tmux", args: ["popup", "-KER", "~/dotfiles/scripts/splunk"] } }
