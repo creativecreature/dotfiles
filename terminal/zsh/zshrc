@@ -100,7 +100,7 @@ ensure_tmux_is_running() {
 ensure_tmux_is_running
 
 # Klarna
-# eval "$(direnv hook $SHELL)"
+eval "$(direnv hook $SHELL)"
 # export ANDROID_HOME=/usr/local/share/android-sdk
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
 # export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
