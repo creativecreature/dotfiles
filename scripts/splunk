@@ -4,8 +4,7 @@ BASE_URL="https://splunk.klarna.net/en-US/app/rhinos/search"
 LOG_LEVEL=30
 ALL_LAMBDAS=(
   "disputes-infra-eu1-disputes-notifications-send-out" \
-  "disputes-infra-eu1-disputes-notifications-comms-callback" \
-  "disputes-infra-eu1-dispute-reasons-get-reasons"
+  "disputes-infra-eu1-disputes-notifications-comms-callback"
 )
 
 rawurlencode() {
