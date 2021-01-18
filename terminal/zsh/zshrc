@@ -101,19 +101,7 @@ ensure_tmux_is_running
 
 # Klarna
 eval "$(direnv hook $SHELL)"
-# export ANDROID_HOME=/usr/local/share/android-sdk
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
-# export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-# export ANDROID_HOME="/usr/local/share/android-sdk"
-# export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-# export GRADLE_USER_HOME="/usr/local/share/gradle"
-# export M2_HOME="/usr/local/share/maven"
 
-# # Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt spaceship
-# PS1='$(pwd)'
-#
 function aws-profile() {
   export AWS_PROFILE="$(grep '\[.*\]' ~/.aws/credentials | tr -d '[-]' | fzf)"
 }
