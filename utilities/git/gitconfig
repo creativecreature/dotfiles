@@ -13,6 +13,9 @@
 [includeif "gitdir:~/code/klarna/"]
   path = ~/code/klarna/.gitconfig
 
+[commit]
+  template = ~/dotfiles/utilities/git/git_commit_template.txt
+
 [push]
   default = current
 
