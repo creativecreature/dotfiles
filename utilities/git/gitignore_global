@@ -7,6 +7,10 @@ LOCALDEV
 # Node
 node_modules
 
+#terraform
+.terraform/
+*.tfstate.backup
+
 # Tags
 tags
 .tags
