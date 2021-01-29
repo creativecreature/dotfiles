@@ -117,6 +117,7 @@ if has("autocmd")
   autocmd BufEnter *.tsx set filetype=typescript.tsx
 
   autocmd BufEnter * set foldmethod=indent
+  au BufRead,BufNewFile Jenkinsfile setfiletype groovy
 
 endif
 
