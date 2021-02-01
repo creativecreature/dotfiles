@@ -15,7 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug '~/code/creativecreature/zeilo'
+Plug '~/code/creativecreature/themer'
 Plug 'ervandew/supertab'
 
 " File navigation
