@@ -100,7 +100,7 @@ let g:prettier#config#trailing_comma = 'all'
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'zeilo',
+      \ 'colorscheme': 'creativecreature',
       \ 'enable': {
       \   'tabline': 0
       \ },
