@@ -159,11 +159,6 @@ endfunction
 nnoremap <silent> <leader>o :call Handle_Win_Exit()<CR>
 nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
 
-" TODO Eventually move these to the colorscheme
-call s:highlight_helper("TabLine", "#697098", "#252837") " TODO: Change first color to be colorGreyX
-call s:highlight_helper("TabLineSel", "#bfc7d5", "#252837") " TODO: Change first color to be colorGreyX
-call s:highlight_helper("TabLineFill", "#bfc7d5", "#252837") " TODO: Change first color to be colorGreyX
-
 " TODO Eventually move this to some helper file
 function! SynGroup()
     let l:s = synID(line('.'), col('.'), 1)
