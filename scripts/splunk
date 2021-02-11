@@ -32,6 +32,8 @@ rawurlencode() {
 
 # }
 
+# TODO: Create function for outputting log messages
+
 # Prompt user to select a Lambda
 lambda=$(printf "%s\n" "${ALL_LAMBDAS[@]}" | fzf --header 'For which lambda would you like to view logs?')
 echo Great, will build the query url for "${lambda}".
