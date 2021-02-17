@@ -83,6 +83,7 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden -i --ignore-file '~/.ignore'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 
+# I always want TMUX to run
 _not_inside_tmux() {
   [[ -z "$TMUX" ]]
 }
