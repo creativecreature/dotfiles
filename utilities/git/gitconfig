@@ -1,7 +1,7 @@
 [user]
   email = charlesvictorconner@gmail.com
   name = Victor Conner
-  editor = /usr/local/bin/nvim
+  editor = "nvim +17"
   signingkey = FDC481F6C898B59F
 
 [core]
