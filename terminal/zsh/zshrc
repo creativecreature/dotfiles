@@ -89,6 +89,7 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # export TERM='screen-256color'
 
+# I always want TMUX to run
 _not_inside_tmux() {
   [[ -z "$TMUX" ]]
 }
