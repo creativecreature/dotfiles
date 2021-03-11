@@ -10,6 +10,8 @@ tags.temp
 tags.lock
 plugged
 
+yarn-error.log
+
 node_modules
 nvim/autoload
 terminal/nvim/plugged
