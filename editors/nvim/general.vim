@@ -18,6 +18,7 @@ set inccommand=nosplit
 set number relativenumber
 set nu rnu
 set cmdheight=2 " Give more space for displaying messages.
+set mouse=a " Enables scrolling in the error popups, usefull for coc-vim.
 
 " Indentation
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
