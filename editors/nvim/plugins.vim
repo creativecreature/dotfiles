@@ -40,7 +40,7 @@ Plug 'michaeljsmith/vim-indent-object'
 
 " Task Running
 Plug 'janko/vim-test'
-Plug 'benmills/vimux'
+Plug 'preservim/vimux'
 
 " Git
 Plug 'tpope/vim-fugitive'
