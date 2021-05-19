@@ -103,6 +103,7 @@ source './applications/vlc.sh'
 source './applications/slack.sh'
 source './applications/discord.sh'
 source './applications/simplescreenrecorder.sh'
+source './applications/1password.sh'
 
 install_docker
 install_enpass
@@ -113,6 +114,7 @@ install_vlc
 install_slack
 install_discord
 install_simplescreenrecorder
+install_1password
 echo ""
 
 
