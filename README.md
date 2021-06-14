@@ -2,12 +2,12 @@
 
 ## Introduction
 I use these scripts to bootstrap new machines, install software and prevent
-configuration drifts between my workstations.
+configuration drifts between different laptops I use.
 
 
 ## Bootstrapping a new machine
 Just download this repository as a zip file. Extract it and run the `bootstrap.sh`
-script. The *bootstrap* scripts should only be ran once. See the following
+script. The *bootstrap* scripts should only be executed once. See the following
 section for instructions on how to sync the latest changes.
 
 The bootstrap scripts will:
