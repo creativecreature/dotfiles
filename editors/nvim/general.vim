@@ -4,7 +4,7 @@ set backspace=2 " Backspace deletes in insertmode
 set nobackup
 set nowritebackup
 set noswapfile
-set history=50
+set history=10000
 set ruler " Always show cursor position
 set showcmd " Display incomplete commands
 set laststatus=2 " Always displays the status line
