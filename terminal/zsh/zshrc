@@ -116,6 +116,7 @@ autoload zmv
 fpath=($fpath "/home/conner/.zfunctions")
 
 
+# zsh functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Set color of autocomplete text
