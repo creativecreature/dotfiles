@@ -1,8 +1,8 @@
 [user]
-  email = charlesvictorconner@gmail.com
-  name = Victor Conner
+  email = hello@creativecreature.com
+  name = creativecreature
   editor = "nvim +17"
-  signingkey = FDC481F6C898B59F
+  signingkey = 15DD0245769BFD92
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -15,6 +15,7 @@
 
 [commit]
   template = ~/dotfiles/utilities/git/git_commit_template.txt
+  gpgSign = true
 
 [push]
   default = current
@@ -36,10 +37,12 @@
   mup = !git checkout master && git pull && git checkout -
   upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
   ureset = !git upstream && git reset --hard $(git upstream)
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge --skip -- %f
   process = git-lfs filter-process --skip
   required = true
+
 [gpg]
-  program = /usr/local/bin/gpg
+  program = gpg

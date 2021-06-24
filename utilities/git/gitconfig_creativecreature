@@ -1,6 +1,2 @@
-[user]
-  email = hello@creativecreature.com
-  name = creativecreature
-
 [url "git@github.com-creativecreature"]
   insteadOf = git@github.com
