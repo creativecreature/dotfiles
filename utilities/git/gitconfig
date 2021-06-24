@@ -13,6 +13,9 @@
 [includeif "gitdir:~/code/klarna/"]
   path = ~/code/klarna/.gitconfig
 
+[log]
+  showSignature = true
+
 [commit]
   template = ~/dotfiles/utilities/git/git_commit_template.txt
   gpgSign = true
@@ -30,7 +33,7 @@
   prune = true
 
 [alias]
-  sla = log --oneline --decorate --graph --all
+  sla = log --oneline --decorate --graph --all --no-show-signature
   glog = log -E -i --grep
   unstage = reset
   uncommit = reset --soft HEAD^
