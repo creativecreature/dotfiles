@@ -18,6 +18,7 @@ echo_header "Utilities"
 source './utilities/build_tools/build_tools.sh'
 source './utilities/ssh/ssh.sh'
 source './utilities/git/git.sh'
+source './utilities/gpg/gpg.sh'
 source './utilities/direnv/direnv.sh'
 source './utilities/http/http.sh'
 source './utilities/tldr/tldr.sh'
@@ -34,6 +35,7 @@ source './utilities/kcolorchooser/kcolorchooser.sh'
 install_build_tools
 configure_ssh
 configure_git
+configure_gpg
 install_direnv
 install_http_utils
 install_tldr
