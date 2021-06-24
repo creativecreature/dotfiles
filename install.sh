@@ -96,7 +96,6 @@ echo ""
 # -- APPLICATIONS --------------------------------------------------------------
 echo_header "Applications"
 source './applications/docker.sh'
-source './applications/enpass.sh'
 source './applications/nordvpn.sh'
 source './applications/virtualbox.sh'
 source './applications/vlc.sh'
@@ -106,8 +105,6 @@ source './applications/simplescreenrecorder.sh'
 source './applications/1password.sh'
 
 install_docker
-install_enpass
-configure_enpass
 install_nordvpn
 install_virtualbox
 install_vlc
