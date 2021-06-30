@@ -54,6 +54,9 @@ map <Leader>g/ <Plug>(incsearch-easymotion-stay)
 
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
+" The two lines below sets the menu at the bottom without a preview of the code.
+let g:fzf_preview_window = ''"
+let g:fzf_layout = { 'down': '~40%' }
 nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>t :FzfBTags<CR>
