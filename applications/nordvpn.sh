@@ -10,6 +10,7 @@ install_nordvpn() {
     sudo dpkg -i ./nordvpn-release_1.0.0_all.deb > /dev/null
     sudo apt-get -qq --yes update
     sudo apt-get -qq --yes install nordvpn
+    sudo usermod -aG nordvpn $USER
     cd -
   fi
 }
