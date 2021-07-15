@@ -55,7 +55,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export ZSH_DISABLE_COMPFIX=true
 fi
 
-# Use lighter version git commands for Starship in KLAPP
+# Disable some git commands for Starship in KLAPP
 if [[ "$(pwd)" =~ klarna-app ]]; then
   export STARSHIP_CONFIG=~/.config/starship-klapp.toml
 fi
