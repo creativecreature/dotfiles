@@ -55,6 +55,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export ZSH_DISABLE_COMPFIX=true
 fi
 
+# Use lighter version git commands for Starship in KLAPP
+if [[ "$(pwd)" =~ klarna-app ]]; then
+  export STARSHIP_CONFIG=~/.config/starship-klapp.toml
+fi
+
 # Add bin to path, should eventually remove this and use dotfiles bin
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
