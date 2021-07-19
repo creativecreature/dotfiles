@@ -2,41 +2,40 @@ call plug#begin()
 
 " User interface
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'ap/vim-buftabline'
 Plug 'chrisbra/Colorizer'
-
-" Project navigation
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug '~/code/creativecreature/themer'
-Plug 'ervandew/supertab'
 
-" File navigation
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'terryma/vim-multiple-cursors'
+" Syntax
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 
 " Editing
+Plug 'nvim-lua/completion-nvim'
+Plug 'folke/twilight.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
-Plug 'prettier/vim-prettier'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-sort-motion'
 Plug 'michaeljsmith/vim-indent-object'
+
+" Project navigation
+Plug 'scrooloose/nerdtree'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" File navigation
+Plug 'haya14busa/incsearch.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 
 " Task Running
 Plug 'janko/vim-test'
@@ -48,9 +47,6 @@ Plug 'tpope/vim-fugitive'
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-
-" Kick bad habits
-Plug 'takac/vim-hardtime'
 
 " Wakatime
 Plug 'wakatime/vim-wakatime'

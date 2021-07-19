@@ -21,7 +21,4 @@ configure_nvim() {
 
   echo_item "updating nvim plugins" "green"
   nvim "+PlugUpdate" +qall
-
-  echo_item "installing coc sources" "green"
-  nvim "+CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-emoji coc-python coc-rls" +qall
 }

@@ -1,68 +1,6 @@
-" Hardtime
-" let g:hardtime_default_on = 1
-let g:hardtime_timeout = 1500
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>" " Tab top down instead of top up
-
-" Coc
-let g:coc_global_extensions = ['coc-solargraph']
-let g:coc_user_config = {}
-let g:coc_user_config['diagnostic'] = {}
-let g:coc_user_config['diagnostic']['infoSign'] = "😱"
-let g:coc_user_config['diagnostic']['warningSign'] = "💩"
-let g:coc_user_config['diagnostic']['errorSign'] = "🔥"
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<CR>
-xmap <leader>f  <Plug>(coc-codeaction-selected)
-nmap <leader>f  <Plug>(coc-codeaction-selected)w
-nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>
-
-" ALT-k and ALT-j to navigate errors
-if system('uname -s') == "Darwin\n"
-  "OSX
-  nmap <silent> <M-k> <Plug>(coc-diagnostic-prev)
-  nmap <silent> <M-j> <Plug>(coc-diagnostic-next)
-else
-  "Linux
-  nmap <silent> <A-k> <Plug>(coc-diagnostic-prev)
-  nmap <silent> <A-j> <Plug>(coc-diagnostic-next)
-endif
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
 " Surround vim
 " Deletes surrounding function
 nmap <silent> dsf ds)db
-
-" Easymotion
-map <Leader>/ <Plug>(incsearch-easymotion-/)
-map <Leader>? <Plug>(incsearch-easymotion-?)
-map <Leader>g/ <Plug>(incsearch-easymotion-stay)
-
-" Fzf
-let g:fzf_command_prefix = 'Fzf'
-" The two lines below sets the menu at the bottom without a preview of the code.
-let g:fzf_preview_window = ''"
-let g:fzf_layout = { 'down': '~40%' }
-nnoremap <Leader>b :FzfBuffers<CR>
-nnoremap <Leader>h :FzfHistory<CR>
-nnoremap <Leader>t :FzfBTags<CR>
-nnoremap <Leader>T :FzfTags<CR>
-nnoremap <C-p> :FzfFiles<CR>
-" let g:fzf_files_options = '--preview="bat --theme=base16 --color=always {}"'
 
 " Nerdtree
 let g:NERDTreeChDirMode=2
@@ -81,13 +19,6 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 " This is to display ` and "
 let g:indentLine_setConceal = 2
 let g:indentLine_concealcursor = ""
-
-" Prettier
-nmap =p <Plug>(Prettier)
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#print_width = 120
-let g:prettier#config#semi = 'false'
-let g:prettier#config#trailing_comma = 'all'
 
 " Lightline
 let g:lightline = {
@@ -166,3 +97,242 @@ nnoremap <C-f> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind - to grep and show result in quickfix
 command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
 nnoremap - :Rg<SPACE>
+
+" LSP
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion
+  require'completion'.on_attach(client, bufnr)
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-y>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+
+local servers = { "pyright", "rust_analyzer", "tsserver", "solargraph", "vimls", "dockerls", "bashls", "rust_analyzer" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+nvim_lsp.diagnosticls.setup {
+  on_attach = on_attach,
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+  init_options = {
+    linters = {
+      eslint = {
+        command = 'eslint_d',
+        rootPatterns = { '.git' },
+        debounce = 100,
+        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+        sourceName = 'eslint_d',
+        parseJson = {
+          errorsRoot = '[0].messages',
+          line = 'line',
+          column = 'column',
+          endLine = 'endLine',
+          endColumn = 'endColumn',
+          message = '[eslint] ${message} [${ruleId}]',
+          security = 'severity'
+        },
+        securities = {
+          [2] = 'error',
+          [1] = 'warning'
+        }
+      },
+    },
+    filetypes = {
+      javascript = 'eslint',
+      javascriptreact = 'eslint',
+      typescript = 'eslint',
+      typescriptreact = 'eslint',
+    },
+    formatters = {
+      eslint_d = {
+        command = 'eslint_d',
+        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+        rootPatterns = { '.git' },
+      },
+      prettier = {
+        command = 'prettier',
+        args = { '--stdin-filepath', '%filename' }
+      }
+    },
+    formatFiletypes = {
+      css = 'prettier',
+      javascript = 'eslint_d',
+      javascriptreact = 'eslint_d',
+      json = 'prettier',
+      scss = 'prettier',
+      less = 'prettier',
+      typescript = 'eslint_d',
+      typescriptreact = 'eslint_d',
+      json = 'prettier',
+      markdown = 'prettier',
+    }
+  }
+}
+
+-- LSP Saga
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+  use_saga_diagnostic_sign = true,
+  border_style = 'round',
+  dianostic_header_icon = '💣',
+  error_sign = '🔥',
+  warn_sign = '💩',
+  hint_sign = '🥺',
+  infor_sign = '💡',
+  definition_preview_icon = ' ',
+  code_action_icon = '✨',
+  code_action_prompt = {
+    enable = true,
+    sign = true,
+    sign_priority = 20,
+    virtual_text = true,
+  },
+  max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+  finder_action_keys = {
+    open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+  },
+  code_action_keys = {
+    quit = 'q',exec = '<CR>'
+  },
+  rename_action_keys = {
+    quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+  },
+  rename_prompt_prefix = '➤',
+}
+
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = false,
+    disable = {},
+  }
+}
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+
+-- Treesitter
+local actions = require('telescope.actions')require('telescope').setup{
+  defaults = {
+    mappings = {
+      n = {
+        ["q"] = actions.close
+      },
+    },
+  }
+}
+
+-- Twilight
+require("twilight").setup {
+  dimming = {
+    alpha = 0.25, -- amount of dimming
+    -- we try to get the foreground from the highlight groups or fallback color
+    color = { "Normal", "#ffffff" },
+  },
+  context = 10, -- amount of lines we will try to show around the current line
+  -- treesitter is used to automatically expand the visible text,
+  -- but you can further control the types of nodes that should always be fully expanded
+  expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
+    "function",
+    "method",
+    "table",
+    "if_statement",
+  },
+  exclude = {}, -- exclude these filetypes
+  }
+EOF
+
+" === LSP Saga =================================================================
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+" lsp provider to find the cursor word definition and reference
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+
+" code action
+nnoremap <silent><leader>f <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>f :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+
+" show hover doc
+nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+" show signature help
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+
+" rename
+nnoremap <silent>,gr <cmd>lua require('lspsaga.rename').rename()<CR>
+
+" preview definition
+nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+
+" show diagnostics
+nnoremap <silent><leader>cd <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+" only show diagnostic if cursor is over the area
+nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+" ALT-k and ALT-j to navigate errors
+if system('uname -s') == "Darwin\n"
+  "OSX
+  nmap <silent> <M-k> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+  nmap <silent> <M-j> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
+else
+  "Linux
+  nmap <silent> <A-k> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+  nmap <silent> <A-j> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
+endif
+
+
+" === COMPLETION ===============================================================
+set completeopt=menuone,noinsert,noselect
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" === TELESCOPE ================================================================
+nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
+nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
+nnoremap <silent> \\ <cmd>Telescope buffers<cr>
+nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
