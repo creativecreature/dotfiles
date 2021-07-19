@@ -10,5 +10,7 @@ install_fonts() {
     ./install.sh > /dev/null
     cd -
     rm -rf fonts
+    mkdir ~/.config/fontconfig
+    ln -sf ~/dotfiles/ui/fonts.conf ~/.config/fontconfig/fonts.conf
   fi
 }

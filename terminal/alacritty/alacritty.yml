@@ -40,16 +40,16 @@ colors:
     - { index: 21, color: '0x959dcb' }
 font:
   normal:
-    family: 'OperatorMono Nerd Font'
+    family: 'monospace'
     style: Light
   bold:
-    family: 'OperatorMono Nerd Font'
+    family: 'monospace'
     style: Book
   italic:
-    family: 'OperatorMono Nerd Font'
+    family: 'monospace'
     style: Light Italic
   bold_italic:
-    family: 'OperatorMono Nerd Font'
+    family: 'monospace'
     style: Book Italic
   # Point size
   size: 13.5
