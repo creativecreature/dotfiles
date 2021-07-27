@@ -52,7 +52,7 @@ font:
     family: 'monospace'
     style: Book Italic
   # Point size
-  size: 13.5
+  size: 12.5
 
   offset:
     x: 0
