@@ -10,6 +10,9 @@ endif
 " Bind leader p to always paste the latest yank
 nnoremap <Leader>p "0p
 
+" Make Y yank to the end of line (similar to how D deletes to end of line and C changes to end of line)
+nnoremap Y y$
+
 "Smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
   if len(getline('.')) == 0
@@ -25,6 +28,19 @@ nnoremap <expr> i IndentWithI()
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Don't move the cursor when joining lines.
+nnoremap J mzJ`z
+
+" Undo breakpoints. Pressing u will take these breakpoints into consideration.
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Mutate the jumplist when we move more than 5 lines
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
 " Split
 noremap <Leader>x :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -38,12 +54,6 @@ noremap <leader>c :bp<cr>:bd #<cr>
 
 "Clean search highlight
 nnoremap <silent> <leader><space> :noh<cr>
-
-" Switching windows
-" noremap <C-j> <C-w>j
-" noremap <C-k> <C-w>k
-" noremap <C-l> <C-w>l
-" noremap <C-h> <C-w>h
 
 " Zoom and rebalance vim panes
 nnoremap <leader>Z :wincmd _<cr>:wincmd \|<cr>
