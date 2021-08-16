@@ -15,11 +15,6 @@ let g:NERDTreeShowHidden=1
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" Indentline
-" This is to display ` and "
-let g:indentLine_setConceal = 2
-let g:indentLine_concealcursor = ""
-
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'creativecreature',
@@ -109,7 +104,6 @@ local on_attach = function(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   --Enable completion
-  require'completion'.on_attach(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -120,15 +114,15 @@ local on_attach = function(client, bufnr)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   --buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-y>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  --buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  --buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+--  buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   --buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   --buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   --buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   --buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("n", "=f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 end
 
@@ -244,8 +238,25 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = false,
     disable = {},
+  },
+  textobjects = {
+    select = {
+      enable = true,
+
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
   }
 }
+
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
 
@@ -278,6 +289,42 @@ require("twilight").setup {
   },
   exclude = {}, -- exclude these filetypes
   }
+
+-- NVIM compe
+vim.o.completeopt = "menuone,noselect"
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = {
+    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
+    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+    max_width = 120,
+    min_width = 60,
+    max_height = math.floor(vim.o.lines * 0.3),
+    min_height = 1,
+  };
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = true;
+    ultisnips = true;
+    luasnip = true;
+    emoji = true;
+  };
+}
 EOF
 
 " === LSP Saga =================================================================
@@ -315,13 +362,14 @@ endif
 
 
 " === COMPLETION ===============================================================
-set completeopt=menuone,noinsert,noselect
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " === TELESCOPE ================================================================
 nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
-nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
+" nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
-nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+" nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+highlight TelescopeSelection guifg=#212431 guibg=#d4d7e2
+highlight TelescopeMatching guifg=#ff8599
