@@ -3,6 +3,7 @@ call plug#begin()
 " User interface
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
+Plug 'josa42/nvim-lightline-lsp'
 Plug '~/code/creativecreature/themer'
 
 " Syntax
