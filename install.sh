@@ -28,6 +28,7 @@ source './utilities/xclip/xclip.sh'
 source './utilities/caffeine/caffeine.sh'
 source './utilities/heroku/heroku.sh'
 source './utilities/gitcrypt/gitcrypt.sh'
+source './utilities/fzf/fzf.sh'
 source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
@@ -46,6 +47,7 @@ install_xclip
 install_caffeine
 install_heroku
 install_gitcrypt
+install_fzf
 install_tree
 configure_eslint
 install_kcolorchooser
