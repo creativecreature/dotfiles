@@ -63,9 +63,9 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   --buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  --buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-y>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   --buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   --buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
@@ -78,6 +78,15 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "=f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 end
+
+-- This disables showing inline errors. I use LSP saga to display them on hover
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = false,
+    underline = true,
+    signs = true,
+  }
+)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -132,7 +141,7 @@ nvim_lsp.diagnosticls.setup {
       },
       prettier = {
         command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
+        args = { '--stdin-filepath', '%filename', '--single-quote', '--print-width 120', '--no-semi', '--trailing-comma all' }
       }
     },
     formatFiletypes = {

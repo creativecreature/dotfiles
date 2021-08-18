@@ -110,6 +110,7 @@ colorscheme creativecreature
 
 let no_buffers_menu=1
 
+" Highlight active pane
 hi ActiveWindow guibg=#292d3d
 hi InactiveWindow guibg=#252837
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
