@@ -50,17 +50,19 @@ bind-key x kill-pane
 
 # Create panes at the current panes path
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
-bind-key - if-shell "$is_vim" "send-keys ,o" \; split-window -v -c '#{pane_current_path}'
-bind-key \\ if-shell "$is_vim" "send-keys ,o" \; split-window -h -c '#{pane_current_path}'
 
+# Split windows with \ -
+bind-key - split-window -v -c '#{pane_current_path}'
+bind-key \\ split-window -h -c '#{pane_current_path}'
+
+# Send focus events to applications. This will be used to toggle colors in vim
 set -g focus-events on
-set-hook -g pane-focus-in "if-shell '$is_vim' 'run ~/dotfiles/terminal/tmux/focus.sh'"
 
 # Smart pane switching with awareness of Vim splits, the -n flag indicates we dont want to use the prefix
-bind -n C-h if-shell "([ $(tmux display-message -p '#{pane_at_left}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_right}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-h" "select-pane -L"
-bind -n C-l if-shell "([ $(tmux display-message -p '#{pane_at_left}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_right}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-l" "select-pane -R"
-bind -n C-k if-shell "([ $(tmux display-message -p '#{pane_at_bottom}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_top}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-k" "select-pane -U"
-bind -n C-j if-shell "([ $(tmux display-message -p '#{pane_at_bottom}') -ne 1 ] || [ $(tmux display-message -p '#{pane_at_top}') -ne 1 ]) && $is_vim" "send-keys ,o" \; if-shell "$is_vim" "send-keys C-j" "select-pane -D"
+bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
 bind-key -T copy-mode-vi C-h select-pane -L
 bind-key -T copy-mode-vi C-j select-pane -D
 bind-key -T copy-mode-vi C-k select-pane -U

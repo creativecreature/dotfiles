@@ -130,35 +130,14 @@ colorscheme creativecreature
 
 let no_buffers_menu=1
 
-function! s:highlight_helper(...)
-  let l:syntax_group = a:1
-  let l:foreground_color = a:2
-  let l:background_color = empty(a:3) ? "NONE" : a:3
-  let l:gui = a:0 == 3 ? "None" : a:4
-  exec "highlight " . l:syntax_group . " guifg=" . l:foreground_color . " guibg=" . l:background_color . " gui=" . l:gui . " cterm=NONE term=NONE"
-endfunction
-
 hi ActiveWindow guibg=#292d3d
 hi InactiveWindow guibg=#252837
-
-" Call method on window enter
-augroup WindowManagement
+set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+augroup colortoggle
   autocmd!
-  autocmd WinEnter * call Handle_Win_Enter()
-  autocmd WinLeave * call Handle_Win_Exit()
+  autocmd BufEnter,FocusGained * setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+  autocmd BufLeave,FocusLost * setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
 augroup END
-
-" Change highlight group of active/inactive windows
-function! Handle_Win_Enter()
-  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-endfunction
-
-function! Handle_Win_Exit()
-  setlocal winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow
-endfunction
-
-nnoremap <silent> <leader>o :call Handle_Win_Exit()<CR>
-nnoremap <silent> <leader>O :call Handle_Win_Enter()<CR>
 
 " TODO Eventually move this to some helper file
 function! SynGroup()
