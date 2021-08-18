@@ -213,12 +213,13 @@ require'nvim-treesitter.configs'.setup {
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
 
--- Treesitter
+--- Telescope
 local actions = require('telescope.actions')require('telescope').setup{
   defaults = {
     mappings = {
-      n = {
-        ["q"] = actions.close
+      -- Close on escape
+      i = {
+        ["<esc>"] = actions.close,
       },
     },
   }

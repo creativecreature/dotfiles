@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = " "
 set shell=zsh " Set zsh as the prompt for vim
 set backspace=2 " Backspace deletes in insertmode
 set nobackup
@@ -18,7 +18,6 @@ set inccommand=nosplit
 set number relativenumber
 set nu rnu
 set cmdheight=2 " Give more space for displaying messages.
-set mouse=a " Enables scrolling in the error popups, usefull for coc-vim.
 
 " Indentation
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
@@ -80,12 +79,6 @@ endif
 set foldmethod=indent
 set foldlevel=99
 
-" This makes coc vim diagnostic messages work better
-set updatetime=300
-" Don't give |ins-completion-menu| messages. Coc vim
-set shortmess+=c
-set signcolumn=yes
-
 if has("autocmd")
   filetype plugin indent on
 
@@ -93,19 +86,8 @@ if has("autocmd")
   " tmux split
   autocmd VimResized * :wincmd =
 
-  autocmd BufReadPost * " {{{2
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif "}}}2
-
   " Automatically clean trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
-
-  " autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
-  "       \ | set textwidth=0
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -117,9 +99,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
   autocmd BufEnter *.tsx set filetype=typescript.tsx
 
-  autocmd BufEnter * set foldmethod=indent
   au BufRead,BufNewFile Jenkinsfile setfiletype groovy
-
 endif
 
 " UI

@@ -42,18 +42,18 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
 " Split
-noremap <Leader>x :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+noremap ,x :<C-u>split<CR>
+noremap ,v :<C-u>vsplit<CR>
 
 " Buffer nav
-noremap <silent><leader>q :bp<CR>
-noremap <silent><leader>w :bn<CR>
+noremap <silent>,q :bp<CR>
+noremap <silent>,w :bn<CR>
 
 " Close buffer, small fix for nerdtree bug see https://github.com/preservim/nerdtree/issues/400
-noremap <leader>c :bp<cr>:bd #<cr>
+noremap ,c :bp<cr>:bd #<cr>
 
 "Clean search highlight
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> ,<space> :noh<cr>
 
 " Zoom and rebalance vim panes
 nnoremap <leader>Z :wincmd _<cr>:wincmd \|<cr>
@@ -68,7 +68,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Enable folding with the spacebar
-nnoremap <space> za
+" nnoremap <space> za
 
 " Map gF to go to file in vertical split
 nnoremap gF :vertical wincmd f<CR>
