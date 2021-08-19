@@ -50,7 +50,7 @@ noremap <silent>,q :bp<CR>
 noremap <silent>,w :bn<CR>
 
 " Close buffer, small fix for nerdtree bug see https://github.com/preservim/nerdtree/issues/400
-noremap ,c :bp<cr>:bd #<cr>
+noremap <leader>c :bp<cr>:bd #<cr>
 
 "Clean search highlight
 nnoremap <silent> ,<space> :noh<cr>
