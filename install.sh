@@ -32,6 +32,8 @@ source './utilities/fzf/fzf.sh'
 source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
+source './utilities/neofetch/neofetch.sh'
+source './utilities/dunst/dunst.sh'
 
 install_build_tools
 configure_ssh
@@ -51,6 +53,8 @@ install_fzf
 install_tree
 configure_eslint
 install_kcolorchooser
+install_neofetch
+install_dunst
 echo ""
 
 
@@ -135,12 +139,21 @@ echo ""
 
 # -- UI ------------------------------------------------------------------------
 echo_header "UI"
+source './ui/bspwm/bspwm.sh'
+source './ui/polybar/polybar.sh'
+source './ui/picom/picom.sh'
 source './ui/fonts.sh'
 source './ui/gnome_tweaks.sh'
 source './ui/dock.sh'
 source './ui/theme.sh'
 source './ui/icons.sh'
 
+install_bspwm
+configure_bspwm
+install_polybar
+configure_polybar
+install_picom
+configure_picom
 install_fonts
 install_gnome_tweaks
 configure_dock

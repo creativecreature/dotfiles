@@ -1,3 +1,9 @@
 setxkbmap -option caps:swapescape
 
+# startx at login
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  # exec startx ~/.config/X11/xinitrc
+fi
+
+export TERMINAL="alacritty"
 export PATH="$HOME/.cargo/bin:$PATH"
