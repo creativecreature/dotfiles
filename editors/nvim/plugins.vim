@@ -1,9 +1,6 @@
 call plug#begin()
 
 " User interface
-" Plug 'itchyny/lightline.vim'
-" Plug 'ap/vim-buftabline'
-Plug 'creativecreature/nvim-lightline-lsp'
 Plug '~/code/creativecreature/themer'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'

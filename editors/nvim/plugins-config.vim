@@ -11,23 +11,6 @@ let g:NERDTreeShowHidden=1
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" Lightline
-let g:lightline = {
-\ 'colorscheme': 'creativecreature',
-\ 'enable': {
-\   'tabline': 0
-\ },
-\ 'active': {
-\   'left': [['mode', 'paste'],[ 'readonly', 'filename', 'modified', 'lsp_info', 'lsp_hints', 'lsp_errors', 'lsp_warnings', 'lsp_ok' ], [ 'lsp_status' ]]
-\ }
-\ }
-let g:lightline#lsp#indicator_errors = '🔥'
-let g:lightline#lsp#indicator_warnings = '💩'
-let g:lightline#lsp#indicator_hints = '🦠'
-let g:lightline#lsp#indicator_info = '❗'
-let g:lightline#lsp#indicator_ok = '👌'
-call lightline#lsp#register()
-
 " Vim-test
 let g:test#javascript#jest#file_pattern = '.*\.test\.js'
 let g:test#typescript#mocha#file_pattern = '.*\.test\.ts'
@@ -306,6 +289,7 @@ require('lualine').setup({
           sources = { 'nvim_lsp' },
           symbols = {
             hint = '  ',
+            error = ' 🔥 '
           },
           sections = { 'error', 'warn', 'info', 'hint' },
         },
