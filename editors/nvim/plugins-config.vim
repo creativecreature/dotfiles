@@ -264,9 +264,9 @@ require'compe'.setup {
     buffer = true;
     calc = true;
     nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-    ultisnips = true;
+    nvim_lua = false;
+    vsnip = false;
+    ultisnips = false;
     luasnip = true;
     emoji = true;
   };
@@ -299,6 +299,7 @@ require('lualine').setup({
       lualine_z = { 'location' }
     }
   })
+
 EOF
 
 " === LSP Saga =================================================================
@@ -345,5 +346,5 @@ nnoremap <silent> <C-p> <cmd>Telescope find_files<cr>
 " nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 " nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
-highlight TelescopeSelection guifg=#212431 guibg=#d4d7e2
-highlight TelescopeMatching guifg=#ff8599
+" highlight TelescopeSelection guifg=#212431 guibg=#d4d7e2
+" highlight TelescopeMatching guifg=#ff8599

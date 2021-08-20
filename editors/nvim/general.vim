@@ -111,8 +111,8 @@ colorscheme creativecreature
 let no_buffers_menu=1
 
 " Highlight active pane
-hi ActiveWindow guibg=#292d3d
-hi InactiveWindow guibg=#252837
+hi ActiveWindow guibg=#24283b
+hi InactiveWindow guibg=#1f2335
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 augroup colortoggle
   autocmd!
