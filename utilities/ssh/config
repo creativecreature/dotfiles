@@ -15,5 +15,5 @@ StrictHostKeyChecking no
 Host stash.int.klarna.net
 AddKeysToAgent yes
 User git
-IdentityFile ~/.ssh/klarna_rsa
+IdentityFile ~/.ssh/klarna
 IdentitiesOnly yes

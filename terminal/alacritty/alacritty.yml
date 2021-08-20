@@ -80,6 +80,9 @@ selection:
 live_config_reload: true
 custom_cursor_colors: false
 
+window:
+  decorations: none
+
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
