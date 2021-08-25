@@ -61,11 +61,13 @@ source './languages/node.sh'
 source './languages/rust.sh'
 source './languages/terraform.sh'
 source './languages/python.sh'
+source './languages/golang.sh'
 
 install_node
 install_rust
 install_terraform
 install_python
+install_golang
 echo ""
 
 
@@ -93,6 +95,7 @@ source './editors/nvim/nvim.sh'
 
 install_nvim
 configure_nvim
+install_lua_language_server
 echo ""
 
 

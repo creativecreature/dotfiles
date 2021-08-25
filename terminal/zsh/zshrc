@@ -34,9 +34,9 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Golang
-export GOROOT=/usr/local/bin/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Linux specific setup
 if [[ "$(uname)" == "Linux" ]]; then
@@ -131,3 +131,5 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # Set starship ZSH as a prompt
 eval "$(starship init zsh)"
+
+alias luamake=/home/cnr/lua-language-server/3rd/luamake/luamake

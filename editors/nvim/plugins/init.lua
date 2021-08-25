@@ -1,6 +1,5 @@
 local api = vim.api
 local fn = vim.fn
-local g = vim.g
 
 -- Setup packer
 local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
@@ -9,73 +8,36 @@ if fn.empty(fn.glob(install_path)) > 0 then
   fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
 end
 
-api.nvim_exec(
-  [[
+api.nvim_exec([[
   augroup Packer
     autocmd!
     autocmd BufWritePost init.lua PackerCompile
   augroup end
-]],
-  false
-)
+]], false)
 
 -- Install plugins
-require('packer').startup(function()
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- UI
   use 'creativecreature/themer'
   use {
     'hoob3rt/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function()
-      require('plugins.lualine')
-    end
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = function() require('plugins.lualine') end
   }
   use 'folke/tokyonight.nvim'
-  use {
-    'folke/twilight.nvim',
-    config = function()
-      require('plugins.twilight')
-    end
-  }
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end
-  }
-
+  use {'folke/twilight.nvim', config = function() require('plugins.twilight') end}
+  use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
 
   -- Syntax
-  use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      require('plugins.lspconfig')
-    end
-  }
-  use {
-    'glepnir/lspsaga.nvim',
-    config = function()
-      require('plugins.lspsaga')
-    end
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-      require('plugins.treesitter')
-    end
-  }
+  use {'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end}
+  use {'glepnir/lspsaga.nvim', config = function() require('plugins.lspsaga') end}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end}
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Editing
-  use {
-    'hrsh7th/nvim-compe',
-    config = function()
-      require('plugins.compe')
-    end
-  }
+  use {'hrsh7th/nvim-compe', config = function() require('plugins.compe') end}
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
@@ -84,18 +46,12 @@ require('packer').startup(function()
   use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-sort-motion'
 
-
   -- Project navigation
   use 'scrooloose/nerdtree'
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' }
-    },
-    config = function()
-      require('plugins.telescope')
-    end
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    config = function() require('plugins.telescope') end
   }
 
   -- File navigation
