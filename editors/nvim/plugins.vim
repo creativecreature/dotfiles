@@ -5,6 +5,7 @@ Plug '~/code/creativecreature/themer'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/tokyonight.nvim'
+Plug 'folke/twilight.nvim'
 
 " Syntax
 Plug 'neovim/nvim-lspconfig'
@@ -12,7 +13,6 @@ Plug 'glepnir/lspsaga.nvim'
 
 " Editing
 Plug 'hrsh7th/nvim-compe'
-Plug 'folke/twilight.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -21,12 +21,12 @@ Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-sort-motion'
 
-" Project navigation
-Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+" Project navigation
+Plug 'scrooloose/nerdtree'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'

@@ -234,7 +234,7 @@ require("twilight").setup {
     "if_statement",
   },
   exclude = {}, -- exclude these filetypes
-  }
+}
 
 -- NVIM compe
 vim.o.completeopt = "menuone,noselect"
