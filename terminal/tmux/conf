@@ -136,6 +136,7 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 # =============================================================================
 source-file ~/code/creativecreature/themer/tmux/creativecreature
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+set -g @plugin 'yardnsm/tmux-1password'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
