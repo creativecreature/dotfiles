@@ -66,8 +66,6 @@ map('v', '>', '>gv', { noremap = true })
 map('v', 'J', ':m \'>+1<CR>gv=gv', { noremap = true })
 map('v', 'K', ':m \'<-2<CR>gv=gv', { noremap = true })
 
-
-
 -- Find the cursor word definition and reference
 map('n', 'gh', '<cmd>lua require\'lspsaga.provider\'.lsp_finder()<CR>', { noremap = true })
 
@@ -88,9 +86,18 @@ map('n', 'gr', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>', { noremap = 
 -- Preview definition
 map('n', 'gD', '<cmd>lua require\'lspsaga.provider\'.preview_definition()<CR>', { noremap = true })
 
+-- Go to definition
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true })
+
+-- Go to implementation
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true })
+
 -- Navigate errors
 map('n', '<A-k>', '<cmd>lua require\'lspsaga.diagnostic\'.lsp_jump_diagnostic_prev()<CR>', { noremap = true })
 map('n', '<A-j>', '<cmd>lua require\'lspsaga.diagnostic\'.lsp_jump_diagnostic_next()<CR>', { noremap = true })
+
+-- Format buffer
+map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true })
 
 -- Telescope
 map('n', '<C-p>', '<cmd>Telescope find_files<cr>', { noremap = true })
