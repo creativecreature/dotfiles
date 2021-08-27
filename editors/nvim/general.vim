@@ -1,26 +1,27 @@
 let mapleader = " "
 set shell=zsh " Set zsh as the prompt for vim
-set backspace=2 " Backspace deletes in insertmode
-set nobackup
-set nowritebackup
-set noswapfile
+" set backspace=2 " Backspace deletes in insertmode
+" set nobackup
+" set nowritebackup
+" set noswapfile
 set history=10000
-set ruler " Always show cursor position
-set showcmd " Display incomplete commands
-set laststatus=2 " Always displays the status line
-set noshowmode
-set timeoutlen=1000
-set ttimeoutlen=0
-set scrolloff=3
+" set ruler " Always show cursor position
+" set showcmd " Display incomplete commands
+" set laststatus=2 " Always displays the status line
+" set noshowmode
+" set timeoutlen=1000
+" set ttimeoutlen=0
+" set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
 set hidden
-set inccommand=nosplit
+" set inccommand=nosplit
 set number relativenumber
-set nu rnu
+set numberwidth=5
+" set nu rnu
 set cmdheight=2 " Give more space for displaying messages.
 
 " Indentation
-set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
+" set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 set shiftwidth=2 " number of spaces to use for autoindenting
 set tabstop=2 " number of space characters to insert when tab is pressed
 set softtabstop=2 " <Tab> and <BS> inserts and deletes right amount of spaces
@@ -49,19 +50,15 @@ endfunction
 nmap <leader>> mz:execute ListToggle()<CR>'z
 
 " Encoding
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
-set bomb
-set binary
-
-" Line numbers
-set number
-set numberwidth=5
+" set encoding=utf-8
+" set fileencoding=utf-8
+" set fileencodings=utf-8
+" set bomb
+" set binary
 
 " Highlight search
-set hlsearch
-set incsearch
+" set hlsearch
+" set incsearch
 set ignorecase
 set smartcase
 
@@ -76,8 +73,8 @@ if executable("rg")
 endif
 
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+" set foldmethod=indent
+" set foldlevel=99
 
 if has("autocmd")
   filetype plugin indent on
@@ -103,9 +100,9 @@ if has("autocmd")
 endif
 
 " UI
-syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+" syntax enable
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" set termguicolors
 colorscheme tokyonight
 
 let no_buffers_menu=1
