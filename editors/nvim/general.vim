@@ -8,15 +8,16 @@ set history=10000
 " set ruler " Always show cursor position
 " set showcmd " Display incomplete commands
 " set laststatus=2 " Always displays the status line
-" set noshowmode
+set noshowmode " Hide the mode in the cmd window
 " set timeoutlen=1000
 " set ttimeoutlen=0
 " set scrolloff=3
-set list listchars=tab:»·,trail:·  " Display extra whitespace characters
+" set list listchars=tab:»·,trail:·  " Display extra whitespace characters
+set listchars=tab:▸\ ,eol:↲,trail:·
 set hidden
-" set inccommand=nosplit
+set inccommand=nosplit " Show % substitution changes without having to hit enter
 set number relativenumber
-set numberwidth=5
+set numberwidth=1
 " set nu rnu
 set cmdheight=2 " Give more space for displaying messages.
 
@@ -105,7 +106,7 @@ endif
 " set termguicolors
 colorscheme tokyonight
 
-let no_buffers_menu=1
+" let no_buffers_menu=1
 
 " Highlight active pane
 hi ActiveWindow guibg=#24283b
