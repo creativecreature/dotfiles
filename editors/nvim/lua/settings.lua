@@ -8,11 +8,13 @@ vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}
 opt.hidden=true
 cmd [[
   set noshowmode
+  set noswapfile
 ]]
--- opt.number='relativenumber'
-opt.numberwidth=1
+opt.numberwidth=5
 opt.cmdheight=2 -- Give more space for displaying messages.
 opt.inccommand='nosplit' -- Show % substitution changes without having to hit enter
+opt.number=true
+opt.relativenumber=true
 
 -- Indentation
 opt.shiftwidth=2 -- number of spaces to use for autoindenting

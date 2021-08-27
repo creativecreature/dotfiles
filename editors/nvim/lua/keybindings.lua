@@ -42,8 +42,8 @@ cmd [[
 
 --Mutate the jumplist when we move more than 5 lines
 cmd [[
-  nnoremap <expr> k (v:count > 5 ? "m'--. v:count : "") . 'k'
-  nnoremap <expr> j (v:count > 5 ? "m'--. v:count : "") . 'j'
+  nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+  nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 ]]
 
 --Split
