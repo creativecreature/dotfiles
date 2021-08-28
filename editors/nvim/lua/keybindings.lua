@@ -102,3 +102,18 @@ map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true })
 -- Telescope
 map('n', '<C-p>', '<cmd>Telescope find_files<cr>', { noremap = true })
 map('n', '\\', '<cmd>Telescope buffers<cr>', { noremap = true })
+
+-- Tab completion
+cmd [[
+  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+]]
+
+-- Open nerdtree
+cmd [[
+  nnoremap <silent> <F2> :NERDTreeFind<CR>
+  nnoremap <silent> <F3> :NERDTreeToggle<CR>
+  let g:NERDTreeMapOpenVSplit = '<C-v>'
+  let g:NERDTreeMapOpenSplit = '<C-x>'
+  let g:NERDTreeWinSize = 50
+]]
