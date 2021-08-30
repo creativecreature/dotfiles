@@ -72,3 +72,7 @@ require('packer').startup(function(use)
   use 'wakatime/vim-wakatime'
 
 end)
+
+vim.cmd [[
+  let g:NERDTreeShowHidden=1
+]]

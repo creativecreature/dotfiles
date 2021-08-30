@@ -14,7 +14,9 @@ require('lualine').setup({
           'diagnostics',
           sources = { 'nvim_lsp' },
           symbols = {
-            hint = '  ',
+            hint = ' 💡 ',
+            info = ' 🤟 ',
+            warning = ' 💩 ',
             error = ' 🔥 '
           },
           sections = { 'error', 'warn', 'info', 'hint' },

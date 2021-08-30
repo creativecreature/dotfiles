@@ -23,14 +23,14 @@ require'compe'.setup {
   };
 
   source = {
-    path = true;
+    path = false; -- This shows the file extension when trying to require/import javascript/typescript files.
     buffer = true;
     calc = true;
     nvim_lsp = true;
     nvim_lua = false;
     vsnip = false;
     ultisnips = false;
-    luasnip = true;
+    luasnip = false;
     emoji = true;
   };
 }

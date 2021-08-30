@@ -26,10 +26,14 @@ local on_attach = function(client, bufnr)
 end
 
 local icons = {
-  Error = '',
-  Warning = '',
-  Hint = '',
-  Information = ''
+  Error = '🔥',
+  Warning = '💩',
+  Hint = '💡',
+  Information = '🤟'
+  -- Error = '',
+  -- Warning = '',
+  -- Hint = '',
+  -- Information = ''
 }
 
 for type, icon in pairs(icons) do

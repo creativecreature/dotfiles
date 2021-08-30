@@ -6,8 +6,8 @@ saga.init_lsp_saga {
   dianostic_header_icon = '💣 ',
   error_sign = '🔥',
   warn_sign = '💩',
-  hint_sign = '🐛',
-  infor_sign = '💡',
+  hint_sign = '💡',
+  infor_sign = '🤟',
   definition_preview_icon = ' ',
   code_action_icon = '✨',
   code_action_prompt = {
