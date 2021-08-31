@@ -41,17 +41,8 @@ require('packer').startup(function(use)
     "hrsh7th/nvim-compe",
     event = "InsertEnter",
     opt = true,
-    config = function()
-      require("plugins.compe")
-    end,
-    requires = {
-      {
-        "windwp/nvim-autopairs",
-        config = function()
-          require("plugins.autopairs")
-        end,
-      },
-    },
+    config = function() require("plugins.compe") end,
+    requires = {{"windwp/nvim-autopairs", config = function() require("plugins.autopairs") end}}
   })
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
