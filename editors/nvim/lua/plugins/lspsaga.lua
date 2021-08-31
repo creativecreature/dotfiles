@@ -10,21 +10,20 @@ saga.init_lsp_saga {
   infor_sign = '🤟',
   definition_preview_icon = ' ',
   code_action_icon = '✨',
-  code_action_prompt = {
-    enable = true,
-    sign = false,
-    sign_priority = 20,
-    virtual_text = true,
-  },
+  code_action_prompt = {enable = true, sign = false, sign_priority = 20, virtual_text = true},
+  code_action_keys = {quit = '<esc>', exec = '<CR>'},
   max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
   finder_action_keys = {
-    open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
-  },
-  code_action_keys = {
-    quit = 'q',exec = '<CR>'
+    open = 'o',
+    vsplit = 's',
+    split = 'i',
+    quit = '<esc>',
+    scroll_down = '<C-f>',
+    scroll_up = '<C-b>' -- quit can be a table
   },
   rename_action_keys = {
-    quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+    quit = '<esc>',
+    exec = '<CR>' -- quit can be a table
   },
-  rename_prompt_prefix = '➤',
+  rename_prompt_prefix = '➤'
 }
