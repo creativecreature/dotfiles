@@ -37,13 +37,28 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Editing
-  use {'hrsh7th/nvim-compe', config = function() require('plugins.compe') end}
+  use({
+    "hrsh7th/nvim-compe",
+    event = "InsertEnter",
+    opt = true,
+    config = function()
+      require("plugins.compe")
+    end,
+    requires = {
+      {
+        "windwp/nvim-autopairs",
+        config = function()
+          require("plugins.autopairs")
+        end,
+      },
+    },
+  })
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
   use 'alvan/vim-closetag'
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
