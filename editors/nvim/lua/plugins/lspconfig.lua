@@ -1,31 +1,6 @@
 local nvim_lsp = require('lspconfig')
 local fn = vim.fn
 
--- Setup the icons
-local icons = {
-  Error = '🔥',
-  Warning = '💩',
-  Hint = '💡',
-  Information = '🤟'
-  -- Error = '',
-  -- Warning = '',
-  -- Hint = '',
-  -- Information = ''
-}
-
-for type, icon in pairs(icons) do
-  local hl = 'LspDiagnosticsSign' .. type
-  fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
-end
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = false,
-  underline = true,
-  signs = true
-})
-
-
-
 -- Add language servers
 local function on_attach(client, bufnr)
   if client.config.flags then client.config.flags.allow_incremental_sync = true end
@@ -57,9 +32,7 @@ require'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {
       runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
-        -- Setup your lua path
         path = vim.split(package.path, ';')
       },
       diagnostics = {
@@ -109,3 +82,29 @@ require"lspconfig".efm.setup {
     }
   }
 }
+
+
+
+-- Setup diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false,
+  underline = true,
+  signs = true
+})
+
+-- Setup the icons
+local icons = {
+  Error = '🔥',
+  Warning = '💩',
+  Hint = '💡',
+  Information = '🤟'
+  -- Error = '',
+  -- Warning = '',
+  -- Hint = '',
+  -- Information = ''
+}
+
+for type, icon in pairs(icons) do
+  local hl = 'LspDiagnosticsSign' .. type
+  fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
