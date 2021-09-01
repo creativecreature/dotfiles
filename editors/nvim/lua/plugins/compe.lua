@@ -6,7 +6,7 @@ require'compe'.setup {
   enabled = true;
   autocomplete = true;
   min_length = 1;
-  preselect = "always", -- changed to "enable" to prevent auto select
+  preselect = "enable", -- "always" would select the first item and require enter to complete to it
   throttle_time = 80;
   source_timeout = 200;
   resolve_timeout = 800;

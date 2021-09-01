@@ -33,6 +33,10 @@ opt.smartcase=true
 opt.splitbelow=true
 opt.splitright=true
 
+-- Auto completion
+vim.opt.pumblend = 10 -- Popup blend
+vim.opt.pumheight = 10 -- Maximum number of entries in a popup
+
 -- Enable folding
 opt.foldmethod='indent'
 opt.foldlevel=99
