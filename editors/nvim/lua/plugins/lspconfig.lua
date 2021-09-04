@@ -55,7 +55,7 @@ local eslint = {
   lintStdin = true,
   lintFormats = {"%f:%l:%c: %m"},
   lintIgnoreExitCode = true,
-  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+  formatCommand = "prettier --stdin --stdin-filepath ${INPUT} --single-quote --trailing-comma all --print-width 120 --no-semi",
   formatStdin = true
 }
 
