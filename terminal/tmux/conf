@@ -124,8 +124,6 @@ bind-key C-b send-keys 'tat && exit' 'C-m'
 # This kills the current session and switches to a previous one, if there are no more sessions it exits to the shell
 bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
 
-# This makes ctrl-s followed by w open up vim with fzf ready to find a file -c is for command
-bind-key w split-window -h -c ~/code/c.conner/docs "nvim +FzfFiles"
 bind-key -T prefix v switch-client -T prefix_v
 bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 
