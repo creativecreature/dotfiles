@@ -99,7 +99,8 @@ map('n', '<A-j>', '<cmd>lua require\'lspsaga.diagnostic\'.lsp_jump_diagnostic_ne
 map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
 
 -- Telescope
-map('n', '<C-p>', '<cmd>Telescope find_files<cr>', {noremap = true})
+local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
+map('n','<C-p>','<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>', { noremap=true})
 map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
 
 -- Tab completion
