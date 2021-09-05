@@ -14,16 +14,16 @@ saga.init_lsp_saga {
   code_action_keys = {quit = '<esc>', exec = '<CR>'},
   max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
   finder_action_keys = {
-    open = 'o',
+    open = '<cr>',
     vsplit = 's',
     split = 'i',
     quit = '<esc>',
     scroll_down = '<C-f>',
-    scroll_up = '<C-b>' -- quit can be a table
+    scroll_up = '<C-b>'
   },
   rename_action_keys = {
     quit = '<esc>',
-    exec = '<CR>' -- quit can be a table
+    exec = '<CR>'
   },
   rename_prompt_prefix = '➤'
 }
