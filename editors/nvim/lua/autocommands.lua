@@ -23,6 +23,12 @@ cmd [[
 
   au BufRead,BufNewFile Jenkinsfile setfiletype groovy
 
+  " Configure active pane colors
+  set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+  augroup ChangeBackgroudColour
+    autocmd colorscheme * :hi ActiveWindow guibg=#24283b
+    autocmd colorscheme * :hi InactiveWindow guibg=#1f2335
+  augroup END
   augroup colortoggle
     autocmd!
     autocmd BufEnter,FocusGained * setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow

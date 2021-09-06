@@ -46,7 +46,4 @@ opt.termguicolors = true
 opt.background = 'dark'
 cmd [[
   colorscheme tokyonight
-  hi ActiveWindow guibg=#24283b
-  hi InactiveWindow guibg=#1f2335
-  set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 ]]
