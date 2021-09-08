@@ -50,4 +50,4 @@ key_bindings:
   - { key: J, mods: Alt, chars: "\x1bj" }
   - { key: K, mods: Alt, chars: "\x1bk" }
   - { key: L, mods: Alt, command: { program: "/usr/local/bin/tmux", args: ["popup", "-E", "~/dotfiles/scripts/splunk"] } }
-  - { key: O, mods: Control, command: { program: "/usr/local/bin/tmux", args: ["popup", "-E", "~/bin/tmux-sessionizer"] } }
+  - { key: W, mods: Control, command: { program: "/usr/local/bin/tmux", args: ["popup", "-E", "~/bin/tmux-sessionizer"] } }
