@@ -1,7 +1,7 @@
 [user]
   email = hello@creativecreature.com
   name = creativecreature
-  editor = "nvim +17"
+  editor = "nvim"
   signingkey = 15DD0245769BFD92
 
 [core]
