@@ -65,6 +65,9 @@ map('v', '>', '>gv', {noremap = true})
 map('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true})
 map('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true})
 
+-- Git
+map('n', '<leader>gs', ':G<CR>', {noremap = true}) -- Git status
+
 -- Find the cursor word definition and reference
 map('n', 'gh', '<cmd>lua require\'lspsaga.provider\'.lsp_finder()<CR>', {noremap = true})
 
