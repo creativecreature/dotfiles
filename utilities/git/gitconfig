@@ -17,7 +17,6 @@
   showSignature = true
 
 [commit]
-  template = ~/dotfiles/utilities/git/git_commit_template.txt
   gpgSign = true
 
 [push]
