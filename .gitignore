@@ -4,7 +4,7 @@
 # Ignore the "local" versions of files
 *.local
 *.local.*
-packer_compiled.lua
+**/packer_compiled.lua
 
 tags
 tags.temp
