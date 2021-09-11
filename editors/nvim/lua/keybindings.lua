@@ -67,7 +67,8 @@ map('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true})
 
 -- Git
 map('n', '<leader>gs', ':G<CR>', {noremap = true}) -- Git status
-map('n', '<leader>gd', ':G<CR>', {noremap = true}) -- Git status
+map('n', '<leader>gd', ':Gvdiffsplit<CR>', {noremap = true}) -- Git status
+map('n', '<leader>gp', ':Git pull<CR>', {noremap = true}) -- Git status
 
 -- Find the cursor word definition and reference
 map('n', 'gh', '<cmd>lua require\'lspsaga.provider\'.lsp_finder()<CR>', {noremap = true})
