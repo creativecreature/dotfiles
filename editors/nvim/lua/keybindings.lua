@@ -69,6 +69,8 @@ map('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true})
 map('n', '<leader>gs', ':G<CR>', {noremap = true}) -- Git status
 map('n', '<leader>gd', ':Gvdiffsplit<CR>', {noremap = true}) -- Git status
 map('n', '<leader>gp', ':Git pull<CR>', {noremap = true}) -- Git status
+map('n', '<leader>gw', ':lua require(\'telescope\').extensions.git_worktree.git_worktrees()<CR>', {noremap = true}) -- Choose work tree
+map('n', '<leader>gc', ':lua require(\'telescope\').extensions.git_worktree.create_git_worktree()<CR>', {noremap = true}) -- Choose work tree
 
 -- Find the cursor word definition and reference
 map('n', 'gh', '<cmd>lua require\'lspsaga.provider\'.lsp_finder()<CR>', {noremap = true})
@@ -105,7 +107,8 @@ map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
 
 -- Telescope
 local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
-map('n','<C-p>','<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>', { noremap=true})
+map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>',
+    {noremap = true})
 map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
 
 -- Tab completion
