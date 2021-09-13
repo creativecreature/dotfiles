@@ -21,12 +21,20 @@ require('packer').startup(function(use)
 
   -- UI
   use 'creativecreature/themer'
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config = function() require('plugins.lualine') end
-  }
+  -- use {
+  --   'hoob3rt/lualine.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  --   config = function() require('plugins.lualine') end
+  -- }
   use 'folke/tokyonight.nvim'
+  use {'SmiteshP/nvim-gps',
+       requires = "nvim-treesitter/nvim-treesitter"
+  }
+  use {
+    'famiu/feline.nvim',
+    requires = {{'kyazdani42/nvim-web-devicons', opt = true}, { 'folke/tokyonight.nvim' }},
+    config = function() require('plugins.feline') end
+  }
   use {'folke/twilight.nvim', config = function() require('plugins.twilight') end}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
 
