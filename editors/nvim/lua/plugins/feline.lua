@@ -87,12 +87,12 @@ components.active[1][1] = {
 
    hl = {
       fg = colors.bg_highlight,
-      bg = colors.blue,
+      bg = colors.cyan,
    },
 
    right_sep = { str = statusline_style.right, hl = {
-      fg = colors.blue,
-      bg = colors.terminal_black,
+      fg = colors.cyan,
+      bg = colors.bg_highlight,
    } },
 }
 
@@ -100,7 +100,7 @@ components.active[1][2] = {
    provider = statusline_style.right,
 
    hl = {
-      fg = colors.terminal_black,
+      fg = colors.bg_highlight,
       bg = colors.bg_highlight,
    },
 }
@@ -121,8 +121,7 @@ components.active[1][3] = {
       bg = colors.bg_highlight,
    },
 
-   right_sep = { str = statusline_style.right, hl = { fg = colors.bg, bg = colors.bg_highlight } },
-}
+   right_sep = { str = statusline_style.right, hl = { fg = colors.bg_highlight, bg = colors.bg } }, }
 
 components.active[1][4] = {
    provider = function()
@@ -131,8 +130,8 @@ components.active[1][4] = {
    end,
 
    hl = {
-      fg = colors.grey_fg2,
-      bg = colors.lightbg2,
+      fg = colors.fg_dark,
+      bg = colors.bg,
    },
    right_sep = { str = statusline_style.right, hi = {
       fg = colors.lightbg2,
@@ -268,8 +267,8 @@ components.active[3][2] = {
 components.active[3][3] = {
    provider = " " .. statusline_style.left,
    hl = {
-      fg = colors.one_bg2,
-      bg = colors.statusline_bg,
+      fg = colors.bg,
+      bg = colors.bg,
    },
 }
 
@@ -299,7 +298,7 @@ local mode_colors = {
 local chad_mode_hl = function()
    return {
       fg = mode_colors[vim.fn.mode()][2],
-      bg = colors.bg,
+      bg = colors.bg_highlight,
    }
 end
 
@@ -317,7 +316,7 @@ components.active[3][5] = {
    provider = statusline_style.vi_mode_icon,
    hl = function()
       return {
-         fg = colors.cyan,
+         fg = colors.bg_highlight,
          bg = mode_colors[vim.fn.mode()][2],
       }
    end,
@@ -333,8 +332,8 @@ components.active[3][6] = {
 components.active[3][7] = {
    provider = statusline_style.left,
    hl = {
-      fg = colors.grey,
-      bg = colors.bg,
+      fg = colors.bg_highlight,
+      bg = colors.bg_highlight,
    },
 }
 
@@ -342,14 +341,14 @@ components.active[3][8] = {
    provider = statusline_style.left,
    hl = {
       fg = colors.green,
-      bg = colors.bg,
+      bg = colors.bg_highlight,
    },
 }
 
 components.active[3][9] = {
    provider = statusline_style.position_icon,
    hl = {
-      fg = colors.black,
+      fg = colors.bg_highlight,
       bg = colors.green,
    },
 }
@@ -370,7 +369,7 @@ components.active[3][10] = {
 
    hl = {
       fg = colors.green,
-      bg = colors.one_bg,
+      bg = colors.bg_highlight,
    },
 }
 
