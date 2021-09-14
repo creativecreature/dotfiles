@@ -7,7 +7,7 @@
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
 
-set -g default-terminal "alacritty"
+set -g default-terminal "kitty"
 
 # Shorter wait
 set -sg escape-time 0
@@ -34,9 +34,9 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 # True color support for Osx and Linux
-if-shell 'uname | grep -q Darwin' \
-    'source-file ~/.tmux.conf.osx' \
-    'if-shell "uname | grep -q CYGWIN" "source-file ~/.tmux.conf.cygwin" "source-file ~/.tmux.conf.linux"'
+# if-shell 'uname | grep -q Darwin' \
+#     'source-file ~/.tmux.conf.osx' \
+#     'if-shell "uname | grep -q CYGWIN" "source-file ~/.tmux.conf.cygwin" "source-file ~/.tmux.conf.linux"'
 
 
 
@@ -150,13 +150,18 @@ set -g status-left-length 100
 set -g window-status-separator ""
 
 # Bars ---------------------------------
-set -g status-left "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] \uf40b #S #[fg=#3E3859,bg=default]"
-set -g status-right "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)#[fg=#3E3859,bg=default] #[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859]  #{b:pane_current_path} #[fg=#3E3859,bg=default]"
+set -g status-left "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] \uf40b #S #[fg=#414868,bg=default]"
+set -g status-right "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)#[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868]  #{b:pane_current_path} #[fg=#414868,bg=default]"
 
 # Windows ------------------------------
 set -g status-justify centre
 set -g window-status-format "#[fg=white,bg=default] #W "
-set -g window-status-current-format "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] #W #[fg=#3E3859,bg=default]"
+set -g window-status-current-format "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #W #[fg=#414868,bg=default]"
+setw -g window-active-style "fg=#a3a9c2,bg=#25293c"
+setw -g window-style "fg=#a3a9c2,bg=#25293c"
+# setw -g window-style "fg=#a3a9c2,bg=#1e2233"
+setw -g pane-active-border-style "fg=#1e2233,bg=#25293c"
+setw -g pane-border-style "fg=#1e2233,bg=#1e2233"
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
 

@@ -47,7 +47,7 @@ if [[ "$(uname)" == "Linux" ]]; then
   xmodmap -e 'keycode 112 = '
   xmodmap -e 'keycode 117 = '
   # Export term for better colors in TMUX
-  export TERM='screen-256color'
+  # export TERM='screen-256color'
 fi
 
 # OSX specific setup
@@ -95,7 +95,7 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # Only show current dir not entire path
 # prompt_dir() { prompt_segment blue black '%c' }
 
-# export TERM='screen-256color'
+export TERM='xterm-kitty'
 
 # I always want TMUX to run
 _not_inside_tmux() {
