@@ -45,5 +45,5 @@ opt.foldlevel=99
 opt.termguicolors = true
 opt.background = 'dark'
 cmd [[
-  colorscheme tokyonight
+  colorscheme creativecreature
 ]]

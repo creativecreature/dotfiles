@@ -16,11 +16,11 @@ font:
   # Point size
   size: 10.5
   offset:
-    x: 0
-    y: 0
+    x: 1
+    y: 5
   glyph_offset:
-    x: 0
-    y: 0
+    x: 1
+    y: 2
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.

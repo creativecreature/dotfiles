@@ -132,7 +132,31 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 # =============================================================================
 # ********************************* PLUGINS ***********************************
 # =============================================================================
-source-file ~/code/creativecreature/themer/tmux/creativecreature
+
+# source-file ~/code/creativecreature/themer/tmux/creativecreature
+# border colours
+ # set -g pane-border-fg blue
+ # set -g pane-active-border-fg blue
+ # set -g pane-active-border-bg default
+
+ # set -g pane-border-bg default
+ # set -g pane-active-border-fg blue
+ # set -g pane-active-border-bg default
+
+# Theme - Status line
+set -g status-style default
+set -g status-right-length 80
+set -g status-left-length 100
+set -g window-status-separator ""
+
+# Bars ---------------------------------
+set -g status-left "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] \uf40b #S #[fg=#3E3859,bg=default]"
+set -g status-right "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)#[fg=#3E3859,bg=default] #[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859]  #{b:pane_current_path} #[fg=#3E3859,bg=default]"
+
+# Windows ------------------------------
+set -g status-justify centre
+set -g window-status-format "#[fg=white,bg=default] #W "
+set -g window-status-current-format "#[fg=#3E3859,bg=default]#[fg=#c991e1,bg=#3E3859] #W #[fg=#3E3859,bg=default]"
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
 

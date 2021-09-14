@@ -21,6 +21,7 @@ require('packer').startup(function(use)
 
   -- UI
   use 'creativecreature/themer'
+  use 'drewtempelmeyer/palenight.vim'
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
