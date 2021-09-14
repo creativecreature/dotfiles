@@ -24,7 +24,7 @@ require('packer').startup(function(use)
   use 'drewtempelmeyer/palenight.vim'
   use {
     'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    -- requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config = function() require('plugins.lualine') end
   }
   use 'folke/tokyonight.nvim'
@@ -54,7 +54,7 @@ require('packer').startup(function(use)
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
-  use { 'scrooloose/nerdtree', requires={ 'kyazdani42/nvim-web-devicons'}}
+  use 'scrooloose/nerdtree'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
