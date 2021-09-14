@@ -161,6 +161,12 @@ setw -g window-active-style "fg=#a3a9c2,bg=#25293c"
 setw -g window-style "fg=#a3a9c2,bg=#25293c"
 setw -g pane-active-border-style "fg=#25293c,bg=#25293c"
 setw -g pane-border-style "fg=#25293c,bg=#25293c"
+set -g status-left "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #S #[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{b:pane_current_path} #[fg=#414868,bg=default]"
+
+set -g @sysstat_cpu_color_low "#c0caf5"
+set -g @sysstat_mem_color_low "#c0caf5"
+set -g status-right "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{sysstat_mem}#[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{sysstat_cpu}#[fg=#414868,bg=default]"
+
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
 

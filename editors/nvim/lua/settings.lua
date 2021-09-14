@@ -5,7 +5,7 @@ opt.shell='zsh' -- Set zsh as the prompt for vim
 opt.history=10000 -- Increase the history
 opt.swapfile=false -- Dont use swap files
 opt.hidden=true -- Enable modified buffers in background
-opt.cmdheight=1 -- Give more space for displaying messages.
+opt.cmdheight=2 -- Give more space for displaying messages.
 opt.inccommand='nosplit' -- Show % substitution changes without having to hit enter
 opt.showmode=false -- Dont show the mode because I use a statusline
 vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}
