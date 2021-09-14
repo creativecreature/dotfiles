@@ -150,8 +150,8 @@ set -g status-left-length 100
 set -g window-status-separator ""
 
 # Bars ---------------------------------
-set -g status-left "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] \uf40b #S #[fg=#414868,bg=default]"
-set -g status-right "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)#[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868]  #{b:pane_current_path} #[fg=#414868,bg=default]"
+set -g status-left "#[fg=#bb9af7,bg=default]#[fg=#c0caf5,bg=#bb9af7] #{b:pane_current_path} #[fg=#bb9af7,bg=default]"
+set -g status-right ""
 
 # Windows ------------------------------
 set -g status-justify centre
@@ -159,9 +159,8 @@ set -g window-status-format "#[fg=white,bg=default] #W "
 set -g window-status-current-format "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #W #[fg=#414868,bg=default]"
 setw -g window-active-style "fg=#a3a9c2,bg=#25293c"
 setw -g window-style "fg=#a3a9c2,bg=#25293c"
-# setw -g window-style "fg=#a3a9c2,bg=#1e2233"
-setw -g pane-active-border-style "fg=#1e2233,bg=#25293c"
-setw -g pane-border-style "fg=#1e2233,bg=#1e2233"
+setw -g pane-active-border-style "fg=#25293c,bg=#25293c"
+setw -g pane-border-style "fg=#25293c,bg=#25293c"
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
 

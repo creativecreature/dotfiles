@@ -75,6 +75,7 @@ echo ""
 echo_header "Terminal"
 source './terminal/zsh/zsh.sh'
 source './terminal/alacritty/alacritty.sh'
+source './terminal/kitty/kitty.sh'
 source './terminal/tmux/tmux.sh'
 source './terminal/starship/starship.sh'
 
@@ -82,6 +83,8 @@ install_zsh
 configure_zsh
 install_alacritty
 configure_alacritty
+install_kitty
+configure_kitty
 install_tmux
 configure_tmux
 install_starship

@@ -26,8 +26,8 @@ cmd [[
   " Configure active pane colors
   set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
   augroup ChangeBackgroudColour
-    autocmd colorscheme * :hi ActiveWindow guibg=#24283b
-    autocmd colorscheme * :hi InactiveWindow guibg=#1f2335
+    autocmd colorscheme * :hi VertSplit ctermbg=NONE guibg=#24283b
+    autocmd colorscheme * :hi VertSplit ctermfg=NONE guifg=#24283b
   augroup END
   augroup colortoggle
     autocmd!
