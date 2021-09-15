@@ -159,16 +159,18 @@ set -g status-right ""
 # Windows ------------------------------
 set -g status-justify centre
 set -g window-status-format "#[fg=white,bg=default] #W "
-set -g window-status-current-format "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #W #[fg=#414868,bg=default]"
-setw -g window-active-style "fg=#a3a9c2,bg=#25293c"
-setw -g window-style "fg=#a3a9c2,bg=#25293c"
-setw -g pane-active-border-style "fg=#25293c,bg=#25293c"
-setw -g pane-border-style "fg=#25293c,bg=#25293c"
-set -g status-left "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #S #[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{b:pane_current_path} #[fg=#414868,bg=default]"
+set -g window-status-current-format "#[fg=#B4F9F8,bg=default]#[fg=#3b4261,bg=#B4F9F8] #W #[fg=#B4F9F8,bg=default]"
+setw -g window-active-style "fg=#a3a9c2,bg=#24283b"
+setw -g window-style "fg=#a3a9c2,bg=#24283b"
+setw -g pane-active-border-style "fg=#24283b,bg=#24283b"
+setw -g pane-border-style "fg=#24283b,bg=#24283b"
+set -g status-left "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #S #[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #{b:pane_current_path} #[fg=#3b4261,bg=default]"
 
-set -g @sysstat_cpu_color_low "#c0caf5"
-set -g @sysstat_mem_color_low "#c0caf5"
-set -g status-right "#[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{sysstat_mem}#[fg=#414868,bg=default] #[fg=#414868,bg=default]#[fg=#c0caf5,bg=#414868] #{sysstat_cpu}#[fg=#414868,bg=default]"
+set -g @sysstat_cpu_color_low "#a9b1d6"
+set -g @sysstat_mem_color_low "#a9b1d6"
+set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
+set -g @sysstat_mem_view_tmpl "#{mem.pused} "
+set -g status-right "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] mem #{sysstat_mem}#[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] cpu #{sysstat_cpu}#[fg=#3b4261,bg=default]"
 
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
