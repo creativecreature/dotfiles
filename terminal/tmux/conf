@@ -7,7 +7,7 @@
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
 
-set -g default-terminal "kitty"
+set -g default-terminal "xterm-kitty"
 
 # Shorter wait
 set -sg escape-time 0
@@ -110,6 +110,9 @@ bind-key b break-pane -d
 # =============================================================================
 # ********************************** SESSIONS *********************************
 # =============================================================================
+
+# Create a new TMUX session
+bind-key w display-popup -E '~/bin/tmux-sessionizer'
 
 # Use fzf to display a list of all sessions and then open the seleted session in a new window
 bind C-j display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ "${TRACE}" ] && set -o xtrace
+
 TMUX_HISTORY_LENGTH=10
 TMUX_HISTORY_FILE=$HOME/.tmux-sessionizer
 
