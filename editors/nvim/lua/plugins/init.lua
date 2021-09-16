@@ -54,7 +54,11 @@ require('packer').startup(function(use)
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
-  use 'scrooloose/nerdtree'
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function() require('plugins.tree') end
+  }
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},

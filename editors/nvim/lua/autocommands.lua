@@ -28,6 +28,8 @@ cmd [[
   augroup ChangeBackgroudColour
     autocmd colorscheme * :hi VertSplit ctermbg=NONE guibg=#24283b
     autocmd colorscheme * :hi VertSplit ctermfg=NONE guifg=#24283b
+    autocmd colorscheme * :hi NvimTreeNormal guibg=#24283b
+    " autocmd colorscheme * :hi NvimTreeRootFolder guifg=bg guibg=bg
   augroup END
   augroup colortoggle
     autocmd!

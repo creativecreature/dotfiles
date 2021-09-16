@@ -109,19 +109,14 @@ map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
 local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
 map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>',
     {noremap = true})
-map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
+map('n', '\\', '', {noremap = true})
+
+-- nvim-tree
+map('n', '<F2>', '<cmd> NvimTreeFindFile<CR>', {noremap = true})
+map('n', '<F3>', '<cmd> NvimTreeToggle<CR>', {noremap = true})
 
 -- Tab completion
 cmd [[
   inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-]]
-
--- Open nerdtree
-cmd [[
-  nnoremap <silent> <F2> :NERDTreeFind<CR>
-  nnoremap <silent> <F3> :NERDTreeToggle<CR>
-  let g:NERDTreeMapOpenVSplit = '<C-v>'
-  let g:NERDTreeMapOpenSplit = '<C-x>'
-  let g:NERDTreeWinSize = 50
 ]]
