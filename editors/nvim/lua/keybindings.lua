@@ -109,7 +109,7 @@ map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
 local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
 map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>',
     {noremap = true})
-map('n', '\\', '', {noremap = true})
+map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
 
 -- nvim-tree
 map('n', '<F2>', '<cmd> NvimTreeFindFile<CR>', {noremap = true})
