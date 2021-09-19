@@ -20,8 +20,6 @@ require'lspconfig'.html.setup {capabilities = capabilities}
 
 require'lspconfig'.cssls.setup {capabilities = capabilities}
 
-
-
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
 local sumneko_root_path = "/home/" .. USER .. "/lua-language-server"
@@ -31,10 +29,7 @@ require'lspconfig'.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
   settings = {
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = vim.split(package.path, ';')
-      },
+      runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
       diagnostics = {
         -- Get the language server to recognize the `vim` global
         globals = {'vim'}
@@ -47,15 +42,14 @@ require'lspconfig'.sumneko_lua.setup {
   }
 }
 
-
-
 -- Configure EFM
 local eslint = {
-  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintCommand = 'eslint_d --stdin --stdin-filename ${INPUT}',
+  lintSource = 'eslint_d',
   lintStdin = true,
-  lintFormats = {"%f:%l:%c: %m"},
+  lintFormats = {'%f(%l,%c): %tarning %m', '%f(%l,%c): %rror %m'},
   lintIgnoreExitCode = true,
-  formatCommand = "prettier --stdin --stdin-filepath ${INPUT} --single-quote --trailing-comma all --print-width 120 --no-semi",
+  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}',
   formatStdin = true
 }
 
@@ -82,8 +76,6 @@ require"lspconfig".efm.setup {
     }
   }
 }
-
-
 
 -- Setup diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
