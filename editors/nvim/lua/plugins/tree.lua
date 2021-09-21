@@ -1,8 +1,8 @@
 vim.g.nvim_tree_width = 45
 vim.g.nvim_tree_show_icons = {
   git = 0,
-  folders = 1,
-  files = 1,
+  folders = 0,
+  files = 0,
   folder_arrows = 0
 }
 

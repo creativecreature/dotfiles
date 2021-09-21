@@ -2,16 +2,16 @@ import:
   - ~/dotfiles/terminal/alacritty/tokyonight.yml
 font:
   normal:
-    family: 'monospace'
+    family: 'SF Mono'
     style: Light
   bold:
-    family: 'monospace'
+    family: 'SF Mono'
     style: Book
   italic:
-    family: 'monospace'
+    family: 'SF Mono'
     style: Light Italic
   bold_italic:
-    family: 'monospace'
+    family: 'SF Mono'
     style: Book Italic
   # Point size
   size: 10.5

@@ -86,14 +86,10 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 -- Setup the icons
 local icons = {
-  Error = '🔥',
-  Warning = '💩',
-  Hint = '💡',
-  Information = '🤟'
-  -- Error = '',
-  -- Warning = '',
-  -- Hint = '',
-  -- Information = ''
+  Error = '',
+  Warning = '',
+  Hint = '',
+  Information = ''
 }
 
 for type, icon in pairs(icons) do

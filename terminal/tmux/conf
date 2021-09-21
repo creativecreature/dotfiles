@@ -33,12 +33,6 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# True color support for Osx and Linux
-# if-shell 'uname | grep -q Darwin' \
-#     'source-file ~/.tmux.conf.osx' \
-#     'if-shell "uname | grep -q CYGWIN" "source-file ~/.tmux.conf.cygwin" "source-file ~/.tmux.conf.linux"'
-
-
 
 # =============================================================================
 # *********************************** PANES ***********************************
@@ -135,17 +129,6 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 # =============================================================================
 # ********************************* PLUGINS ***********************************
 # =============================================================================
-
-# source-file ~/code/creativecreature/themer/tmux/creativecreature
-# border colours
- # set -g pane-border-fg blue
- # set -g pane-active-border-fg blue
- # set -g pane-active-border-bg default
-
- # set -g pane-border-bg default
- # set -g pane-active-border-fg blue
- # set -g pane-active-border-bg default
-
 # Theme - Status line
 set -g status-style default
 set -g status-right-length 80
