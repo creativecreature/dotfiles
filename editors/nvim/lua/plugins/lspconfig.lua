@@ -44,13 +44,12 @@ require'lspconfig'.sumneko_lua.setup {
 
 -- Configure EFM
 local eslint = {
-  lintCommand = 'eslint_d --stdin --stdin-filename ${INPUT}',
-  lintSource = 'eslint_d',
-  lintStdin = true,
-  lintFormats = {'%f(%l,%c): %tarning %m', '%f(%l,%c): %rror %m'},
+  lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
   lintIgnoreExitCode = true,
-  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}',
-  formatStdin = true
+  lintStdin = true,
+  lintFormats = {'%f:%l:%c: %m'},
+  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}',
+  formatStdin = true,
 }
 
 local luaFormat = {
