@@ -116,6 +116,11 @@ function aws-profile() {
   export AWS_PROFILE="$(grep '\[.*\]' ~/.aws/credentials | tr -d '[-]' | fzf)"
 }
 
+function aws-signin() {
+  aws-profile
+  aws-login
+}
+
 # enable zmv
 autoload zmv
 fpath=($fpath "/home/conner/.zfunctions")

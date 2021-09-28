@@ -1,3 +1,5 @@
+require'nvim-tree'.setup()
+
 vim.g.nvim_tree_width = 45
 vim.g.nvim_tree_show_icons = {
   git = 0,

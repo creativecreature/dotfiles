@@ -49,7 +49,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
-  use 'alvan/vim-closetag'
+  use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end }
   -- use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-sort-motion'
 
