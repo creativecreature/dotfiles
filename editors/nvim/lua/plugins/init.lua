@@ -69,8 +69,10 @@ require('packer').startup(function(use)
   use 'terryma/vim-multiple-cursors'
 
   -- Task running
-  use 'janko/vim-test'
-  use 'preservim/vimux'
+  use {
+    'janko/vim-test',
+    requires = 'preservim/vimux'
+  }
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -85,5 +87,6 @@ require('packer').startup(function(use)
 end)
 
 vim.cmd [[
-  let g:NERDTreeShowHidden=1
+  let g:test#javascript#mocha#file_pattern = ".*test.ts"
+  let test#strategy = "vimux"
 ]]
