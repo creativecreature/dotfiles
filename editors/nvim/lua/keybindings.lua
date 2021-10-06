@@ -120,3 +120,10 @@ cmd [[
   inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 ]]
+
+-- Test nearest
+map('n', 'tn', '<cmd>TestNearest<CR>', {noremap = true})
+-- Test file
+map('n', 'tf', '<cmd>TestFile<CR>', {noremap = true})
+-- Test suite
+map('n', 'ts', '<cmd>TestSuite<CR>', {noremap = true})
