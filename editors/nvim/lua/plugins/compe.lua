@@ -29,7 +29,7 @@ require'compe'.setup {
     calc = true;
     nvim_lsp = true;
     nvim_lua = false;
-    vsnip = false;
+    vsnip = false; -- https://github.com/hrsh7th/vim-vsnip
     ultisnips = false;
     luasnip = false;
     emoji = true;
