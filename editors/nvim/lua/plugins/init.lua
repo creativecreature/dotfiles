@@ -24,7 +24,7 @@ require('packer').startup(function(use)
   use 'drewtempelmeyer/palenight.vim'
   use {
     'hoob3rt/lualine.nvim',
-    -- requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config = function() require('plugins.lualine') end
   }
   use 'folke/tokyonight.nvim'
@@ -50,7 +50,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
   use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end }
-  -- use 'jiangmiao/auto-pairs'
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
