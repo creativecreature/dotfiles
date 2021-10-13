@@ -66,7 +66,7 @@ require('packer').startup(function(use)
 
   -- File navigation
   use 'easymotion/vim-easymotion'
-  use 'terryma/vim-multiple-cursors'
+  use 'mg979/vim-visual-multi'
 
   -- Task running
   use {
