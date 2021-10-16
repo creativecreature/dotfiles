@@ -1,5 +1,7 @@
 # Dotfiles
 
+![dotfiles][screenshot]
+
 ## Introduction
 I use these scripts to bootstrap new machines, install software and prevent
 configuration drifts between different laptops I use.
@@ -21,3 +23,5 @@ The bootstrap scripts will:
 You only need to run the `bootstrap.sh` script once. For subsequent syncs just
 execute the `install.sh` script. It will check if there is any new software
 to install, as well as symlink configuration files.
+
+[screenshot]: screenshots/dotfiles.png
