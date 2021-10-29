@@ -88,5 +88,4 @@ end)
 vim.cmd [[
   let g:test#javascript#mocha#file_pattern = ".*test.ts"
   let test#strategy = "vimux"
-  let g:VimuxUseNearest = 0
 ]]
