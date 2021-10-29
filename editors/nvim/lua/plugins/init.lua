@@ -49,34 +49,32 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
-  use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end }
+  use {'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end}
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = function() require('plugins.tree') end
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require('plugins.tree') end
   }
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     config = function() require('plugins.telescope') end
   }
+  use {'folke/todo-comments.nvim', wants = "telescope.nvim", config = function() require('plugins.todo-comments') end}
 
   -- File navigation
   use 'easymotion/vim-easymotion'
-  use 'mg979/vim-visual-multi'
+  -- use 'mg979/vim-visual-multi'
 
   -- Task running
-  use {
-    'janko/vim-test',
-    requires = 'preservim/vimux'
-  }
+  use {'janko/vim-test', requires = 'preservim/vimux'}
 
   -- Git
   use 'tpope/vim-fugitive'
-  use {'ThePrimeagen/git-worktree.nvim', config= function() require("telescope").load_extension("git_worktree")end}
+  use {'ThePrimeagen/git-worktree.nvim', config = function() require("telescope").load_extension("git_worktree") end}
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
@@ -84,6 +82,7 @@ require('packer').startup(function(use)
   -- Wakatime
   use 'wakatime/vim-wakatime'
 
+  use '~/code/creativecreature/whid.nvim'
 end)
 
 vim.cmd [[

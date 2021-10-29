@@ -111,6 +111,9 @@ map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_comm
     {noremap = true})
 map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
 
+-- Todo comments
+map('n', '|', '<cmd>TodoTelescope<cr>', {noremap = true})
+
 -- nvim-tree
 map('n', '<F2>', '<cmd> NvimTreeFindFile<CR>', {noremap = true})
 map('n', '<F3>', '<cmd> NvimTreeToggle<CR>', {noremap = true})
