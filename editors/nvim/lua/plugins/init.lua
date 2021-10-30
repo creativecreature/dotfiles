@@ -82,7 +82,6 @@ require('packer').startup(function(use)
   -- Wakatime
   use 'wakatime/vim-wakatime'
 
-  use '~/code/creativecreature/whid.nvim'
 end)
 
 vim.cmd [[
