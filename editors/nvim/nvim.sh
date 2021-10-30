@@ -5,9 +5,9 @@ install_nvim() {
     echo_item "neovim is already installed" "green"
   else
     echo_item "installing neovim" "green"
-    sudo apt-get -qq --yes install neovim
-    curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    sudo mv nvim.appimage /usr/bin/nvim
   fi
 }
 
