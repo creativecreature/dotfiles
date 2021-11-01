@@ -5,14 +5,12 @@ M.functions = {}
 
 function M.execute(id)
   local func = M.functions[id]
-  if not func then
-    error("Function doest not exist: " .. id)
-  end
+  if not func then error("Function doest not exist: " .. id) end
   return func()
 end
 
 local map = function(mode, key, cmd, opts, defaults)
-  opts = vim.tbl_deep_extend("force", { silent = true }, defaults or {}, opts or {})
+  opts = vim.tbl_deep_extend("force", {silent = true}, defaults or {}, opts or {})
 
   if type(cmd) == "function" then
     table.insert(M.functions, cmd)

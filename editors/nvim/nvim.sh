@@ -17,7 +17,7 @@ configure_nvim() {
   ln -sfn ~/dotfiles/editors/nvim ~/.config/nvim
 
   echo_item "installing nvim plugins" "green"
-  nvim "+PlugInstall" +qall
+  nvim "+PackerInstall" +qall
 
   echo_item "updating nvim plugins" "green"
   nvim "+PlugUpdate" +qall
