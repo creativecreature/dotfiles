@@ -1,5 +1,6 @@
 local api = vim.api
 local fn = vim.fn
+local sep_os_replacer = require("util").sep_os_replacer
 
 -- Setup packer
 local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
@@ -71,6 +72,20 @@ require('packer').startup(function(use)
 
   -- Task running
   use {'janko/vim-test', requires = 'preservim/vimux'}
+
+  -- Debugging
+  use({
+    "Pocco81/DAPInstall.nvim",
+    cmd = {"DIInstall", "DIList"},
+    config = function()
+      local dap_install = require("dap-install")
+
+      dap_install.setup({installation_path = sep_os_replacer(vim.fn.stdpath("data") .. "/dapinstall/")})
+    end
+  }) -- install dap adapters
+  use({"mfussenegger/nvim-dap", opt = true}) -- dap
+  use({"rcarriga/nvim-dap-ui", opt = true, requires = {"mfussenegger/nvim-dap"}}) -- dap ui
+  use 'nvim-telescope/telescope-dap.nvim'
 
   -- Git
   use 'tpope/vim-fugitive'

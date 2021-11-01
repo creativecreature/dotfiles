@@ -20,7 +20,11 @@ configure_nvim() {
   nvim "+PackerInstall" +qall
 
   echo_item "updating nvim plugins" "green"
-  nvim "+PlugUpdate" +qall
+  nvim "+PackerUpdate" +qall
+
+  echo_item "installing chrome debugger" "green"
+  nvim "+DIInstall chrome" +qall
+  nvim "+DIInstall jsnode" +qall
 }
 
 install_lua_language_server() {

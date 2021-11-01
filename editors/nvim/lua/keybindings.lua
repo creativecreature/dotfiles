@@ -130,3 +130,7 @@ map('n', 'tn', '<cmd>TestNearest<CR>', {noremap = true})
 map('n', 'tf', '<cmd>TestFile<CR>', {noremap = true})
 -- Test suite
 map('n', 'ts', '<cmd>TestSuite<CR>', {noremap = true})
+
+-- Lazyloaded debugging
+map("n", "<Leader>dc", [[ <Cmd>lua require("plugins.dap-attach"):addPlug(); require'dap'.continue()<CR>]], {noremap = true})
+map("n", "<Leader>db", [[ <Cmd>lua require("plugins.dap-attach"):addPlug(); require'dap'.toggle_breakpoint()<CR>]], {noremap = true})

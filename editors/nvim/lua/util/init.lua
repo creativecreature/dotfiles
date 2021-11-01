@@ -29,46 +29,31 @@ local map = function(mode, key, cmd, opts, defaults)
   end
 end
 
-function M.map(mode, key, cmd, opt, defaults)
-  return map(mode, key, cmd, opt, defaults)
-end
 
-function M.nmap(key, cmd, opts)
-  return map("n", key, cmd, opts)
-end
-function M.vmap(key, cmd, opts)
-  return map("v", key, cmd, opts)
-end
-function M.xmap(key, cmd, opts)
-  return map("x", key, cmd, opts)
-end
-function M.imap(key, cmd, opts)
-  return map("i", key, cmd, opts)
-end
-function M.omap(key, cmd, opts)
-  return map("o", key, cmd, opts)
-end
-function M.smap(key, cmd, opts)
-  return map("s", key, cmd, opts)
-end
+function M.map(mode, key, cmd, opt, defaults) return map(mode, key, cmd, opt, defaults) end
 
-function M.nnoremap(key, cmd, opts)
-  return map("n", key, cmd, opts, { noremap = true })
-end
-function M.vnoremap(key, cmd, opts)
-  return map("v", key, cmd, opts, { noremap = true })
-end
-function M.xnoremap(key, cmd, opts)
-  return map("x", key, cmd, opts, { noremap = true })
-end
-function M.inoremap(key, cmd, opts)
-  return map("i", key, cmd, opts, { noremap = true })
-end
-function M.onoremap(key, cmd, opts)
-  return map("o", key, cmd, opts, { noremap = true })
-end
-function M.snoremap(key, cmd, opts)
-  return map("s", key, cmd, opts, { noremap = true })
+function M.nmap(key, cmd, opts) return map("n", key, cmd, opts) end
+function M.vmap(key, cmd, opts) return map("v", key, cmd, opts) end
+function M.xmap(key, cmd, opts) return map("x", key, cmd, opts) end
+function M.imap(key, cmd, opts) return map("i", key, cmd, opts) end
+function M.omap(key, cmd, opts) return map("o", key, cmd, opts) end
+function M.smap(key, cmd, opts) return map("s", key, cmd, opts) end
+
+function M.nnoremap(key, cmd, opts) return map("n", key, cmd, opts, {noremap = true}) end
+function M.vnoremap(key, cmd, opts) return map("v", key, cmd, opts, {noremap = true}) end
+function M.xnoremap(key, cmd, opts) return map("x", key, cmd, opts, {noremap = true}) end
+function M.inoremap(key, cmd, opts) return map("i", key, cmd, opts, {noremap = true}) end
+function M.onoremap(key, cmd, opts) return map("o", key, cmd, opts, {noremap = true}) end
+function M.snoremap(key, cmd, opts) return map("s", key, cmd, opts, {noremap = true}) end
+
+--- Replaces / or \\ depending on os to path to correct places
+--- @param str string
+--- @return string
+function M.sep_os_replacer(str)
+  local result = str
+  local path_sep = package.config:sub(1, 1)
+  result = result:gsub("/", path_sep)
+  return result
 end
 
 return M
