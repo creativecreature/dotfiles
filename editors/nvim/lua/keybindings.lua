@@ -73,11 +73,11 @@ map('n', '<leader>gw', ':lua require(\'telescope\').extensions.git_worktree.git_
 map('n', '<leader>gc', ':lua require(\'telescope\').extensions.git_worktree.create_git_worktree()<CR>', {noremap = true}) -- Choose work tree
 
 -- Find the cursor word definition and reference
-map('n', 'gh', '<cmd>lua require\'lspsaga.provider\'.lsp_finder()<CR>', {noremap = true})
+map('n', 'gh', '<cmd>lua require\'telescope.builtin\'.lsp_references{}<CR>', {noremap = true})
 
 -- Code actions
-map('n', '<leader>f', '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', {noremap = true})
-map('v', '<leader>f', ':<C-U>lua require(\'lspsaga.codeaction\').range_code_action()<CR>', {noremap = true})
+map('n', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_code_actions{}<CR>', {noremap = true})
+map('v', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', {noremap = true})
 
 -- Show hover doc
 map('n', 'K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', {noremap = true})
