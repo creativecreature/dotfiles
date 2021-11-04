@@ -76,10 +76,13 @@ require"lspconfig".efm.setup {
   }
 }
 
--- Setup diagnostics
+-- Automatically update diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = false,
   underline = true,
+  update_in_insert = false,
+  -- virtual_text = { spacing = 4, prefix = "●" },
+  virtual_text = false,
+  severity_sort = true,
   signs = true
 })
 
@@ -94,4 +97,25 @@ local icons = {
 for type, icon in pairs(icons) do
   local hl = 'LspDiagnosticsSign' .. type
   fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+
+
+-- Configure to looks for all floating previews
+-- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization
+local border = {
+      {"╭", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"╮", "FloatBorder"},
+      {"│", "FloatBorder"},
+      {"╯", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"╰", "FloatBorder"},
+      {"│", "FloatBorder"}
+}
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or border
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end

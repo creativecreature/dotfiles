@@ -80,27 +80,21 @@ map('n', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_code_actions{}<
 map('v', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', {noremap = true})
 
 -- Show hover doc
-map('n', 'K', '<cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', {noremap = true})
-
--- Scroll preview windows
-map('n', '<C-f>', '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(1)<CR>', {noremap = true})
-map('n', '<C-b>', '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>', {noremap = true})
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
 
 -- Rename
-map('n', 'gr', '<cmd>lua require(\'lspsaga.rename\').rename()<CR>', {noremap = true})
-
--- Preview definition
-map('n', 'gD', '<cmd>lua require\'lspsaga.provider\'.preview_definition()<CR>', {noremap = true})
+map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true})
 
 -- Go to definition
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {noremap = true})
 
 -- Go to implementation
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true})
 
 -- Navigate errors
-map('n', '<A-k>', '<cmd>lua require\'lspsaga.diagnostic\'.lsp_jump_diagnostic_prev()<CR>', {noremap = true})
-map('n', '<A-j>', '<cmd>lua require\'lspsaga.diagnostic\'.lsp_jump_diagnostic_next()<CR>', {noremap = true})
+map('n', '<A-k>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap = true})
+map('n', '<A-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap = true})
 
 -- Format buffer
 map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
@@ -110,6 +104,9 @@ local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '
 map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })<cr>',
     {noremap = true})
 map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
+
+-- Live grep
+map('n', '<leader>/', '<cmd>Telescope live_grep<cr>', {noremap = true})
 
 -- Todo comments
 map('n', '|', '<cmd>TodoTelescope<cr>', {noremap = true})

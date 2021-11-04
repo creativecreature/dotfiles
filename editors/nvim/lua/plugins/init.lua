@@ -33,7 +33,6 @@ require('packer').startup(function(use)
 
   -- Syntax
   use {'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end}
-  use {'glepnir/lspsaga.nvim', config = function() require('plugins.lspsaga') end}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end}
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
