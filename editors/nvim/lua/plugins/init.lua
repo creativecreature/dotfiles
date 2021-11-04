@@ -28,6 +28,13 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use {'folke/twilight.nvim', config = function() require('plugins.twilight') end}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
+  -- Smooth Scrolling
+  use({
+    "karb94/neoscroll.nvim",
+    keys = {"<C-u>", "<C-d>", "gg", "G"},
+    config = function() require("plugins.neoscroll") end
+  })
+  use({"edluffy/specs.nvim", after = "neoscroll.nvim", config = function() require("plugins.specs") end})
 
   -- Syntax
   use {'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end}
