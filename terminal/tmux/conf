@@ -155,8 +155,6 @@ set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
 set -g @sysstat_mem_view_tmpl "#{mem.pused} "
 set -g status-right "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] mem #{sysstat_mem}#[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] cpu #{sysstat_cpu}#[fg=#3b4261,bg=default]"
 
-run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
-
 set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'yardnsm/tmux-1password'
 
