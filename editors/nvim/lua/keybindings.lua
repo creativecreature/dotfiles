@@ -115,12 +115,6 @@ map('n', '|', '<cmd>TodoTelescope<cr>', {noremap = true})
 map('n', '<F2>', '<cmd> NvimTreeFindFile<CR>', {noremap = true})
 map('n', '<F3>', '<cmd> NvimTreeToggle<CR>', {noremap = true})
 
--- Tab completion
-cmd [[
-  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-]]
-
 -- Test nearest
 map('n', 'tn', '<cmd>TestNearest<CR>', {noremap = true})
 -- Test file
