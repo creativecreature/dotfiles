@@ -8,8 +8,8 @@ require("specs").setup({
     width = 20,
     winhl = "PMenu",
     fader = require("specs").linear_fader,
-    resizer = require("specs").shrink_resizer,
+    resizer = require("specs").shrink_resizer
   },
   ignore_filetypes = {},
-  ignore_buftypes = { nofile = true },
+  ignore_buftypes = {nofile = true}
 })
