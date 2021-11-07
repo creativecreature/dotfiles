@@ -81,7 +81,6 @@ require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
-  use {'ThePrimeagen/git-worktree.nvim', config = function() require("telescope").load_extension("git_worktree") end}
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
@@ -92,6 +91,6 @@ require('packer').startup(function(use)
 end)
 
 vim.cmd [[
-  let g:test#javascript#mocha#file_pattern = ".*test.ts"
+  let g:test#javascript#runner = 'jest'
   let test#strategy = "vimux"
 ]]
