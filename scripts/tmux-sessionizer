@@ -44,7 +44,7 @@ elif [[ $# -eq 2 && "$1" = "restore" ]]; then
     fi
     selected=`cat $TMUX_HISTORY_FILE | sed -n "$2,${2}p"`
 else
-    items=`find ~/code/klarna -maxdepth 1 -mindepth 1 -type d`
+    items=`find ~/code/mojang -maxdepth 1 -mindepth 1 -type d`
     items+=`find ~/code/creativecreature -maxdepth 1 -mindepth 1 -type d`
     # items+=`find ~ -maxdepth 1 -mindepth 1 -type d`
     selected=`echo "$items" | fzf`
