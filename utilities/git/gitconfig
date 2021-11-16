@@ -10,8 +10,8 @@
 [includeif "gitdir:~/code/creativecreature/"]
   path = ~/code/creativecreature/.gitconfig
 
-[includeif "gitdir:~/code/klarna/"]
-  path = ~/code/klarna/.gitconfig
+[includeif "gitdir:~/code/mojang/"]
+  path = ~/code/mojang/.gitconfig
 
 [log]
   showSignature = true
