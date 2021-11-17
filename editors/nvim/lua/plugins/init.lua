@@ -1,4 +1,3 @@
-local api = vim.api
 local fn = vim.fn
 
 -- Setup packer
@@ -8,26 +7,23 @@ if fn.empty(fn.glob(install_path)) > 0 then
   fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
 end
 
-api.nvim_exec([[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
-  augroup end
-]], false)
-
 -- Install plugins
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- UI
+   use({
+    "kyazdani42/nvim-web-devicons",
+    module = "nvim-web-devicons",
+  })
   use {
     'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+	event = "VimEnter",
+	wants = "nvim-web-devicons",
     config = function() require('plugins.lualine') end
   }
   use 'folke/tokyonight.nvim'
-  use {'folke/twilight.nvim', config = function() require('plugins.twilight') end}
-  use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
+  use {'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end}
   -- Smooth Scrolling
   use({
     "karb94/neoscroll.nvim",
@@ -37,9 +33,15 @@ require('packer').startup(function(use)
   use({"edluffy/specs.nvim", after = "neoscroll.nvim", config = function() require("plugins.specs") end})
 
   -- Syntax
-  use {'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end}
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end}
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use {'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end}
+  use {
+	  'nvim-treesitter/nvim-treesitter',
+	  opt = true,
+	  event = "BufRead",
+	  run = ':TSUpdate',
+	  config = function() require('plugins.treesitter') end,
+	  requires = { 'nvim-treesitter/nvim-treesitter-textobjects' }
+  }
 
   -- Editing
   use({
@@ -49,20 +51,20 @@ require('packer').startup(function(use)
     config = function() require("plugins.cmp") end,
     requires = {
       "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip",
-      "hrsh7th/cmp-emoji", {"windwp/nvim-autopairs", config = function() require("plugins.autopairs") end}
+      "hrsh7th/cmp-emoji", {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup() end}
     }
   })
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
   use 'tpope/vim-commentary'
-  use {'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end}
+  use {'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end, after = "nvim-treesitter"}
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+	wants = "nvim-web-devicons",
     config = function() require('plugins.tree') end
   }
   use {
