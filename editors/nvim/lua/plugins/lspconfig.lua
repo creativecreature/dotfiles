@@ -3,10 +3,11 @@ local fn = vim.fn
 
 -- Add language servers
 local function on_attach(client, bufnr)
-  if client.config.flags then client.config.flags.allow_incremental_sync = true end
+  -- if client.config.flags then client.config.flags.allow_incremental_sync = true end
 
   -- TypeScript specific stuff
   if client.name == "typescript" or client.name == "tsserver" then
+    -- This makes sure tsserver is not used for formatting (I prefer prettier)
     client.resolved_capabilities.document_formatting = false
   end
 end
@@ -14,16 +15,16 @@ end
 local servers = {"pyright", "rust_analyzer", "tsserver", "solargraph", "vimls", "dockerls", "bashls", "rust_analyzer"}
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}} end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-require'lspconfig'.html.setup {capabilities = capabilities}
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- require'lspconfig'.html.setup {capabilities = capabilities}
 
-require'lspconfig'.cssls.setup {capabilities = capabilities}
+-- require'lspconfig'.cssls.setup {capabilities = capabilities}
 
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
-local sumneko_root_path = "/home/" .. USER .. "/lua-language-server"
-local sumneko_binary = "/home/" .. USER .. "/lua-language-server/bin/Linux/lua-language-server"
+local sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
+local sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
@@ -48,7 +49,7 @@ local eslint = {
   lintIgnoreExitCode = true,
   lintStdin = true,
   lintFormats = {'%f:%l:%c: %m'},
-  formatCommand = 'prettier ${INPUT}',
+  formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
   formatStdin = true,
 }
 

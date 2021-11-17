@@ -5,6 +5,7 @@
 *.local
 *.local.*
 **/packer_compiled.lua
+**/lua-language-server
 
 tags
 tags.temp
