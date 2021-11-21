@@ -5,6 +5,7 @@ install_fzf() {
     echo_item "fzf is already installed" "green"
   else
     echo_item "installing fzf" "green"
-    sudo apt-get -qq --yes install fzf
+		brew install fzf
+		$(brew --prefix)/opt/fzf/install
   fi
 }

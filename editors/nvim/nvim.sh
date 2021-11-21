@@ -5,9 +5,8 @@ install_nvim() {
     echo_item "neovim is already installed" "green"
   else
     echo_item "installing neovim" "green"
-    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    chmod u+x nvim.appimage
-    sudo mv nvim.appimage /usr/bin/nvim
+		brew install neovim
+		brew install efm-langserver
   fi
 }
 
@@ -20,7 +19,7 @@ configure_nvim() {
   nvim "+PackerInstall" +qall
 
   echo_item "updating nvim plugins" "green"
-  nvim "+PlugUpdate" +qall
+  nvim "+PackerUpdate" +qall
 }
 
 install_lua_language_server() {

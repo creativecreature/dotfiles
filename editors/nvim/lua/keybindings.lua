@@ -87,6 +87,7 @@ map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true})
 
 -- Go to definition
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+map('n', 'gD', "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true})
 map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {noremap = true})
 
 -- Go to implementation

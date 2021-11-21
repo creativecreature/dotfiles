@@ -15,7 +15,7 @@ echo ""
 
 # -- UTILITIES -----------------------------------------------------------------
 echo_header "Utilities"
-source './utilities/build_tools/build_tools.sh'
+source './utilities/homebrew/homebrew.sh'
 source './utilities/ssh/ssh.sh'
 source './utilities/git/git.sh'
 source './utilities/gpg/gpg.sh'
@@ -25,7 +25,6 @@ source './utilities/tldr/tldr.sh'
 source './utilities/ripgrep/ripgrep.sh'
 source './utilities/jq/jq.sh'
 source './utilities/xclip/xclip.sh'
-source './utilities/caffeine/caffeine.sh'
 source './utilities/heroku/heroku.sh'
 source './utilities/gitcrypt/gitcrypt.sh'
 source './utilities/fzf/fzf.sh'
@@ -33,7 +32,7 @@ source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
 
-install_build_tools
+install_homebrew
 configure_ssh
 configure_git
 configure_gpg
@@ -44,7 +43,6 @@ install_ripgrep
 configure_ripgrep
 install_jq
 install_xclip
-install_caffeine
 install_heroku
 install_gitcrypt
 install_fzf
