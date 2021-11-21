@@ -5,6 +5,6 @@ install_tldr() {
     echo_item "tldr is already installed" "green"
   else
     echo_item "installing tldr" "green"
-    sudo apt-get -qq --yes install tldr
+    brew install tldr
   fi
 }

@@ -5,6 +5,6 @@ install_tree() {
     echo_item "tree is already installed" "green"
   else
     echo_item "installing tree" "green"
-    sudo apt-get -qq --yes install tree
+    brew install tree
   fi
 }

@@ -162,12 +162,3 @@ source './scripts/scripts.sh'
 
 install_scripts
 echo ""
-
-
-
-# -- CLEANUP -------------------------------------------------------------------
-echo_header "Cleanup - removing unwanted software"
-source './cleanup.sh'
-
-uninstall_unwanted_software
-echo ""

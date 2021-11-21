@@ -5,6 +5,6 @@ install_gitcrypt() {
     echo_item "git crypt is already installed" "green"
   else
     echo_item "installing git crypt" "green"
-    sudo apt-get -qq --yes install git-crypt
+    brew install git-crypt
   fi
 }
