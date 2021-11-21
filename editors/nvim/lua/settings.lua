@@ -26,8 +26,8 @@ opt.relativenumber=true -- Show other lines relative to the current line
 vim.cmd [[
   set autoindent
   set noexpandtab
-  set tabstop=4
-  set shiftwidth=4
+  set tabstop=2
+  set shiftwidth=2
 ]]
 
 -- Better copy pasting
