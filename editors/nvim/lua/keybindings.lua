@@ -23,6 +23,9 @@ cmd [[
   nnoremap <expr> i IndentWithI()
 ]]
 
+-- Copy buffers relative path
+map('n', 'cp', ':let @* = expand("%")<cr>', {noremap = true})
+
 -- Search mappings: These will make it so that going to the next one in a
 -- search will center on the line it's found in.
 map('n', 'n', 'nzzzv', {noremap = true})
