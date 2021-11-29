@@ -81,7 +81,6 @@ export GPG_TTY=$(tty)
 alias vim=nvim
 alias vi=nvim
 alias gs="git status"
-alias open="gio open"
 alias tree="/usr/local/bin/tree -I node_modules"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
