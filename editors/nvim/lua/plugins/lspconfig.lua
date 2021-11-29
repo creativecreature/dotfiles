@@ -88,18 +88,16 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 -- Setup the icons
-local icons = {
-  Error = '',
-  Warning = '',
-  Hint = '',
-  Information = ''
-}
-
-for type, icon in pairs(icons) do
-  local hl = 'LspDiagnosticsSign' .. type
-  fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+local function lspSymbol(name, icon)
+vim.fn.sign_define(
+	'DiagnosticSign' .. name,
+	{ text = icon, numhl = 'DiagnosticDefault' .. name }
+)
 end
-
+lspSymbol('Error', '')
+lspSymbol('Warning', '')
+lspSymbol('Hint', '')
+lspSymbol('Information', '')
 
 -- Configure to looks for all floating previews
 -- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization
