@@ -1,8 +1,7 @@
 local nvim_lsp = require('lspconfig')
-local fn = vim.fn
 
 -- Add language servers
-local function on_attach(client, bufnr)
+local function on_attach(client)
   -- if client.config.flags then client.config.flags.allow_incremental_sync = true end
 
   -- TypeScript specific stuff
