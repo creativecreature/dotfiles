@@ -111,6 +111,7 @@ source './applications/slack.sh'
 source './applications/discord.sh'
 source './applications/simplescreenrecorder.sh'
 source './applications/1password.sh'
+source './applications/kap.sh'
 
 install_docker
 install_nordvpn
@@ -120,6 +121,7 @@ install_slack
 install_discord
 install_simplescreenrecorder
 install_1password
+install_kap
 echo ""
 
 
