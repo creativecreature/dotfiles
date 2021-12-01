@@ -112,6 +112,7 @@ source './applications/discord.sh'
 source './applications/simplescreenrecorder.sh'
 source './applications/1password.sh'
 source './applications/kap.sh'
+source './applications/thefuck.sh'
 
 install_docker
 install_nordvpn
@@ -122,6 +123,7 @@ install_discord
 install_simplescreenrecorder
 install_1password
 install_kap
+install_thefuck
 echo ""
 
 
