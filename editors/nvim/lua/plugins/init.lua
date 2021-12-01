@@ -84,6 +84,7 @@ require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
+	use { 'ThePrimeagen/git-worktree.nvim', requires = "telescope.nvim", config = function() require('plugins.git-worktree') end }
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
