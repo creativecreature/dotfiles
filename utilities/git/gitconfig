@@ -1,51 +1,51 @@
 [user]
-  email = hello@creativecreature.com
-  name = Victor Conner
-  editor = "nvim"
-  signingkey = 15DD0245769BFD92
+	email = hello@creativecreature.com
+	name = Victor Conner
+	editor = "nvim"
+	signingkey = 15DD0245769BFD92
 
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [includeif "gitdir:~/code/creativecreature/"]
-  path = ~/code/creativecreature/.gitconfig
+	path = ~/code/creativecreature/.gitconfig
 
 [includeif "gitdir:~/code/mojang/"]
-  path = ~/code/mojang/.gitconfig
+	path = ~/code/mojang/.gitconfig
 
 [log]
-  showSignature = true
+	showSignature = true
 
 [commit]
-  gpgSign = true
+	gpgSign = true
 
 [push]
-  default = current
+	default = current
 
 [pull]
-  rebase = true
+	rebase = true
 
 [merge]
-  ff = only
+	ff = only
 
 [fetch]
-  prune = true
+	prune = true
 
 [alias]
-  sla = log --oneline --decorate --graph --all --no-show-signature
-  glog = log -E -i --grep
-  unstage = reset
-  uncommit = reset --soft HEAD^
-  mup = !git checkout master && git pull && git checkout -
-  upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
-  ureset = !git upstream && git reset --hard $(git upstream)
+	sla = log --oneline --decorate --graph --all --no-show-signature
+	glog = log -E -i --grep
+	unstage = reset
+	uncommit = reset --soft HEAD^
+	mup = !git checkout master && git pull && git checkout -
+	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
+	ureset = !git upstream && git reset --hard $(git upstream)
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge --skip -- %f
-  process = git-lfs filter-process --skip
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 [gpg]
-  program = gpg
+	program = gpg
