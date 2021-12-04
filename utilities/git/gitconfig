@@ -39,6 +39,7 @@
   mup = !git checkout master && git pull && git checkout -
   upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
   ureset = !git upstream && git reset --hard $(git upstream)
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
