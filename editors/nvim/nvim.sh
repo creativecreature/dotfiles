@@ -26,36 +26,21 @@ install_lua_language_server() {
   LANGUAGE_SERVER_DIR=~/lua-language-server
   if [[ ! -d "$LANGUAGE_SERVER_DIR" ]]; then
     echo_item "installing lua language server" "green"
-    sudo apt install ninja-build build-essential libreadline-dev
     cd
     git clone https://github.com/sumneko/lua-language-server
     cd lua-language-server
     git submodule update --init --recursive
-    cd 3rd/luamake
+		cd 3rd/luamake
     ./compile/install.sh
     cd ../..
     ./3rd/luamake/luamake rebuild
     cd
-    # Install lua and luarocks
-    curl -R -O http://www.lua.org/ftp/lua-5.3.5.tar.gz
-    tar -zxf lua-5.3.5.tar.gz
-    rm lua-5.3.5.tar.gz
-    cd lua-5.3.5
-    make linux test
-    sudo make install
-    cd -
-    rm -rf lua-5.3.5
-    wget https://luarocks.org/releases/luarocks-3.3.1.tar.gz
-    tar zxpf luarocks-3.3.1.tar.gz
-    rm luarocks-3.3.1.tar.gz
-    cd luarocks-3.3.1
-    ./configure --with-lua-include=/usr/local/include
+    # Install lua formatter
+		git clone --recurse-submodules https://github.com/Koihik/LuaFormatter.git
+    cd LuaFormatter
+    cmake .
     make
-    sudo make install
-    cd
-    rm -rf luarocks-3.3.1
-    sudo luarocks install --server=https://luarocks.org/dev luaformatter
-    go install github.com/mattn/efm-langserver@latest
+    make install
     cd ~/dotfiles
   else
     echo_item "lua language server is already installed" "green"

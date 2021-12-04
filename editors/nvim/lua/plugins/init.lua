@@ -12,14 +12,11 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- UI
-   use({
-    "kyazdani42/nvim-web-devicons",
-    module = "nvim-web-devicons",
-  })
+  use({"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"})
   use {
     'hoob3rt/lualine.nvim',
-	event = "VimEnter",
-	wants = "nvim-web-devicons",
+    event = "VimEnter",
+    wants = "nvim-web-devicons",
     config = function() require('plugins.lualine') end
   }
   use 'folke/tokyonight.nvim'
@@ -35,12 +32,12 @@ require('packer').startup(function(use)
   -- Syntax
   use {'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end}
   use {
-	  'nvim-treesitter/nvim-treesitter',
-	  opt = true,
-	  event = "BufRead",
-	  run = ':TSUpdate',
-	  config = function() require('plugins.treesitter') end,
-	  requires = { 'nvim-treesitter/nvim-treesitter-textobjects' }
+    'nvim-treesitter/nvim-treesitter',
+    opt = true,
+    event = "BufRead",
+    run = ':TSUpdate',
+    config = function() require('plugins.treesitter') end,
+    requires = {'nvim-treesitter/nvim-treesitter-textobjects'}
   }
 
   -- Editing
@@ -62,12 +59,8 @@ require('packer').startup(function(use)
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
-  use {
-    'kyazdani42/nvim-tree.lua',
-	wants = "nvim-web-devicons",
-    config = function() require('plugins.tree') end
-  }
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'kyazdani42/nvim-tree.lua', wants = "nvim-web-devicons", config = function() require('plugins.tree') end}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
@@ -84,7 +77,11 @@ require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
-	use { 'ThePrimeagen/git-worktree.nvim', requires = "telescope.nvim", config = function() require('plugins.git-worktree') end }
+  use {
+    'ThePrimeagen/git-worktree.nvim',
+    requires = "telescope.nvim",
+    config = function() require('plugins.git-worktree') end
+  }
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'

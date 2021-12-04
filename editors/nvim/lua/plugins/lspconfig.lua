@@ -49,7 +49,7 @@ local eslint = {
   lintStdin = true,
   lintFormats = {'%f:%l:%c: %m'},
   formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
-  formatStdin = true,
+  formatStdin = true
 }
 
 local luaFormat = {
@@ -88,10 +88,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 -- Setup the icons
 local function lspSymbol(name, icon)
-vim.fn.sign_define(
-	'DiagnosticSign' .. name,
-	{ text = icon, numhl = 'DiagnosticDefault' .. name }
-)
+  vim.fn.sign_define('DiagnosticSign' .. name, {text = icon, numhl = 'DiagnosticDefault' .. name})
 end
 lspSymbol('Error', '')
 lspSymbol('Warning', '')
@@ -101,14 +98,8 @@ lspSymbol('Information', '')
 -- Configure to looks for all floating previews
 -- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization
 local border = {
-      {"╭", "FloatBorder"},
-      {"─", "FloatBorder"},
-      {"╮", "FloatBorder"},
-      {"│", "FloatBorder"},
-      {"╯", "FloatBorder"},
-      {"─", "FloatBorder"},
-      {"╰", "FloatBorder"},
-      {"│", "FloatBorder"}
+  {"╭", "FloatBorder"}, {"─", "FloatBorder"}, {"╮", "FloatBorder"}, {"│", "FloatBorder"},
+  {"╯", "FloatBorder"}, {"─", "FloatBorder"}, {"╰", "FloatBorder"}, {"│", "FloatBorder"}
 }
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
