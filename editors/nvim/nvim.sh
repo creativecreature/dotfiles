@@ -20,6 +20,9 @@ configure_nvim() {
 
   echo_item "updating nvim plugins" "green"
   nvim "+PackerUpdate" +qall
+
+	echo_item "installing required python packages"
+  python3 -m pip install --user --upgrade pynvim
 }
 
 install_lua_language_server() {
