@@ -55,3 +55,7 @@ opt.background = 'dark'
 cmd [[
   colorscheme tokyonight
 ]]
+-- dw (delete word) will delete word with hyphens, e.g "some-word" gets deleted by having the cursor on s and pressing dw
+cmd [[
+	set iskeyword+=-
+]]
