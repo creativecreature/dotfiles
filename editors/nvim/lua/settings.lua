@@ -52,9 +52,13 @@ opt.foldlevel = 99
 -- UI
 opt.termguicolors = true
 opt.background = 'dark'
-cmd [[
-  colorscheme tokyonight
-]]
+local colorscheme = "tokyonight"
+local status_ok = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+	vim.notify("colorscheme " .. colorscheme .. "not found")
+	return
+end
+
 -- dw (delete word) will delete word with hyphens, e.g "some-word" gets deleted by having the cursor on s and pressing dw
 cmd [[
 	set iskeyword+=-
