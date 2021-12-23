@@ -21,8 +21,8 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	print "Failed to require packer"
-	return
+  print "Failed to require packer"
+  return
 end
 
 -- Have packer use a popup window
@@ -33,13 +33,8 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- UI
-  use({"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"})
-  use {
-    'hoob3rt/lualine.nvim',
-    event = "VimEnter",
-    wants = "nvim-web-devicons",
-    config = function() require('plugins.lualine') end
-  }
+  use({"kyazdani42/nvim-web-devicons"})
+  use {'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end}
   use 'folke/tokyonight.nvim'
   use {'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end}
   -- Smooth Scrolling
@@ -80,14 +75,18 @@ return packer.startup(function(use)
   use 'christoomey/vim-sort-motion'
 
   -- Project navigation
-  use {'kyazdani42/nvim-tree.lua', wants = "nvim-web-devicons", config = function() require('plugins.tree') end}
+  use {'kyazdani42/nvim-tree.lua', config = function() require('plugins.tree') end}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     config = function() require('plugins.telescope') end
   }
-  use {'folke/todo-comments.nvim', wants = "telescope.nvim", config = function() require('plugins.todo-comments') end}
+  use {
+    'folke/todo-comments.nvim',
+    requires = "telescope.nvim",
+    config = function() require('plugins.todo-comments') end
+  }
 
   -- File navigation
   use 'easymotion/vim-easymotion'
