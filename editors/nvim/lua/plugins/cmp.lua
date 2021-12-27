@@ -13,7 +13,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'}),
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})
   },
-  sources = {{name = "nvim_lsp"}, {name = "buffer"}, {name = "path"}, {name = 'emoji'}},
+  sources = {{name = "nvim_lsp"}, {name = "nvim_lua"}, {name = "buffer"}, {name = "path"}, {name = 'emoji'}},
   documentation = {border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}},
   experimental = {ghost_text = {hl_group = "LineNr"}}
 })

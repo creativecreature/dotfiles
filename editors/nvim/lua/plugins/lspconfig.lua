@@ -1,9 +1,19 @@
+local util = require('util')
 local nvim_lsp = require('lspconfig')
 
--- Add language servers
-local function on_attach(client)
-  -- if client.config.flags then client.config.flags.allow_incremental_sync = true end
+local function install_missing_servers(servers)
+  local lspi_servers = require("nvim-lsp-installer.servers")
+  for _, server in pairs(servers) do
+    local ok, s = lspi_servers.get_server(server)
+    if ok then
+      if not s:is_installed() then s:install() end
+    else
+      util.error("Server " .. server .. " not found")
+    end
+  end
+end
 
+local function on_attach(client)
   -- TypeScript specific stuff
   if client.name == "typescript" or client.name == "tsserver" then
     -- This makes sure tsserver is not used for formatting (I prefer prettier)
@@ -11,14 +21,9 @@ local function on_attach(client)
   end
 end
 
-local servers = {"pyright", "rust_analyzer", "tsserver", "solargraph", "vimls", "dockerls", "bashls", "rust_analyzer"}
+local servers = {"tsserver", "pyright", "vimls", "dockerls", "bashls", "html", "jsonls", "cssls"}
+install_missing_servers(servers)
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}} end
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- require'lspconfig'.html.setup {capabilities = capabilities}
-
--- require'lspconfig'.cssls.setup {capabilities = capabilities}
 
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
@@ -80,7 +85,6 @@ require"lspconfig".efm.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
   update_in_insert = false,
-  -- virtual_text = { spacing = 4, prefix = "●" },
   virtual_text = false,
   severity_sort = true,
   signs = true
@@ -92,8 +96,8 @@ local function lspSymbol(name, icon)
 end
 lspSymbol('Error', '')
 lspSymbol('Warning', '')
-lspSymbol('Hint', '')
-lspSymbol('Information', '')
+lspSymbol('Hint', '')
+lspSymbol('Information', '')
 
 -- Configure to looks for all floating previews
 -- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization

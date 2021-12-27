@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use({"edluffy/specs.nvim", after = "neoscroll.nvim", config = function() require("plugins.specs") end})
 
   -- Syntax
+	use "williamboman/nvim-lsp-installer"
   use {'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end}
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -53,7 +54,7 @@ return packer.startup(function(use)
     event = "BufRead",
     run = ':TSUpdate',
     config = function() require('plugins.treesitter') end,
-    requires = {'nvim-treesitter/nvim-treesitter-textobjects'}
+    requires = {'nvim-treesitter/nvim-treesitter-textobjects', 'williamboman/nvim-lsp-installer'}
   }
 
   -- Editing
@@ -63,7 +64,7 @@ return packer.startup(function(use)
     opt = true,
     config = function() require("plugins.cmp") end,
     requires = {
-      "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip",
       "hrsh7th/cmp-emoji", {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup() end}
     }
   })
