@@ -5,6 +5,6 @@ install_discord() {
     echo_item "discord is already installed" "green"
   else
     echo_item "installing discord" "green"
-    brew install --cask discord
+		sudo snap install discord > /dev/null
   fi
 }
