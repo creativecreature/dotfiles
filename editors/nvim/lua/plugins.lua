@@ -94,7 +94,7 @@ return packer.startup(function(use)
   -- use 'mg979/vim-visual-multi'
 
   -- Task running
-  use {'janko/vim-test', requires = 'preservim/vimux'}
+  use {'janko/vim-test', requires = 'preservim/vimux', config = function() require('plugins.vim-test') end}
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -114,8 +114,3 @@ return packer.startup(function(use)
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
--- vim.cmd [[
---   let g:test#javascript#runner = 'jest'
---   let g:test#javascript#jest#file_pattern = '\v(__tests__/.*|(spec|test))\.(js|jsx|coffee|ts|tsx)$'
---   let test#strategy = "vimux"
--- ]]
