@@ -4,9 +4,11 @@ set -o nounset
 
 source 'helpers.sh'
 source 'setup_structure.sh'
+source 'utilities/git/git.sh'
 
 sudo apt-get -qq --yes update
 
+install_git
 
 # Clone dotfiles repo and symlink it to the users home directory
 git clone https://github.com/creativecreature/dotfiles.git ~/code/creativecreature/dotfiles

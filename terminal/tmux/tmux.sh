@@ -5,7 +5,7 @@ install_tmux() {
     echo_item "tmux is already installed" "green"
   else
     echo_item 'installing tmux' "green"
-    brew install tmux
+		sudo apt-get -qq --yes install tmux
   fi
 }
 

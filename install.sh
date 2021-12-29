@@ -2,20 +2,20 @@
 
 source 'helpers.sh'
 
-set -o nounset
+set o nounset
 
 echo ""
 echo_header "Starting installation and configuration"
 
-sudo -v # Ask for sudo password & keep alive
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+sudo v # Ask for sudo password & keep alive
+while true; do sudo n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-sudo apt-get -qq --yes update
+sudo aptget -qq --yes update
 echo ""
 
-# -- UTILITIES -----------------------------------------------------------------
+# - UTILITIES -----------------------------------------------------------------
 echo_header "Utilities"
-source './utilities/homebrew/homebrew.sh'
+source './utilities/build_tools/build_tools.sh'
 source './utilities/ssh/ssh.sh'
 source './utilities/git/git.sh'
 source './utilities/gpg/gpg.sh'
@@ -25,6 +25,7 @@ source './utilities/tldr/tldr.sh'
 source './utilities/ripgrep/ripgrep.sh'
 source './utilities/jq/jq.sh'
 source './utilities/xclip/xclip.sh'
+source './utilities/caffeine/caffeine.sh'
 source './utilities/heroku/heroku.sh'
 source './utilities/gitcrypt/gitcrypt.sh'
 source './utilities/fzf/fzf.sh'
@@ -32,7 +33,7 @@ source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
 
-install_homebrew
+install_build_tools
 configure_ssh
 configure_git
 configure_gpg
@@ -43,6 +44,7 @@ install_ripgrep
 configure_ripgrep
 install_jq
 install_xclip
+install_caffeine
 install_heroku
 install_gitcrypt
 install_fzf
@@ -53,23 +55,21 @@ echo ""
 
 
 
-# -- PROGRAMMING LANGUAGES -----------------------------------------------------
+# - PROGRAMMING LANGUAGES -----------------------------------------------------
 echo_header "Programming languages"
 source './languages/node.sh'
 source './languages/rust.sh'
 source './languages/terraform.sh'
-source './languages/python.sh'
 source './languages/golang.sh'
 
 install_node
 install_rust
 install_terraform
-install_python
 install_golang
 echo ""
 
 
-# -- TERMINAL ------------------------------------------------------------------
+# - TERMINAL ------------------------------------------------------------------
 echo_header "Terminal"
 source './terminal/zsh/zsh.sh'
 source './terminal/alacritty/alacritty.sh'
@@ -90,7 +90,7 @@ echo ""
 
 
 
-# -- EDITORS -------------------------------------------------------------------
+# - EDITORS -------------------------------------------------------------------
 echo_header "Editors"
 source './editors/nvim/nvim.sh'
 
@@ -101,7 +101,7 @@ echo ""
 
 
 
-# -- APPLICATIONS --------------------------------------------------------------
+# - APPLICATIONS --------------------------------------------------------------
 echo_header "Applications"
 source './applications/docker.sh'
 source './applications/nordvpn.sh'
@@ -111,7 +111,6 @@ source './applications/slack.sh'
 source './applications/discord.sh'
 source './applications/simplescreenrecorder.sh'
 source './applications/1password.sh'
-source './applications/kap.sh'
 source './applications/thefuck.sh'
 
 install_docker
@@ -122,13 +121,12 @@ install_slack
 install_discord
 install_simplescreenrecorder
 install_1password
-install_kap
 install_thefuck
 echo ""
 
 
 
-# -- HARDWARE ------------------------------------------------------------------
+# - HARDWARE ------------------------------------------------------------------
 echo_header "Hardware"
 source "./hardware/keyboard.sh"
 source './hardware/touchpad.sh'
@@ -141,7 +139,7 @@ echo ""
 
 
 
-# -- UI ------------------------------------------------------------------------
+# - UI ------------------------------------------------------------------------
 echo_header "UI"
 source './ui/fonts.sh'
 source './ui/gnome_tweaks.sh'
@@ -160,9 +158,16 @@ echo ""
 
 
 
-# -- SCRIPTS -------------------------------------------------------------------
+# - SCRIPTS -------------------------------------------------------------------
 echo_header "Scripts"
 source './scripts/scripts.sh'
 
 install_scripts
+echo ""
+
+# -- CLEANUP -------------------------------------------------------------------
+echo_header "Cleanup - removing unwanted software"
+source './cleanup.sh'
+
+uninstall_unwanted_software
 echo ""

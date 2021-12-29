@@ -1,1 +1,2 @@
-# setxkbmap -option caps:swapescape
+setxkbmap -option caps:swapescape
+export PATH="$HOME/.cargo/bin:$PATH"

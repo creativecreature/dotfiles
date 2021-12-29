@@ -5,6 +5,6 @@ install_slack() {
     echo_item "slack is already installed" "green"
   else
     echo_item "installing slack" "green"
-    brew install --cask slack
+    sudo snap install slack --classic > /dev/null
   fi
 }

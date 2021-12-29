@@ -82,6 +82,7 @@ alias vim=nvim
 alias vi=nvim
 alias gs="git status"
 alias tree="/usr/local/bin/tree -I node_modules"
+alias open="gio open"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

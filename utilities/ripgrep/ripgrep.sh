@@ -5,7 +5,7 @@ install_ripgrep() {
     echo_item "ripgrep is already installed" "green"
   else
     echo_item "installing ripgrep" "green"
-		brew install rq
+    sudo apt-get -qq --yes install ripgrep
   fi
 }
 

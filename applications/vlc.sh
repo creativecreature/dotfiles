@@ -5,6 +5,6 @@ install_vlc() {
     echo_item "vlc is already installed" "green"
   else
     echo_item "installing vlc" "green"
-    brew install --cask vlc
+    sudo apt-get -qq --yes install vlc
   fi
 }

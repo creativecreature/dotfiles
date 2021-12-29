@@ -5,6 +5,6 @@ install_starship() {
     echo_item "starship is already installed" "green"
   else
     echo_item "installing starship" "green"
-		brew install starship
+		curl -fsSL https://starship.rs/install.sh | bash
   fi
 }

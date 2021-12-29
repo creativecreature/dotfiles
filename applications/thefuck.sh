@@ -5,6 +5,8 @@ install_thefuck() {
     echo_item "thefuck is already installed" "green"
   else
     echo_item "installing thefuck" "green"
-    brew install --cask thefuck
+		sudo apt update
+		sudo apt install python3-dev python3-pip python3-setuptools
+		pip3 install thefuck --user
   fi
 }

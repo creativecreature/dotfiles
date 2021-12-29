@@ -5,6 +5,6 @@ install_direnv() {
     echo_item "direnv is already installed" "green"
   else
     echo_item "installing direnv" "green"
-		brew install direnv
+    sudo apt-get -qq --yes install direnv
   fi
 }

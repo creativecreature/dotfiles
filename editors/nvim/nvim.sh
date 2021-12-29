@@ -5,8 +5,10 @@ install_nvim() {
     echo_item "neovim is already installed" "green"
   else
     echo_item "installing neovim" "green"
-		brew install neovim
-		brew install efm-langserver
+		curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+		chmod u+x nvim.appimage
+		sudo mv nvim.appimage /usr/bin/nvim
+		go install github.com/mattn/efm-langserver@latest
   fi
 }
 
@@ -29,6 +31,7 @@ install_lua_language_server() {
   LANGUAGE_SERVER_DIR=~/lua-language-server
   if [[ ! -d "$LANGUAGE_SERVER_DIR" ]]; then
     echo_item "installing lua language server" "green"
+		sudo apt-get --qq --yes install ninja-build build-essential libreadline-dev
     cd
     git clone https://github.com/sumneko/lua-language-server
     cd lua-language-server
