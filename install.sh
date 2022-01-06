@@ -32,6 +32,7 @@ source './utilities/fzf/fzf.sh'
 source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
+source './utilities/prettier/prettier.sh'
 
 install_build_tools
 configure_ssh
@@ -63,6 +64,8 @@ source './languages/terraform.sh'
 source './languages/golang.sh'
 
 install_node
+install_prettier
+configure_prettier
 install_rust
 install_terraform
 install_golang
