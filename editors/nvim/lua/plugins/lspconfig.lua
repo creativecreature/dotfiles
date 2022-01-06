@@ -63,7 +63,8 @@ local eslint = {
   lintIgnoreExitCode = true,
   lintStdin = true,
   lintFormats = {'%f:%l:%c: %m'},
-  formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+  -- formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+  formatCommand = "prettier --stdin-filepath ${INPUT}",
   formatStdin = true
 }
 
