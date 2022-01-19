@@ -1,18 +1,3 @@
-local util = require('util')
-local nvim_lsp = require('lspconfig')
-
-local function install_missing_servers(servers)
-  local lspi_servers = require("nvim-lsp-installer.servers")
-  for _, server in pairs(servers) do
-    local ok, s = lspi_servers.get_server(server)
-    if ok then
-      if not s:is_installed() then s:install() end
-    else
-      util.error("Server " .. server .. " not found")
-    end
-  end
-end
-
 local function on_attach(client)
   -- TypeScript specific stuff
   if client.name == "typescript" or client.name == "tsserver" then
@@ -22,8 +7,8 @@ local function on_attach(client)
 end
 
 local servers = {"tsserver", "pyright", "vimls", "dockerls", "bashls", "html", "jsonls", "cssls"}
-install_missing_servers(servers)
-for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}} end
+-- install_missing_servers(servers)
+-- for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}} end
 
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
@@ -31,13 +16,13 @@ local sumneko_root_path = ""
 local sumneko_binary = ""
 
 if vim.fn.has("mac") == 1 then
-    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
-    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
+  sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
+  sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
 elseif vim.fn.has("unix") == 1 then
-    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
-    sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
+  sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
+  sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
 else
-    print("Unsupported system for sumneko")
+  print("Unsupported system for sumneko")
 end
 
 require'lspconfig'.sumneko_lua.setup {
@@ -123,3 +108,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts.border = opts.border or border
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
+
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local options = {on_attach = on_attach, capabilities = capabilities, flags = {debounce_text_changes = 150}}
+require("plugins.lsp-installer").setup(servers, options)
