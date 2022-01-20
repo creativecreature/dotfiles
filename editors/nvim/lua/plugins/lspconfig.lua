@@ -7,8 +7,6 @@ local function on_attach(client)
 end
 
 local servers = {"tsserver", "pyright", "vimls", "dockerls", "bashls", "html", "jsonls", "cssls"}
--- install_missing_servers(servers)
--- for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, flags = {debounce_text_changes = 150}} end
 
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
