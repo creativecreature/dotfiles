@@ -6,7 +6,7 @@ local function on_attach(client)
   end
 end
 
-local servers = {"tsserver", "pyright", "vimls", "dockerls", "bashls", "html", "jsonls", "cssls"}
+local servers = { tsserver = {}, pyright = {}, vimls = {}, dockerls = {}, bashls = {}, html = {}, jsonls = {}, cssls = {}, gopls = {}}
 
 -- Configure language server for lua
 USER = vim.fn.expand('$USER')
@@ -107,6 +107,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local options = {on_attach = on_attach, capabilities = capabilities, flags = {debounce_text_changes = 150}}
 require("plugins.lsp-installer").setup(servers, options)
