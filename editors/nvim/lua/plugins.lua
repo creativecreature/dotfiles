@@ -60,8 +60,6 @@ return packer.startup(function(use)
   -- Editing
   use({
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    opt = true,
     config = function() require("plugins.cmp") end,
     requires = {
       "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip",
