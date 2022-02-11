@@ -17,5 +17,6 @@ install_node() {
     /home/$USER/.volta/bin/volta install bash-language-server
     /home/$USER/.volta/bin/volta install diagnostic-languageserver
     /home/$USER/.volta/bin/volta install eslint_d
+    /home/$USER/.volta/bin/volta install aws-cdk
   fi
 }
