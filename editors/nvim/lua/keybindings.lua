@@ -99,8 +99,8 @@ map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {noremap = true})
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true})
 
 -- Navigate errors
-map('n', '<A-k>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap = true})
-map('n', '<A-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap = true})
+map('n', '<A-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
+map('n', '<A-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
 
 -- Format buffer
 map('n', '=f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {noremap = true})
