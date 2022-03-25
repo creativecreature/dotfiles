@@ -1,0 +1,3 @@
+#!/bin/bash
+SCREENSHOT=$(find . -type f -name \*.visual-regression.ts? | sed -n -E "s/.*\/(.*)\.visual-regression\.tsx/\1/p" | fzf)
+yarn screenshots --match ^$SCREENSHOT$
