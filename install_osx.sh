@@ -53,6 +53,8 @@ CASKS=(
 	kitty
 	nordvpn
 	rectangle
+	centered
+	todoist
 	google-chrome
 	firefox
 	slack
