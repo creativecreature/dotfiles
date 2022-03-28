@@ -78,6 +78,10 @@ brew install --cask ${CASKS[@]}
 echo_item "Performing cleanup" "green"
 brew cleanup
 
+echo_item "Installing nerdfonts" "green"
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 install_node() {
   if exists "node"; then
     echo_item "node is already installed" "green"
