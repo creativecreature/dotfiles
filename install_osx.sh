@@ -22,8 +22,10 @@ if test ! $(which brew); then
 fi
 
 PACKAGES=(
+	coreutils
 	mas
 	1password
+	1password-cli
 	dockutil
 	neovim
 	tmux
