@@ -155,8 +155,8 @@ set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
 set -g @sysstat_mem_view_tmpl "#{mem.pused} "
 set -g status-right "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] mem #{sysstat_mem}#[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] cpu #{sysstat_cpu}#[fg=#3b4261,bg=default]"
 
-set -g @plugin 'samoshkin/tmux-plugin-sysstat'
-set -g @plugin 'yardnsm/tmux-1password'
+set -g @plugin 'creativecreature/tmux-plugin-sysstat'
+set -g @plugin 'creativecreature/tmux-1password'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
