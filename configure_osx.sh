@@ -41,6 +41,8 @@ configure_ssh() {
   ln -sf ~/dotfiles/utilities/ssh/config ~/.ssh/config
   chmod 600 ~/.ssh/config
 }
+configure_ssh
+echo ""
 
 
 echo_header "Configuring git"

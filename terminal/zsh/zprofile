@@ -2,3 +2,4 @@ if [[ "$(uname)" == "Linux" ]]; then
 	setxkbmap -option caps:swapescape
 	export PATH="$HOME/.cargo/bin:$PATH"
 fi
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -17,16 +17,20 @@ xcode-select --install
 if test ! $(which brew); then
     echo_item "Installing homebrew" "green"
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/conner/.zprofile
+   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 PACKAGES=(
 	mas
+	1password
 	dockutil
 	neovim
 	tmux
 	starship
 	rg
 	fzf
+	direnv
 	gnupg
 	tig
 	git-crypt
@@ -35,7 +39,6 @@ PACKAGES=(
 	efm-langserver
 	volta
 	rust
-	terraform
 	tfenv
 	jq
 	tldr
@@ -46,8 +49,8 @@ PACKAGES=(
 
 CASKS=(
 	kitty
-	1password
 	nordvpn
+	rectangle
 	google-chrome
 	firefox
 	slack
@@ -55,11 +58,11 @@ CASKS=(
 	vlc
 )
 # Filter out already installed packages and casks
-for index in "${!PACKAGES[@]}" ; do [[ …condition… ]] && unset -v 'PACKAGES[$index]' ; done
-PACKAGES=("${PACKAGES[@]}")
+# for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
+# PACKAGES=("${PACKAGES[@]}")
 
-for index in "${!CASKS[@]}" ; do [[ …condition… ]] && unset -v 'CASKS[$index]' ; done
-CASKS=("${CASKS[@]}")
+# for index in "${!CASKS[@]}" ; do [[ which CASKS[$index] ]] && unset -v 'CASKS[$index]' ; done
+# CASKS=("${CASKS[@]}")
 
 
 echo_item "Updating homebrew" "green"
@@ -80,13 +83,13 @@ install_node() {
     echo_item "node is already installed" "green"
   else
     echo_item "installing node" "green"
-    /home/$USER/.volta/bin/volta install node
-    /home/$USER/.volta/bin/volta install yarn
-    /home/$USER/.volta/bin/volta install neovim
-    /home/$USER/.volta/bin/volta install typescript
-    /home/$USER/.volta/bin/volta install diagnostic-languageserver
-    /home/$USER/.volta/bin/volta install eslint_d
-    /home/$USER/.volta/bin/volta install aws-cdk
+    volta install node
+    volta install yarn
+    volta install neovim
+    volta install typescript
+    volta install diagnostic-languageserver
+    volta install eslint_d
+    volta install aws-cdk
   fi
 }
 install_node
