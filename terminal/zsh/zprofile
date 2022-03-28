@@ -1,2 +1,4 @@
-setxkbmap -option caps:swapescape
-export PATH="$HOME/.cargo/bin:$PATH"
+if [[ "$(uname)" == "Linux" ]]; then
+	setxkbmap -option caps:swapescape
+	export PATH="$HOME/.cargo/bin:$PATH"
+fi

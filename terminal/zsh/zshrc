@@ -46,8 +46,7 @@ if [[ "$(uname)" == "Linux" ]]; then
   # xmodmap -pke to list all keycodes
   xmodmap -e 'keycode 112 = '
   xmodmap -e 'keycode 117 = '
-  # Export term for better colors in TMUX
-  # export TERM='screen-256color'
+	alias open="gio open"
 fi
 
 # OSX specific setup
@@ -82,7 +81,7 @@ alias vim=nvim
 alias vi=nvim
 alias gs="git status"
 alias tree="/usr/local/bin/tree -I node_modules"
-alias open="gio open"
+alias spotify=spt
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
