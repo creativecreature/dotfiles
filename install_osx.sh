@@ -96,6 +96,7 @@ install_node() {
     volta install neovim
     volta install typescript
     volta install diagnostic-languageserver
+		volta install prettier
     volta install eslint_d
     volta install aws-cdk
   fi
