@@ -32,6 +32,7 @@ PACKAGES=(
 	starship
 	rg
 	fzf
+	wget
 	direnv
 	gnupg
 	tig
