@@ -40,6 +40,7 @@
 	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	ureset = !git upstream && git reset --hard $(git upstream)
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	udiff = !git diff origin/`git symbolic-ref --short HEAD`
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
