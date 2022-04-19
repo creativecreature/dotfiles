@@ -14,6 +14,8 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})
   },
   sources = {{name = "nvim_lsp"}, {name = "nvim_lua"}, {name = "buffer"}, {name = "path"}, {name = 'emoji'}},
-  documentation = {border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}},
+	window = {
+		documentation = {border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}},
+	},
   experimental = {ghost_text = {hl_group = "LineNr"}}
 })
