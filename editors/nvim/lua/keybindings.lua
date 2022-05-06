@@ -79,7 +79,7 @@ map('n', '<leader>gc', ':lua require(\'telescope\').extensions.git_worktree.crea
 map('n', 'gh', '<cmd>lua require\'telescope.builtin\'.lsp_references{}<CR>', {noremap = true})
 
 -- Code actions
-map('n', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_code_actions{}<CR>', {noremap = true})
+map('n', '<leader>f', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true})
 map('v', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', {noremap = true})
 
 -- Show hover doc

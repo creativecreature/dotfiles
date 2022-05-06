@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use({"edluffy/specs.nvim", after = "neoscroll.nvim", config = function() require("plugins.specs") end})
 
   -- Syntax
+	use "folke/lua-dev.nvim"
 	use "williamboman/nvim-lsp-installer"
   use {'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end}
   use {

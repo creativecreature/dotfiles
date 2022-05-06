@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
+	ignore_install = { "phpdoc" }, -- This won't install cleanly and causes errors
   highlight = {enable = true, disable = {}, additional_vim_regex_highlighting = true},
   indent = {enable = true, disable = {}},
   textobjects = {
