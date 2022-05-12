@@ -90,7 +90,6 @@ return packer.startup(function(use)
 
   -- File navigation
   use 'easymotion/vim-easymotion'
-  -- use 'mg979/vim-visual-multi'
 
   -- Task running
   use {'janko/vim-test', requires = 'preservim/vimux', config = function() require('plugins.vim-test') end}
