@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+[ "${TRACE}" ] && set -o xtrace
+set -o errexit
+
+URL_REGEX='https?://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+WHITE=$(tput setaf 7)
+MAGENTA=$(tput setaf 5)
+
+cecho() {
+  echo "${2}${1}${reset}"
+  return
+}
+
+exists() {
+  type "$1" >/dev/null 2>/dev/null
+}
+
+main() {
+  if ! exists "gh"; then
+    cecho "The Github CLI is required to run this script." $RED >&2
+    cecho "You can find it here: https://cli.github.com" $WHITE >&2
+		exit 1
+	fi
+
+	URL=$(gh pr list --search "$@" --state merged --json url --jq '.[0].url')
+
+	if ! [[ $URL =~ $URL_REGEX ]]; then
+		cecho "Sorry, I was not able to find a PR for that commit hash." $RED >&2
+		exit 1
+	fi
+
+	echo ""
+	cecho "Found the PR for that commit hash. Here is the URL:" $GREEN
+	cecho $URL $WHITE
+	echo ""
+
+	OPEN_IN_BROWSER=false
+	cecho "Would you like to open it in the browser? (y/n)" $MAGENTA
+	read -r response
+	if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		OPEN_IN_BROWSER=true
+	fi
+
+	if $OPEN_IN_BROWSER; then
+		open $URL
+	fi
+}
+
+main "$@"

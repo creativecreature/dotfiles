@@ -11,7 +11,7 @@ cmd [[
   autocmd BufWritePre * :%s/\s\+$//e
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd FileType markdown setlocal spell
+  autocmd BufEnter markdown setlocal spell spelllang=en_us
 
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
