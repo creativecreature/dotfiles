@@ -5,12 +5,10 @@ require('telescope').load_extension('fzf')
 require('telescope').setup {
   defaults = {
     mappings = {
-      -- Close on escape
-      i = {["<esc>"] = actions.close}
+      i = {["<esc>"] = actions.close} -- Close on escape
     }
   },
   pickers = {
-    -- Your special builtin config goes in here
     buffers = {
       sort_lastused = true,
       mappings = {

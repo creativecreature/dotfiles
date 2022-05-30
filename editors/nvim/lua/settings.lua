@@ -8,6 +8,7 @@ opt.hidden = true -- Enable modified buffers in background
 opt.cmdheight = 2 -- Give more space for displaying messages.
 opt.inccommand = 'nosplit' -- Show % substitution changes without having to hit enter
 opt.showmode = false -- Dont show the mode because I use a statusline
+vim.opt.list=false -- Disable list chars by default.
 vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}
 vim.opt.joinspaces = false -- No double spaces with join after a dot
 vim.opt.undolevels = 1000 -- Allow for more undos(at the cost of increased memory usage)

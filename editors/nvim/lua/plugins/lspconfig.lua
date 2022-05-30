@@ -77,7 +77,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   signs = true
 })
 
--- Setup the icons
+-- Setup the diagnostics icons
 local function lspSymbol(name, icon)
   vim.fn.sign_define('DiagnosticSign' .. name, {text = icon, numhl = 'DiagnosticDefault' .. name})
 end
@@ -86,13 +86,12 @@ lspSymbol('Warning', '')
 lspSymbol('Hint', '')
 lspSymbol('Information', '')
 
--- Configure to looks for all floating previews
+-- Configure the look for all floating previews
 -- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization
 local border = {
   {"╭", "FloatBorder"}, {"─", "FloatBorder"}, {"╮", "FloatBorder"}, {"│", "FloatBorder"},
   {"╯", "FloatBorder"}, {"─", "FloatBorder"}, {"╰", "FloatBorder"}, {"│", "FloatBorder"}
 }
-
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
@@ -100,8 +99,8 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
--- require'cmp'.setup {sources = {{name = 'nvim_lsp'}}}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 local options = {on_attach = on_attach, capabilities = capabilities, flags = {debounce_text_changes = 150}}
 require("plugins.lsp-installer").setup(servers, options)
