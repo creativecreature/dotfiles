@@ -38,8 +38,11 @@ return packer.startup(function(use)
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
 
 	-- Languages
-	use "williamboman/nvim-lsp-installer"
-	use { 'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end }
+	use "folke/lua-dev.nvim"
+	use {
+		"williamboman/nvim-lsp-installer",
+		{ 'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end }
+	}
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		opt = true,
