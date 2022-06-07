@@ -53,6 +53,8 @@ return packer.startup(function(use)
 	}
 
 	-- Editing
+	use 'L3MON4D3/LuaSnip'  -- nvim-cmp requires a snippet engine...
+	use 'saadparwaiz1/cmp_luasnip'
 	use({
 		"hrsh7th/nvim-cmp",
 		config = function() require("plugins.cmp") end,
