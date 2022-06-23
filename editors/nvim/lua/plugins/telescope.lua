@@ -1,8 +1,10 @@
+local telescope = require('telescope')
 local actions = require('telescope.actions')
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
+telescope.load_extension("live_grep_args")
 
-require('telescope').setup {
+telescope.setup {
   defaults = {
     mappings = {
       i = {["<esc>"] = actions.close} -- Close on escape

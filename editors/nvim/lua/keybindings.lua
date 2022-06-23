@@ -86,7 +86,8 @@ map('v', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_acti
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
 
 -- Rename
-map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true})
+-- map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true})
+map('n', 'gr', '<cmd>lua require\'telescope.builtin\'.lsp_references{}<CR>', {noremap = true})
 
 -- Go to definition
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
@@ -112,7 +113,7 @@ map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files({find_comm
 map('n', '\\', '<cmd>Telescope buffers<cr>', {noremap = true})
 
 -- Live grep
-map('n', '<leader>/', '<cmd>Telescope live_grep<cr>', {noremap = true})
+map('n', '<leader>/', '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>', {noremap = true})
 
 -- Todo comments
 map('n', '|', '<cmd>TodoTelescope<cr>', {noremap = true})

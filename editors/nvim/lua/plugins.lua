@@ -53,7 +53,7 @@ return packer.startup(function(use)
 	}
 
 	-- Editing
-	use 'L3MON4D3/LuaSnip'  -- nvim-cmp requires a snippet engine...
+	use 'L3MON4D3/LuaSnip' -- nvim-cmp requires a snippet engine...
 	use 'saadparwaiz1/cmp_luasnip'
 	use({
 		"hrsh7th/nvim-cmp",
@@ -70,17 +70,22 @@ return packer.startup(function(use)
 	use 'tpope/vim-commentary'
 	use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end, after = "nvim-treesitter" }
 	use 'christoomey/vim-sort-motion'
+	use 'github/copilot.vim'
 
 	-- Project navigation
 	use { 'kyazdani42/nvim-tree.lua', config = function() require('plugins.tree') end }
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
+		requires = {
+			{ 'nvim-lua/popup.nvim' },
+			{ 'nvim-lua/plenary.nvim' },
+			{ "nvim-telescope/telescope-live-grep-args.nvim" }
+		},
 		config = function() require('plugins.telescope') end
 	}
 	use {
-		'folke/todo-comments.nvim',
+		'~/code/creativecreature/todo-comments.nvim',
 		requires = "telescope.nvim",
 		config = function() require('plugins.todo-comments') end
 	}
