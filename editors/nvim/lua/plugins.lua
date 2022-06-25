@@ -85,7 +85,7 @@ return packer.startup(function(use)
 		config = function() require('plugins.telescope') end
 	}
 	use {
-		'~/code/creativecreature/todo-comments.nvim',
+		'folke/todo-comments.nvim',
 		requires = "telescope.nvim",
 		config = function() require('plugins.todo-comments') end
 	}
