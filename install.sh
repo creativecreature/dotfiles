@@ -7,10 +7,10 @@ set o nounset
 echo ""
 echo_header "Starting installation and configuration"
 
-sudo v # Ask for sudo password & keep alive
+sudo -v # Ask for sudo password & keep alive
 while true; do sudo n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-sudo aptget -qq --yes update
+sudo apt-get -qq --yes update
 echo ""
 
 # - UTILITIES -----------------------------------------------------------------
@@ -32,6 +32,7 @@ source './utilities/tree/tree.sh'
 source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
 source './utilities/prettier/prettier.sh'
+source './utilities/postgresql/postgresql.sh'
 
 install_build_tools
 configure_ssh
@@ -45,12 +46,12 @@ configure_ripgrep
 install_jq
 install_xclip
 install_caffeine
-install_heroku
 install_gitcrypt
 install_fzf
 install_tree
 configure_eslint
 install_kcolorchooser
+install_postgresql
 echo ""
 
 
@@ -74,15 +75,12 @@ echo ""
 # - TERMINAL ------------------------------------------------------------------
 echo_header "Terminal"
 source './terminal/zsh/zsh.sh'
-source './terminal/alacritty/alacritty.sh'
 source './terminal/kitty/kitty.sh'
 source './terminal/tmux/tmux.sh'
 source './terminal/starship/starship.sh'
 
 install_zsh
 configure_zsh
-install_alacritty
-configure_alacritty
 install_kitty
 configure_kitty
 install_tmux
