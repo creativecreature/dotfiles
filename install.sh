@@ -33,6 +33,7 @@ source './utilities/eslint/eslint.sh'
 source './utilities/kcolorchooser/kcolorchooser.sh'
 source './utilities/prettier/prettier.sh'
 source './utilities/postgresql/postgresql.sh'
+source './utilities/hey/hey.sh'
 
 install_build_tools
 configure_ssh
@@ -52,6 +53,7 @@ install_tree
 configure_eslint
 install_kcolorchooser
 install_postgresql
+install_hey
 echo ""
 
 
