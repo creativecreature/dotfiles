@@ -23,6 +23,7 @@ cmp.setup({
 		{ name = 'emoji' }
 	},
 	window = {
+		-- completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
 		documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
 	},
 	experimental = { ghost_text = { hl_group = "LineNr" } }

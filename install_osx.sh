@@ -6,6 +6,9 @@ set o nounset
 echo ""
 echo_header "Starting installation"
 
+## TODO Move this
+brew tap homebrew/cask-versions
+
 # Ask for the admin password upfront, and run a keep-alive to update existing `sudo` time stamp untilthe script has finished
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -58,9 +61,11 @@ CASKS=(
 	todoist
 	google-chrome
 	firefox
+	firefox-developer-edition
 	slack
 	discord
 	vlc
+	amethyst
 )
 # Filter out already installed packages and casks
 # for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done

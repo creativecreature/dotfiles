@@ -33,24 +33,27 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- UI
-	use { 'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end }
+	-- use { 'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end }
 	use 'folke/tokyonight.nvim'
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
+	use({
+		'glepnir/galaxyline.nvim',
+		branch = 'main',
+		-- your statusline
+		config = function()
+			require('plugins.galaxyline')
+		end,
+		-- some optional icons
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+	})
 
 	-- Languages
 	use "folke/lua-dev.nvim"
-	use {
-		"williamboman/nvim-lsp-installer",
-		{ 'neovim/nvim-lspconfig', opt = true, event = "BufReadPre", config = function() require('plugins.lspconfig') end }
-	}
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		opt = true,
-		event = "BufRead",
-		run = ':TSUpdate',
-		config = function() require('plugins.treesitter') end,
-		requires = { 'nvim-treesitter/nvim-treesitter-textobjects', 'williamboman/nvim-lsp-installer' }
-	}
+	use "williamboman/nvim-lsp-installer"
+	use { 'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end }
+	use { 'nvim-treesitter/nvim-treesitter', config = function() require('plugins.treesitter') end }
+	use 'nvim-treesitter/nvim-treesitter-textobjects'
+	use 'nvim-treesitter/nvim-treesitter-context'
 
 	-- Editing
 	use 'L3MON4D3/LuaSnip' -- nvim-cmp requires a snippet engine...
@@ -89,12 +92,12 @@ return packer.startup(function(use)
 		requires = "telescope.nvim",
 		config = function() require('plugins.todo-comments') end
 	}
-
+	--
 	-- File navigation
 	use 'easymotion/vim-easymotion'
 
 	-- Task running
-	use { 'janko/vim-test', requires = 'preservim/vimux', config = function() require('plugins.vim-test') end }
+	use { 'vim-test/vim-test', requires = 'preservim/vimux', config = function() require('plugins.vim-test') end }
 
 	-- Git
 	use 'tpope/vim-fugitive'

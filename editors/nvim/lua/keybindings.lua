@@ -75,22 +75,16 @@ map('n', '<leader>gp', ':Git pull<CR>', {noremap = true}) -- Git status
 map('n', '<leader>gw', ':lua require(\'telescope\').extensions.git_worktree.git_worktrees()<CR>', {noremap = true}) -- Choose work tree
 map('n', '<leader>gc', ':lua require(\'telescope\').extensions.git_worktree.create_git_worktree()<CR>', {noremap = true}) -- Choose work tree
 
--- Find the cursor word definition and reference
-map('n', 'gh', '<cmd>lua require\'telescope.builtin\'.lsp_references{}<CR>', {noremap = true})
-
 -- Code actions
 map('n', '<leader>f', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true})
-map('v', '<leader>f', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', {noremap = true})
 
 -- Show hover doc
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
 
 -- Rename
--- map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true})
 map('n', 'gr', '<cmd>lua require\'telescope.builtin\'.lsp_references{}<CR>', {noremap = true})
 
 -- Go to definition
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
 map('n', 'gd', '<cmd>lua require\'telescope.builtin\'.lsp_definitions{}<CR>', {noremap = true})
 map('n', 'gD', '<cmd>lua require\'telescope.builtin\'.lsp_definitions{jump_type = "vsplit"}<CR>', {noremap = true})
 map('n', 'gX', '<cmd>lua require\'telescope.builtin\'.lsp_definitions{jump_type = "split"}<CR>', {noremap = true})
