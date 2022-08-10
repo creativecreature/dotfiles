@@ -1,5 +1,6 @@
-local cmd = vim.cmd
+local cache_dir = os.getenv('HOME') .. '/.cache/nvim/'
 local opt = vim.opt
+local cmd = vim.cmd
 
 opt.shell = 'zsh' -- Set zsh as the prompt for vim
 opt.history = 10000 -- Increase the history
@@ -8,28 +9,13 @@ opt.hidden = true -- Enable modified buffers in background
 opt.cmdheight = 2 -- Give more space for displaying messages.
 opt.inccommand = 'nosplit' -- Show % substitution changes without having to hit enter
 opt.showmode = false -- Dont show the mode because I use a statusline
-vim.opt.list=false -- Disable list chars by default.
-vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}
-vim.opt.joinspaces = false -- No double spaces with join after a dot
-vim.opt.undolevels = 1000 -- Allow for more undos(at the cost of increased memory usage)
+opt.joinspaces = false -- No double spaces with join after a dot
+opt.undolevels = 1000 -- Allow for more undos(at the cost of increased memory usage)
+opt.encoding = 'utf-8'
 
 -- Line numbers
 opt.number = true -- Show the current line as the real line number
 opt.relativenumber = true -- Show other lines relative to the current line
-
--- Indentation
--- opt.shiftwidth=2 -- Number of spaces to use for autoindenting
--- opt.tabstop=2 -- Number of space characters to insert when tab is pressed
--- opt.softtabstop=2 -- <Tab> and <BS> inserts and deletes right amount of spaces
--- opt.expandtab=true -- Insert space characters whenever tab key is pressed
-
--- Indent with tabs
-vim.cmd [[
-  set autoindent
-  set noexpandtab
-  set tabstop=2
-  set shiftwidth=2
-]]
 
 -- Better copy pasting
 opt.clipboard = 'unnamed,unnamedplus'
@@ -37,6 +23,7 @@ opt.clipboard = 'unnamed,unnamedplus'
 -- Searching
 opt.ignorecase = true
 opt.smartcase = true
+opt.magic = true
 
 -- Open new split panes to right and bottom
 opt.splitbelow = true
@@ -50,17 +37,40 @@ vim.opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.foldmethod = 'indent'
 opt.foldlevel = 99
 
--- UI
-opt.termguicolors = true
-opt.background = 'dark'
-local colorscheme = "tokyonight"
-local status_ok = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. "not found")
-	return
-end
+opt.directory = cache_dir .. 'swag/'
+opt.undodir = cache_dir .. 'undo/'
+opt.backupdir = cache_dir .. 'backup/'
+opt.viewdir = cache_dir .. 'view/'
+opt.spellfile = cache_dir .. 'spell/en.uft-8.add'
+
+
+opt.updatetime = 100
+opt.redrawtime = 1500
+
+
+-- Indent with tabs
+cmd [[
+  set autoindent
+  set noexpandtab
+  set tabstop=2
+  set shiftwidth=2
+]]
+
+cmd [[
+  function! IndentWithI()
+    if len(getline('.')) == 0
+      return "\"_ddO"
+    else
+      return "i"
+    endif
+  endfunction
+  nnoremap <expr> i IndentWithI()
+]]
 
 -- dw (delete word) will delete word with hyphens, e.g "some-word" gets deleted by having the cursor on s and pressing dw
 cmd [[
 	set iskeyword+=-
 ]]
+
+
+opt.termguicolors = true
