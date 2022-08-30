@@ -36,8 +36,6 @@ nmap({
 	-- Clean search highlight
 	{ ',<space>', ':noh<CR>', opts(noremap, silent) },
 
-	-- Move visual block
-	{ 'J', ':m \'>+1<CR>gv=gv', opts(noremap) },
 	{ 'K', ':m \'<-2<CR>gv=gv', opts(noremap) },
 })
 
