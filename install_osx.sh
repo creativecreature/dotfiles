@@ -66,6 +66,8 @@ CASKS=(
 	discord
 	vlc
 	amethyst
+	postgresql
+	golang-migrate
 )
 # Filter out already installed packages and casks
 # for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
