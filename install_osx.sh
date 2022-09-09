@@ -51,12 +51,12 @@ PACKAGES=(
 	tree
 	spotify-tui
 	spotifyd
+	mongodb-community@6.0
 )
 
 CASKS=(
 	kitty
 	nordvpn
-	rectangle
 	centered
 	todoist
 	google-chrome
@@ -68,6 +68,8 @@ CASKS=(
 	amethyst
 	postgresql
 	golang-migrate
+	mongodb-compass
+	postman
 )
 # Filter out already installed packages and casks
 # for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
