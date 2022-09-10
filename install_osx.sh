@@ -7,14 +7,17 @@ echo ""
 echo_header "Starting installation"
 
 ## TODO Move this
-brew tap homebrew/cask-versions
 
 # Ask for the admin password upfront, and run a keep-alive to update existing `sudo` time stamp untilthe script has finished
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install the command line tools
-xcode-select --install
+if exists "xcode-select"; then
+	echo_item "Command line tools are already installed." "green"
+ else
+	 xcode-select --install
+fi
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
@@ -71,13 +74,20 @@ CASKS=(
 	mongodb-compass
 	postman
 )
+
 # Filter out already installed packages and casks
-for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
-PACKAGES=("${PACKAGES[@]}")
+for index in "${!PACKAGES[@]}"; do
+	if exists ${PACKAGES[index]}; then
+		unset -v PACKAGES[$index]
+	fi
+done
 
-for index in "${!CASKS[@]}" ; do [[ which CASKS[$index] ]] && unset -v 'CASKS[$index]' ; done
-CASKS=("${CASKS[@]}")
-
+brew tap homebrew/cask-versions
+for index in "${!CASKS[@]}"; do
+	if exists ${CASKS[index]}; then
+		unset -v CASKS[$index]
+	fi
+done
 
 echo_item "Updating homebrew" "green"
 brew upgrade
@@ -139,18 +149,4 @@ install_oh_my_zsh() {
 install_oh_my_zsh
 
 # Install useful fzf keybindings and fuzzy completion
-$(brew --prefix)/opt/fzf/install
-
-### Mas login is currently broken on mojave. See:
-### Login manually for now.
-echo_item "Need to log in to App Store manually to install apps with mas" "red"
-echo "Opening App Store. Please login."
-open "/Applications/App Store.app"
-echo_item "Is app store login complete.(y/n)? " "green"
-read response
-if [ "$response" != "${response#[Yy]}" ]
-then
-	mas install 937984704 # Amphetamine
-else
-	echo_item "App Store login not complete. Skipping installing App Store Apps" "red"
-fi
+# $(brew --prefix)/opt/fzf/install
