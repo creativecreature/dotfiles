@@ -52,6 +52,8 @@ PACKAGES=(
 	spotify-tui
 	spotifyd
 	mongodb-community@6.0
+	postgresql
+	golang-migrate
 )
 
 CASKS=(
@@ -66,17 +68,15 @@ CASKS=(
 	discord
 	vlc
 	amethyst
-	postgresql
-	golang-migrate
 	mongodb-compass
 	postman
 )
 # Filter out already installed packages and casks
-# for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
-# PACKAGES=("${PACKAGES[@]}")
+for index in "${!PACKAGES[@]}" ; do [[ which PACKAGES[$index] ]] && unset -v 'PACKAGES[$index]' ; done
+PACKAGES=("${PACKAGES[@]}")
 
-# for index in "${!CASKS[@]}" ; do [[ which CASKS[$index] ]] && unset -v 'CASKS[$index]' ; done
-# CASKS=("${CASKS[@]}")
+for index in "${!CASKS[@]}" ; do [[ which CASKS[$index] ]] && unset -v 'CASKS[$index]' ; done
+CASKS=("${CASKS[@]}")
 
 
 echo_item "Updating homebrew" "green"
@@ -87,7 +87,7 @@ echo_item "Installing packages" "green"
 brew install ${PACKAGES[@]}
 
 echo_item "Installing casks" "green"
-brew install --cask ${CASKS[@]}
+brew install ${CASKS[@]} --cask
 
 echo_item "Performing cleanup" "green"
 brew cleanup
