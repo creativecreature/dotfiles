@@ -6,8 +6,6 @@ set o nounset
 echo ""
 echo_header "Starting installation"
 
-## TODO Move this
-
 # Ask for the admin password upfront, and run a keep-alive to update existing `sudo` time stamp untilthe script has finished
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -82,7 +80,6 @@ for index in "${!PACKAGES[@]}"; do
 	fi
 done
 
-brew tap homebrew/cask-versions
 for index in "${!CASKS[@]}"; do
 	if exists ${CASKS[index]}; then
 		unset -v CASKS[$index]
@@ -92,6 +89,8 @@ done
 echo_item "Updating homebrew" "green"
 brew upgrade
 brew update
+brew tap mongodb/brew
+brew tap homebrew/cask-versions
 
 echo_item "Installing packages" "green"
 brew install ${PACKAGES[@]}
