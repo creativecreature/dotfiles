@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local util = require('lspconfig/util')
 
 local function on_attach(client)
 	-- We are going to use EFM to format typescript/javascript files
@@ -80,9 +81,22 @@ lspconfig.efm.setup {
 			["javascript.jsx"] = { eslint },
 			typescript = { eslint },
 			["typescript.tsx"] = { eslint },
-			typescriptreact = { eslint }
+			typescriptreact = { eslint },
 		}
 	}
+}
+lspconfig.gopls.setup {
+	cmd = { "gopls", "serve" },
+	filetypes = { "go", "gomod" },
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+			},
+			staticcheck = true,
+		},
+	},
 }
 
 -- Setup lua-dev supports which provides information about the neovim API's

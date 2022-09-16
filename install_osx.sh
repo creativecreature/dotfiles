@@ -43,6 +43,7 @@ PACKAGES=(
 	git-crypt
 	git-lfs
 	go
+	staticcheck
 	efm-langserver
 	volta
 	rust
