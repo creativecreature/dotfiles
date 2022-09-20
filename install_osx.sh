@@ -25,65 +25,63 @@ if test ! $(which brew); then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-PACKAGES=(
+WANTED_PACKAGES=(
 	coreutils
-	mas
-	1password
-	1password-cli
-	dockutil
-	neovim
-	tmux
-	starship
-	rg
-	fzf
-	wget
 	direnv
-	gnupg
-	tig
+	dockutil
+	efm-langserver
+	fzf
 	git-crypt
 	git-lfs
+	gnupg
 	go
-	staticcheck
-	efm-langserver
-	volta
-	rust
-	tfenv
-	jq
-	tldr
-	tree
-	spotify-tui
-	spotifyd
-	mongodb-community@6.0
-	postgresql
 	golang-migrate
+	jq
+	mongodb-community
+	neovim
+	postgresql
+	rg
+	rust
+	starship
+	tfenv
+	tig
+	tldr
+	tmux
+	tree
+	volta
+	wget
 )
+INSTALLED_PACKAGES=$(brew leaves)
 
-CASKS=(
-	kitty
-	nordvpn
+WANTED_CASKS=(
+	1password
+	1password-cli
+	amethyst
 	centered
-	todoist
-	google-chrome
+	discord
 	firefox
 	firefox-developer-edition
-	slack
-	discord
-	vlc
-	amethyst
+	google-chrome
+	kitty
 	mongodb-compass
+	nordvpn
 	postman
+	slack
+	todoist
+	vlc
 )
+INSTALLED_CASKS=$(brew list --cask)
 
 # Filter out already installed packages and casks
-for index in "${!PACKAGES[@]}"; do
-	if exists ${PACKAGES[index]}; then
-		unset -v PACKAGES[$index]
+for index in "${!WANTED_PACKAGES[@]}"; do
+	if [[ "${INSTALLED_PACKAGES[*]}" =~ "${WANTED_PACKAGES[$index]}" ]]; then
+		unset -v WANTED_PACKAGES[$index]
 	fi
 done
 
-for index in "${!CASKS[@]}"; do
-	if exists ${CASKS[index]}; then
-		unset -v CASKS[$index]
+for index in "${!WANTED_CASKS[@]}"; do
+	if [[ "${INSTALLED_CASKS[*]}" =~ "${WANTED_CASKS[$index]}" ]]; then
+		unset -v WANTED_CASKS[$index]
 	fi
 done
 
@@ -94,10 +92,10 @@ brew tap mongodb/brew
 brew tap homebrew/cask-versions
 
 echo_item "Installing packages" "green"
-brew install ${PACKAGES[@]}
+brew install ${WANTED_PACKAGES[@]}
 
 echo_item "Installing casks" "green"
-brew install ${CASKS[@]} --cask
+brew install ${WANTED_CASKS[@]} --cask
 
 echo_item "Performing cleanup" "green"
 brew cleanup
