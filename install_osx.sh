@@ -10,13 +10,6 @@ echo_header "Starting installation"
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Install the command line tools
-if exists "xcode-select"; then
-	echo_item "Command line tools are already installed." "green"
- else
-	 xcode-select --install
-fi
-
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo_item "Installing homebrew" "green"
@@ -61,6 +54,7 @@ WANTED_CASKS=(
 	discord
 	firefox
 	firefox-developer-edition
+	goland
 	google-chrome
 	kitty
 	mongodb-compass

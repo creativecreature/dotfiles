@@ -5,6 +5,14 @@ set -o nounset
 source 'helpers.sh'
 source 'setup_structure.sh'
 
+# Install XCode Command Line Tools.
+xcode-select --install &> /dev/null
+
+# Wait until XCode Command Line Tools installation has finished.
+until $(xcode-select --print-path &> /dev/null); do
+  sleep 5;
+done
+
 # Clone dotfiles repo and symlink it to the users home directory
 git clone https://github.com/creativecreature/dotfiles.git ~/code/creativecreature/dotfiles
 ln -s ~/code/creativecreature/dotfiles ~/dotfiles
