@@ -59,6 +59,7 @@ WANTED_CASKS=(
 	kitty
 	mongodb-compass
 	nordvpn
+	obsidian
 	postman
 	slack
 	todoist
