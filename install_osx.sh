@@ -58,6 +58,7 @@ WANTED_CASKS=(
 	google-chrome
 	kitty
 	mongodb-compass
+	monodraw
 	nordvpn
 	obsidian
 	postman
