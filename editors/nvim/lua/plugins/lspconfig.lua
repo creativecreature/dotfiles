@@ -4,7 +4,7 @@ local util = require('lspconfig/util')
 local function on_attach(client)
 	-- We are going to use EFM to format typescript/javascript files
 	if client.name == "typescript" or client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 end
 

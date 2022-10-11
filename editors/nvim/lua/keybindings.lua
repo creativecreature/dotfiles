@@ -90,7 +90,7 @@ nmap({
 	{ 'gi', cmd('lua vim.lsp.buf.implementation()'), opts(noremap) },
 	{ '<A-k>', cmd('lua vim.diagnostic.goto_prev()'), opts(noremap) },
 	{ '<A-j>', cmd('lua vim.diagnostic.goto_next()'), opts(noremap) },
-	{ '=f', cmd('lua vim.lsp.buf.formatting()'), opts(noremap) },
+	{ '=f', cmd('lua vim.lsp.buf.format({ async = true })'), opts(noremap) },
 
 	-- dashboard
 	{ '<Leader>n', cmd('DashboardNewFile'), opts(noremap, silent) },
