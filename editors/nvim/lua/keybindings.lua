@@ -11,7 +11,7 @@ vim.g.mapleader = ' '
 -- normal mode
 nmap({
 	-- yank
-	{ 'Y', 'y$', opts(noremap) },
+	{ 'Y', 'y$', opts(noremap, silent) },
 	-- buffer nav
 	{ ']b', cmd('bn'), opts(noremap) },
 	{ '[b', cmd('bp'), opts(noremap) },
@@ -20,7 +20,7 @@ nmap({
 	{ ',c', ':bp<CR>:bd #<CR>', opts(noremap) },
 
 	-- Copy buffer path
-	{ 'cp', ':let @* = expand("%")<cr>', opts(noremap) },
+	{ 'cp', ':let @* = expand("%")<cr>', opts(noremap, silent) },
 
 	-- search will center on the line it's found in.
 	{ 'n', 'nzzzv', opts(noremap) },
@@ -30,8 +30,8 @@ nmap({
 	{ 'J', 'mzJ`z', opts(noremap) },
 
 	-- Split
-	{ ',x', ':<C-u>split<CR>', opts(noremap) },
-	{ ',v', ':<C-u>vsplit<CR>', opts(noremap) },
+	{ ',x', ':<C-u>split<CR>', opts(noremap, silent) },
+	{ ',v', ':<C-u>vsplit<CR>', opts(noremap, silent) },
 
 	-- Clean search highlight
 	{ ',<space>', ':noh<CR>', opts(noremap, silent) },
@@ -52,8 +52,8 @@ vmap({
 	{ '>', '>gv', opts(noremap) },
 
 	-- Move visual block
-	{ 'J', ':m \'>+1<CR>gv=gv', opts(noremap) },
-	{ 'K', ':m \'<-2<CR>gv=gv', opts(noremap) },
+	{ 'J', ':m \'>+1<CR>gv=gv', opts(noremap, silent) },
+	{ 'K', ':m \'<-2<CR>gv=gv', opts(noremap, silent) },
 })
 
 

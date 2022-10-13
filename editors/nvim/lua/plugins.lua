@@ -33,19 +33,19 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- UI
-	-- use { 'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end }
+	use { 'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end }
 	use 'folke/tokyonight.nvim'
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
-	use({
-		'glepnir/galaxyline.nvim',
-		branch = 'main',
-		-- your statusline
-		config = function()
-			require('plugins.galaxyline')
-		end,
-		-- some optional icons
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-	})
+	-- use({
+	-- 	'glepnir/galaxyline.nvim',
+	-- 	branch = 'main',
+	-- 	-- your statusline
+	-- 	config = function()
+	-- 		require('plugins.galaxyline')
+	-- 	end,
+	-- 	-- some optional icons
+	-- 	requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+	-- })
 
 	-- Languages
 	use "folke/lua-dev.nvim"
