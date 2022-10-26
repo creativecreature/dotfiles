@@ -9,7 +9,7 @@ local function on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Define the language servers we want to use and initialize them.
 local servers = {
@@ -100,5 +100,5 @@ lspconfig.gopls.setup {
 }
 
 -- Setup lua-dev supports which provides information about the neovim API's
-local luadev = require("lua-dev").setup({})
-lspconfig.sumneko_lua.setup(luadev)
+local neodev = require("neodev").setup({})
+lspconfig.sumneko_lua.setup(neodev)

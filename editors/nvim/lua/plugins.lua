@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	-- })
 
 	-- Languages
-	use "folke/lua-dev.nvim"
+	use "folke/neodev.nvim"
 	use "williamboman/nvim-lsp-installer"
 	use { 'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end }
 	use { 'nvim-treesitter/nvim-treesitter', config = function() require('plugins.treesitter') end }
