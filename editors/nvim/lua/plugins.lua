@@ -1,9 +1,7 @@
-local fn = vim.fn
-
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system {
+local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	PACKER_BOOTSTRAP = vim.fn.system {
 		"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path
 	}
 	print "Installing packer close and reopen Neovim..."
@@ -33,19 +31,20 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- UI
-	use { 'hoob3rt/lualine.nvim', config = function() require('plugins.lualine') end }
-	use 'folke/tokyonight.nvim'
+	use {
+		"catppuccin/nvim",
+		as = "catppuccin",
+		config = function() require("plugins.catppuccin") end,
+	}
+
+	use {
+		"feline-nvim/feline.nvim",
+		after = "catppuccin",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function() require("plugins.feline") end,
+	}
+
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
-	-- use({
-	-- 	'glepnir/galaxyline.nvim',
-	-- 	branch = 'main',
-	-- 	-- your statusline
-	-- 	config = function()
-	-- 		require('plugins.galaxyline')
-	-- 	end,
-	-- 	-- some optional icons
-	-- 	requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-	-- })
 
 	-- Languages
 	use "folke/neodev.nvim"
@@ -56,12 +55,11 @@ return packer.startup(function(use)
 	use 'nvim-treesitter/nvim-treesitter-context'
 
 	-- Editing
-	use 'L3MON4D3/LuaSnip' -- nvim-cmp requires a snippet engine...
-	use 'saadparwaiz1/cmp_luasnip'
 	use({
 		"hrsh7th/nvim-cmp",
 		config = function() require("plugins.cmp") end,
 		requires = {
+			"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip",
 			"hrsh7th/cmp-emoji",
 			{ "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup({ map_cr = false }) end }
@@ -92,7 +90,7 @@ return packer.startup(function(use)
 		requires = "telescope.nvim",
 		config = function() require('plugins.todo-comments') end
 	}
-	--
+
 	-- File navigation
 	use 'easymotion/vim-easymotion'
 
@@ -110,7 +108,7 @@ return packer.startup(function(use)
 	-- Tmux
 	use 'christoomey/vim-tmux-navigator'
 
-	-- Wakatime
+	-- Misc
 	use 'wakatime/vim-wakatime'
 	use 'creativecreature/vim-code-harvest'
 

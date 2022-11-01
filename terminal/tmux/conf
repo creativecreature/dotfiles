@@ -111,10 +111,6 @@ bind-key w display-popup -E '~/bin/tmux-sessionizer'
 # Use fzf to display a list of all sessions and then open the seleted session in a new window
 bind C-j display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
-# Choose tree lets us switch between sessions, o for open-session
-# bind C-o choose-session
-bind C-o split-window -v "cat ~/.z | sort -t '|' -k 2 -n -r | awk -F'|' '{print $1}' | awk -F/ '{print$NF}' | fzf | while read -r i; do z '$i'; done; tat;"
-
 # This quits the current session and breaks out to a new one
 bind-key C-b send-keys 'tat && exit' 'C-m'
 
@@ -129,34 +125,14 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 # =============================================================================
 # ********************************* PLUGINS ***********************************
 # =============================================================================
-# Theme - Status line
-set -g status-style default
-set -g status-right-length 80
-set -g status-left-length 100
-set -g window-status-separator ""
 
-# Bars ---------------------------------
-set -g status-left "#[fg=#bb9af7,bg=default]#[fg=#c0caf5,bg=#bb9af7] #{b:pane_current_path} #[fg=#bb9af7,bg=default]"
-set -g status-right ""
-
-# Windows ------------------------------
-set -g status-justify centre
-set -g window-status-format "#[fg=white,bg=default] #W "
-set -g window-status-current-format "#[fg=#B4F9F8,bg=default]#[fg=#3b4261,bg=#B4F9F8] #W #[fg=#B4F9F8,bg=default]"
-setw -g window-active-style "fg=#a3a9c2,bg=#24283b"
-setw -g window-style "fg=#a3a9c2,bg=#24283b"
-setw -g pane-active-border-style "fg=#24283b,bg=#24283b"
-setw -g pane-border-style "fg=#24283b,bg=#24283b"
-set -g status-left "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #S #[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #{b:pane_current_path} #[fg=#3b4261,bg=default]"
-
-set -g @sysstat_cpu_color_low "#a9b1d6"
-set -g @sysstat_mem_color_low "#a9b1d6"
-set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
-set -g @sysstat_mem_view_tmpl "#{mem.pused} "
-set -g status-right "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] mem #{sysstat_mem}#[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] cpu #{sysstat_cpu}#[fg=#3b4261,bg=default]"
-
-set -g @plugin 'creativecreature/tmux-plugin-sysstat'
 set -g @plugin 'creativecreature/tmux-1password'
+set -g @plugin 'catppuccin/tmux'
+set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
+
+# Take the status-bg color from the theme. Overries the catppuccin border styles.
+set pane-border-style fg=#24273a
+set pane-active-border-style fg=#24273a
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'

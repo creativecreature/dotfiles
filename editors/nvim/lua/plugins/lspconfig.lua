@@ -1,3 +1,4 @@
+require("neodev").setup({})
 local lspconfig = require('lspconfig')
 local util = require('lspconfig/util')
 
@@ -85,6 +86,7 @@ lspconfig.efm.setup {
 		}
 	}
 }
+
 lspconfig.gopls.setup {
 	cmd = { "gopls", "serve" },
 	filetypes = { "go", "gomod" },
@@ -98,7 +100,3 @@ lspconfig.gopls.setup {
 		},
 	},
 }
-
--- Setup lua-dev supports which provides information about the neovim API's
-local neodev = require("neodev").setup({})
-lspconfig.sumneko_lua.setup(neodev)

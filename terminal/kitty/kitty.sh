@@ -15,5 +15,7 @@ install_kitty() {
 configure_kitty() {
   echo_item "symlinking kitty config" "green"
   mkdir -p ~/.config/kitty
+  mkdir -p ~/.config/kitty/themes
+	ln -sf ~/dotfiles/terminal/kitty/macchiato.conf ~/.config/kitty/themes/macchiato.conf
   ln -sf ~/dotfiles/terminal/kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
