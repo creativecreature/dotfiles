@@ -4,3 +4,4 @@ build/
 dist/
 yarn.lock
 tags
+vendor/
