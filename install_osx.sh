@@ -32,8 +32,9 @@ WANTED_PACKAGES=(
 	jq
 	mongodb-community
 	neovim
+	orlangure/tap/gocovsh
 	postgresql
-	rg
+	ripgrep
 	rust
 	starship
 	tfenv
@@ -65,6 +66,7 @@ WANTED_CASKS=(
 	slack
 	todoist
 	vlc
+  font-hack-nerd-font
 )
 INSTALLED_CASKS=$(brew list --cask)
 
@@ -86,19 +88,24 @@ brew upgrade
 brew update
 brew tap mongodb/brew
 brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
-echo_item "Installing packages" "green"
-brew install ${WANTED_PACKAGES[@]}
+if [ ${#WANTED_PACKAGES[@]} -eq 0 ]; then
+	echo_item "All packages are already installed" "green"
+else
+	echo_item "Installing packages" "green"
+	brew install ${WANTED_PACKAGES[@]}
+fi
 
-echo_item "Installing casks" "green"
-brew install ${WANTED_CASKS[@]} --cask
+if [ ${#WANTED_CASKS[@]} -eq 0 ]; then
+	echo_item "All casks are already installed" "green"
+else
+	echo_item "Installing casks" "green"
+	brew install ${WANTED_CASKS[@]} --cask
+fi
 
 echo_item "Performing cleanup" "green"
 brew cleanup
-
-echo_item "Installing nerdfonts" "green"
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
 
 install_node() {
   if exists "node"; then
