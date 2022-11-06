@@ -27,12 +27,6 @@ bindkey '^ ' autosuggest-accept
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# Add bin to path, should eventually remove this and use dotfiles bin
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
 # Golang
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/go
@@ -52,11 +46,6 @@ fi
 # OSX specific setup
 if [[ "$(uname)" == "Darwin" ]]; then
   export ZSH_DISABLE_COMPFIX=true
-fi
-
-# Disable some git commands for Starship in KLAPP
-if [[ "$(pwd)" =~ klarna-app ]]; then
-  export STARSHIP_CONFIG=~/.config/starship-klapp.toml
 fi
 
 # Add bin to path, should eventually remove this and use dotfiles bin
@@ -88,19 +77,15 @@ alias spotify=spt
 # fzf search with ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden -i --ignore-file '~/.ignore'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-# Removes username@host from the terminal prompt
-# prompt_context() {}
-
-# Only show current dir not entire path
-# prompt_dir() { prompt_segment blue black '%c' }
 
 export TERM='xterm-kitty'
 
-# I always want TMUX to run
+# Helper to detect if we are running tmux
 _not_inside_tmux() {
   [[ -z "$TMUX" ]]
 }
 
+# I always want TMUX to run
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
     tat
@@ -108,22 +93,9 @@ ensure_tmux_is_running() {
 }
 ensure_tmux_is_running
 
-# Klarna
-eval "$(direnv hook $SHELL)"
-
-function aws-profile() {
-  export AWS_PROFILE="$(grep '\[.*\]' ~/.aws/credentials | tr -d '[-]' | fzf)"
-}
-
-function aws-signin() {
-  aws-profile
-  aws-login
-}
-
 # enable zmv
 autoload zmv
 fpath=($fpath "/home/conner/.zfunctions")
-
 
 # zsh functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -136,4 +108,5 @@ export XDG_CONFIG_HOME=$HOME/.config
 # Set starship ZSH as a prompt
 eval "$(starship init zsh)"
 
-alias luamake=/home/cnr/lua-language-server/3rd/luamake/luamake
+# direnv needs to be hooked into the shell to work properly
+eval "$(direnv hook $SHELL)"
