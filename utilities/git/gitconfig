@@ -14,7 +14,7 @@
 	path = ~/code/mojang/.gitconfig
 
 [log]
-	showSignature = true
+	showSignature = false
 
 [commit]
 	gpgSign = true
