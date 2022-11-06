@@ -29,6 +29,7 @@ WANTED_PACKAGES=(
 	gnupg
 	go
 	golang-migrate
+	hugo
 	jq
 	mongodb-community
 	neovim
