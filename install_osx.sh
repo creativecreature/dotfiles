@@ -22,6 +22,7 @@ fi
 WANTED_PACKAGES=(
 	coreutils
 	direnv
+	dive
 	dockutil
 	efm-langserver
 	fzf
