@@ -18,6 +18,7 @@ if test ! $(which brew); then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Packages we want to have installed
 WANTED_PACKAGES=(
 	coreutils
 	direnv
@@ -45,8 +46,18 @@ WANTED_PACKAGES=(
 	tree
 	wget
 )
+
+# Currently installed packages
 INSTALLED_PACKAGES=$(brew leaves)
 
+# Extract the packages that we are missing
+for index in "${!WANTED_PACKAGES[@]}"; do
+	if [[ "${INSTALLED_PACKAGES[*]}" =~ "${WANTED_PACKAGES[$index]}" ]]; then
+		unset -v WANTED_PACKAGES[$index]
+	fi
+done
+
+# Casks we want to have installed
 WANTED_CASKS=(
 	1password
 	1password-cli
@@ -68,28 +79,28 @@ WANTED_CASKS=(
 	vlc
   font-hack-nerd-font
 )
+
+# Currently installed casks
 INSTALLED_CASKS=$(brew list --cask)
 
-# Filter out already installed packages and casks
-for index in "${!WANTED_PACKAGES[@]}"; do
-	if [[ "${INSTALLED_PACKAGES[*]}" =~ "${WANTED_PACKAGES[$index]}" ]]; then
-		unset -v WANTED_PACKAGES[$index]
-	fi
-done
-
+# Extract the casks that we are missing
 for index in "${!WANTED_CASKS[@]}"; do
 	if [[ "${INSTALLED_CASKS[*]}" =~ "${WANTED_CASKS[$index]}" ]]; then
 		unset -v WANTED_CASKS[$index]
 	fi
 done
 
-echo_item "Updating homebrew" "green"
-brew upgrade
-brew update
+echo_item "Adding additional repositories to the homebrew formulaes" "green"
 brew tap mongodb/brew
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 
+echo_item "Updating homebrew" "green"
+brew update
+brew upgrade
+
+
+echo_item "Installing missing packages" "green"
 if [ ${#WANTED_PACKAGES[@]} -eq 0 ]; then
 	echo_item "All packages are already installed" "green"
 else
@@ -97,6 +108,7 @@ else
 	brew install ${WANTED_PACKAGES[@]}
 fi
 
+echo_item "Installing missing casks" "green"
 if [ ${#WANTED_CASKS[@]} -eq 0 ]; then
 	echo_item "All casks are already installed" "green"
 else
