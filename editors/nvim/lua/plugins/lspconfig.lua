@@ -97,6 +97,9 @@ lspconfig.gopls.setup {
 				unusedparams = true,
 			},
 			staticcheck = true,
+			env = {
+				GOFLAGS = "-tags=windows,linux,darwin,integration",
+			},
 		},
 	},
 }
