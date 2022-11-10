@@ -65,6 +65,7 @@ WANTED_CASKS=(
 	amethyst
 	centered
 	discord
+	figma
 	firefox
 	firefox-developer-edition
 	goland
