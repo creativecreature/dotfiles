@@ -126,7 +126,6 @@ bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 # ********************************* PLUGINS ***********************************
 # =============================================================================
 
-set -g @plugin 'creativecreature/tmux-1password'
 set -g @plugin 'catppuccin/tmux'
 set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
 
