@@ -121,6 +121,7 @@ nmap({
 	{ '<Leader>gd', cmd('Gvdiffsplit'), opts(noremap) },
 	{ '<Leader>gp', cmd('Git pull'), opts(noremap) },
 	{ '<Leader>gh', cmd('0Gclog'), opts(noremap) },
+	{ 'dv', cmd('Gdiff'), opts(noremap) },
 
 	-- Git worktree
 	{ '<Leader>gw', cmd('lua require(\'telescope\').extensions.git_worktree.git_worktrees()'), opts(noremap) },
