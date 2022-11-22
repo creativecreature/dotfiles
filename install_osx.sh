@@ -20,6 +20,7 @@ fi
 
 # Packages we want to have installed
 WANTED_PACKAGES=(
+	awscli
 	coreutils
 	direnv
 	dive
