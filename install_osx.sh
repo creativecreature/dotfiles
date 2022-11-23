@@ -93,7 +93,7 @@ for index in "${!WANTED_CASKS[@]}"; do
 	fi
 done
 
-echo_item "Adding additional repositories to the homebrew formulaes" "green"
+echo_item "Adding additional repositories to the homebrew" "green"
 brew tap mongodb/brew
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
