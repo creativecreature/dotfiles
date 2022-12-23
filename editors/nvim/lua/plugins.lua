@@ -52,7 +52,6 @@ return packer.startup(function(use)
 	use { 'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end }
 	use { 'nvim-treesitter/nvim-treesitter', config = function() require('plugins.treesitter') end }
 	use 'nvim-treesitter/nvim-treesitter-textobjects'
-	use 'nvim-treesitter/nvim-treesitter-context'
 
 	-- Editing
 	use({
@@ -71,17 +70,16 @@ return packer.startup(function(use)
 	use 'tpope/vim-commentary'
 	use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end, after = "nvim-treesitter" }
 	use 'christoomey/vim-sort-motion'
-	use 'github/copilot.vim'
 
 	-- Project navigation
 	use { 'kyazdani42/nvim-tree.lua', config = function() require('plugins.tree') end }
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {
+			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 			{ 'nvim-lua/popup.nvim' },
 			{ 'nvim-lua/plenary.nvim' },
-			{ "nvim-telescope/telescope-live-grep-args.nvim" }
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 		},
 		config = function() require('plugins.telescope') end
 	}
