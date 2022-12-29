@@ -10,7 +10,7 @@ telescope.setup {
 		layout_strategy = "bottom_pane", -- Puts the window at the bottom
 		layout_config = {
 			prompt_position = "bottom", -- Puts the cursor at the bottom of the window
-			height = 0.3
+			height = 0.99
 		},
 		mappings = {
 			i = { ["<esc>"] = actions.close } -- Close on escape
@@ -22,6 +22,8 @@ telescope.setup {
 		},
 		buffers = {
 			sort_lastused = true,
+			previewer = false,
+			height = 0.99,
 			mappings = {
 				i = { ["<c-d>"] = require("telescope.actions").delete_buffer },
 				n = { ["<c-d>"] = require("telescope.actions").delete_buffer }
