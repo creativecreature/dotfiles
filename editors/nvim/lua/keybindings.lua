@@ -10,6 +10,7 @@ vim.g.mapleader = ' '
 
 -- normal mode
 nmap({
+	{ '<Leader><tab>', ':set list!<CR>', opts(noremap) },
 	-- yank
 	{ 'Y', 'y$', opts(noremap, silent) },
 	-- buffer nav
