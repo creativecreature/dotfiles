@@ -106,6 +106,8 @@ nmap({
 	{ '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
 	{ '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
 	{ '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+	{ '<Leader>ds', cmd('Telescope lsp_document_symbols'), opts(noremap, silent) },
+	{ '<Leader>sd', cmd('Telescope diagnostics'), opts(noremap, silent) },
 	{ 'gr', cmd('lua require\'telescope.builtin\'.lsp_references{}'), opts(noremap) },
 	{ 'gd', cmd('lua require\'telescope.builtin\'.lsp_definitions{}'), opts(noremap) },
 	{ 'gD', cmd('lua require\'telescope.builtin\'.lsp_definitions{jump_type = "vsplit"}'), opts(noremap) },

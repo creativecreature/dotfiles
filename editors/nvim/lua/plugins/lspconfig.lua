@@ -2,6 +2,29 @@ require("neodev").setup({})
 local lspconfig = require('lspconfig')
 local util = require('lspconfig/util')
 
+--  Add any additional override configuration in the following tables. They will be passed to
+--  the `settings` field of the server config. See the documentation for more information.
+local servers = {
+	tsserver = {},
+	gopls = {},
+	bashls = {},
+	dockerls = {},
+	vimls = {},
+	pyright = {},
+	cssls = {},
+	html = {},
+	sumneko_lua = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			telemetry = { enable = false },
+		},
+	},
+}
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 local function on_attach(client)
 	-- We are going to use EFM to format typescript/javascript files
 	if client.name == "typescript" or client.name == "tsserver" then
@@ -9,22 +32,28 @@ local function on_attach(client)
 	end
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- Setup mason so it can manage external tooling
+require('mason').setup()
 
--- Define the language servers we want to use and initialize them.
-local servers = {
-	"tsserver", "pyright", "vimls", "dockerls", "bashls", "html", "jsonls", "cssls", "gopls", "sumneko_lua"
+-- Ensure the servers above are installed
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+	ensure_installed = vim.tbl_keys(servers),
 }
-local lspinstaller = require("nvim-lsp-installer")
-lspinstaller.setup { ensure_installed = servers }
-for _, server in ipairs(lspinstaller.get_installed_servers()) do
-	lspconfig[server.name].setup {
-		on_attach = on_attach,
-		capabilities = capabilities,
-		flags = { debounce_text_changes = 150 }
-	}
-end
+
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = servers[server_name],
+    }
+  end,
+}
+
+-- Turn on lsp status information
+require('fidget').setup()
 
 -- Automatically update diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

@@ -8,14 +8,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -25,6 +17,14 @@ end
 
 -- Have packer use a popup window
 packer.init { display = { open_fn = function() return require("packer.util").float { border = "rounded" } end } }
+
+-- Automatically source and re-compile packer whenever you save this init.lua
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+	command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
+	group = packer_group,
+	pattern = vim.fn.expand '$MYVIMRC',
+})
 
 -- Install plugins
 return packer.startup(function(use)
@@ -36,20 +36,25 @@ return packer.startup(function(use)
 		as = "catppuccin",
 		config = function() require("plugins.catppuccin") end,
 	}
-
 	use {
 		"feline-nvim/feline.nvim",
 		after = "catppuccin",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function() require("plugins.feline") end,
 	}
-
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
 
 	-- Languages
-	use "folke/neodev.nvim"
-	use "williamboman/nvim-lsp-installer"
-	use { 'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end }
+	use {
+		'neovim/nvim-lspconfig',
+		config = function() require('plugins.lspconfig') end,
+		requires = {
+			'folke/neodev.nvim',
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+			'j-hui/fidget.nvim',
+		}
+	}
 	use { 'nvim-treesitter/nvim-treesitter', config = function() require('plugins.treesitter') end }
 	use 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -58,8 +63,8 @@ return packer.startup(function(use)
 		"hrsh7th/nvim-cmp",
 		config = function() require("plugins.cmp") end,
 		requires = {
-			"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-vsnip",
+			"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-emoji",
 			{ "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup({ map_cr = false }) end }
 		}
@@ -70,6 +75,7 @@ return packer.startup(function(use)
 	use 'tpope/vim-commentary'
 	use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end, after = "nvim-treesitter" }
 	use 'christoomey/vim-sort-motion'
+	use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
 	-- Project navigation
 	use { 'kyazdani42/nvim-tree.lua', config = function() require('plugins.tree') end }
@@ -109,6 +115,11 @@ return packer.startup(function(use)
 	-- Misc
 	use 'wakatime/vim-wakatime'
 	use 'creativecreature/vim-code-harvest'
+
+	local has_plugins, plugins = pcall(require, 'custom.plugins')
+	if has_plugins then
+		plugins(use)
+	end
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

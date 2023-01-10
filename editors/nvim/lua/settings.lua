@@ -21,6 +21,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 
+opt.updatetime = 200 -- Decrease update time
 opt.shell = 'zsh' -- Set zsh as the prompt for vim
 opt.history = 10000 -- Increase the history
 opt.swapfile = false -- Dont use swap files
