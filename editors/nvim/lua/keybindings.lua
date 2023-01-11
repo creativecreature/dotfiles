@@ -1,64 +1,112 @@
-local keymapper = require('keymapper')
-
-local nmap, imap, vmap = keymapper.nmap, keymapper.imap, keymapper.vmap
-local silent, noremap = keymapper.silent, keymapper.noremap
-local opts = keymapper.new_opts
-local cmd = keymapper.cmd
+local function cmd(str)
+	return '<cmd>' .. str .. '<CR>'
+end
 
 -- Use space as leader key
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- normal mode
-nmap({
-	{ '<Leader><tab>', ':set list!<CR>', opts(noremap) },
-	-- yank
-	{ 'Y', 'y$', opts(noremap, silent) },
-	-- buffer nav
-	{ ']b', cmd('bn'), opts(noremap) },
-	{ '[b', cmd('bp'), opts(noremap) },
-	{ ',q', cmd('bp'), opts(noremap) },
-	{ ',w', cmd('bn'), opts(noremap) },
-	{ ',c', ':bp<CR>:bd #<CR>', opts(noremap) },
+-- =============================================================================
+-- === NORMAL MODE =============================================================
+-- =============================================================================
+-- Toggle list chars
+vim.keymap.set({ 'n' }, '<Leader><tab>', ':set list!<CR>', { silent = true, desc = "[t]oggle list chars" })
 
-	-- Copy buffer path
-	{ 'cp', ':let @* = expand("%")<cr>', opts(noremap, silent) },
+-- Yank Line
+vim.keymap.set({ 'n' }, 'Y', 'y$', { silent = true, desc = "[Y]ank line" })
 
-	-- search will center on the line it's found in.
-	{ 'n', 'nzzzv', opts(noremap) },
-	{ 'N', 'Nzzzv', opts(noremap) },
+-- Copy path to buffer
+vim.keymap.set({ 'n' }, 'cp', ':let @* = expand("%")<CR>', { silent = true, desc = "[c]opy [p]ath to buffer" })
 
-	-- Don't move the cursor when joining lines.
-	{ 'J', 'mzJ`z', opts(noremap) },
+-- Search will center on the line it found
+vim.keymap.set({ 'n' }, 'n', 'nzzzv', { silent = true, desc = "Next search result" })
+vim.keymap.set({ 'n' }, 'N', 'Nzzzv', { silent = true, desc = "Previous search result" })
 
-	-- Split
-	{ ',x', ':<C-u>split<CR>', opts(noremap, silent) },
-	{ ',v', ':<C-u>vsplit<CR>', opts(noremap, silent) },
+-- Don't move the cursor when joining lines.
+vim.keymap.set({ 'n' }, 'J', 'mzJ`z', { silent = true, desc = "[J]oin lines" })
 
-	-- Clean search highlight
-	{ ',<space>', ':noh<CR>', opts(noremap, silent) },
+-- Split
+vim.keymap.set({ 'n' }, ',x', ':<C-u>split<CR>', { silent = true, desc = "Horizontal split" })
+vim.keymap.set({ 'n' }, ',v', ':<C-u>vsplit<CR>', { silent = true, desc = "[V]ertical split" })
 
-	{ 'K', ':m \'<-2<CR>gv=gv', opts(noremap) },
-})
+-- Clean search highlight
+vim.keymap.set({ 'n' }, ',<space>', ':noh<CR>', { silent = true, desc = "Clean search highlight" })
 
--- insert mode
-imap({
-	{ '<C-h>', '<Bs>', opts(noremap) },
-	{ '<C-e>', '<End>', opts(noremap) },
-})
+-- =============================================================================
+-- === NORMAL MODE PLUGINS =====================================================
+-- =============================================================================
+-- Packer
+vim.keymap.set({ 'n' }, '<Leader>pu', cmd('PackerUpdate'), { silent = true, desc = "[P]acker [u]pdate" })
+vim.keymap.set({ 'n' }, '<Leader>pi', cmd('PackerInstall'), { silent = true, desc = "[P]acker [i]nstall" })
+vim.keymap.set({ 'n' }, '<Leader>pc', cmd('PackerCompile'), { silent = true, desc = "[P]acker [c]ompile" })
 
--- visul mode
-vmap({
-	-- Vmap for maintain Visual Mode after shifting > and <
-	{ '<', '<gv', opts(noremap) },
-	{ '>', '>gv', opts(noremap) },
+--  Lsp
+vim.keymap.set({ 'n' }, '<Leader>f', cmd('lua vim.lsp.buf.code_action()'), { silent = true, desc = "Code action" })
+vim.keymap.set({ 'n' }, 'K', cmd('lua vim.lsp.buf.hover()'), { silent = true, desc = "Hover description" })
+vim.keymap.set({ 'n' }, 'gt', cmd('lua vim.lsp.buf.type_definition()'), { silent = true, desc = "[G]o to [t]ype" })
+vim.keymap.set({ 'n' }, 'gi', cmd('lua vim.lsp.buf.implementation()'),
+	{ silent = true, desc = "[G]o to [i]mplementation" })
+vim.keymap.set({ 'n' }, '<A-k>', cmd('lua vim.diagnostic.goto_prev()'), { silent = true, desc = "Go to previus error" })
+vim.keymap.set({ 'n' }, '<A-j>', cmd('lua vim.diagnostic.goto_next()'), { silent = true, desc = "Go to next error" })
+vim.keymap.set({ 'n' }, '=f', cmd('lua vim.lsp.buf.format({})'), { silent = true, desc = "[F]ormat buffer" })
 
-	-- Move visual block
-	{ 'J', ':m \'>+1<CR>gv=gv', opts(noremap, silent) },
-	{ 'K', ':m \'<-2<CR>gv=gv', opts(noremap, silent) },
-})
+-- Filetree
+vim.keymap.set({ 'n' }, '<F2>', cmd('NvimTreeFindFile'), { silent = true, desc = "Find file in filetree" })
+vim.keymap.set({ 'n' }, '<F3>', cmd('NvimTreeToggle'), { silent = true, desc = "Toggle filetree" })
+
+-- Telescope
+local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
+vim.keymap.set({ 'n' }, '<Leader>b', cmd('Telescope buffers'), { silent = true, desc = "List open [b]uffers" })
+vim.keymap.set({ 'n' }, '<Leader>fa', cmd('Telescope live_grep'), { silent = true, desc = "[F]ind [a]ll matches" })
+vim.keymap.set({ 'n' }, '<Leader>ff', cmd('Telescope find_files'), { silent = true, desc = "[F]ind [f]iles" })
+vim.keymap.set({ 'n' }, '<Leader>ds', cmd('Telescope lsp_document_symbols'), { silent = true, desc = "Find [d]ocument [s]ymbol" })
+vim.keymap.set({ 'n' }, '<Leader>sd', cmd('Telescope diagnostics'), { silent = true, desc = "[S]ee [d]iagnostics" })
+vim.keymap.set({ 'n' }, 'gr', cmd('lua require\'telescope.builtin\'.lsp_references{}'), { silent = true })
+vim.keymap.set({ 'n' }, 'gd', cmd('lua require\'telescope.builtin\'.lsp_definitions{}'), { silent = true })
+vim.keymap.set({ 'n' }, 'gD', cmd('lua require\'telescope.builtin\'.lsp_definitions{jump_type = "vsplit"}'),
+	{ silent = true })
+vim.keymap.set({ 'n' }, 'gX', cmd('lua require\'telescope.builtin\'.lsp_definitions{jump_type = "split"}'),
+	{ silent = true })
+vim.keymap.set({ 'n' }, '<C-p>',
+	cmd('lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })'), { silent = true })
+vim.keymap.set({ 'n' }, '\\', cmd('Telescope buffers'), { silent = true })
+vim.keymap.set({ 'n' }, '<Leader>/', cmd('lua require("telescope").extensions.live_grep_args.live_grep_args()'),
+	{ silent = true })
+
+-- Todo comments
+vim.keymap.set({ 'n' }, '|', cmd('TodoTelescope'), { silent = true })
+
+-- Fugitive
+vim.keymap.set({ 'n' }, '<Leader>gs', cmd('G'), { silent = true })
+vim.keymap.set({ 'n' }, '<Leader>gd', cmd('Gvdiffsplit'), { silent = true })
+vim.keymap.set({ 'n' }, '<Leader>gp', cmd('Git pull'), { silent = true })
+vim.keymap.set({ 'n' }, '<Leader>gh', cmd('0Gclog'), { silent = true })
+vim.keymap.set({ 'n' }, 'dv', cmd('Gdiff'), { silent = true })
+
+-- Git worktree
+vim.keymap.set({ 'n' }, '<Leader>gw', cmd('lua require(\'telescope\').extensions.git_worktree.git_worktrees()'),
+	{ silent = true })
+vim.keymap.set({ 'n' }, '<Leader>gc', cmd('lua require(\'telescope\').extensions.git_worktree.create_git_worktree()'),
+	{ silent = true })
+
+-- Vim test
+vim.keymap.set({ 'n' }, 'tn', cmd('TestNearest'), { silent = true })
+vim.keymap.set({ 'n' }, 'tf', cmd('TestFile'), { silent = true })
+vim.keymap.set({ 'n' }, 'ts', cmd('TestSuite'), { silent = true })
 
 
--- ============  TODO ==============
+-- =============================================================================
+-- === VISUAL MODE =============================================================
+-- =============================================================================
+--  Maintain visual mode after shifting > and <
+vim.keymap.set({ 'v' }, '<', '<gv', { silent = true })
+vim.keymap.set({ 'v' }, '>', '>gv', { silent = true })
+
+-- Move visual block
+vim.keymap.set({ 'v' }, 'J', ':m \'>+1<CR>gv=gv', { silent = true })
+vim.keymap.set({ 'v' }, 'K', ':m \'<-2<CR>gv=gv', { silent = true })
+
+
 -- Undo breakpoints. Pressing u will take these breakpoints into consideration.
 vim.cmd [[
   inoremap , ,<c-g>u
@@ -72,66 +120,3 @@ vim.cmd [[
   nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
   nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 ]]
-
-
--- PLUGINS --
-local find_command = "{ 'rg', '--files', '--hidden', '-g', '!node_modules/**', '-g', '!.git/**', }"
-
--- TODO:  I think its nicer to put a keybindings file in the modules directory
-nmap({
-	-- packer
-	{ '<Leader>pu', cmd('PackerUpdate'), opts(noremap, silent) },
-	{ '<Leader>pi', cmd('PackerInstall'), opts(noremap, silent) },
-	{ '<Leader>pc', cmd('PackerCompile'), opts(noremap, silent) },
-
-	--  lsp
-	{ '<Leader>f', cmd('lua vim.lsp.buf.code_action()'), opts(noremap) },
-	{ 'K', cmd('lua vim.lsp.buf.hover()'), opts(noremap) },
-	{ 'gt', cmd('lua vim.lsp.buf.type_definition()'), opts(noremap) },
-	{ 'gi', cmd('lua vim.lsp.buf.implementation()'), opts(noremap) },
-	{ '<A-k>', cmd('lua vim.diagnostic.goto_prev()'), opts(noremap) },
-	{ '<A-j>', cmd('lua vim.diagnostic.goto_next()'), opts(noremap) },
-	{ '=f', cmd('lua vim.lsp.buf.format({})'), opts(noremap) },
-
-	-- dashboard
-	{ '<Leader>n', cmd('DashboardNewFile'), opts(noremap, silent) },
-	{ '<Leader>ss', cmd('SessionSave'), opts(noremap, silent) },
-	{ '<Leader>sl', cmd('SessionLoad'), opts(noremap, silent) },
-
-	-- nvimtree
-	{ '<F2>', cmd('NvimTreeFindFile'), opts(noremap) },
-	{ '<F3>', cmd('NvimTreeToggle'), opts(noremap) },
-
-	-- Telescope
-	{ '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
-	{ '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-	{ '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
-	{ '<Leader>ds', cmd('Telescope lsp_document_symbols'), opts(noremap, silent) },
-	{ '<Leader>sd', cmd('Telescope diagnostics'), opts(noremap, silent) },
-	{ 'gr', cmd('lua require\'telescope.builtin\'.lsp_references{}'), opts(noremap) },
-	{ 'gd', cmd('lua require\'telescope.builtin\'.lsp_definitions{}'), opts(noremap) },
-	{ 'gD', cmd('lua require\'telescope.builtin\'.lsp_definitions{jump_type = "vsplit"}'), opts(noremap) },
-	{ 'gX', cmd('lua require\'telescope.builtin\'.lsp_definitions{jump_type = "split"}'), opts(noremap) },
-	{ '<C-p>', cmd('lua require(\'telescope.builtin\').find_files({find_command = ' .. find_command .. ' })'), opts(noremap) },
-	{ '\\', cmd('Telescope buffers'), opts(noremap) },
-	{ '<Leader>/', cmd('lua require("telescope").extensions.live_grep_args.live_grep_args()'), opts(noremap) },
-
-	-- Todo comments
-	{ '|', cmd('TodoTelescope'), opts(noremap) },
-
-	-- Fugitive
-	{ '<Leader>gs', cmd('G'), opts(noremap) },
-	{ '<Leader>gd', cmd('Gvdiffsplit'), opts(noremap) },
-	{ '<Leader>gp', cmd('Git pull'), opts(noremap) },
-	{ '<Leader>gh', cmd('0Gclog'), opts(noremap) },
-	{ 'dv', cmd('Gdiff'), opts(noremap) },
-
-	-- Git worktree
-	{ '<Leader>gw', cmd('lua require(\'telescope\').extensions.git_worktree.git_worktrees()'), opts(noremap) },
-	{ '<Leader>gc', cmd('lua require(\'telescope\').extensions.git_worktree.create_git_worktree()'), opts(noremap) },
-
-	-- Vim test
-	{ 'tn', cmd('TestNearest'), opts(noremap) },
-	{ 'tf', cmd('TestFile'), opts(noremap) },
-	{ 'ts', cmd('TestSuite'), opts(noremap) },
-})

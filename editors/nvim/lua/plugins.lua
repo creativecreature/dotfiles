@@ -75,7 +75,7 @@ return packer.startup(function(use)
 	use 'tpope/vim-commentary'
 	use { 'windwp/nvim-ts-autotag', config = function() require("plugins.autotag") end, after = "nvim-treesitter" }
 	use 'christoomey/vim-sort-motion'
-	use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+	-- use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
 	-- Project navigation
 	use { 'kyazdani42/nvim-tree.lua', config = function() require('plugins.tree') end }
