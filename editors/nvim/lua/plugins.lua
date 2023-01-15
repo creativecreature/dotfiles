@@ -39,7 +39,6 @@ return packer.startup(function(use)
 	use {
 		"feline-nvim/feline.nvim",
 		after = "catppuccin",
-		requires = "kyazdani42/nvim-web-devicons",
 		config = function() require("plugins.feline") end,
 	}
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
