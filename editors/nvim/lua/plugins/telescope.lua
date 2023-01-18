@@ -6,6 +6,8 @@ telescope.load_extension("live_grep_args")
 
 telescope.setup {
 	defaults = {
+		selection_caret = " ❯ ",
+		entry_prefix = "  ",
 		previewer = false,
 		layout_strategy = "bottom_pane", -- Puts the window at the bottom
 		layout_config = {
