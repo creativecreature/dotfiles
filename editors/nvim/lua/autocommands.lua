@@ -24,7 +24,7 @@ cmd [[
   au BufRead,BufNewFile Jenkinsfile setfiletype groovy
 
 	" Set typescript errors in quickfix
-  augroup strdr4605
+  augroup makeTS
     autocmd FileType typescript,typescriptreact compiler tsc | setlocal makeprg=npx\ tsc
   augroup END
 ]]
