@@ -142,18 +142,18 @@ set -g status-right ""
 # Windows ------------------------------
 set -g status-justify centre
 set -g window-status-format "#[fg=white,bg=default] #W "
-set -g window-status-current-format "#[fg=#B4F9F8,bg=default]#[fg=#3b4261,bg=#B4F9F8] #W #[fg=#B4F9F8,bg=default]"
-setw -g window-active-style "fg=#a3a9c2,bg=#24273a"
-setw -g window-style "fg=#a3a9c2,bg=#24273a"
-setw -g pane-active-border-style "fg=#24273a,bg=#24273a"
-setw -g pane-border-style "fg=#24273a,bg=#24273a"
-set -g status-left "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #S #[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] #{b:pane_current_path} #[fg=#3b4261,bg=default]"
+set -g window-status-current-format "#[fg=#b2ccd6,bg=default]#[fg=#343A51,bg=#b2ccd6] #W #[fg=#b2ccd6,bg=default]"
+setw -g window-active-style "fg=#a3a9c2,bg=#252837"
+setw -g window-style "fg=#a3a9c2,bg=#252837"
+setw -g pane-active-border-style "fg=#252837,bg=#252837"
+setw -g pane-border-style "fg=#252837,bg=#252837"
+set -g status-left "#[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] #S #[fg=#343A51,bg=default] #[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] #{b:pane_current_path} #[fg=#343A51,bg=default]"
 
 set -g @sysstat_cpu_color_low "#a9b1d6"
 set -g @sysstat_mem_color_low "#a9b1d6"
 set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
 set -g @sysstat_mem_view_tmpl "#{mem.pused} "
-set -g status-right "#[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] mem #{sysstat_mem}#[fg=#3b4261,bg=default] #[fg=#3b4261,bg=default]#[fg=#a9b1d6,bg=#3b4261] cpu #{sysstat_cpu}#[fg=#3b4261,bg=default]"
+set -g status-right "#[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] mem #{sysstat_mem}#[fg=#343A51,bg=default] #[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] cpu #{sysstat_cpu}#[fg=#343A51,bg=default]"
 
 # Forks --------------------------------
 set -g @plugin 'creativecreature/tmux-plugin-sysstat-1'

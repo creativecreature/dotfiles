@@ -140,7 +140,6 @@ install_node() {
 }
 install_node
 
-
 install_oh_my_zsh() {
 	if [[ -d ~/.oh-my-zsh ]]; then
 		echo_item "oh my zsh is already installed" "green"

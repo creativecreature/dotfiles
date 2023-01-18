@@ -32,13 +32,11 @@ return packer.startup(function(use)
 
 	-- UI
 	use {
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function() require("plugins.catppuccin") end,
+		'JoosepAlviste/palenightfall.nvim',
+		config = function() require('palenightfall').setup() end,
 	}
 	use {
 		"feline-nvim/feline.nvim",
-		after = "catppuccin",
 		config = function() require("plugins.feline") end,
 	}
 	use { 'norcalli/nvim-colorizer.lua', event = "BufReadPre", config = function() require('colorizer').setup() end }
@@ -51,7 +49,6 @@ return packer.startup(function(use)
 			'folke/neodev.nvim',
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
-			'j-hui/fidget.nvim',
 		}
 	}
 	use { 'nvim-treesitter/nvim-treesitter', config = function() require('plugins.treesitter') end }

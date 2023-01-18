@@ -52,9 +52,6 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
--- Turn on lsp status information
-require('fidget').setup()
-
 -- Automatically update diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
@@ -71,8 +68,8 @@ end
 
 lspSymbol('Error', '')
 lspSymbol('Warning', '')
-lspSymbol('Hint', '')
-lspSymbol('Information', '')
+lspSymbol('Information', '')
+lspSymbol('Hint', '')
 
 -- Configure the look for all floating previews
 -- For more info see: https://github-wiki-see.page/m/neovim/nvim-lspconfig/wiki/UI-customization
