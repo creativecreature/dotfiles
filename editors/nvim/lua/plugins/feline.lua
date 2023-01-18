@@ -201,12 +201,15 @@ local function get()
 		icon = " " .. assets.lsp.hint .. " ",
 	}
 
-
 	-- RIGHT (Current File)
 	components.active[3][1] = {
 		provider = function()
 			local filename = vim.fn.expand "%:t"
 			return " " .. filename .. " "
+		end,
+		enabled = function()
+			local filename = vim.fn.expand "%:t"
+			return not (filename == nil or filename == '')
 		end,
 		hl = {
 			fg = settings.text,
