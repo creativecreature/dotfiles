@@ -32,7 +32,7 @@ return packer.startup(function(use)
 
 	-- UI
 	use {
-		'JoosepAlviste/palenightfall.nvim',
+		'creativecreature/palenightfall.nvim',
 		config = function() require('palenightfall').setup() end,
 	}
 	use {
