@@ -204,8 +204,9 @@ local function get()
 	-- RIGHT (Current File)
 	components.active[3][1] = {
 		provider = function()
+			local row, column = unpack(vim.api.nvim_win_get_cursor(0))
 			local filename = vim.fn.expand "%:t"
-			return " " .. filename .. " "
+			return " " .. filename .. " " .. row ..":" .. column .. " "
 		end,
 		enabled = function()
 			local filename = vim.fn.expand "%:t"
