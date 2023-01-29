@@ -37,6 +37,7 @@ WANTED_PACKAGES=(
 	mongodb-community
 	neovim
 	orlangure/tap/gocovsh
+	pnpm
 	postgresql
 	ripgrep
 	rust
