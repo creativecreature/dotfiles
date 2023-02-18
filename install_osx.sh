@@ -71,6 +71,7 @@ WANTED_CASKS=(
   figma
   firefox
   firefox-developer-edition
+  font-hack-nerd-font
   goland
   google-chrome
   kitty
@@ -79,10 +80,10 @@ WANTED_CASKS=(
   nordvpn
   obsidian
   postman
+  raycast
   slack
   todoist
   vlc
-  font-hack-nerd-font
 )
 
 # Currently installed casks

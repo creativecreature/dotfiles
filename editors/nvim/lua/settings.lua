@@ -39,18 +39,18 @@ opt.number = true -- Show the current line as the real line number
 opt.relativenumber = true -- Show other lines relative to the current line
 
 -- Indentation
--- opt.shiftwidth=2 -- Number of spaces to use for autoindenting
--- opt.tabstop=2 -- Number of space characters to insert when tab is pressed
--- opt.softtabstop=2 -- <Tab> and <BS> inserts and deletes right amount of spaces
--- opt.expandtab=true -- Insert space characters whenever tab key is pressed
+opt.shiftwidth = 2 -- Number of spaces to use for autoindenting
+opt.tabstop = 2 -- Number of space characters to insert when tab is pressed
+opt.softtabstop = 2 -- <Tab> and <BS> inserts and deletes right amount of spaces
+opt.expandtab = true -- Insert space characters whenever tab key is pressed
 
 -- Indent with tabs
-vim.cmd [[
-  set autoindent
-  set noexpandtab
-  set tabstop=2
-  set shiftwidth=2
-]]
+-- vim.cmd [[
+--   set autoindent
+--   set noexpandtab
+--   set tabstop=2
+--   set shiftwidth=2
+-- ]]
 
 -- Better copy pasting
 opt.clipboard = 'unnamed,unnamedplus'
@@ -76,5 +76,5 @@ opt.termguicolors = true
 
 -- dw (delete word) will delete word with hyphens, e.g "some-word" gets deleted by having the cursor on s and pressing dw
 cmd [[
-	set iskeyword+=-
+  set iskeyword+=-
 ]]

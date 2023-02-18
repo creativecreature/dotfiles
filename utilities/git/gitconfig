@@ -10,6 +10,9 @@
 [includeif "gitdir:~/code/creativecreature/"]
 	path = ~/code/creativecreature/.gitconfig
 
+[includeif "gitdir:~/code/work/"]
+	path = ~/code/work/.gitconfig
+
 [includeif "gitdir:~/code/mojang/"]
 	path = ~/code/mojang/.gitconfig
 

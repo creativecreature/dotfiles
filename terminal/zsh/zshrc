@@ -30,7 +30,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Golang
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Linux specific setup
 if [[ "$(uname)" == "Linux" ]]; then
