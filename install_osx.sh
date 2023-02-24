@@ -82,6 +82,7 @@ WANTED_CASKS=(
   postman
   raycast
   slack
+  spotify
   todoist
   vlc
 )
