@@ -74,6 +74,7 @@ WANTED_CASKS=(
   font-hack-nerd-font
   goland
   google-chrome
+  insomnia
   kitty
   mongodb-compass
   monodraw
