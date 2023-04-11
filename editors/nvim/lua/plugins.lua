@@ -85,7 +85,24 @@ return packer.startup(function(use)
 
 	-- Editing
 	use({
+		"zbirenbaum/copilot.lua",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
+	use({
 		"hrsh7th/nvim-cmp",
+		after = { "copilot-cmp" },
 		config = function()
 			require("plugins.cmp")
 		end,
@@ -173,12 +190,6 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- Misc
-	use("github/copilot.vim")
-	vim.cmd([[
-    imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-    let g:copilot_no_tab_map = v:true
-  ]])
-
 	use("wakatime/vim-wakatime")
 	use("creativecreature/vim-code-harvest")
 
