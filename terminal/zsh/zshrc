@@ -110,3 +110,6 @@ eval "$(starship init zsh)"
 
 # direnv needs to be hooked into the shell to work properly
 eval "$(direnv hook $SHELL)"
+
+# Setup github copilot cli aliases
+eval "$(github-copilot-cli alias -- "$0")"
