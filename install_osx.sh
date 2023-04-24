@@ -37,6 +37,7 @@ WANTED_PACKAGES=(
   jq
   mongodb-community
   ncdu
+  neodev
   neovim
   orlangure/tap/gocovsh
   pnpm
