@@ -2,26 +2,6 @@ require("neodev").setup({})
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. See the documentation for more information.
-local servers = {
-	tsserver = {},
-	gopls = {},
-	bashls = {},
-	dockerls = {},
-	vimls = {},
-	pyright = {},
-	cssls = {},
-	html = {},
-	eslint = {},
-	lua_ls = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-		},
-	},
-}
-
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -39,8 +19,25 @@ require("mason").setup({
 	},
 })
 
--- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
+
+-- Ensure that the servers below are installed
+local servers = {
+	tsserver = {},
+	gopls = {},
+	bashls = {},
+	dockerls = {},
+	vimls = {},
+	cssls = {},
+	html = {},
+	eslint = {},
+	lua_ls = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			telemetry = { enable = false },
+		},
+	},
+}
 
 mason_lspconfig.setup({
 	ensure_installed = vim.tbl_keys(servers),
@@ -55,7 +52,6 @@ mason_lspconfig.setup_handlers({
 		})
 	end,
 })
-
 -- Automatically update diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
@@ -132,6 +128,23 @@ null_ls.setup({
 		null_ls.builtins.formatting.shellharden,
 		null_ls.builtins.formatting.stylua,
 	},
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = function(ev)
+		-- Buffer local mappings.
+		local opts = { buffer = ev.buf }
+		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "=f", vim.lsp.buf.format, opts)
+		vim.keymap.set("n", "<Leader>f", vim.lsp.buf.code_action, opts)
+		vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+
+		-- make gq work with lsp
+		vim.api.nvim_buf_set_option(ev.buf, "formatexpr", "")
+	end,
 })
 
 -- vim.lsp.set_log_level("debug")

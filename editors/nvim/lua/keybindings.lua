@@ -40,15 +40,8 @@ vim.keymap.set({ 'n' }, '<Leader>pu', cmd('PackerUpdate'), { silent = true, desc
 vim.keymap.set({ 'n' }, '<Leader>pi', cmd('PackerInstall'), { silent = true, desc = "[P]acker [i]nstall" })
 vim.keymap.set({ 'n' }, '<Leader>pc', cmd('PackerCompile'), { silent = true, desc = "[P]acker [c]ompile" })
 
---  Lsp
-vim.keymap.set({ 'n' }, '<Leader>f', cmd('lua vim.lsp.buf.code_action()'), { silent = true, desc = "Code action" })
-vim.keymap.set({ 'n' }, 'K', cmd('lua vim.lsp.buf.hover()'), { silent = true, desc = "Hover description" })
-vim.keymap.set({ 'n' }, 'gt', cmd('lua vim.lsp.buf.type_definition()'), { silent = true, desc = "[G]o to [t]ype" })
-vim.keymap.set({ 'n' }, 'gi', cmd('lua vim.lsp.buf.implementation()'),
-	{ silent = true, desc = "[G]o to [i]mplementation" })
-vim.keymap.set({ 'n' }, '<A-k>', cmd('lua vim.diagnostic.goto_prev()'), { silent = true, desc = "Go to previus error" })
+vim.keymap.set({ 'n' }, '<A-k>', cmd('lua vim.diagnostic.goto_prev()'), { silent = true, desc = "Go to previous error" })
 vim.keymap.set({ 'n' }, '<A-j>', cmd('lua vim.diagnostic.goto_next()'), { silent = true, desc = "Go to next error" })
-vim.keymap.set({ 'n' }, '=f', cmd('lua vim.lsp.buf.format({})'), { silent = true, desc = "[F]ormat buffer" })
 
 -- Filetree
 vim.keymap.set({ 'n' }, '<F2>', cmd('NvimTreeFindFile'), { silent = true, desc = "Find file in filetree" })
