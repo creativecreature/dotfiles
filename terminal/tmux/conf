@@ -1,8 +1,6 @@
 # vim: ft=tmux
 
-# =============================================================================
-# ********************************** GENERAL **********************************
-# =============================================================================
+# General -------------------------------------------------------------
 
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL
@@ -19,7 +17,6 @@ set -g prefix C-s
 # Larger scrollback
 set-option -g history-limit 100000
 
-
 # On double ctrl-s we send it to the running process
 bind-key -r C-s send-prefix
 
@@ -33,14 +30,8 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 # Use ctrl-s + r to source the config file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-
-# =============================================================================
-# *********************************** PANES ***********************************
-# =============================================================================
-
 # Kill panes without confirmation
 bind-key x kill-pane
-
 
 # Create panes at the current panes path
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
@@ -63,7 +54,6 @@ bind-key -T copy-mode-vi C-k select-pane -U
 bind-key -T copy-mode-vi C-l select-pane -R
 bind-key -T copy-mode-vi C-\\ select-pane -l
 
-
 # Resize panes, shift arrow keys for smaller increments and control arrow key for larger
 bind -n S-Left resize-pane -L 2
 bind -n S-Right resize-pane -R 2
@@ -82,10 +72,7 @@ bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
 bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
 
 
-
-# =============================================================================
-# ********************************** WINDOWS **********************************
-# =============================================================================
+# Windows -------------------------------------------------------------
 
 # New windows opens at the path of the pane
 bind c new-window -c '#{pane_current_path}'
@@ -100,15 +87,12 @@ set-option -g renumber-windows on
 bind-key b break-pane -d
 
 
-
-# =============================================================================
-# ********************************** SESSIONS *********************************
-# =============================================================================
+# Sessions ------------------------------------------------------------
 
 # Create a new TMUX session
 bind-key w display-popup -E '~/bin/tmux-sessionizer'
 
-# Use fzf to display a list of all sessions and then open the seleted session in a new window
+# Use fzf to display a list of all sessions and then open the selected session in a new window
 bind C-j display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
 # Choose tree lets us switch between sessions, o for open-session
@@ -125,37 +109,10 @@ bind-key -T prefix v switch-client -T prefix_v
 bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
 
 
+# Theming ------------------------------------------------------------=
 
-# =============================================================================
-# ********************************* PLUGINS ***********************************
-# =============================================================================
-# Theme - Status line
-set -g status-style default
-set -g status-right-length 80
-set -g status-left-length 100
-set -g window-status-separator ""
+# Plugins -------------------------------------------------------------
 
-# Bars ---------------------------------
-set -g status-left "#[fg=#bb9af7,bg=default]#[fg=#c0caf5,bg=#bb9af7] #{b:pane_current_path} #[fg=#bb9af7,bg=default]"
-set -g status-right ""
-
-# Windows ------------------------------
-set -g status-justify centre
-set -g window-status-format "#[fg=white,bg=default] #W "
-set -g window-status-current-format "#[fg=#b2ccd6,bg=default]#[fg=#343A51,bg=#b2ccd6] #W #[fg=#b2ccd6,bg=default]"
-setw -g window-active-style "fg=#a3a9c2,bg=#252837"
-setw -g window-style "fg=#a3a9c2,bg=#252837"
-setw -g pane-active-border-style "fg=#252837,bg=#252837"
-setw -g pane-border-style "fg=#252837,bg=#252837"
-set -g status-left "#[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] #S #[fg=#343A51,bg=default] #[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] #{b:pane_current_path} #[fg=#343A51,bg=default]"
-
-set -g @sysstat_cpu_color_low "#a9b1d6"
-set -g @sysstat_mem_color_low "#a9b1d6"
-set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
-set -g @sysstat_mem_view_tmpl "#{mem.pused} "
-set -g status-right "#[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] mem #{sysstat_mem}#[fg=#343A51,bg=default] #[fg=#343A51,bg=default]#[fg=#a9b1d6,bg=#343A51] cpu #{sysstat_cpu}#[fg=#343A51,bg=default]"
-
-# Forks --------------------------------
 set -g @plugin 'creativecreature/tmux-plugin-sysstat-1'
 set -g @plugin 'creativecreature/tmux-1password'
 

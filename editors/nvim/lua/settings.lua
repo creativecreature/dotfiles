@@ -58,6 +58,7 @@ opt.clipboard = 'unnamed,unnamedplus'
 -- Searching
 opt.ignorecase = true
 opt.smartcase = true
+opt.wrapscan = false -- Don't searches wrap the buffer
 
 -- Open new split panes to right and bottom
 opt.splitbelow = true

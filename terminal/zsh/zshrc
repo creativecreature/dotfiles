@@ -1,9 +1,21 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
 
-plugins=(git keychain gpg-agent z node npm zsh-syntax-highlighting zsh-autosuggestions)
+# plugins=(git keychain gpg-agent z node npm zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git keychain gpg-agent z node npm zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+function toggle_theme() {
+  if [[ $THEME == "dark" ]]; then
+    tmux source-file ~/code/creativecreature/dotfiles/terminal/tmux/light-theme
+    kitty +kitten themes --reload-in=all Catppuccin Kitty Latte
+    export THEME="light"
+  else
+    tmux source-file ~/code/creativecreature/dotfiles/terminal/tmux/dark-theme
+    kitty +kitten themes --reload-in=all dark
+    export THEME="dark"
+  fi
+}
 
 # Stop auto change of directory from zsh
 unsetopt AUTO_CD
@@ -101,7 +113,7 @@ fpath=($fpath "/home/conner/.zfunctions")
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Set color of autocomplete text
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#5C5F77'
 
 export XDG_CONFIG_HOME=$HOME/.config
 

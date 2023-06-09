@@ -1,68 +1,52 @@
-local colors = {
-	background = '#252837',
-	foreground = '#a6accd',
+local theme = os.getenv("THEME") or "dark"
+local function getColors()
+	if theme == "dark" then
+		return {
+			background = "#252837",
+			red = "#f07178",
+			green = "#c3e88d",
+			yellow = "#ffcb6b",
+			magenta = "#D49BFD",
+			cyan = "#89ddff",
+			purple = "#82aaff",
+			violet = "#bb80b3",
+		}
+	end
+	return {
+		background = "#EFF1F5",
+		red = "#e64553",
+		green = "#40A02B",
+		yellow = "#DF8E1D",
+		magenta = "#EA76CB",
+		cyan = "#179299",
+		purple = "#7287fd",
+	}
+end
 
-	background_darker = '#232534',
-	highlight = '#2b2f40',
-	references = '#2e2e41',
-	selection = '#343A51',
-	statusline = '#1d1f2b',
-	foreground_darker = '#7982b4',
-	line_numbers = '#4e5579',
-	comments = '#676e95',
-
-	red = '#ff5370',
-	orange = '#f78c6c',
-	yellow = '#ffcb6b',
-	green = '#c3e88d',
-	cyan = '#89ddff',
-	blue = '#82aaff',
-	paleblue = '#b2ccd6',
-	purple = '#D49BFD',
-	brown = '#c17e70',
-	pink = '#f07178',
-	violet = '#bb80b3',
-
-	-- Mix 6 background / 10 color
-	red_dark = '#9e4057',
-	orange_dark = '#9a6054',
-	blue_dark = '#5970a6',
-	green_dark = '#7d9367',
-
-	-- Diff change
-	-- Mix 7 background / 1 #00BE6A
-	diff_add_background = '#203b3d',
-	-- Mix 2 background / 1 #00BE6A
-	diff_add_highlight = '#1c4e44',
-	-- Mix 5 background / 1 red
-	diff_delete_background = '#492f41',
-	-- Mix 2 background / 1 red
-	diff_delete_hightlight = '#6e364a',
-}
-
-local lsp = require "feline.providers.lsp"
+local colors = getColors()
+local lsp = require("feline.providers.lsp")
 
 local assets = {
 	left_separator = "",
 	right_separator = "",
 	lsp = {
-		server = "",
-		error = "",
+		server = "󰅡",
+		error = "󰅙",
 		warning = "",
 		info = "",
 		hint = "",
-	}
+	},
 }
 
 local settings = {
-	text = colors.selection,
-	bkg = colors.selection,
-	curr_file = colors.paleblue,
+	text = colors.background,
+	bkg = colors.background,
+	curr_file = colors.purple,
 }
 
 local mode_colors = {
-	["n"] = { "NORMAL", colors.paleblue },
-	["no"] = { "N-PENDING", colors.paleblue },
+	["n"] = { "NORMAL", colors.purple },
+	["no"] = { "N-PENDING", colors.purple },
 	["i"] = { "INSERT", colors.green },
 	["ic"] = { "INSERT", colors.green },
 	["t"] = { "TERMINAL", colors.green },
@@ -74,7 +58,7 @@ local mode_colors = {
 	["s"] = { "SELECT", colors.brown },
 	["S"] = { "S-LINE", colors.brown },
 	[""] = { "S-BLOCK", colors.brown },
-	["c"] = { "COMMAND", colors.cyan },
+	["c"] = { "COMMAND", colors.magenta },
 	["cv"] = { "COMMAND", colors.cyan },
 	["ce"] = { "COMMAND", colors.cyan },
 	["r"] = { "PROMPT", colors.cyan },
@@ -92,7 +76,9 @@ local function get()
 	}
 
 	local function is_enabled(min_width)
-		if shortline then return true end
+		if shortline then
+			return true
+		end
 
 		return vim.api.nvim_win_get_width(0) > min_width
 	end
@@ -106,7 +92,9 @@ local function get()
 	end
 
 	components.active[1][1] = {
-		provider = function() return " " .. mode_colors[vim.fn.mode()][1] .. " " end,
+		provider = function()
+			return " " .. mode_colors[vim.fn.mode()][1] .. " "
+		end,
 		hl = vi_mode_hl,
 	}
 
@@ -128,7 +116,9 @@ local function get()
 			if Lsp then
 				local msg = Lsp.message or ""
 				local percentage = Lsp.percentage
-				if not percentage then return "" end
+				if not percentage then
+					return ""
+				end
 				local title = Lsp.title or ""
 				local spinners = {
 					"",
@@ -154,18 +144,19 @@ local function get()
 		end,
 		enabled = is_enabled(80),
 		hl = {
-			fg = colors.paleblue,
+			fg = colors.purple,
 			bg = settings.bkg,
 		},
 	}
 
-	-- genral diagnostics (errors, warnings. info and hints)
+	-- general diagnostics (errors, warnings. info and hints)
 	components.active[2][2] = {
 		provider = "diagnostic_errors",
-		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,
-
+		enabled = function()
+			return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
+		end,
 		hl = {
-			fg = colors.pink,
+			fg = colors.red,
 			bg = settings.bkg,
 		},
 		icon = " " .. assets.lsp.error .. " ",
@@ -173,7 +164,9 @@ local function get()
 
 	components.active[2][3] = {
 		provider = "diagnostic_warnings",
-		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.WARN) end,
+		enabled = function()
+			return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
+		end,
 		hl = {
 			fg = colors.yellow,
 			bg = settings.bkg,
@@ -183,7 +176,9 @@ local function get()
 
 	components.active[2][4] = {
 		provider = "diagnostic_info",
-		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
+		enabled = function()
+			return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
+		end,
 		hl = {
 			fg = colors.blue_dark,
 			bg = settings.bkg,
@@ -193,7 +188,9 @@ local function get()
 
 	components.active[2][5] = {
 		provider = "diagnostic_hints",
-		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
+		enabled = function()
+			return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
+		end,
 		hl = {
 			fg = colors.paleblue,
 			bg = settings.bkg,
@@ -205,12 +202,12 @@ local function get()
 	components.active[3][1] = {
 		provider = function()
 			local row, column = unpack(vim.api.nvim_win_get_cursor(0))
-			local filename = vim.fn.expand "%:t"
-			return " " .. filename .. " " .. row ..":" .. column .. " "
+			local filename = vim.fn.expand("%:t")
+			return " " .. filename .. " " .. row .. ":" .. column .. " "
 		end,
 		enabled = function()
-			local filename = vim.fn.expand "%:t"
-			return not (filename == nil or filename == '')
+			local filename = vim.fn.expand("%:t")
+			return not (filename == nil or filename == "")
 		end,
 		hl = {
 			fg = settings.text,
@@ -227,6 +224,6 @@ local function get()
 	return components
 end
 
-require("feline").setup {
+require("feline").setup({
 	components = get(),
-}
+})

@@ -19,3 +19,5 @@ tags.temp
 
 # Vim
 .netrwhist
+
+.envrc

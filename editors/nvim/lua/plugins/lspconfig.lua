@@ -66,7 +66,7 @@ local function lspSymbol(name, icon)
 	vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, numhl = "DiagnosticDefault" .. name })
 end
 
-lspSymbol("Error", "")
+lspSymbol("Error", "󰅙")
 lspSymbol("Warning", "")
 lspSymbol("Information", "")
 lspSymbol("Hint", "")
@@ -117,8 +117,6 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.commitlint,
 		null_ls.builtins.diagnostics.gitlint,
 		null_ls.builtins.diagnostics.misspell,
-		null_ls.builtins.diagnostics.selene,
-		null_ls.builtins.diagnostics.shellcheck,
 		null_ls.builtins.diagnostics.write_good,
 		null_ls.builtins.diagnostics.yamllint,
 		null_ls.builtins.formatting.cbfmt,

@@ -48,8 +48,10 @@ WANTED_PACKAGES=(
   tfenv
   tig
   tldr
+  goreleaser
   tmux
   tree
+  volta
   wget
 )
 
@@ -134,7 +136,6 @@ install_node() {
     echo_item "node is already installed" "green"
   else
     echo_item "installing node" "green"
-    curl --silent https://get.volta.sh | bash
     volta install node
     volta install yarn
     volta install neovim

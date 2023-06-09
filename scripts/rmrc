@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Remove recursive containers
+docker container rm --force $(docker container ls --all --quiet)

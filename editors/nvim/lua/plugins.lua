@@ -42,12 +42,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- UI
-	use({
-		"creativecreature/palenightfall.nvim",
-		config = function()
-			require("palenightfall").setup()
-		end,
-	})
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "creativecreature/palenightfall.nvim" })
 	use({
 		"feline-nvim/feline.nvim",
 		config = function()
