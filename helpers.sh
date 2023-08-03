@@ -65,6 +65,20 @@ echo_item() {
   fi
 }
 
+function symlink_file() {
+    local source=$1
+    local dest=$2
+    local message=${3:-"Symlinking"}
+
+    echo_item "$message" "green"
+    ln -sf "$source" "$dest"
+}
+
+function create_directory() {
+    local dir=$1
+    mkdir -p "$dir"
+}
+
 get_boolean_response() {
   while true; do
     read -p "$1 (Y/N) " yn

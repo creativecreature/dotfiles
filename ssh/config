@@ -1,0 +1,29 @@
+Host github.com-work
+HostName github.com
+AddKeysToAgent yes
+User git
+IdentityFile ~/.ssh/work
+IdentitiesOnly yes
+
+Host github.com-personal
+HostName github.com
+AddKeysToAgent yes
+User git
+IdentityFile ~/.ssh/personal
+IdentitiesOnly yes
+
+Host localhost
+HostName 127.0.0.1
+Port 22
+User pair
+IdentityFile ~/.ssh/private_rsa
+StrictHostKeyChecking no
+
+Host stash.int.klarna.net
+AddKeysToAgent yes
+User git
+IdentityFile ~/.ssh/klarna
+IdentitiesOnly yes
+
+Host i-* mi-*
+ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"

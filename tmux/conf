@@ -1,0 +1,120 @@
+# vim: ft=tmux
+
+# General -------------------------------------------------------------
+if-shell '[[ ! $(tmux show-environment | grep THEME) =~ 'THEME=light' ]]' 'source-file ~/dotfiles/tmux/dark-theme'
+
+# Use default $SHELL instead of a login shell
+set -g default-command $SHELL
+
+set -g default-terminal "xterm-kitty"
+
+# Shorter wait
+set -sg escape-time 0
+
+# Change the prefix key from ctrl-b to ctrl-s
+unbind C-b
+set -g prefix C-s
+
+# Larger scrollback
+set-option -g history-limit 100000
+
+# On double ctrl-s we send it to the running process
+bind-key -r C-s send-prefix
+
+# Copy n paste
+bind P paste-buffer
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+# Use ctrl-s + r to source the config file
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# Kill panes without confirmation
+bind-key x kill-pane
+
+# Create panes at the current panes path
+is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
+
+# Split windows with \ -
+bind-key - split-window -v -c '#{pane_current_path}'
+bind-key \\ split-window -h -c '#{pane_current_path}'
+
+# Send focus events to applications. This will be used to toggle colors in vim
+set -g focus-events on
+
+# Smart pane switching with awareness of Vim splits, the -n flag indicates we dont want to use the prefix
+bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+bind-key -T copy-mode-vi C-h select-pane -L
+bind-key -T copy-mode-vi C-j select-pane -D
+bind-key -T copy-mode-vi C-k select-pane -U
+bind-key -T copy-mode-vi C-l select-pane -R
+bind-key -T copy-mode-vi C-\\ select-pane -l
+
+# Resize panes, shift arrow keys for smaller increments and control arrow key for larger
+bind -n S-Left resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down resize-pane -D 1
+bind -n S-Up resize-pane -U 1
+
+bind -n C-Left resize-pane -L 10
+bind -n C-Right resize-pane -R 10
+bind -n C-Down resize-pane -D 5
+bind -n C-Up resize-pane -U 5
+
+# Prompted join-pane
+bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
+
+# Easily swap a pane (targeted by pane number) with the current pane
+bind-key s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
+
+
+# Windows -------------------------------------------------------------
+
+# New windows opens at the path of the pane
+bind c new-window -c '#{pane_current_path}'
+
+# Dont index windows from 0, start at 1
+set-option -g base-index 1
+
+# Automatically renumber the windows to follow this rule
+set-option -g renumber-windows on
+
+# Move current pane to a new window but keep focus on this window
+bind-key b break-pane -d
+
+
+# Sessions ------------------------------------------------------------
+
+# Create a new TMUX session
+bind-key w display-popup -E '~/bin/tmux-sessionizer'
+
+# Use fzf to display a list of all sessions and then open the selected session in a new window
+bind C-j display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+
+# Choose tree lets us switch between sessions, o for open-session
+# bind C-o choose-session
+bind C-o split-window -v "cat ~/.z | sort -t '|' -k 2 -n -r | awk -F'|' '{print $1}' | awk -F/ '{print$NF}' | fzf | while read -r i; do z '$i'; done; tat;"
+
+# This quits the current session and breaks out to a new one
+bind-key C-b send-keys 'tat && exit' 'C-m'
+
+# This kills the current session and switches to a previous one, if there are no more sessions it exits to the shell
+bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
+
+bind-key -T prefix v switch-client -T prefix_v
+bind-key -T prefix_v G split-window -v -c '#{pane_current_path}'
+
+
+
+# Plugins -------------------------------------------------------------
+
+set -g @plugin 'creativecreature/tmux-plugin-sysstat-1'
+set -g @plugin 'creativecreature/tmux-1password'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'

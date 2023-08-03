@@ -1,22 +1,34 @@
 #!/bin/bash
 
 set -o nounset
+set -o errexit
 
 source 'helpers.sh'
-source 'setup_structure.sh'
-source 'utilities/git/git.sh'
 
-sudo apt-get -qq --yes update
+# Create folder structure
+mkdir -p ~/code/personal ~/code/work ~/bin ~/.config ~/tmp ~/.ssh ~/.gnupg
 
-install_git
+# Install XCode Command Line Tools.
+xcode-select --install &> /dev/null
 
-# Clone dotfiles repo and symlink it to the users home directory
-git clone https://github.com/creativecreature/dotfiles.git ~/code/creativecreature/dotfiles
-ln -s ~/code/creativecreature/dotfiles ~/dotfiles
-cd ~/dotfiles && ./install.sh
+# Wait until XCode Command Line Tools installation has finished.
+until $(xcode-select --print-path &> /dev/null); do
+  sleep 5;
+done
 
-# Post installation I want to update the remote to be ssh instead of https
-cd ~/dotfiles && git remote set-url origin git@github.com:creativecreature/dotfiles.git
+# Clone dotfiles repo and symlink it to my home directory
+git clone https://github.com/creativecreature/dotfiles.git ~/code/personal/dotfiles
+ln -s ~/code/personal/dotfiles ~/dotfiles
+cd ~/dotfiles
+
+# Run install scripts
+./install_osx.sh
+# Run configuration scripts
+./configure_osx.sh
+
+# Post installation I want to update to ensure that I use ssh auth for this repository
+cd ~/dotfiles
+git remote set-url origin git@github.com:creativecreature/dotfiles.git
 
 # Installation complete, ask for reboot
 echo "Installation completed successfully."

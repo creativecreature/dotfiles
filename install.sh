@@ -1,175 +1,155 @@
 #!/bin/bash
-
 source 'helpers.sh'
 
-set o nounset
+set -o nounset
+set -o errexit
 
 echo ""
-echo_header "Starting installation and configuration"
+echo_header "Starting installation"
 
-sudo -v # Ask for sudo password & keep alive
-while true; do sudo n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# Ask for the admin password upfront, and run a keep-alive to
+# update existing `sudo` time stamp until the script has finished
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-sudo apt-get -qq --yes update
-echo ""
+# Check for Homebrew. Install if needed.
+if test ! $(which brew); then
+    echo_item "Installing homebrew" "green"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-# - UTILITIES -----------------------------------------------------------------
-echo_header "Utilities"
-source './utilities/build_tools/build_tools.sh'
-source './utilities/ssh/ssh.sh'
-source './utilities/git/git.sh'
-source './utilities/gpg/gpg.sh'
-source './utilities/direnv/direnv.sh'
-source './utilities/http/http.sh'
-source './utilities/tldr/tldr.sh'
-source './utilities/ripgrep/ripgrep.sh'
-source './utilities/jq/jq.sh'
-source './utilities/xclip/xclip.sh'
-source './utilities/caffeine/caffeine.sh'
-source './utilities/gitcrypt/gitcrypt.sh'
-source './utilities/fzf/fzf.sh'
-source './utilities/tree/tree.sh'
-source './utilities/eslint/eslint.sh'
-source './utilities/kcolorchooser/kcolorchooser.sh'
-source './utilities/prettier/prettier.sh'
-source './utilities/postgresql/postgresql.sh'
-source './utilities/hey/hey.sh'
+# These are the packages we want to have installed
+WANTED_PACKAGES=(
+  awscli
+  btop
+  coreutils
+  direnv
+  dive
+  dockutil
+  efm-langserver
+  flyctl
+  fzf
+  git-crypt
+  git-lfs
+  gnupg
+  go
+  golang-migrate
+  goreleaser
+  hey
+  hugo
+  jq
+  mongodb-community
+  ncdu
+  neovim
+  orlangure/tap/gocovsh
+  pnpm
+  postgresql
+  ripgrep
+  rust
+  starship
+  tfenv
+  tig
+  tldr
+  tmux
+  tree
+  volta
+  wget
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
-install_build_tools
-configure_ssh
-configure_git
-configure_gpg
-install_direnv
-install_http_utils
-install_tldr
-install_ripgrep
-configure_ripgrep
-install_jq
-install_xclip
-install_caffeine
-install_gitcrypt
-install_fzf
-install_tree
-configure_eslint
-install_kcolorchooser
-install_postgresql
-install_hey
-echo ""
+# These are the currently installed packages
+INSTALLED_PACKAGES=$(brew leaves)
 
+# Extract the packages that we are missing
+for index in "${!WANTED_PACKAGES[@]}"; do
+  if [[ "${INSTALLED_PACKAGES[*]}" =~ "${WANTED_PACKAGES[$index]}" ]]; then
+    unset -v WANTED_PACKAGES[$index]
+  fi
+done
 
+# These are the casks we want to have installed
+WANTED_CASKS=(
+  1password
+  1password-cli
+  amethyst
+  centered
+  discord
+  figma
+  firefox
+  firefox-developer-edition
+  goland
+  google-chrome
+  insomnia
+  kap
+  kitty
+  mongodb-compass
+  monodraw
+  nordvpn
+  obsidian
+  postman
+  raycast
+  slack
+  spotify
+  vlc
+)
 
-# - PROGRAMMING LANGUAGES -----------------------------------------------------
-echo_header "Programming languages"
-source './languages/node.sh'
-source './languages/rust.sh'
-source './languages/terraform.sh'
-source './languages/golang.sh'
+# These are the currently installed casks
+INSTALLED_CASKS=$(brew list --cask)
 
-install_node
-install_prettier
-configure_prettier
-install_rust
-install_terraform
-install_golang
-echo ""
+# Extract the casks that we are missing
+for index in "${!WANTED_CASKS[@]}"; do
+  if [[ "${INSTALLED_CASKS[*]}" =~ "${WANTED_CASKS[$index]}" ]]; then
+    unset -v WANTED_CASKS[$index]
+  fi
+done
 
+echo_item "Tapping additional homebrew repositories" "green"
+brew tap mongodb/brew
+brew tap homebrew/cask-versions
 
-# - TERMINAL ------------------------------------------------------------------
-echo_header "Terminal"
-source './terminal/zsh/zsh.sh'
-source './terminal/kitty/kitty.sh'
-source './terminal/tmux/tmux.sh'
-source './terminal/starship/starship.sh'
+echo_item "Updating homebrew" "green"
+brew update
+brew upgrade
 
-install_zsh
-configure_zsh
-install_kitty
-configure_kitty
-install_tmux
-configure_tmux
-install_starship
-echo ""
+if [ ${#WANTED_PACKAGES[@]} -eq 0 ]; then
+  echo_item "All packages are already installed" "green"
+else
+  echo_item "Installing package: ${WANTED_PACKAGES[@]}" "green"
+  brew install ${WANTED_PACKAGES[@]}
+fi
 
+if [ ${#WANTED_CASKS[@]} -eq 0 ]; then
+  echo_item "All casks are already installed" "green"
+else
+  echo_item "Installing cask: ${WANTED_CASKS[@]}" "green"
+  brew install ${WANTED_CASKS[@]} --cask
+fi
 
+echo_item "Performing homebrew cleanup" "green"
+brew cleanup
 
-# - EDITORS -------------------------------------------------------------------
-echo_header "Editors"
-source './editors/nvim/nvim.sh'
+echo_item "Checking for missing volta installations" "green"
+VOLTA_BIN="$HOME/.volta/bin"
+VOLTA_PACKAGES=("node" "pnpm" "yarn")
+for PACKAGE in "${VOLTA_PACKAGES[@]}"; do
+  FILE="$VOLTA_BIN/$PACKAGE"
+  if [ -f "$FILE" ]; then
+    echo_item "$PACKAGE is already installed" "green"
+  else
+    echo_item "installing $PACKAGE" "green"
+    volta install $PACKAGE
+  fi
+done
 
-install_nvim
-configure_nvim
-install_lua_language_server
-echo ""
-
-
-
-# - APPLICATIONS --------------------------------------------------------------
-echo_header "Applications"
-source './applications/docker.sh'
-source './applications/nordvpn.sh'
-source './applications/virtualbox.sh'
-source './applications/vlc.sh'
-source './applications/slack.sh'
-source './applications/discord.sh'
-source './applications/simplescreenrecorder.sh'
-source './applications/1password.sh'
-source './applications/thefuck.sh'
-
-install_docker
-install_nordvpn
-install_virtualbox
-install_vlc
-install_slack
-install_discord
-install_simplescreenrecorder
-install_1password
-install_thefuck
-echo ""
-
-
-
-# - HARDWARE ------------------------------------------------------------------
-echo_header "Hardware"
-source "./hardware/keyboard.sh"
-source './hardware/touchpad.sh'
-source './hardware/usb.sh'
-
-configure_keyboard
-configure_touchpad
-configure_usb
-echo ""
-
-
-
-# - UI ------------------------------------------------------------------------
-echo_header "UI"
-source './ui/fonts.sh'
-source './ui/gnome_tweaks.sh'
-source './ui/dock.sh'
-source './ui/theme.sh'
-source './ui/icons.sh'
-
-install_fonts
-install_gnome_tweaks
-configure_dock
-install_theme
-configure_theme
-install_icons
-configure_icons
-echo ""
-
-
-
-# - SCRIPTS -------------------------------------------------------------------
-echo_header "Scripts"
-source './scripts/scripts.sh'
-
-install_scripts
-echo ""
-
-# -- CLEANUP -------------------------------------------------------------------
-echo_header "Cleanup - removing unwanted software"
-source './cleanup.sh'
-
-uninstall_unwanted_software
-echo ""
+install_oh_my_zsh() {
+	if [[ -d ~/.oh-my-zsh ]]; then
+		echo_item "oh my zsh is already installed" "green"
+	else
+		echo_item "installing oh my zsh" " green"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	fi
+}
+install_oh_my_zsh
