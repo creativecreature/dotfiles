@@ -56,6 +56,7 @@ WANTED_PACKAGES=(
   tree
   volta
   wget
+  youtube-dl
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
