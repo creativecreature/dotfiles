@@ -186,7 +186,6 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- Misc
-	use("wakatime/vim-wakatime")
 	use("creativecreature/vim-code-harvest")
 
 	local has_plugins, plugins = pcall(require, "custom.plugins")
