@@ -92,6 +92,7 @@ WANTED_CASKS=(
   obsidian
   postman
   raycast
+  redisinsight
   slack
   spotify
   vlc
