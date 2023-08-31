@@ -46,6 +46,7 @@ WANTED_PACKAGES=(
   orlangure/tap/gocovsh
   pnpm
   postgresql
+  protobuf
   ripgrep
   rust
   starship
