@@ -25,6 +25,7 @@ WANTED_PACKAGES=(
   awscli
   btop
   coreutils
+  delve
   direnv
   dive
   dockutil

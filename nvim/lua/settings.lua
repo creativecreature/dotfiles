@@ -33,6 +33,7 @@ vim.opt.list = false -- Disable list chars by default.
 vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' }
 vim.opt.joinspaces = false -- No double spaces with join after a dot
 vim.opt.undolevels = 1000 -- Allow for more undos(at the cost of increased memory usage)
+vim.o.completeopt = "menuone,noselect"
 
 -- Line numbers
 opt.number = true -- Show the current line as the real line number
@@ -58,7 +59,7 @@ opt.clipboard = 'unnamed,unnamedplus'
 -- Searching
 opt.ignorecase = true
 opt.smartcase = true
--- opt.wrapscan = false -- Don't searches wrap the buffer
+-- opt.wrapscan = false -- Searches don't wrap the buffer
 
 -- Open new split panes to right and bottom
 opt.splitbelow = true

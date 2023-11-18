@@ -4,7 +4,7 @@ map ctrl+shift+r load_config_file
 # Font family and line height
 font_family Berkeley Mono
 font_size        12.0
-adjust_line_height  13
+adjust_line_height  16
 adjust_column_width 0
 disable_ligatures never
 

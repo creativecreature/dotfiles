@@ -5,14 +5,7 @@ cmd([[
 ]])
 
 require("settings")
-require("plugins")
 require("keybindings")
 require("autocommands")
+require("plugin")
 require("theme")
-
-cmd([[
-let g:go_fmt_command = "golines"
-let g:go_fmt_options = {
-    \ 'golines': '-m 120',
-    \ }
-]])

@@ -19,3 +19,7 @@ The bootstrap scripts will:
 You only need to run the `bootstrap.sh` script once. For subsequent syncs just
 execute the `install.sh` script to ensure that you have all applications, and
 `configure.sh` to configure them.
+
+## TODO
+Go installs
+- go install github.com/go-delve/delve/cmd/dlv@latest

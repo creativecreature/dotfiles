@@ -55,7 +55,7 @@ export GPG_TTY=$(tty)
 alias vim=nvim
 alias vi=nvim
 alias gs="git status"
-alias tree='tree -I node_modules'
+alias tree='tree -I node_modules -a'
 alias spotify=spt
 # Toggle light theme
 alias light="\
