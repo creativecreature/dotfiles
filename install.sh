@@ -25,7 +25,6 @@ WANTED_PACKAGES=(
   awscli
   btop
   coreutils
-  delve
   direnv
   dive
   dockutil
@@ -78,7 +77,6 @@ WANTED_CASKS=(
   1password
   1password-cli
   amethyst
-  centered
   discord
   figma
   firefox
@@ -97,7 +95,6 @@ WANTED_CASKS=(
   redisinsight
   slack
   spotify
-  vlc
 )
 
 # These are the currently installed casks

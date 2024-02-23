@@ -1,5 +1,6 @@
 return {
 	{ "catppuccin/nvim" },
+	{ "marko-cerovac/material.nvim" },
 	{ "norcalli/nvim-colorizer.lua" },
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
@@ -11,12 +12,12 @@ return {
 	{ "tpope/vim-fugitive" },
 	{ "christoomey/vim-tmux-navigator" },
 	{ "creativecreature/vim-code-harvest" },
-  { dir = "~/code/personal/palenightfall.nvim"},
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      local colorizer = require'colorizer'
-      colorizer.setup()
-    end,
-  },
+	{ dir = "~/code/personal/palenightfall.nvim" },
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			local colorizer = require("colorizer")
+			colorizer.setup()
+		end,
+	},
 }
