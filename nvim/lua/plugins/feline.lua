@@ -17,13 +17,13 @@ return {
 				}
 			end
 			return {
-				background = "#EFF1F5",
-				red = "#e64553",
-				green = "#40A02B",
-				yellow = "#DF8E1D",
-				magenta = "#EA76CB",
-				cyan = "#179299",
-				purple = "#7287fd",
+				background = "#FAFAFA",
+				red = "#E53935",
+				green = "#91B859",
+				yellow = "#F6A434",
+				magenta = "#FF5370",
+				cyan = "#39ADB5",
+				purple = "#6182B8",
 			}
 		end
 

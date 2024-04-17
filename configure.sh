@@ -19,11 +19,14 @@ function apply_defaults() {
   defaults write com.apple.dock mru-spaces -bool false
   # Automatically hide and show the Dock
   defaults write com.apple.dock autohide -bool true
+	# Hide/Show the dock at a faster phase
+	defaults write com.apple.dock autohide-time-modifier -float 0.5
   # Don’t show recent applications in Dock
   defaults write com.apple.dock show-recents -bool false
   # Configure faster key repeat
-  defaults write NSGlobalDomain InitialKeyRepeat -int 15
-  defaults write NSGlobalDomain KeyRepeat -int 1
+	defaults write NSGlobalDomain InitialKeyRepeat -int 12
+	defaults write NSGlobalDomain KeyRepeat -float 0.2
+	defaults write com.apple.Accessibility KeyRepeatEnabled -bool false
 }
 
 configure_fzf() {

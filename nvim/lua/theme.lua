@@ -1,11 +1,27 @@
 local theme = string.sub(vim.fn.system("tmux show-environment THEME"), 7):gsub("%s+$", "")
 
 if theme == "dark" then
-  require("palenightfall").setup()
-  vim.o.background = "dark"
+	local material = require("material")
+	material.setup({
+		custom_colors = function(colors)
+			-- colors.editor.fg = "#213B47"
+			-- colors.editor.fg_dark = "#61747D"
+		end,
+	})
+	vim.o.background = "dark"
+	vim.g.material_style = "palenight"
+	vim.cmd.colorscheme("material")
 end
 
 if theme == "light" then
-  vim.o.background = "light"
-  vim.cmd.colorscheme("catppuccin-latte")
+	local material = require("material")
+	material.setup({
+		custom_colors = function(colors)
+			colors.editor.fg = "#213B47"
+			colors.editor.fg_dark = "#61747D"
+		end,
+	})
+	vim.o.background = "light"
+	vim.g.material_style = "lighter"
+	vim.cmd.colorscheme("material")
 end

@@ -60,7 +60,7 @@ vim.keymap.set(
 vim.keymap.set({ "n" }, "<A-j>", cmd("lua vim.diagnostic.goto_next()"), { silent = true, desc = "Go to next error" })
 
 -- Filetree
-vim.keymap.set({ "n" }, "<F2>", cmd("NvimTreeFindFile"), { silent = true, desc = "Find file in filetree" })
+vim.keymap.set({ "n" }, "<F2>", cmd("NvimTreeFindFileToggle!"), { silent = true, desc = "Find file in filetree" })
 vim.keymap.set({ "n" }, "<F3>", cmd("NvimTreeToggle"), { silent = true, desc = "Toggle filetree" })
 
 -- Telescope
