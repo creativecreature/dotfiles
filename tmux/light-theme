@@ -1,58 +1,17 @@
 # vim: ft=tmux
 
-# Colors
-COLOR_TERMINAL_BG="#FAFAFA"
-COLOR_WINDOW_STATUS_BG="#91B859"
-COLOR_WINDOW_STATUS_TEXT="#[fg=$COLOR_TERMINAL_BG,bg=$COLOR_WINDOW_STATUS_BG] #W"
-COLOR_STATUS_BG="#6182B8"
-COLOR_STATUS_TEXT="#[fg=$COLOR_TERMINAL_BG,bg=$COLOR_STATUS_BG]"
+color_bg="#FAFAFA"
+color_fg="#fafafa"
 
-# Hide pane borders
-setw -g pane-active-border-style "fg=$COLOR_TERMINAL_BG,bg=$COLOR_TERMINAL_BG"
-setw -g pane-border-style "fg=$COLOR_TERMINAL_BG,bg=$COLOR_TERMINAL_BG"
+color_green="#C3E88D"
+color_yellow="#FFCB6B"
+color_red="#FF8B92"
+color_blue="#89DDFF"
+color_cyan="#A3F7FF"
+color_purple="#C792EA"
+color_light_gray="#6C6F85"
+color_gray="#213B47"
+color_selection="#82AAFF"
+color_buffer="#5C5F77"
 
-# Theme - Status line
-set -g status-style default
-set -g window-status-separator ""
-
-# Window
-WINDOW_STATUS_BORDER_LEFT="#[fg=$COLOR_WINDOW_STATUS_BG,bg=$COLOR_TERMINAL_BG]"
-WINDOW_STATUS_BORDER_RIGHT="#[fg=$COLOR_WINDOW_STATUS_BG,bg=$COLOR_TERMINAL_BG]"
-WINDOW_STATUS="$WINDOW_STATUS_BORDER_LEFT$COLOR_WINDOW_STATUS_TEXT $WINDOW_STATUS_BORDER_RIGHT"
-set -g status-justify centre
-set -g window-status-current-format "$WINDOW_STATUS"
-
-# Status
-STATUS_BORDER_LEFT="#[fg=$COLOR_STATUS_BG,bg=default]"
-STATUS_BORDER_RIGHT="#[fg=$COLOR_STATUS_BG,bg=default]"
-
-# Status left
-STATUS_LEFT="\
-$STATUS_BORDER_LEFT\
-$COLOR_STATUS_TEXT\
-#S \
-$STATUS_BORDER_RIGHT \
-$STATUS_BORDER_LEFT$COLOR_STATUS_TEXT \
-#{b:pane_current_path} \
-$STATUS_BORDER_RIGHT\
-"
-set -g status-left-length 100
-set -g status-left "$STATUS_LEFT"
-
-# Status right
-set -g @sysstat_cpu_color_low "#a9b1d6"
-set -g @sysstat_mem_color_low "#a9b1d6"
-set -g @sysstat_cpu_view_tmpl "#{cpu.pused} "
-set -g @sysstat_mem_view_tmpl "#{mem.pused} "
-STATUS_RIGHT="\
-$STATUS_BORDER_LEFT\
-$COLOR_STATUS_TEXT \
-mem #{sysstat_mem}\
-$STATUS_BORDER_RIGHT \
-$STATUS_BORDER_LEFT\
-$COLOR_STATUS_TEXT \
-cpu #{sysstat_cpu}\
-$STATUS_BORDER_RIGHT\
-"
-set -g status-right-length 80
-set -g status-right $STATUS_RIGHT
+source "~/dotfiles/tmux/shared-theme"

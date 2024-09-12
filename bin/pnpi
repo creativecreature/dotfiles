@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+SECRETS_FILE=~/.secrets.sh
+GPG_ID=victor@conner.dev
+
+decrypt (){
+  gpg -d ${SECRETS_FILE}.asc > ${SECRETS_FILE}
+  rm ${SECRETS_FILE}.asc
+}
+
+encrypt (){
+  gpg -ea -r ${GPG_ID} ${SECRETS_FILE}
+  rm ${SECRETS_FILE}
+}
+
+decrypt
+source $SECRETS_FILE
+pnpm install
+encrypt

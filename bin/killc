@@ -1,0 +1,6 @@
+#!/bin/bash
+FZF_DEFAULT_OPTS='--height 90% --reverse'
+container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf --reverse -m | awk -F '=>' '{print $1}')
+if [[ $container != '' ]]; then
+  docker kill $container
+fi

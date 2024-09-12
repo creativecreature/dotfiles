@@ -2,24 +2,23 @@
 
 ## Introduction
 I use these scripts to bootstrap new machines, install software and prevent
-configuration drifts between different laptops I use.
+configuration drifts between my personal laptop and the one I use at work.
 
 ## Bootstrapping a new machine
-Download this repository as a zip file, unpack it, and run the `bootstrap.sh`
-script. The *bootstrap* script should only be executed once. See the following
-section for instructions on how to sync the latest changes.
+Clone this as a bare git repository:
 
-The bootstrap scripts will:
-- Setup the directory structure.
-- Generate SSH keys and change the git remote for this project to use ssh.
-- Install and configure software.
-- Symlink configuration files.
+```sh
+git clone --bare git@github.com:creativecreature/dotfiles.git $HOME/.cfg
+```
 
-## Syncing settings
-You only need to run the `bootstrap.sh` script once. For subsequent syncs just
-execute the `install.sh` script to ensure that you have all applications, and
-`configure.sh` to configure them.
+Checkout the bare repository content to the home directory:
 
-## TODO
-Go installs
-- go install github.com/go-delve/delve/cmd/dlv@latest
+```sh
+./checkout.sh
+```
+
+Run the bootstrap script to install software, create ssh keys, download oh-my-zsh, etc.
+
+```sh
+./bootstrap.sh
+```

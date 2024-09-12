@@ -1,0 +1,16 @@
+#!/bin/bash
+container=$(docker ps --format '{{.Names}} => {{.Image}}' | fzf --height 90% --reverse | awk -F '\\=>' '{print $1}')
+if [[ $container != '' ]]; then
+  echo -e "\n  \033[1mDocker container:\033[0m" $container
+  # Mac uses bash version 3, which does not support the -i command for read
+  options="-it"
+  # read -e -p $'  \e[1mOptions: \e[0m' -i "-it" options
+  if [[ $@ == '' ]]; then
+    read -e -p $'  \e[1mCommand: \e[0m' cmd
+  else
+    cmd="$@"
+  fi
+  echo ''
+  docker exec $options $container $cmd
+  echo ''
+fi

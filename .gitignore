@@ -1,6 +1,9 @@
 # Ignore Mac OS files
 .DS_Store
 
+# Ignore .cfg to avoid weird recursion problems
+.cfg
+
 # Ignore the "local" versions of files
 *.local
 *.local.*

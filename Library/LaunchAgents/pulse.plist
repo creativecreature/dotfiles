@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+
+    <key>Label</key>
+    <string>dev.conner.pulse.plist</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardErrorPath</key>
+		<string>/Users/conner/.pulse/logs/stderr.log</string>
+
+    <key>StandardOutPath</key>
+		<string>/Users/conner/.pulse/logs/stdout.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string><![CDATA[/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin]]></string>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/conner</string>
+
+    <key>ProgramArguments</key>
+    <array>
+			<string>/Users/conner/bin/pulse-server</string>
+    </array>
+
+		<key>KeepAlive</key>
+    <true/>
+
+  </dict>
+</plist>
