@@ -69,19 +69,16 @@ THEME="light"
 
 # Toggle light theme
 alias light="\
-tmux source-file ~/dotfiles/tmux/light-theme; \
+tmux source-file ~/tmux/light-theme; \
 tmux set-environment THEME 'light'; \
 cp $HOME/.config/ghostty/config.light $HOME/.config/ghostty/config"
 
 
 # Toggle dark theme
 alias dark="\
-tmux source-file ~/dotfiles/tmux/dark-theme; \
+tmux source-file ~/tmux/dark-theme; \
 tmux set-environment THEME 'dark'; \
 cp $HOME/.config/ghostty/config.dark $HOME/.config/ghostty/config"
-
-# Setup github copilot cli aliases
-eval "$(github-copilot-cli alias -- "$0")"
 
 # Make ctrl+r use fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -117,3 +114,6 @@ eval "$(starship init zsh)"
 
 # direnv needs to be hooked into the shell to work properly
 eval "$(direnv hook $SHELL)"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

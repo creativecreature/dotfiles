@@ -3,7 +3,7 @@
 # General -------------------------------------------------------------
 
 # Colors
-if-shell '[[ ! $(tmux show-environment | grep THEME) =~ 'THEME=dark' ]]' 'source-file ~/dotfiles/tmux/light-theme'
+if-shell '[[ ! $(tmux show-environment | grep THEME) =~ 'THEME=dark' ]]' 'source-file ~/tmux/light-theme'
 
 # Use default $SHELL instead of a login shell
 set -g default-command $SHELL

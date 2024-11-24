@@ -2,18 +2,16 @@
 
 source 'helpers.sh'
 
-set -o nounset
-set -o errexit
-
 echo ""
 echo_header "Starting installation"
 
 # Ask for the admin password upfront, and run a keep-alive to
 # update the `sudo` timestamp until the script has finished.
-sudo -v while true; do
-	sudo -n true
-	sleep 60
-	kill -0 "$$" || exit
+sudo -v
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
 done 2>/dev/null &
 
 # Check for Homebrew. Install if needed.
@@ -47,6 +45,7 @@ WANTED_PACKAGES=(
 	git-lfs
 	gnupg
 	go
+	goland
 	golang-migrate
 	goreleaser
 	hey
@@ -61,10 +60,13 @@ WANTED_PACKAGES=(
 	pnpm
 	postgresql
 	protobuf
+	raycast
 	redis
 	ripgrep
 	rust
 	sketchybar
+	slack
+	spotify
 	starship
 	switchaudio-osx
 	tfenv
@@ -76,7 +78,10 @@ WANTED_PACKAGES=(
 	websocat
 	wget
 	youtube-dl
+	sf-symbols
+	spotify
 	zsh-autosuggestions
+	font-hack-nerd-font
 	zsh-syntax-highlighting
 )
 
@@ -94,13 +99,10 @@ done
 WANTED_CASKS=(
 	1password
 	1password-cli
-	amethyst
 	discord
 	figma
 	firefox
 	firefox-developer-edition
-	font-hack-nerd-font
-	goland
 	google-chrome
 	homebrew/cask-fonts/font-sf-mono
 	homebrew/cask-fonts/font-sf-pro
@@ -112,11 +114,7 @@ WANTED_CASKS=(
 	nordvpn
 	obsidian
 	postman
-	raycast
 	redisinsight
-	sf-symbols
-	slack
-	spotify
 )
 
 # These are the currently installed casks

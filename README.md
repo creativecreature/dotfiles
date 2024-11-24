@@ -5,6 +5,16 @@ I use these scripts to bootstrap new machines, install software and prevent
 configuration drifts between my personal laptop and the one I use at work.
 
 ## Bootstrapping a new machine
+Generate SSH keys, copy them, and add them to Github:
+
+```sh
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/personal
+pbcopy < ~/.ssh/personal.pub
+
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/work
+pbcopy < ~/.ssh/work.pub
+```
+
 Clone this as a bare git repository:
 
 ```sh

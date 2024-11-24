@@ -14,4 +14,4 @@ color_gray="#213B47"
 color_selection="#82AAFF"
 color_buffer="#5C5F77"
 
-source "~/dotfiles/tmux/shared-theme"
+source "~/tmux/shared-theme"
