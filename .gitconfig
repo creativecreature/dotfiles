@@ -5,7 +5,7 @@
 	email = victor@conner.dev
 	name = Victor Conner
 	editor = "nvim"
-	signingkey = 3B9574B40F0E4B88BE1B7FF1511C8D93E1307C18
+	signingkey = 12B0C3A210C96A594771046CD0356B9B43EBDC1E
 
 [core]
 	excludesfile = ~/.gitignore_global

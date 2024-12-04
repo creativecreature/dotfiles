@@ -6,7 +6,7 @@ clipboard-read = "allow"
 clipboard-paste-protection = false
 window-decoration = false
 
-adjust-cell-height = 55%
+adjust-cell-height = 35%
 font-size = 10
 font-family = Berkeley Mono
 # font-family = SF Mono
